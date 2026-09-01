@@ -1,0 +1,1805 @@
+/* DwS — cinematic dark theme overrides on top of Bootstrap 5 */
+
+:root {
+  --dws-black: #000000;
+  --dws-white: #ffffff;
+  --dws-border: #222222;
+  --dws-muted: #8b8b8b;
+  --dws-hover: #0d0d0d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.dws-body {
+  background-color: var(--dws-black);
+  color: var(--dws-white);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+.dws-body ::selection {
+  background: var(--dws-white);
+  color: var(--dws-black);
+}
+
+.dws-muted {
+  color: var(--dws-muted);
+}
+
+.dws-mono {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Navigation ---------- */
+.dws-nav {
+  background-color: var(--dws-black);
+  border-bottom: 1px solid var(--dws-border);
+}
+
+.dws-nav-link {
+  color: var(--dws-white);
+  text-decoration: none;
+  font-size: 0.925rem;
+  opacity: 0.7;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.dws-nav-link:hover {
+  opacity: 1;
+  color: var(--dws-white);
+}
+
+.dws-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ---------- Buttons ---------- */
+.dws-btn {
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.dws-btn-solid {
+  background-color: var(--dws-white);
+  color: var(--dws-black);
+}
+
+.dws-btn-solid:hover {
+  background-color: #d9d9d9;
+  color: var(--dws-black);
+  transform: translateY(-2px);
+}
+
+.dws-btn-outline {
+  background-color: transparent;
+  color: var(--dws-white);
+  border-color: #3a3a3a;
+}
+
+.dws-btn-outline:hover {
+  border-color: var(--dws-white);
+  color: var(--dws-white);
+  transform: translateY(-2px);
+}
+
+/* ---------- Hero ---------- */
+.dws-hero {
+  min-height: 85vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.dws-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -60% 0;
+  height: 90%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.09), transparent 65%);
+  pointer-events: none;
+}
+
+.dws-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--dws-border);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: #e6e6e6;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dws-hero h1 {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+.dws-hero-sub {
+  max-width: 640px;
+  font-size: 1.075rem;
+  line-height: 1.7;
+}
+
+/* ---------- Section chrome ---------- */
+.dws-section {
+  padding: 6.5rem 0;
+  border-top: 1px solid var(--dws-border);
+}
+
+.dws-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dws-muted);
+}
+
+.dws-section-title {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* ---------- Services matrix ---------- */
+.dws-service {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem 1.25rem;
+  border-bottom: 1px solid var(--dws-border);
+  cursor: pointer;
+  transition:
+    background-color 0.35s ease,
+    transform 0.35s ease,
+    padding-left 0.35s ease;
+}
+
+.dws-service:first-child {
+  border-top: 1px solid var(--dws-border);
+}
+
+.dws-service:hover {
+  background-color: var(--dws-hover);
+  transform: translateX(14px);
+}
+
+.dws-service-index {
+  color: var(--dws-muted);
+  font-size: 0.9rem;
+  min-width: 3.5rem;
+}
+
+.dws-service-title {
+  font-size: clamp(1.15rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.dws-service-meta {
+  color: var(--dws-muted);
+  font-size: 0.9rem;
+}
+
+.dws-service-arrow {
+  margin-left: auto;
+  color: var(--dws-muted);
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+  flex-shrink: 0;
+}
+
+.dws-service:hover .dws-service-arrow {
+  color: var(--dws-white);
+  transform: translateX(6px) rotate(-45deg);
+}
+
+/* ---------- Process ---------- */
+.dws-step {
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--dws-border);
+  height: 100%;
+}
+
+.dws-step-number {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--dws-white);
+  opacity: 0.25;
+}
+
+.dws-step h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* ---------- Portfolio ---------- */
+.dws-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .dws-work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CSS grid + fr rows force every card to the same height per row */
+.dws-work-grid > * {
+  display: flex;
+}
+
+.dws-work {
+  border: 1px solid var(--dws-border);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #050505;
+  height: 100%;
+  width: 100%;
+  transition:
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.dws-work:hover {
+  border-color: #3d3d3d;
+  transform: translateY(-6px);
+}
+
+.dws-work-canvas {
+  aspect-ratio: 16 / 10;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dws-work-canvas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.dws-work:hover .dws-work-canvas img {
+  transform: scale(1.05);
+}
+
+/* Keep card bodies a consistent height across the grid */
+.dws-work .p-4 {
+  flex: 1 1 auto;
+}
+
+.dws-work .dws-muted.small {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---------- CTA / footer ---------- */
+.dws-cta h2 {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.dws-footer {
+  border-top: 1px solid var(--dws-border);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.02) 0%, transparent 70%),
+    var(--dws-black);
+  padding: 4.5rem 0 2rem;
+  color: var(--dws-muted);
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.dws-footer-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.dws-footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.dws-footer-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  display: inline-block;
+  animation: dws-pulse-dot 2.2s infinite ease-in-out;
+}
+
+@keyframes dws-pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+.dws-footer-title {
+  color: var(--dws-white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.dws-footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dws-footer-list li,
+.dws-footer-list a {
+  color: var(--dws-muted);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.885rem;
+}
+
+.dws-footer-list a:hover {
+  color: var(--dws-white);
+  transform: translateX(3px);
+}
+
+.dws-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px;
+  border: 1px solid var(--dws-border);
+  color: var(--dws-muted);
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.dws-social:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.dws-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 2rem;
+  margin-top: 3.5rem;
+  font-size: 0.84rem;
+  color: var(--dws-muted);
+}
+
+.dws-footer-legal-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dws-footer-legal-links a {
+  color: var(--dws-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dws-footer-legal-links a:hover {
+  color: var(--dws-white);
+}
+
+.dws-scroll-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--dws-border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--dws-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dws-scroll-top-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 575.98px) {
+  .dws-service {
+    padding: 1.5rem 0.75rem;
+    gap: 0.85rem;
+  }
+  .dws-section {
+    padding: 4.5rem 0;
+  }
+}
+
+/* ---------- Preloader ---------- */
+.dws-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: var(--dws-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dws-preloader-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.dws-preloader-glow {
+  position: absolute;
+  top: -60px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22), transparent 65%);
+  pointer-events: none;
+}
+
+.dws-preloader-logo {
+  width: 150px;
+  height: auto;
+  position: relative;
+}
+
+.dws-preloader-track {
+  width: 190px;
+  height: 2px;
+  background: #1c1c1c;
+  overflow: hidden;
+}
+
+.dws-preloader-bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--dws-white);
+  transform-origin: left center;
+}
+
+.dws-preloader-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  color: var(--dws-muted);
+  margin: 0;
+}
+
+/* ---------- React Bits: SplitText ---------- */
+.dws-split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.06em;
+}
+
+.dws-split-word:not(:last-child) {
+  margin-right: 0.26em;
+}
+
+.dws-split-inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+.dws-split {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+/* ---------- React Bits: ShinyText ---------- */
+.dws-shiny {
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.55) 30%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.55) 70%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation-name: dws-shine;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dws-shine {
+  0% {
+    background-position: 180% center;
+  }
+  100% {
+    background-position: -80% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dws-shiny {
+    animation: none;
+    color: var(--dws-white);
+    -webkit-text-fill-color: var(--dws-white);
+  }
+}
+
+/* ---------- Nav active state ---------- */
+.dws-nav-link.is-active {
+  color: #fff;
+}
+
+/* ---------- Work links ---------- */
+.dws-work-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+.dws-work-link:hover {
+  color: #fff;
+  border-color: #fff;
+  transform: translateX(4px);
+}
+
+/* ---------- Team ---------- */
+.dws-team {
+  border: 1px solid #1c1c1c;
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem;
+  background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+.dws-team:hover {
+  border-color: #333;
+  transform: translateY(-4px);
+}
+.dws-team-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  background: #0d0d0d;
+}
+
+/* ---------- Testimonials ---------- */
+.dws-quote {
+  border: 1px solid #1c1c1c;
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  position: relative;
+  background: #060606;
+  transition: border-color 0.3s ease;
+}
+.dws-quote:hover {
+  border-color: #333;
+}
+.dws-quote-mark {
+  position: absolute;
+  top: 0.25rem;
+  right: 1.25rem;
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0.12;
+}
+.dws-quote blockquote {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ---------- Pricing tiers ---------- */
+.dws-tier {
+  position: relative;
+  border: 1px solid #1c1c1c;
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  background: #050505;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+.dws-tier:hover {
+  border-color: #333;
+  transform: translateY(-6px);
+}
+.dws-tier-featured {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: linear-gradient(180deg, #0d0d0d 0%, #000 100%);
+}
+.dws-tier-flag {
+  position: absolute;
+  top: -0.75rem;
+  left: 1.75rem;
+  background: #fff;
+  color: #000;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+}
+.dws-tier-price {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.dws-tier-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dws-tier-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+.dws-tier-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ---------- Contact form ---------- */
+.dws-form-card {
+  border: 1px solid #1c1c1c;
+  border-radius: 22px;
+  padding: 2rem;
+  background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+}
+.dws-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.5rem;
+}
+.dws-input {
+  width: 100%;
+  background: #000;
+  border: 1px solid #222;
+  border-radius: 12px;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.dws-input:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+select.dws-input {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-opacity='0.6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  color-scheme: dark;
+}
+select.dws-input:not(:focus):not([value=""]) {
+  border-color: #222;
+}
+select.dws-input.is-placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+.dws-input option {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+.dws-input option:checked {
+  background: #1a1a1a;
+}
+.dws-form-error {
+  color: #ff8080;
+  font-size: 0.88rem;
+}
+.dws-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Blog */
+.dws-post-card {
+  border: 1px solid var(--dws-line, #222);
+  padding: 1.75rem;
+  background: #050505;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+.dws-post-card:hover {
+  border-color: #444;
+  transform: translateY(-4px);
+}
+.dws-post-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.dws-post-link:hover {
+  opacity: 0.7;
+  color: #fff;
+}
+.dws-post-mini {
+  border-left: 2px solid #222;
+  padding-left: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    padding-left 0.25s ease;
+}
+.dws-post-mini:hover {
+  border-color: #fff;
+  padding-left: 1.25rem;
+  color: #fff;
+}
+.dws-article-p {
+  color: #cfcfcf;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.4rem;
+}
+.dws-divider {
+  height: 1px;
+  background: #222;
+}
+
+/* Dashboard */
+.dws-stat {
+  border: 1px solid #222;
+  padding: 1.1rem 1.25rem;
+  background: #050505;
+}
+.dws-stat-num {
+  display: block;
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.dws-chip {
+  background: transparent;
+  border: 1px solid #222;
+  color: var(--dws-muted, #8b8b8b);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+}
+.dws-chip:hover {
+  border-color: #555;
+  color: #fff;
+}
+.dws-chip.is-active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+.dws-enquiry {
+  border: 1px solid #222;
+  padding: 1.5rem;
+  background: #050505;
+}
+.dws-enquiry-msg {
+  color: #cfcfcf;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+.dws-reply {
+  border-left: 2px solid #333;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+.dws-badge {
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #333;
+  color: var(--dws-muted, #8b8b8b);
+}
+.dws-badge-new {
+  border-color: #fff;
+  color: #fff;
+}
+.dws-badge-replied {
+  border-color: #2f6b3f;
+  color: #7fd39a;
+}
+.dws-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #fff;
+  text-decoration: underline;
+  font-size: inherit;
+}
+
+/* ---------- Mobile navigation ---------- */
+.dws-burger {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--dws-border);
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.dws-burger span {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: var(--dws-white);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+.dws-burger span.is-open:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+}
+.dws-burger span.is-open:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+.dws-mobile-menu {
+  overflow: hidden;
+}
+.dws-mobile-link {
+  color: var(--dws-white);
+  text-decoration: none;
+  padding: 0.85rem 0.25rem;
+  border-top: 1px solid var(--dws-border);
+  font-size: 1rem;
+  opacity: 0.8;
+}
+.dws-mobile-link:active,
+.dws-mobile-link:hover {
+  color: var(--dws-white);
+  opacity: 1;
+}
+
+/* ---------- Responsive scaling ---------- */
+.dws-body h1,
+.dws-body .display-1,
+.dws-body .display-2 {
+  font-size: clamp(2.15rem, 8.5vw, 4.5rem);
+  line-height: 1.04;
+}
+.dws-body h2,
+.dws-body .display-4,
+.dws-body .display-5 {
+  font-size: clamp(1.65rem, 5.2vw, 2.75rem);
+  line-height: 1.12;
+}
+.dws-body .dws-hero-sub {
+  font-size: clamp(0.98rem, 3.6vw, 1.15rem);
+}
+
+@media (max-width: 991.98px) {
+  .dws-hero {
+    min-height: auto;
+    padding: 4rem 0 3.5rem;
+  }
+  .dws-section {
+    padding: 4rem 0;
+  }
+  .dws-service:hover,
+  .dws-work:hover,
+  .dws-post-card:hover {
+    transform: none;
+  }
+  .dws-tier,
+  .dws-team-card,
+  .dws-quote,
+  .dws-form-card,
+  .dws-enquiry,
+  .dws-post-card {
+    padding: 1.35rem 1.15rem;
+  }
+  .dws-step {
+    padding-top: 1.4rem;
+  }
+  .dws-tier-price {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .dws-body {
+    letter-spacing: -0.005em;
+  }
+  .dws-btn {
+    padding: 0.8rem 1.35rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dws-btn-sm-tight {
+    padding: 0.6rem 1.05rem;
+    font-size: 0.82rem;
+  }
+  .dws-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.9rem;
+  }
+  .dws-service {
+    padding: 1.25rem 0;
+  }
+  .dws-service:hover {
+    padding-left: 0;
+  }
+  .dws-logo {
+    height: 34px;
+  }
+  .dws-article-p {
+    font-size: 1rem;
+  }
+  .dws-stat-num {
+    font-size: 1.5rem;
+  }
+  .dws-chip {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.9rem;
+  }
+  .dws-work-canvas {
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+  }
+}
+
+/* never let long words or links break the layout */
+.dws-body {
+  overflow-x: hidden;
+}
+.dws-body h1,
+.dws-body h2,
+.dws-body h3,
+.dws-body p,
+.dws-body a {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Service row link overlay ---------- */
+.dws-service {
+  position: relative;
+}
+.dws-service-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+/* ---------- Service pricing cards ---------- */
+.dws-service-card {
+  border: 1px solid var(--dws-line, #222);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+.dws-service-card:hover {
+  border-color: #555;
+  background: var(--dws-hover, #0b0b0b);
+  transform: translateY(-4px);
+  color: #fff;
+}
+.dws-service-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.dws-service-card-price {
+  font-family: var(--dws-mono, ui-monospace, monospace);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+.dws-addon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dws-addon-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--dws-line, #222);
+  font-size: 0.92rem;
+}
+.dws-addon-list li:last-child {
+  border-bottom: 0;
+}
+
+/* ---------- Article page ---------- */
+.dws-post-back {
+  color: var(--dws-muted, #888);
+  text-decoration: none;
+}
+.dws-post-back:hover {
+  color: #fff;
+}
+.dws-article-cover {
+  border: 1px solid var(--dws-line, #222);
+  overflow: hidden;
+}
+.dws-article-cover img,
+.dws-article-inline-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.dws-article-inline-img {
+  margin: 2.5rem 0 0;
+  border: 1px solid var(--dws-line, #222);
+  padding: 0.5rem;
+}
+.dws-article-inline-img figcaption {
+  padding: 0.75rem 0.25rem 0.25rem;
+}
+.dws-article-lead {
+  font-size: 1.16rem;
+  line-height: 1.75;
+  color: #e6e6e6;
+  margin-bottom: 1.25rem;
+}
+.dws-article-h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+.dws-article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.dws-article-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.6rem;
+  color: #cfcfcf;
+  line-height: 1.7;
+}
+.dws-article-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--dws-muted, #888);
+}
+.dws-article-quote {
+  border-left: 2px solid #fff;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 2rem 0;
+  font-size: 1.12rem;
+  line-height: 1.7;
+  color: #fff;
+}
+.dws-takeaways {
+  border: 1px solid var(--dws-line, #222);
+  background: var(--dws-hover, #0b0b0b);
+  padding: 1.75rem;
+}
+.dws-article-cta {
+  border: 1px solid var(--dws-line, #222);
+  padding: 2rem;
+}
+
+/* ---------- Comments ---------- */
+.dws-comments {
+  margin-top: 3.5rem;
+}
+.dws-comment-form {
+  border: 1px solid var(--dws-line, #222);
+  padding: 1.5rem;
+}
+.dws-form-success {
+  color: #7ee0a5;
+  font-size: 0.88rem;
+}
+.dws-comment {
+  border: 1px solid var(--dws-line, #222);
+  padding: 1.25rem 1.35rem;
+  margin-bottom: 1rem;
+}
+.dws-comment-author {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.dws-comment-body {
+  color: #cfcfcf;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 575.98px) {
+  .dws-article-cta,
+  .dws-takeaways,
+  .dws-comment-form {
+    padding: 1.25rem;
+  }
+  .dws-article-h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ============ Skeleton loading ============ */
+.dws-skeleton {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+}
+.dws-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.09) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: dws-shimmer 1.4s infinite;
+}
+@keyframes dws-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.dws-skeleton-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dws-skeleton-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dws-enquiry-skeleton {
+  border: 1px solid #1c1c1c;
+  border-radius: 14px;
+  padding: 20px;
+  background: #060606;
+}
+
+/* Images with skeleton placeholder */
+.dws-img-wrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #050505;
+}
+.dws-img-skeleton {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+}
+.dws-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s ease;
+}
+.dws-img.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dws-skeleton::after {
+    animation: none;
+  }
+  .dws-img {
+    transition: none;
+  }
+}
+
+.dws-work-canvas .dws-img-wrap {
+  height: 100%;
+}
+.dws-work-canvas .dws-img {
+  object-position: top center;
+}
+
+.dws-article-cover .dws-img-wrap,
+.dws-article-inline-img .dws-img-wrap {
+  aspect-ratio: 16 / 9;
+}
+.dws-article-cover .dws-img,
+.dws-article-inline-img .dws-img {
+  height: 100%;
+}
+
+/* ============================================================
+   DwS Assistant — floating chat widget
+   ============================================================ */
+.dws-chat-fab {
+  position: fixed;
+  right: clamp(14px, 3vw, 28px);
+  bottom: clamp(14px, 3vw, 28px);
+  z-index: 1080;
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  background: #0a0a0a;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.75),
+    0 0 0 0 rgba(255, 255, 255, 0.55);
+  animation: dws-chat-pop 2.6s cubic-bezier(0.36, 0, 0.36, 1) infinite;
+}
+.dws-chat-fab-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.dws-chat-fab.is-open {
+  animation-play-state: paused;
+  transform: scale(1);
+}
+@keyframes dws-chat-pop {
+  0% {
+    transform: scale(1);
+    box-shadow:
+      0 18px 45px rgba(0, 0, 0, 0.75),
+      0 0 0 0 rgba(255, 255, 255, 0.55);
+  }
+  45% {
+    transform: scale(1.12);
+    box-shadow:
+      0 22px 50px rgba(0, 0, 0, 0.8),
+      0 0 0 16px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 18px 45px rgba(0, 0, 0, 0.75),
+      0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+.dws-chat-fab-close {
+  font-size: 1.9rem;
+  line-height: 1;
+  font-weight: 300;
+}
+.dws-chat-panel {
+  position: fixed;
+  right: clamp(10px, 3vw, 28px);
+  bottom: calc(clamp(14px, 3vw, 28px) + 70px);
+  z-index: 1080;
+  width: min(400px, calc(100vw - 20px));
+  height: min(600px, calc(100vh - 130px));
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  border: 1px solid #222;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+}
+.dws-chat-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid #1c1c1c;
+  background: #050505;
+}
+.dws-chat-head-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.dws-chat-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.dws-chat-sub {
+  margin: 0;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+.dws-chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scroll-behavior: smooth;
+}
+.dws-chat-empty-title {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.dws-chat-empty-copy {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+}
+.dws-chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.dws-chat-suggestion {
+  border: 1px solid #262626;
+  background: #0b0b0b;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.76rem;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.dws-chat-suggestion:hover {
+  background: #151515;
+  border-color: #3a3a3a;
+  color: #fff;
+}
+.dws-chat-msg {
+  display: flex;
+}
+.dws-chat-msg-user {
+  justify-content: flex-end;
+}
+.dws-chat-bubble {
+  background: #fff;
+  color: #000;
+  border-radius: 16px 16px 4px 16px;
+  padding: 10px 14px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  max-width: 85%;
+  overflow-wrap: anywhere;
+}
+.dws-chat-markdown {
+  font-size: 0.87rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.dws-chat-markdown p {
+  margin: 0 0 10px;
+}
+.dws-chat-markdown p:last-child {
+  margin-bottom: 0;
+}
+.dws-chat-markdown ul,
+.dws-chat-markdown ol {
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+.dws-chat-markdown li {
+  margin-bottom: 4px;
+}
+.dws-chat-markdown strong {
+  color: #fff;
+}
+.dws-chat-markdown a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.dws-chat-markdown h1,
+.dws-chat-markdown h2,
+.dws-chat-markdown h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 6px;
+}
+.dws-chat-thinking {
+  margin: 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  animation: dwsChatPulse 1.4s ease-in-out infinite;
+}
+@keyframes dwsChatPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+.dws-chat-error {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #ff8080;
+}
+.dws-chat-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #1c1c1c;
+  background: #050505;
+}
+.dws-chat-input {
+  flex: 1;
+  resize: none;
+  max-height: 120px;
+  min-height: 44px;
+  background: #0b0b0b;
+  border: 1px solid #242424;
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+}
+.dws-chat-input:focus {
+  outline: none;
+  border-color: #454545;
+}
+.dws-chat-send {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.dws-chat-send:disabled {
+  opacity: 0.4;
+}
+@media (max-width: 575.98px) {
+  .dws-chat-panel {
+    height: min(74vh, calc(100vh - 120px));
+  }
+}
+
+/* ---------- Case studies ---------- */
+.dws-case {
+  border-top: 1px solid var(--dws-border, #222);
+  padding-top: 2.5rem;
+  display: grid;
+  gap: 1.75rem;
+}
+.dws-case-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+}
+.dws-case-index {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+.dws-case-scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+}
+.dws-chip {
+  border: 1px solid #222;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.dws-case-panel {
+  border: 1px solid #1c1c1c;
+  border-radius: 18px;
+  padding: 1.5rem;
+  background: #050505;
+}
+.dws-case-after {
+  border-color: #2a2a2a;
+  background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+}
+.dws-case-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.dws-case-after .dws-case-label {
+  color: #fff;
+}
+.dws-case-shot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #1c1c1c;
+}
+.dws-case-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.dws-case-before-visual {
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  border: 1px dashed #262626;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.02) 0 10px,
+    transparent 10px 20px
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+.dws-case-before-visual span {
+  display: block;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.dws-case-before-visual span:nth-child(1) {
+  width: 55%;
+}
+.dws-case-before-visual span:nth-child(2) {
+  width: 80%;
+}
+.dws-case-before-visual span:nth-child(3) {
+  width: 35%;
+}
+.dws-case-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.dws-case-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.3);
+}
+.dws-case-list-check li::before {
+  content: "✓";
+  color: #fff;
+}
+.dws-case-metric {
+  border: 1px solid #1c1c1c;
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.dws-case-metric-value {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.dws-case-quote {
+  margin-top: 0.5rem;
+}
+
+/* ---------- Services page ---------- */
+.dws-service-block {
+  border-top: 1px solid #222;
+  padding-top: 2.5rem;
+}
+.dws-faq-list {
+  display: grid;
+  gap: 0.75rem;
+}
+.dws-faq {
+  border: 1px solid #1c1c1c;
+  border-radius: 14px;
+  background: #050505;
+  padding: 0 1.25rem;
+}
+.dws-faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  font-size: 0.98rem;
+  color: #fff;
+  min-height: 44px;
+}
+.dws-faq summary::-webkit-details-marker {
+  display: none;
+}
+.dws-faq .dws-faq-icon {
+  position: relative;
+  flex: 0 0 14px;
+  height: 14px;
+}
+.dws-faq .dws-faq-icon::before,
+.dws-faq .dws-faq-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.6);
+  transition: transform 0.25s ease;
+}
+.dws-faq .dws-faq-icon::before {
+  width: 14px;
+  height: 1px;
+}
+.dws-faq .dws-faq-icon::after {
+  width: 1px;
+  height: 14px;
+}
+.dws-faq[open] .dws-faq-icon::after {
+  transform: scaleY(0);
+}
+.dws-faq[open] {
+  border-color: #2a2a2a;
+}
+.dws-faq > p {
+  padding-bottom: 1.15rem;
+}
+
+/* ---------- Full-page route loading skeleton ---------- */
+.dws-page-skeleton {
+  min-height: 70vh;
+  padding-top: 4.5rem;
+}
+.dws-page-skeleton .dws-skeleton {
+  display: block;
+}
+.dws-page-skeleton-card {
+  border: 1px solid #1c1c1c;
+  border-radius: 18px;
+  padding: 1rem;
+  background: #050505;
+}
+
+.dws-link {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  transition:
+    border-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.dws-link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+  opacity: 0.85;
+}
