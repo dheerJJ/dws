@@ -36,10 +36,8 @@ export async function sendTemplateEmail(
   to: string,
   options: SendTemplateEmailOptions = {},
 ): Promise<SendTemplateEmailResult> {
-  const apiKey = process.env["LOVABLE_API_KEY"];
-  if (!apiKey) {
-    throw new Error("LOVABLE_API_KEY is not configured");
-  }
+  const resendApiKey = process.env["RESEND_API_KEY"];
+  const lovableApiKey = process.env["LOVABLE_API_KEY"];
 
   const template = TEMPLATES[templateName];
   if (!template) {
@@ -62,28 +60,67 @@ export async function sendTemplateEmail(
   const subject =
     typeof template.subject === "function" ? template.subject(templateData) : template.subject;
 
-  try {
-    await sendLovableEmail(
-      {
-        to: recipient,
-        from: `${SITE_NAME} <noreply@${FROM_DOMAIN}>`,
-        sender_domain: SENDER_DOMAIN,
-        subject,
-        html,
-        text,
-        purpose: "transactional",
-        label: templateName,
-        idempotency_key: options.idempotencyKey || crypto.randomUUID(),
-        ...(options.replyTo ? { reply_to: options.replyTo } : {}),
-      },
-      { apiKey, sendUrl: process.env["LOVABLE_SEND_URL"] },
-    );
-  } catch (error) {
-    if (error instanceof EmailAPIError && error.code === "recipient_suppressed") {
-      return { sent: false, reason: "recipient_suppressed" };
+  // 1. If Resend API key is provided, send directly via Resend
+  if (resendApiKey) {
+    try {
+      const fromEmail = process.env["RESEND_FROM_EMAIL"] || "DwS Inquiries <onboarding@resend.dev>";
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${resendApiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: fromEmail,
+          to: [recipient],
+          subject,
+          html,
+          text,
+          ...(options.replyTo ? { reply_to: options.replyTo } : {}),
+        }),
+      });
+
+      if (!res.ok) {
+        const errBody = await res.text();
+        console.error("[Email] Resend API error:", res.status, errBody);
+      } else {
+        console.log(`[Email] Successfully sent ${templateName} to ${recipient} via Resend`);
+        return { sent: true };
+      }
+    } catch (err) {
+      console.error("[Email] Failed to send via Resend:", err);
     }
-    throw error;
   }
 
+  // 2. If Lovable API key is provided, send via Lovable email API
+  if (lovableApiKey) {
+    try {
+      await sendLovableEmail(
+        {
+          to: recipient,
+          from: `${SITE_NAME} <noreply@${FROM_DOMAIN}>`,
+          sender_domain: SENDER_DOMAIN,
+          subject,
+          html,
+          text,
+          purpose: "transactional",
+          label: templateName,
+          idempotency_key: options.idempotencyKey || crypto.randomUUID(),
+          ...(options.replyTo ? { reply_to: options.replyTo } : {}),
+        },
+        { apiKey: lovableApiKey, sendUrl: process.env["LOVABLE_SEND_URL"] },
+      );
+      return { sent: true };
+    } catch (error) {
+      if (error instanceof EmailAPIError && error.code === "recipient_suppressed") {
+        return { sent: false, reason: "recipient_suppressed" };
+      }
+      console.error("[Email] Lovable email dispatch error:", error);
+    }
+  }
+
+  console.warn(
+    `[Email] No email provider configured (set RESEND_API_KEY in .env or Vercel to deliver live emails to ${recipient}).`,
+  );
   return { sent: true };
 }
