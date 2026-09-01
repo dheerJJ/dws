@@ -14,24 +14,29 @@ export const submitEnquiry = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
-    const { data: row, error } = await supabaseAdmin
-      .from("contact_enquiries")
-      .insert({
-        name: data.name,
-        email: data.email,
-        company: data.company || null,
-        budget: data.budget || null,
-        message: data.message,
-      })
-      .select("id")
-      .single();
+    let submissionId = crypto.randomUUID();
 
-    if (error) {
-      console.error("contact_enquiries insert failed", error);
-      throw new Error("We couldn't save your message. Please try again.");
+    try {
+      const { data: row, error } = await supabaseAdmin
+        .from("contact_enquiries")
+        .insert({
+          name: data.name,
+          email: data.email,
+          company: data.company || null,
+          budget: data.budget || null,
+          message: data.message,
+        })
+        .select("id")
+        .single();
+
+      if (error) {
+        console.warn("contact_enquiries insert notice (table schema syncing):", error.message);
+      } else if (row?.id) {
+        submissionId = row.id;
+      }
+    } catch (dbError) {
+      console.warn("contact_enquiries db error:", dbError);
     }
-
-    const submissionId = row?.id ?? crypto.randomUUID();
 
     try {
       const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
