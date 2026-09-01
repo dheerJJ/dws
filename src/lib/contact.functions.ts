@@ -14,7 +14,7 @@ export const submitEnquiry = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
-    let submissionId = crypto.randomUUID();
+    let submissionId: string = crypto.randomUUID();
 
     try {
       const { data: row, error } = await supabaseAdmin

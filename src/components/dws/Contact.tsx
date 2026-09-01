@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ArrowUp, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { business } from "@/data/business";
 import logo from "@/assets/dws-logo.png.asset.json";
@@ -143,18 +144,7 @@ export function Footer() {
                   className="dws-social"
                   aria-label="Send us an email"
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
+                  <Mail size={16} aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -199,71 +189,28 @@ export function Footer() {
               <h3 className="dws-footer-title">Get in touch</h3>
               <ul className="dws-footer-list mb-3">
                 <li>
-                  <a href={`mailto:${business.email}`}>
-                    <svg
-                      viewBox="0 0 24 24"
-                      width="15"
-                      height="15"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      aria-hidden="true"
-                    >
-                      <rect x="2" y="4" width="20" height="16" rx="2" />
-                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
-                    {business.email}
+                  <a href={`mailto:${business.email}`} className="dws-footer-item">
+                    <Mail size={16} className="dws-footer-icon" aria-hidden="true" />
+                    <span>{business.email}</span>
                   </a>
                 </li>
                 <li>
-                  <a href={`tel:${business.phone}`}>
-                    <svg
-                      viewBox="0 0 24 24"
-                      width="15"
-                      height="15"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      aria-hidden="true"
-                    >
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    {phoneDisplay}
+                  <a href={`tel:${business.phone}`} className="dws-footer-item">
+                    <Phone size={16} className="dws-footer-icon" aria-hidden="true" />
+                    <span>{phoneDisplay}</span>
                   </a>
                 </li>
                 <li>
-                  <span>
-                    <svg
-                      viewBox="0 0 24 24"
-                      width="15"
-                      height="15"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      aria-hidden="true"
-                    >
-                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    {business.city}, {business.state}, India
-                  </span>
+                  <div className="dws-footer-item">
+                    <MapPin size={16} className="dws-footer-icon" aria-hidden="true" />
+                    <span>{business.city}, {business.state}, India</span>
+                  </div>
                 </li>
                 <li>
-                  <span>
-                    <svg
-                      viewBox="0 0 24 24"
-                      width="15"
-                      height="15"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    Mon–Sat, 10:00–19:00 IST
-                  </span>
+                  <div className="dws-footer-item">
+                    <Clock size={16} className="dws-footer-icon" aria-hidden="true" />
+                    <span>Mon–Sat, 10:00–19:00 IST</span>
+                  </div>
                 </li>
               </ul>
               <div className="d-flex gap-2 flex-wrap">
@@ -307,17 +254,7 @@ export function Footer() {
                 aria-label="Scroll back to top"
               >
                 <span>Top</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  aria-hidden="true"
-                >
-                  <path d="m18 15-6-6-6 6" />
-                </svg>
+                <ArrowUp size={14} aria-hidden="true" />
               </button>
             </div>
           </div>

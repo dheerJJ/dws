@@ -393,7 +393,8 @@ body.dws-body {
 }
 
 .dws-footer-list li,
-.dws-footer-list a {
+.dws-footer-list a,
+.dws-footer-item {
   color: var(--dws-muted);
   text-decoration: none;
   transition:
@@ -401,13 +402,26 @@ body.dws-body {
     transform 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.55rem;
   font-size: 0.885rem;
+  line-height: 1.4;
 }
 
 .dws-footer-list a:hover {
   color: var(--dws-white);
   transform: translateX(3px);
+}
+
+.dws-footer-icon {
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--dws-muted);
+  transition: color 0.2s ease;
+}
+
+.dws-footer-list a:hover .dws-footer-icon {
+  color: var(--dws-white);
 }
 
 .dws-social {
