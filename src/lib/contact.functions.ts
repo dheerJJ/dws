@@ -40,8 +40,11 @@ export const submitEnquiry = createServerFn({ method: "POST" })
 
     try {
       const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
+      const { business } = await import("@/data/business");
 
-      await sendTemplateEmail("contact-notification", data.email, {
+      const adminEmail = business.email || "tech.dws.co@gmail.com";
+
+      await sendTemplateEmail("contact-notification", adminEmail, {
         templateData: {
           name: data.name,
           email: data.email,

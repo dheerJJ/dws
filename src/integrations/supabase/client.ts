@@ -30,17 +30,20 @@ function createSupabaseFetch(supabaseKey: string): typeof fetch {
   };
 }
 
+function getEnv(key: string): string {
+  const metaVal = (import.meta.env as Record<string, string | undefined>)[key];
+  if (metaVal) return metaVal;
+  if (typeof process !== "undefined" && process.env) {
+    const procVal = process.env[key];
+    if (procVal) return procVal;
+  }
+  return "";
+}
+
 function createSupabaseClient() {
-  // Use import.meta.env for client-side (Vite build-time replacement)
-  // Fall back to process.env for SSR (server-side rendering)
-  const SUPABASE_URL =
-    import.meta.env.VITE_SUPABASE_URL ||
-    (typeof process !== "undefined" && process.env ? (process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL) : undefined) ||
-    "";
+  const SUPABASE_URL = getEnv("VITE_SUPABASE_URL") || getEnv("SUPABASE_URL");
   const SUPABASE_PUBLISHABLE_KEY =
-    import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
-    (typeof process !== "undefined" && process.env ? (process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY) : undefined) ||
-    "";
+    getEnv("VITE_SUPABASE_PUBLISHABLE_KEY") || getEnv("SUPABASE_PUBLISHABLE_KEY");
 
   return createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
     global: {

@@ -31,16 +31,21 @@ function createSupabaseFetch(supabaseKey: string): typeof fetch {
   };
 }
 
+function getEnv(key: string): string {
+  if (typeof process !== "undefined" && process.env) {
+    const procVal = process.env[key];
+    if (procVal) return procVal;
+  }
+  const metaVal = (import.meta.env as Record<string, string | undefined>)[key];
+  if (metaVal) return metaVal;
+  return "";
+}
+
 export const requireSupabaseAuth = createMiddleware({ type: "function" }).server(
   async ({ next }) => {
-    const SUPABASE_URL =
-      (typeof process !== "undefined" && process.env ? (process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL) : undefined) ||
-      import.meta.env.VITE_SUPABASE_URL ||
-      "";
+    const SUPABASE_URL = getEnv("VITE_SUPABASE_URL") || getEnv("SUPABASE_URL");
     const SUPABASE_PUBLISHABLE_KEY =
-      (typeof process !== "undefined" && process.env ? (process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY) : undefined) ||
-      import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
-      "";
+      getEnv("VITE_SUPABASE_PUBLISHABLE_KEY") || getEnv("SUPABASE_PUBLISHABLE_KEY");
 
     if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
       const missing = [
