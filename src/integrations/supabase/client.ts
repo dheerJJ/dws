@@ -41,9 +41,14 @@ function getEnv(key: string): string {
 }
 
 function createSupabaseClient() {
-  const SUPABASE_URL = getEnv("VITE_SUPABASE_URL") || getEnv("SUPABASE_URL");
+  const SUPABASE_URL =
+    getEnv("VITE_SUPABASE_URL") ||
+    getEnv("SUPABASE_URL") ||
+    "https://ebddzepcpcpynzxqqhwj.supabase.co";
   const SUPABASE_PUBLISHABLE_KEY =
-    getEnv("VITE_SUPABASE_PUBLISHABLE_KEY") || getEnv("SUPABASE_PUBLISHABLE_KEY");
+    getEnv("VITE_SUPABASE_PUBLISHABLE_KEY") ||
+    getEnv("SUPABASE_PUBLISHABLE_KEY") ||
+    "sb_publishable_2qlLeWW6QEXq7dE-JmhcpQ_2IeGeRCF";
 
   return createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
     global: {

@@ -43,12 +43,17 @@ function getEnv(key: string): string {
 }
 
 function createSupabaseAdminClient() {
-  const SUPABASE_URL = getEnv("VITE_SUPABASE_URL") || getEnv("SUPABASE_URL");
+  const SUPABASE_URL =
+    getEnv("SUPABASE_URL") ||
+    getEnv("VITE_SUPABASE_URL") ||
+    "https://ebddzepcpcpynzxqqhwj.supabase.co";
   const SUPABASE_SERVICE_ROLE_KEY =
     getEnv("SUPABASE_SERVICE_ROLE_KEY") ||
     getEnv("SUPABASE_SECRET_KEY") ||
     getEnv("VITE_SUPABASE_SERVICE_ROLE_KEY") ||
-    getEnv("VITE_SUPABASE_PUBLISHABLE_KEY");
+    getEnv("VITE_SUPABASE_PUBLISHABLE_KEY") ||
+    getEnv("SUPABASE_PUBLISHABLE_KEY") ||
+    "sb_publishable_2qlLeWW6QEXq7dE-JmhcpQ_2IeGeRCF";
 
   if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
     const missing = [
