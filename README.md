@@ -134,7 +134,6 @@ DwS is a modern digital agency platform designed to deliver an interactive digit
 - **Agency Name**: DwS (Digital with Strategy)
 - **Headquarters**: Jaipur, Rajasthan, India
 - **Email**: [tech.dws.co@gmail.com](mailto:tech.dws.co@gmail.com)
-- **Phone**: [+91 7850915862](tel:+917850915862)
 - **Founder**: Dheerajj Kumawat
 - **Website**: [https://dws.io](https://dws.io)
 
