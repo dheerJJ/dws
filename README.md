@@ -1,4 +1,4 @@
-# DwS — Digital with Strategy
+# DwS
 
 > High-performance digital agency platform showcasing web engineering, SaaS product development, SEO, performance marketing, and bespoke brand solutions.
 
@@ -131,7 +131,7 @@ DwS is a modern digital agency platform designed to deliver an interactive digit
 
 ## 🏢 Business & Agency Details
 
-- **Agency Name**: DwS (Digital with Strategy)
+- **Agency Name**: DwS
 - **Headquarters**: Jaipur, Rajasthan, India
 - **Email**: [tech.dws.co@gmail.com](mailto:tech.dws.co@gmail.com)
 - **Founder**: Dheerajj Kumawat
@@ -141,4 +141,4 @@ DwS is a modern digital agency platform designed to deliver an interactive digit
 
 ## 📄 License
 
-Proprietary — All rights reserved by DwS (Digital with Strategy).
+Proprietary — All rights reserved by DwS.

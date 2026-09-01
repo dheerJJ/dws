@@ -233,7 +233,7 @@ export function Footer() {
           <div className="dws-footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div className="d-flex flex-column flex-sm-row align-items-center gap-2 text-center text-sm-start">
               <span>
-                © {new Date().getFullYear()} DwS (Digital with Strategy). All rights reserved.
+                © {new Date().getFullYear()} DwS. All rights reserved.
               </span>
               <span className="d-none d-sm-inline">•</span>
               <span>Crafted in Jaipur, shipping worldwide.</span>
