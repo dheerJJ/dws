@@ -179,6 +179,12 @@ export function Footer() {
                   </li>
                 ))}
                 <li>
+                  <Link to="/privacy-policy">Privacy Policy</Link>
+                </li>
+                <li>
+                  <Link to="/terms-and-conditions">Terms & Conditions</Link>
+                </li>
+                <li>
                   <Link to="/dashboard">Client Portal</Link>
                 </li>
               </ul>
@@ -203,13 +209,13 @@ export function Footer() {
                 <li>
                   <div className="dws-footer-item">
                     <MapPin size={16} className="dws-footer-icon" aria-hidden="true" />
-                    <span>{business.city}, {business.state}, India</span>
+                    <span>{business.address.streetAddress}, {business.city}, {business.state} {business.address.postalCode}, India</span>
                   </div>
                 </li>
                 <li>
                   <div className="dws-footer-item">
                     <Clock size={16} className="dws-footer-icon" aria-hidden="true" />
-                    <span>Mon–Sat, 10:00–19:00 IST</span>
+                    <span>{business.openingHoursDisplay}</span>
                   </div>
                 </li>
               </ul>
@@ -218,7 +224,7 @@ export function Footer() {
                   Start a Project
                 </Link>
                 <a
-                  href={`https://wa.me/${business.phone.replace("+", "")}`}
+                  href={`https://wa.me/${business.whatsappNumber}?text=${encodeURIComponent(business.whatsappDefaultMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dws-btn dws-btn-outline dws-btn-sm-tight"
@@ -229,18 +235,26 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Bottom Bar with Copyright & Back to Top */}
+          {/* Bottom Bar with Copyright, Legal & Credit Line */}
           <div className="dws-footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div className="d-flex flex-column flex-sm-row align-items-center gap-2 text-center text-sm-start">
               <span>
-                © {new Date().getFullYear()} DwS. All rights reserved.
+                © {new Date().getFullYear()} {business.legalName}. All rights reserved.
               </span>
               <span className="d-none d-sm-inline">•</span>
               <span>Crafted in Jaipur, shipping worldwide.</span>
+              {business.showCreditLine && (
+                <>
+                  <span className="d-none d-sm-inline">•</span>
+                  <span className="dws-muted">{business.creditLine}</span>
+                </>
+              )}
             </div>
 
             <div className="d-flex align-items-center gap-3">
               <div className="dws-footer-legal-links">
+                <Link to="/privacy-policy">Privacy</Link>
+                <Link to="/terms-and-conditions">Terms</Link>
                 <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
                   Sitemap
                 </a>

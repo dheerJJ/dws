@@ -113,7 +113,7 @@ export function Comments({ slug }: { slug: string }) {
 
         {status === "error" && error && <p className="dws-form-error mt-3 mb-0">{error}</p>}
         {status === "sent" && (
-          <p className="dws-form-success mt-3 mb-0">Thanks — your comment is live.</p>
+          <p className="dws-form-success mt-3 mb-0">Thanks - your comment is live.</p>
         )}
 
         <button
@@ -132,7 +132,7 @@ export function Comments({ slug }: { slug: string }) {
           <CommentSkeleton />
         </div>
       ) : comments.length === 0 ? (
-        <p className="dws-muted small mb-0">No comments yet — be the first.</p>
+        <p className="dws-muted small mb-0">No comments yet - be the first.</p>
       ) : (
         <AnimatePresence initial={false}>
           {comments.map((c) => (

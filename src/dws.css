@@ -42,6 +42,24 @@ body.dws-body {
   letter-spacing: 0.04em;
 }
 
+/* Rendering performance & typography optimization */
+h1, h2, h3, .h1, .h2, .h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+.dws-portfolio-grid,
+.dws-pricing-grid,
+.dws-case-grid,
+.dws-blog-grid,
+.dws-faq-list,
+.dws-process-list {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
 /* ---------- Navigation ---------- */
 .dws-nav {
   background-color: var(--dws-black);
@@ -1187,7 +1205,7 @@ select.dws-input.is-placeholder {
   line-height: 1.7;
 }
 .dws-article-list li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   color: var(--dws-muted, #888);
@@ -1700,7 +1718,7 @@ select.dws-input.is-placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 .dws-case-list li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   color: rgba(255, 255, 255, 0.3);

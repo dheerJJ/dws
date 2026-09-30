@@ -68,7 +68,7 @@ export function Services() {
           <div className="col-lg-5 mt-4 mt-lg-0">
             <Reveal delay={0.1}>
               <p className="dws-muted mb-0">
-                Every engagement runs on one integrated team — no handoffs, no agency theatre.
+                Every engagement runs on one integrated team - no handoffs, no agency theatre.
               </p>
             </Reveal>
           </div>
@@ -82,7 +82,7 @@ export function Services() {
                   to="/pricing/$service"
                   params={{ service: service.service }}
                   className="dws-service-link"
-                  aria-label={`${service.title} — see pricing`}
+                  aria-label={`${service.title} - see pricing`}
                 />
                 <span className="dws-service-index dws-mono">
                   {"{"}

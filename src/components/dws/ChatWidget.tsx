@@ -83,7 +83,7 @@ export default function ChatWidget() {
     onError: (error) => {
       setErrorText(
         error.message?.includes("402")
-          ? "The assistant is out of credits right now — please email tech.dws.co@gmail.com."
+          ? "The assistant is out of credits right now - please email tech.dws.co@gmail.com."
           : "Something went wrong. Please try again, or email tech.dws.co@gmail.com.",
       );
     },
@@ -148,14 +148,14 @@ export default function ChatWidget() {
               <img src={logo.url} alt="DwS" className="dws-chat-head-logo" />
               <div>
                 <p className="dws-chat-title">DwS Assistant</p>
-                <p className="dws-chat-sub">Pricing, services, projects — ask anything</p>
+                <p className="dws-chat-sub">Pricing, services, projects - ask anything</p>
               </div>
             </header>
 
             <div className="dws-chat-body" ref={scrollRef}>
               {messages.length === 0 && (
                 <div className="dws-chat-empty">
-                  <p className="dws-chat-empty-title">Hi 👋 I'm the DwS assistant.</p>
+                  <p className="dws-chat-empty-title">Hi, I'm the DwS assistant.</p>
                   <p className="dws-chat-empty-copy">
                     I can walk you through our packages, rates in ₹, past work, process and how to
                     start a project.

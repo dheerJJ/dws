@@ -1,5 +1,5 @@
 // Real DwS client work. Swap in a real "before" screenshot by adding
-// `beforeThumb` (an imported asset url) to any entry — the page will use it
+// `beforeThumb` (an imported asset url) to any entry - the page will use it
 // instead of the written before-state card.
 
 import { projects } from "./site";
@@ -35,15 +35,15 @@ export const caseStudies: CaseStudy[] = [
     location: "Jaipur, Rajasthan",
     scope: ["Website design", "Copy structure", "Local SEO foundations", "Enquiry flow"],
     before:
-      "The hospital's reputation lived entirely offline — walk-ins, referrals and phone calls. Anyone searching for a dentist in Jaipur had no way to see the doctors, the treatments or the clinic itself before deciding.",
+      "The hospital's reputation lived entirely offline - walk-ins, referrals and phone calls. Anyone searching for a dentist in Jaipur had no way to see the doctors, the treatments or the clinic itself before deciding.",
     beforePoints: [
-      "No owned website — only third-party listings",
+      "No owned website - only third-party listings",
       "Treatments and doctor credentials undocumented online",
       "Appointments handled ad hoc over phone",
       "Nothing to rank for local dental searches",
     ],
     after:
-      "A warm, trust-first website built around 'Creating Beautiful Smiles Everyday' — treatment pages, doctor profiles, clinic photography and one obvious path to book an appointment on mobile.",
+      "A warm, trust-first website built around 'Creating Beautiful Smiles Everyday' - treatment pages, doctor profiles, clinic photography and one obvious path to book an appointment on mobile.",
     afterPoints: [
       "Treatment-wise pages patients can actually read",
       "Doctor profiles and credentials front and centre",
@@ -71,7 +71,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Jaipur, Rajasthan",
     scope: ["Website design", "Service architecture", "Lead capture", "SEO foundations"],
     before:
-      "A luxury property business running on WhatsApp forwards and word of mouth. Four distinct services — sales, land leasing, rentals and property management — were impossible for a buyer to tell apart.",
+      "A luxury property business running on WhatsApp forwards and word of mouth. Four distinct services - sales, land leasing, rentals and property management - were impossible for a buyer to tell apart.",
     beforePoints: [
       "Enquiries scattered across WhatsApp and calls",
       "No single place to present listings or services",
@@ -109,7 +109,7 @@ export const caseStudies: CaseStudy[] = [
     before:
       "An idea on a whiteboard: link shortening tools either hide analytics behind a paywall or ship an interface nobody enjoys using. There was no product, no schema and no users.",
     beforePoints: [
-      "Zero code — concept stage only",
+      "Zero code - concept stage only",
       "Analytics locked behind paid tiers elsewhere",
       "No QR or link-protection workflow in one place",
       "Unproven demand",
@@ -151,7 +151,7 @@ export const caseStudies: CaseStudy[] = [
       "No contact path for inbound interest",
     ],
     after:
-      "A focused personal portfolio: clear positioning, selected case work, skills and one direct contact path — the link that now opens every conversation.",
+      "A focused personal portfolio: clear positioning, selected case work, skills and one direct contact path - the link that now opens every conversation.",
     afterPoints: [
       "One-line positioning above the fold",
       "Selected work presented as outcomes",

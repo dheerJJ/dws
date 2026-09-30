@@ -54,7 +54,7 @@ export const ContactNotificationEmail = ({
     <Preview>{`New DwS enquiry from ${name}`}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Text style={eyebrow}>DwS — New Enquiry</Text>
+        <Text style={eyebrow}>DwS - New Enquiry</Text>
         <Heading style={h1}>{name} wants to talk</Heading>
 
         <Text style={label}>Email</Text>

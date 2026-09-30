@@ -9,7 +9,7 @@ import { useDwsBody } from "@/components/dws/useDwsBody";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Team Sign In — DwS" },
+      { title: "Team Sign In - DwS" },
       {
         name: "description",
         content: "Sign in to the DwS team dashboard to review and reply to client enquiries.",

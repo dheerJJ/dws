@@ -35,7 +35,7 @@ export function Process() {
                 A framework built for compounding results.
               </h2>
               <p className="dws-muted mb-0">
-                Four phases, run in loops — so growth is engineered, not guessed.
+                Four phases, run in loops - so growth is engineered, not guessed.
               </p>
             </Reveal>
           </div>

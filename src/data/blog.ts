@@ -49,7 +49,7 @@ export const posts: Post[] = [
     ],
     takeaways: [
       "Answer three questions in the first screen: what is this, is it for me, what happens next.",
-      "Speed is a conversion feature — target under 2 seconds on 4G, not a perfect design in 5.",
+      "Speed is a conversion feature - target under 2 seconds on 4G, not a perfect design in 5.",
       "One primary action, repeated. Competing CTAs split intent and kill conversion.",
       "Instrument scroll depth, form field drop-off and enquiry quality from day one.",
     ],
@@ -57,13 +57,13 @@ export const posts: Post[] = [
       {
         heading: "1. The first screen does one job",
         paragraphs: [
-          "Visitors decide in roughly eight seconds whether to keep scrolling. That means the hero is not decoration — it is a qualification tool. A specific headline naming the outcome beats a clever tagline every time: 'Dental implants in Jaipur, done in one sitting' converts better than 'Creating beautiful smiles'.",
+          "Visitors decide in roughly eight seconds whether to keep scrolling. That means the hero is not decoration - it is a qualification tool. A specific headline naming the outcome beats a clever tagline every time: 'Dental implants in Jaipur, done in one sitting' converts better than 'Creating beautiful smiles'.",
           "Directly under it, add immediate proof: a real number, a recognisable client, or a single verifiable result. Proof placed near the promise reduces the burden on the rest of the page.",
         ],
         bullets: [
           "Outcome-led headline naming the service and the place you serve.",
           "One line of sub-copy handling the obvious 'for whom' question.",
-          "Primary CTA with a low-commitment verb — 'Get a quote', not 'Submit'.",
+          "Primary CTA with a low-commitment verb - 'Get a quote', not 'Submit'.",
           "One proof element: rating, client count, or a named result.",
         ],
       },
@@ -74,7 +74,7 @@ export const posts: Post[] = [
           "In practice this means pricing transparency sits immediately before or after the enquiry form, process explanations sit near the point where people wonder 'how long does this take', and social proof sits beside the highest-value service.",
         ],
         quote:
-          "If a section does not answer a question or remove a doubt, it is decoration — delete it and the page converts better.",
+          "If a section does not answer a question or remove a doubt, it is decoration - delete it and the page converts better.",
       },
       {
         heading: "3. Speed is a conversion feature",
@@ -91,14 +91,14 @@ export const posts: Post[] = [
       {
         heading: "4. Make the enquiry the easiest thing on the page",
         paragraphs: [
-          "Every extra field costs completions. Name, contact and one context field is enough for a first conversation — you can qualify further on the call. Add a WhatsApp path alongside the form: for a large share of Indian buyers it is the default channel, and it converts warmer.",
+          "Every extra field costs completions. Name, contact and one context field is enough for a first conversation - you can qualify further on the call. Add a WhatsApp path alongside the form: for a large share of Indian buyers it is the default channel, and it converts warmer.",
           "Confirm receipt instantly. An auto-reply that names what happens next and when reduces the 'did that even go through' drop-off and improves show-up rates on calls.",
         ],
       },
       {
         heading: "5. Instrument it, then iterate monthly",
         paragraphs: [
-          "If you cannot see where people stop scrolling and which field they abandon, you are redesigning on opinion. One clean analytics setup — page views, scroll depth, CTA clicks, form starts, form completions, enquiry quality — pays for itself in the first month of iteration.",
+          "If you cannot see where people stop scrolling and which field they abandon, you are redesigning on opinion. One clean analytics setup - page views, scroll depth, CTA clicks, form starts, form completions, enquiry quality - pays for itself in the first month of iteration.",
           "Review it monthly with one hypothesis and one change. A site treated as a product compounds; a site treated as a project decays.",
         ],
       },
@@ -108,7 +108,7 @@ export const posts: Post[] = [
     slug: "saas-mvp-to-first-paying-users",
     title: "Shipping a SaaS MVP That Reaches Its First Paying Users",
     excerpt:
-      "Scope, stack and go-to-market decisions we make when building SaaS products for founders — and the features we deliberately cut.",
+      "Scope, stack and go-to-market decisions we make when building SaaS products for founders - and the features we deliberately cut.",
     date: "2026-07-03",
     readingTime: "9 min read",
     category: "SaaS",
@@ -123,14 +123,14 @@ export const posts: Post[] = [
       "Define the paid loop in one sentence before any design work starts.",
       "Cut roles, permissions, notification centres and custom dashboards from v1.",
       "Ship billing in week one of coding, not after 'we get users'.",
-      "Launch is a distribution problem — build the acquisition path in parallel with the product.",
+      "Launch is a distribution problem - build the acquisition path in parallel with the product.",
     ],
     sections: [
       {
         heading: "Start from the loop, not the feature list",
         paragraphs: [
           "Write the loop as a sentence: 'A freelancer uploads an invoice, we chase the client, they get paid faster.' Everything that does not serve that sentence is version two. This one constraint typically cuts a six-month roadmap to a six-week build.",
-          "We then wireframe only the screens the loop touches — usually four to six — and treat every additional screen request as a scope decision with a date attached.",
+          "We then wireframe only the screens the loop touches - usually four to six - and treat every additional screen request as a scope decision with a date attached.",
         ],
       },
       {
@@ -158,7 +158,7 @@ export const posts: Post[] = [
       {
         heading: "Charge in week one",
         paragraphs: [
-          "Free MVPs generate praise, not evidence. Wiring payments early forces pricing clarity and gives you the only signal that matters — someone entering card details for a problem you solve.",
+          "Free MVPs generate praise, not evidence. Wiring payments early forces pricing clarity and gives you the only signal that matters - someone entering card details for a problem you solve.",
           "Start with two plans and one currency. Pricing pages get sophisticated after you have customers, not before.",
         ],
       },
@@ -175,7 +175,7 @@ export const posts: Post[] = [
     slug: "local-seo-checklist-indian-businesses",
     title: "The Local SEO Checklist for Indian Businesses",
     excerpt:
-      "A practical, no-fluff checklist to rank in your city — Google Business Profile, service pages, reviews and schema, in the order they matter.",
+      "A practical, no-fluff checklist to rank in your city - Google Business Profile, service pages, reviews and schema, in the order they matter.",
     date: "2026-06-18",
     readingTime: "7 min read",
     category: "SEO",
@@ -187,51 +187,51 @@ export const posts: Post[] = [
       "Work this list in order. Skipping ahead is how agencies burn budget on backlinks while a wrong business category quietly caps your visibility.",
     ],
     takeaways: [
-      "Google Business Profile before anything else — category, hours, photos, weekly posts.",
+      "Google Business Profile before anything else - category, hours, photos, weekly posts.",
       "One real page per service and per city, never ten thin duplicates.",
       "Ask for reviews within 48 hours of delivery, and reply to every one.",
       "Add LocalBusiness schema so search engines stop guessing your details.",
     ],
     sections: [
       {
-        heading: "Step 1 — Fix the Google Business Profile",
+        heading: "Step 1 - Fix the Google Business Profile",
         paragraphs: [
-          "This single asset drives most local enquiries. Get the primary category exactly right — 'Dental clinic' and 'Dental implants periodontist' surface for very different searches — then complete every field.",
+          "This single asset drives most local enquiries. Get the primary category exactly right - 'Dental clinic' and 'Dental implants periodontist' surface for very different searches - then complete every field.",
         ],
         bullets: [
           "Exact primary category, plus two or three secondary ones.",
           "Real address or a defined service area, matching your website footer.",
           "Working hours including holidays, and a WhatsApp-capable number.",
           "At least fifteen genuine photos: exterior, interior, team, work.",
-          "One post per week — activity is a ranking and trust signal.",
+          "One post per week - activity is a ranking and trust signal.",
         ],
       },
       {
-        heading: "Step 2 — Build real service and city pages",
+        heading: "Step 2 - Build real service and city pages",
         paragraphs: [
           "One page per service, and one per major city you actually serve, each with genuinely different copy, local proof and a visible call or enquiry action. Ten thin duplicated city pages perform worse than three real ones and can suppress the whole site.",
           "A page qualifies as 'real' when it names local landmarks or areas, shows local work, prices or ranges honestly, and answers the questions people in that city actually ask.",
         ],
       },
       {
-        heading: "Step 3 — Turn delivery into reviews",
+        heading: "Step 3 - Turn delivery into reviews",
         paragraphs: [
-          "Ask every satisfied client within 48 hours of delivery, with a direct review link sent over WhatsApp. Reply to all of them, including the critical ones — public, calm replies convert readers better than a spotless average.",
+          "Ask every satisfied client within 48 hours of delivery, with a direct review link sent over WhatsApp. Reply to all of them, including the critical ones - public, calm replies convert readers better than a spotless average.",
           "Volume and recency both matter. Twenty reviews spread across the year beats forty collected in one week, which also looks manufactured.",
         ],
       },
       {
-        heading: "Step 4 — Add structured data",
+        heading: "Step 4 - Add structured data",
         paragraphs: [
           "LocalBusiness structured data lets search engines read your name, area served, hours, price range and contact details without inference. It takes an hour and removes ambiguity permanently.",
           "Add FAQ schema on service pages where you genuinely answer common questions, and BlogPosting schema on articles.",
         ],
       },
       {
-        heading: "Step 5 — Only now, links",
+        heading: "Step 5 - Only now, links",
         paragraphs: [
           "Local directories, industry bodies, chambers of commerce, supplier and partner pages, and press in your own city move the needle far more than bulk backlinks from unrelated sites.",
-          "Ten relevant local citations with consistent name, address and phone beat a thousand purchased links — and will not get the domain penalised.",
+          "Ten relevant local citations with consistent name, address and phone beat a thousand purchased links - and will not get the domain penalised.",
         ],
       },
     ],
@@ -248,7 +248,7 @@ export const posts: Post[] = [
     cover: marketingBudgetCover.url,
     coverAlt: "Rising line chart with coin stacks drawn in glowing white lines on black",
     intro: [
-      "With a small budget, the goal of the first 90 days is not scale — it is learning which message, audience and offer produce a qualified enquiry.",
+      "With a small budget, the goal of the first 90 days is not scale - it is learning which message, audience and offer produce a qualified enquiry.",
       "Buy information first, volume second. Here is the split we use and what we refuse to fund.",
     ],
     takeaways: [
@@ -261,7 +261,7 @@ export const posts: Post[] = [
       {
         heading: "The default split",
         paragraphs: [
-          "Around half goes into search ads on high-intent keywords — people already looking for what you sell. A quarter funds landing page and creative production, because ad money spent on a weak page is money donated. The last quarter stays unspent until week six, then doubles down on whatever worked.",
+          "Around half goes into search ads on high-intent keywords - people already looking for what you sell. A quarter funds landing page and creative production, because ad money spent on a weak page is money donated. The last quarter stays unspent until week six, then doubles down on whatever worked.",
           "For a ₹50,000 quarter that is roughly ₹25,000 media, ₹12,500 assets, ₹12,500 reserve.",
         ],
       },
@@ -274,20 +274,20 @@ export const posts: Post[] = [
           "Tools you have not opened in a month.",
         ],
         quote:
-          "If a line item cannot change a decision you will make this quarter, it is not a marketing cost — it is a subscription to feeling busy.",
+          "If a line item cannot change a decision you will make this quarter, it is not a marketing cost - it is a subscription to feeling busy.",
       },
       {
         heading: "Set up measurement before spending a rupee",
         paragraphs: [
           "Conversion tracking, call tracking and a lead source field on your enquiry form. Without them you will end the quarter with traffic reports and no idea which rupee produced revenue.",
-          "Define 'qualified' before launch — for most service businesses it is a contactable enquiry with budget and a timeline, not a form fill.",
+          "Define 'qualified' before launch - for most service businesses it is a contactable enquiry with budget and a timeline, not a form fill.",
         ],
       },
       {
         heading: "The week-six decision",
         paragraphs: [
           "By week six you should know your cost per qualified enquiry per channel. Kill the worst, keep the best, and release the reserve into the winner. Do not average across channels; averages hide the one thing working.",
-          "Report on cost per qualified enquiry and closed revenue. Once a channel produces enquiries at a price you can profitably pay, that is the moment to scale — and only then.",
+          "Report on cost per qualified enquiry and closed revenue. Once a channel produces enquiries at a price you can profitably pay, that is the moment to scale - and only then.",
         ],
       },
     ],

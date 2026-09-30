@@ -42,11 +42,11 @@ export const ContactConfirmationEmail = ({
 }: ContactConfirmationProps) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>We received your enquiry — DwS</Preview>
+    <Preview>We received your enquiry - DwS</Preview>
     <Body style={main}>
       <Container style={container}>
         <Text style={eyebrow}>DwS</Text>
-        <Heading style={h1}>Thanks, {name} — we've got it.</Heading>
+        <Heading style={h1}>Thanks, {name} - we've got it.</Heading>
         <Text style={text}>
           Your enquiry landed with our team. You'll hear back within one business day with next
           steps and a slot for a 30-minute strategy call.
@@ -57,7 +57,7 @@ export const ContactConfirmationEmail = ({
             <Text style={quote}>{message}</Text>
           </>
         ) : null}
-        <Text style={text}>— The DwS team</Text>
+        <Text style={text}>The DwS team</Text>
         <Hr style={hr} />
         <Text style={footer}>
           You're getting this because you submitted the contact form on the DwS website.
@@ -69,7 +69,7 @@ export const ContactConfirmationEmail = ({
 
 export const template = {
   component: ContactConfirmationEmail,
-  subject: "We received your enquiry — DwS",
+  subject: "We received your enquiry - DwS",
   displayName: "Contact form confirmation",
   previewData: {
     name: "Aarav",

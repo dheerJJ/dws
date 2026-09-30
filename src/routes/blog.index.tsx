@@ -7,40 +7,73 @@ import { useDwsBody } from "@/components/dws/useDwsBody";
 import { SplitText } from "@/components/dws/reactbits/SplitText";
 import { posts } from "@/data/blog";
 
+import { formatMetaDescription, formatMetaTitle, getCanonicalUrl } from "@/lib/seo";
+import { business } from "@/data/business";
+
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog — Web, SaaS & Growth Insights | DwS Jaipur" },
+      { title: formatMetaTitle("Web Design & SEO Insights", "Blog") },
       {
         name: "description",
-        content:
-          "Practical articles from DwS on websites that convert, shipping SaaS products, local SEO for Indian businesses and spending a marketing budget well.",
+        content: formatMetaDescription(
+          "Practical insights on high-converting websites, SaaS MVP development, local SEO for Indian businesses and digital marketing."
+        ),
       },
-      { property: "og:title", content: "Blog — Web, SaaS & Growth Insights | DwS" },
+      { property: "og:title", content: "Web Design & SEO Insights | DWS Web Services" },
       {
         property: "og:description",
         content:
-          "Field notes from a Jaipur-based digital agency on web design, SaaS builds, SEO and performance marketing.",
+          "Practical insights on high-converting websites, SaaS builds, local SEO and digital marketing from Jaipur.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: getCanonicalUrl("/blog") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/blog") }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",
-          name: "DwS Blog",
+          name: `${business.name} Blog`,
+          url: getCanonicalUrl("/blog"),
+          description:
+            "Practical insights on web development, SaaS MVP shipping, local SEO and digital marketing.",
+          publisher: {
+            "@type": "Organization",
+            name: business.name,
+            url: business.siteUrl,
+          },
           blogPost: posts.map((p) => ({
             "@type": "BlogPosting",
             headline: p.title,
             description: p.excerpt,
             datePublished: p.date,
-            url: `/blog/${p.slug}`,
+            url: getCanonicalUrl(`/blog/${p.slug}`),
           })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: business.siteUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Blog",
+              item: getCanonicalUrl("/blog"),
+            },
+          ],
         }),
       },
     ],
@@ -54,20 +87,34 @@ function BlogIndex() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <section className="dws-section pt-5">
           <div className="container">
+            <nav aria-label="Breadcrumb" className="mb-4">
+              <ol className="d-flex align-items-center gap-2 list-unstyled small text-muted mb-0">
+                <li>
+                  <Link to="/" className="text-muted text-decoration-none">
+                    Home
+                  </Link>
+                </li>
+                <li>/</li>
+                <li className="text-white" aria-current="page">
+                  Blog
+                </li>
+              </ol>
+            </nav>
+
             <Reveal>
-              <p className="dws-eyebrow mb-3">Blog</p>
+              <p className="dws-eyebrow mb-3">Articles & Insights</p>
             </Reveal>
             <h1 className="display-5 mb-4">
-              <SplitText as="span" text="Notes on building and growing." />
+              <SplitText as="span" text="Notes on building, ranking, and scaling." />
             </h1>
             <Reveal delay={0.15}>
               <p className="dws-hero-sub mb-5" style={{ maxWidth: "44rem" }}>
                 Want a website that actually converts? Field notes from building websites, SaaS
-                products and growth programmes for founders in India and beyond — no theory, just
-                what we've shipped.
+                products and growth programmes for founders in India and beyond: no theory, just
+                what we have shipped.
               </p>
             </Reveal>
 

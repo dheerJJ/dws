@@ -9,6 +9,8 @@ import { useDwsBody } from "@/components/dws/useDwsBody";
 import { getPost, posts } from "@/data/blog";
 import { business } from "@/data/business";
 
+import { formatMetaDescription, formatMetaTitle, getCanonicalUrl, getBlogPostingSchema, getBreadcrumbSchema } from "@/lib/seo";
+
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
     const post = getPost(params.slug);
@@ -16,37 +18,54 @@ export const Route = createFileRoute("/blog/$slug")({
     return { post };
   },
   head: ({ params, loaderData }) => {
-    if (!loaderData) {
+    const post = loaderData?.post || getPost(params?.slug);
+    if (!post) {
       return {
-        meta: [{ title: "Article not found — DwS" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: formatMetaTitle("Article not found", false) }, { name: "robots", content: "noindex" }],
       };
     }
-    const { post } = loaderData;
+    const slug = params?.slug || post.slug;
+    const postUrl = getCanonicalUrl(`/blog/${slug}`);
+    const postTitle = formatMetaTitle(post.title);
+    const postDesc = formatMetaDescription(post.excerpt);
+
     return {
       meta: [
-        { title: `${post.title} | DwS` },
-        { name: "description", content: post.excerpt },
-        { property: "og:title", content: post.title },
-        { property: "og:description", content: post.excerpt },
+        { title: postTitle },
+        { name: "description", content: postDesc },
+        { property: "og:title", content: postTitle },
+        { property: "og:description", content: postDesc },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/blog/${params.slug}` },
+        { property: "og:url", content: postUrl },
+        { property: "og:image", content: post.cover },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: post.cover },
       ],
-      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+      links: [{ rel: "canonical", href: postUrl }],
       scripts: [
         {
           type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.title,
-            description: post.excerpt,
-            datePublished: post.date,
-            articleSection: post.category,
-            author: { "@type": "Person", name: post.author },
-            publisher: { "@type": "Organization", name: business.name },
-            mainEntityOfPage: `/blog/${params.slug}`,
-          }),
+          children: JSON.stringify(
+            getBlogPostingSchema({
+              title: post.title,
+              excerpt: post.excerpt,
+              date: post.date,
+              slug,
+              cover: post.cover,
+              author: post.author,
+              category: post.category,
+            })
+          ),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            getBreadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Blog", path: "/blog" },
+              { name: post.title, path: `/blog/${slug}` },
+            ])
+          ),
         },
       ],
     };
@@ -60,10 +79,10 @@ function PostNotFound() {
   return (
     <>
       <Navbar />
-      <main className="dws-section pt-5">
+      <main className="dws-section pt-5" id="main-content">
         <div className="container">
           <h1 className="display-6 mb-3">Article not found</h1>
-          <p className="dws-muted mb-4">That article doesn't exist or has moved.</p>
+          <p className="dws-muted mb-4">That article does not exist or has moved.</p>
           <Link to="/blog" className="dws-btn dws-btn-solid">
             Back to blog
           </Link>
@@ -82,15 +101,32 @@ function PostPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <article className="dws-section pt-5">
           <div className="container">
             <div className="row justify-content-center mb-5">
               <div className="col-lg-9">
+                <nav aria-label="Breadcrumb" className="mb-4">
+                  <ol className="d-flex align-items-center gap-2 list-unstyled small text-muted mb-0">
+                    <li>
+                      <Link to="/" className="text-muted text-decoration-none">
+                        Home
+                      </Link>
+                    </li>
+                    <li>/</li>
+                    <li>
+                      <Link to="/blog" className="text-muted text-decoration-none">
+                        Blog
+                      </Link>
+                    </li>
+                    <li>/</li>
+                    <li className="text-white text-truncate" style={{ maxWidth: "240px" }} aria-current="page">
+                      {post.title}
+                    </li>
+                  </ol>
+                </nav>
+
                 <Reveal>
-                  <Link to="/blog" className="dws-post-back dws-mono small d-inline-block mb-4">
-                    ← All articles
-                  </Link>
                   <p className="dws-eyebrow mb-3">{post.category}</p>
                   <h1 className="display-5 mb-4">{post.title}</h1>
                   <p className="dws-muted small mb-0">

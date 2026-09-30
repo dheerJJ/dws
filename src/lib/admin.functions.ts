@@ -108,7 +108,7 @@ const replySchema = z.object({
 
 export const replyToEnquiry = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((data: unknown) => replySchema.parse(data))
+  .validator((data: unknown) => replySchema.parse(data))
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
 
@@ -166,7 +166,7 @@ const statusSchema = z.object({
 
 export const setEnquiryStatus = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((data: unknown) => statusSchema.parse(data))
+  .validator((data: unknown) => statusSchema.parse(data))
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
     const { data: isAdmin } = await supabase.rpc("has_role", {

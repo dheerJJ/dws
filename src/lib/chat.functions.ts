@@ -10,7 +10,7 @@ export type StoredChatMessage = {
 };
 
 export const getChatHistory = createServerFn({ method: "POST" })
-  .inputValidator((input: unknown) => HistoryInput.parse(input))
+  .validator((input: unknown) => HistoryInput.parse(input))
   .handler(async ({ data }): Promise<StoredChatMessage[]> => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { data: rows, error } = await supabaseAdmin

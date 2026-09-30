@@ -21,7 +21,7 @@ export function buildDwsKnowledge(): string {
   lines.push("\n## Retainer packages (monthly, INR)");
   for (const tier of tiers) {
     lines.push(
-      `- ${tier.name} — ${tier.price} ${tier.cadence}. ${tier.summary} Includes: ${tier.features.join("; ")}.`,
+      `- ${tier.name} - ${tier.price} ${tier.cadence}. ${tier.summary} Includes: ${tier.features.join("; ")}.`,
     );
   }
 
@@ -33,36 +33,36 @@ export function buildDwsKnowledge(): string {
     lines.push(service.intro);
     for (const pkg of service.packages) {
       lines.push(
-        `- ${pkg.name}: ${pkg.price} ${pkg.cadence} — ${pkg.summary} Timeline: ${pkg.timeline}. Includes: ${pkg.features.join("; ")}.`,
+        `- ${pkg.name}: ${pkg.price} ${pkg.cadence} - ${pkg.summary} Timeline: ${pkg.timeline}. Includes: ${pkg.features.join("; ")}.`,
       );
     }
     if (service.addons.length) {
       lines.push(`Add-ons: ${service.addons.map((a) => `${a.name} (${a.price})`).join(", ")}.`);
     }
     for (const faq of service.faqs) {
-      lines.push(`FAQ — ${faq.q} ${faq.a}`);
+      lines.push(`FAQ: ${faq.q} ${faq.a}`);
     }
   }
 
   lines.push("\n## Work / projects");
   for (const project of projects) {
-    lines.push(`- ${project.name} (${project.type}) — ${project.description} Live: ${project.url}`);
+    lines.push(`- ${project.name} (${project.type}) - ${project.description} Live: ${project.url}`);
   }
 
   lines.push("\n## Team");
   for (const member of team) {
-    lines.push(`- ${member.name}, ${member.role} — ${member.bio}`);
+    lines.push(`- ${member.name}, ${member.role} - ${member.bio}`);
   }
 
   lines.push("\n## Client feedback");
   for (const t of testimonials) {
-    lines.push(`- "${t.quote}" — ${t.author}, ${t.role}`);
+    lines.push(`- "${t.quote}" - ${t.author}, ${t.role}`);
   }
 
   lines.push("\n## Articles (page: /blog/<slug>)");
   for (const post of posts) {
     lines.push(
-      `- ${post.title} (/blog/${post.slug}, ${post.category}, ${post.readingTime}) — ${post.excerpt} Key takeaways: ${post.takeaways.join("; ")}.`,
+      `- ${post.title} (/blog/${post.slug}, ${post.category}, ${post.readingTime}) - ${post.excerpt} Key takeaways: ${post.takeaways.join("; ")}.`,
     );
   }
 
@@ -72,7 +72,7 @@ export function buildDwsKnowledge(): string {
   return lines.join("\n");
 }
 
-export const DWS_SYSTEM_PROMPT = `You are "DwS Assistant", the site assistant for DwS — a digital agency based in Jaipur, India.
+export const DWS_SYSTEM_PROMPT = `You are "DwS Assistant", the site assistant for DwS - a digital agency based in Jaipur, India.
 
 Your job is to give visitors every detail they ask for about DwS: services, pricing in INR, packages, timelines, past projects, the team, articles, process and how to get in touch. Answer confidently and specifically using the knowledge below.
 

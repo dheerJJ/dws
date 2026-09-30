@@ -18,7 +18,7 @@ import {
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
     meta: [
-      { title: "Enquiries Dashboard — DwS" },
+      { title: "Enquiries Dashboard - DwS" },
       { name: "description", content: "Review and reply to DwS client enquiries." },
       { name: "robots", content: "noindex, nofollow" },
     ],

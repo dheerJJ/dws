@@ -142,3 +142,36 @@
     color: var(--color-foreground);
   }
 }
+
+/* Floating WhatsApp Action Button */
+.dws-floating-whatsapp {
+  position: fixed;
+  left: clamp(14px, 3vw, 28px);
+  bottom: clamp(14px, 3vw, 28px);
+  z-index: 1070;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.dws-floating-whatsapp:hover {
+  transform: scale(1.08);
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { posts } from "@/data/blog";
-import { publicRoutes } from "@/data/business";
+import { business, publicRoutes } from "@/data/business";
 import { servicePricing } from "@/data/pricing";
 
-type Entry = { loc: string; priority: string; lastmod?: string };
+type Entry = { loc: string; priority: string; lastmod: string; changefreq: string };
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -13,30 +13,50 @@ export const Route = createFileRoute("/sitemap.xml")({
         const url = new URL(request.url);
         const forwardedHost =
           url.hostname === "localhost" ? request.headers.get("x-forwarded-host") : null;
-        const origin = forwardedHost ? `https://${forwardedHost}` : url.origin;
+        const origin = forwardedHost ? `https://${forwardedHost}` : business.siteUrl;
 
-        const entries: Entry[] = [
-          ...publicRoutes.map((path) => ({
-            loc: `${origin}${path}`,
-            priority: path === "/" ? "1.0" : "0.8",
-          })),
-          ...servicePricing.map((s) => ({
-            loc: `${origin}/pricing/${s.slug}`,
-            priority: "0.7",
-          })),
-          ...posts.map((post) => ({
-            loc: `${origin}/blog/${post.slug}`,
-            priority: "0.6",
-            lastmod: post.date,
-          })),
-        ];
+        // Current build date for static page lastmod
+        const today = new Date().toISOString().split("T")[0];
+
+        // Unique set of indexable, canonical URLs
+        const seen = new Set<string>();
+        const entries: Entry[] = [];
+
+        const addEntry = (path: string, priority: string, lastmod: string, changefreq: string) => {
+          const loc = `${origin}${path === "/" ? "" : path}`;
+          if (!seen.has(loc)) {
+            seen.add(loc);
+            entries.push({ loc, priority, lastmod, changefreq });
+          }
+        };
+
+        // Main core public routes
+        publicRoutes.forEach((path) => {
+          const priority = path === "/" ? "1.0" : path === "/services" ? "0.9" : "0.8";
+          const changefreq = path === "/" ? "weekly" : "monthly";
+          addEntry(path, priority, today, changefreq);
+        });
+
+        // Dedicated service landing & pricing pages
+        servicePricing.forEach((service) => {
+          addEntry(`/pricing/${service.slug}`, "0.85", today, "monthly");
+        });
+
+        // Individual blog posts
+        posts.forEach((post) => {
+          addEntry(`/blog/${post.slug}`, "0.75", post.date, "monthly");
+        });
 
         const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${entries
   .map(
-    (e) =>
-      `  <url>\n    <loc>${e.loc}</loc>\n${e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>\n` : ""}    <priority>${e.priority}</priority>\n  </url>`,
+    (e) => `  <url>
+    <loc>${e.loc}</loc>
+    <lastmod>${e.lastmod}</lastmod>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>
+  </url>`,
   )
   .join("\n")}
 </urlset>`;
@@ -44,7 +64,7 @@ ${entries
         return new Response(body, {
           headers: {
             "Content-Type": "application/xml; charset=utf-8",
-            "Cache-Control": "public, max-age=3600",
+            "Cache-Control": "public, max-age=3600, s-maxage=86400",
           },
         });
       },

@@ -74,11 +74,11 @@ export const EnquiryReplyEmail = ({
 
 export const template = {
   component: EnquiryReplyEmail,
-  subject: "Re: your enquiry — DwS",
+  subject: "Re: your enquiry - DwS",
   displayName: "Enquiry reply",
   previewData: {
     name: "Aarav",
-    reply: "Thanks for reaching out — here is how we would approach your paid social setup...",
+    reply: "Thanks for reaching out - here is how we would approach your paid social setup...",
     originalMessage: "We want to scale paid social and fix our landing page conversion rate.",
   },
 } satisfies TemplateEntry;
