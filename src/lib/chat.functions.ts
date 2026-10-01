@@ -12,22 +12,25 @@ export type StoredChatMessage = {
 export const getChatHistory = createServerFn({ method: "POST" })
   .validator((input: unknown) => HistoryInput.parse(input))
   .handler(async ({ data }): Promise<StoredChatMessage[]> => {
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { data: rows, error } = await supabaseAdmin
-      .from("chat_messages")
-      .select("id, role, content")
-      .eq("session_id", data.sessionId)
-      .order("created_at", { ascending: true })
-      .limit(100);
+    try {
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      const { data: rows, error } = await supabaseAdmin
+        .from("chat_messages")
+        .select("id, role, content")
+        .eq("session_id", data.sessionId)
+        .order("created_at", { ascending: true })
+        .limit(100);
 
-    if (error) {
-      console.error("chat history failed", error);
+      if (error) {
+        return [];
+      }
+
+      return (rows ?? []).map((row) => ({
+        id: row.id,
+        role: row.role === "assistant" ? "assistant" : "user",
+        content: row.content,
+      }));
+    } catch {
       return [];
     }
-
-    return (rows ?? []).map((row) => ({
-      id: row.id,
-      role: row.role === "assistant" ? "assistant" : "user",
-      content: row.content,
-    }));
   });

@@ -315,7 +315,7 @@ export const servicePricing: ServicePricing[] = [
     startsAt: "₹35,999",
     metaTitle: "Mobile App Development in Jaipur | DWS Web Services",
     metaDescription:
-      "Custom mobile app development in Jaipur and India. Native iOS & Android, Flutter, and React Native applications built for performance, clean architecture, and store approval.",
+      "Custom mobile app development in Jaipur & India. Native iOS & Android, Flutter, and React Native apps built for performance and store approval.",
     whoItsFor: [
       "Startups and founders needing a store-ready MVP for iOS and Android without paying bloated agency overhead.",
       "Growing businesses expanding their web platforms into native or cross-platform mobile apps.",

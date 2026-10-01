@@ -34,7 +34,6 @@ function messageText(message: UIMessage): string {
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
-  const [initialMessages, setInitialMessages] = useState<UIMessage[] | null>(null);
   const [input, setInput] = useState("");
   const [errorText, setErrorText] = useState<string | null>(null);
 
@@ -45,28 +44,6 @@ export default function ChatWidget() {
     setSessionId(readSessionId());
   }, []);
 
-  useEffect(() => {
-    if (!sessionId || initialMessages) return;
-    let cancelled = false;
-    getChatHistory({ data: { sessionId } })
-      .then((rows) => {
-        if (cancelled) return;
-        setInitialMessages(
-          rows.map((row) => ({
-            id: row.id,
-            role: row.role,
-            parts: [{ type: "text" as const, text: row.content }],
-          })),
-        );
-      })
-      .catch(() => {
-        if (!cancelled) setInitialMessages([]);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [sessionId, initialMessages]);
-
   const transport = useMemo(
     () =>
       new DefaultChatTransport({
@@ -76,9 +53,8 @@ export default function ChatWidget() {
     [sessionId],
   );
 
-  const { messages, sendMessage, status, stop } = useChat({
+  const { messages, setMessages, sendMessage, status, stop } = useChat({
     id: sessionId ?? "dws-chat",
-    messages: initialMessages ?? [],
     transport,
     onError: (error) => {
       setErrorText(
@@ -88,6 +64,26 @@ export default function ChatWidget() {
       );
     },
   });
+
+  useEffect(() => {
+    if (!sessionId) return;
+    let cancelled = false;
+    getChatHistory({ data: { sessionId } })
+      .then((rows) => {
+        if (cancelled || !rows.length) return;
+        setMessages(
+          rows.map((row) => ({
+            id: row.id,
+            role: row.role,
+            parts: [{ type: "text" as const, text: row.content }],
+          })),
+        );
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [sessionId, setMessages]);
 
   const busy = status === "submitted" || status === "streaming";
 
