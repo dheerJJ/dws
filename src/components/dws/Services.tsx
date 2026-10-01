@@ -56,19 +56,15 @@ export function Services() {
   return (
     <section id="services" className="dws-section">
       <div className="container">
-        <div className="row align-items-end mb-5">
-          <div className="col-lg-7">
+        <div className="row mb-5">
+          <div className="col-lg-8 col-xl-7">
             <Reveal>
               <p className="dws-eyebrow mb-2">Services</p>
-              <h2 className="dws-section-title display-5 mb-0">
-                A full-stack growth team, on demand.
+              <h2 className="dws-section-title display-5 mb-3">
+                Specialized engineering and growth, on demand.
               </h2>
-            </Reveal>
-          </div>
-          <div className="col-lg-5 mt-4 mt-lg-0">
-            <Reveal delay={0.1}>
-              <p className="dws-muted mb-0">
-                Every engagement runs on one integrated team - no handoffs, no agency theatre.
+              <p className="dws-muted fs-5 mb-0">
+                From bespoke website architecture and cross-platform apps to production SaaS MVPs. Direct senior execution with zero handoffs.
               </p>
             </Reveal>
           </div>
