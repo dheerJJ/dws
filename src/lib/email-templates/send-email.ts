@@ -1,18 +1,10 @@
 import * as React from "react";
 import { render } from "@react-email/render";
-import { EmailAPIError, sendLovableEmail } from "@lovable.dev/email-js";
 import { TEMPLATES } from "./registry";
 
-// Server-only: reads LOVABLE_API_KEY. Never import from client components.
+// Server-only: reads env vars. Never import from client components.
 
-// Configuration baked in at scaffold time
 const SITE_NAME = "DwS Web Services";
-// SENDER_DOMAIN is the verified sender subdomain FQDN (e.g., "notify.example.com").
-// It MUST match the subdomain delegated to Lovable's nameservers. NEVER use the root domain.
-const SENDER_DOMAIN = "notify.tech.dws.co";
-// FROM_DOMAIN is the domain shown in the From: header (e.g., "example.com").
-// Can be the root domain when display_from_root is enabled — this is cosmetic only.
-const FROM_DOMAIN = "notify.tech.dws.co";
 
 export type SendTemplateEmailResult =
   { sent: true } | { sent: false; reason: "recipient_suppressed" };
@@ -25,20 +17,19 @@ export interface SendTemplateEmailOptions {
 }
 
 /**
- * Renders a registered template and sends it through Lovable's managed email
- * API. Suppression, retries, and rate limits are enforced by Lovable
- * server-side. A suppressed recipient is an expected outcome
- * ({ sent: false }); any other failure throws — EmailAPIError exposes
- * .code and .status for branching.
+ * Renders a registered React Email template and sends it via the first
+ * available provider:
+ *   1. Gmail SMTP (Nodemailer) — GMAIL_USER + GMAIL_APP_PASSWORD
+ *   2. Resend API — RESEND_API_KEY
+ *   3. Lovable Email API — LOVABLE_API_KEY
+ *
+ * Throws on failure so calling code can handle errors in its own boundary.
  */
 export async function sendTemplateEmail(
   templateName: string,
   to: string,
   options: SendTemplateEmailOptions = {},
 ): Promise<SendTemplateEmailResult> {
-  const resendApiKey = process.env["RESEND_API_KEY"];
-  const lovableApiKey = process.env["LOVABLE_API_KEY"];
-
   const template = TEMPLATES[templateName];
   if (!template) {
     throw new Error(
@@ -60,9 +51,43 @@ export async function sendTemplateEmail(
   const subject =
     typeof template.subject === "function" ? template.subject(templateData) : template.subject;
 
-  // 1. If Resend API key is provided, send directly via Resend
+  // ── Provider 1: Gmail SMTP via Nodemailer ─────────────────────────────
+  const gmailUser = process.env["GMAIL_USER"];
+  const gmailAppPassword = process.env["GMAIL_APP_PASSWORD"];
+
+  if (gmailUser && gmailAppPassword) {
+    try {
+      const nodemailer = await import("nodemailer");
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: gmailUser,
+          pass: gmailAppPassword,
+        },
+      });
+
+      await transporter.sendMail({
+        from: `${SITE_NAME} <${gmailUser}>`,
+        to: recipient,
+        subject,
+        html,
+        text,
+        ...(options.replyTo ? { replyTo: options.replyTo } : {}),
+      });
+
+      console.log(`[Email] Successfully sent "${templateName}" to ${recipient} via Gmail SMTP`);
+      return { sent: true };
+    } catch (err) {
+      console.error(`[Email] Gmail SMTP failed for "${templateName}" to ${recipient}:`, err);
+      throw err;
+    }
+  }
+
+  // ── Provider 2: Resend API ────────────────────────────────────────────
+  const resendApiKey = process.env["RESEND_API_KEY"];
+
   if (resendApiKey) {
-    const fromEmail = process.env["RESEND_FROM_EMAIL"] || "DwS Web Services <onboarding@resend.dev>";
+    const fromEmail = process.env["RESEND_FROM_EMAIL"] || `${SITE_NAME} <onboarding@resend.dev>`;
     try {
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -94,19 +119,21 @@ export async function sendTemplateEmail(
       return { sent: true };
     } catch (err) {
       console.error(`[Email] Failed to send "${templateName}" to ${recipient} via Resend:`, err);
-      // Don't swallow — let the calling code's error boundary handle it
       throw err;
     }
   }
 
-  // 2. If Lovable API key is provided, send via Lovable email API
+  // ── Provider 3: Lovable Email API ─────────────────────────────────────
+  const lovableApiKey = process.env["LOVABLE_API_KEY"];
+
   if (lovableApiKey) {
     try {
+      const { sendLovableEmail, EmailAPIError } = await import("@lovable.dev/email-js");
       await sendLovableEmail(
         {
           to: recipient,
-          from: `${SITE_NAME} <noreply@${FROM_DOMAIN}>`,
-          sender_domain: SENDER_DOMAIN,
+          from: `${SITE_NAME} <noreply@notify.tech.dws.co>`,
+          sender_domain: "notify.tech.dws.co",
           subject,
           html,
           text,
@@ -119,15 +146,19 @@ export async function sendTemplateEmail(
       );
       return { sent: true };
     } catch (error) {
+      const { EmailAPIError } = await import("@lovable.dev/email-js");
       if (error instanceof EmailAPIError && error.code === "recipient_suppressed") {
         return { sent: false, reason: "recipient_suppressed" };
       }
       console.error("[Email] Lovable email dispatch error:", error);
+      throw error;
     }
   }
 
-  console.warn(
-    `[Email] No email provider configured (set RESEND_API_KEY in .env or Vercel to deliver live emails to ${recipient}).`,
+  // ── No provider configured ────────────────────────────────────────────
+  console.error(
+    `[Email] No email provider configured. Set GMAIL_USER + GMAIL_APP_PASSWORD, ` +
+    `or RESEND_API_KEY, or LOVABLE_API_KEY to deliver emails to ${recipient}.`,
   );
-  return { sent: true };
+  throw new Error("No email provider configured");
 }
