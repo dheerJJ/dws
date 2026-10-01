@@ -101,9 +101,10 @@ export function getServiceSchema(opts: {
   name: string;
   description: string;
   slug: string;
+  urlPath?: string;
   offers?: { name: string; price: string; description?: string }[];
 }) {
-  const serviceUrl = getCanonicalUrl(`/pricing/${opts.slug}`);
+  const serviceUrl = getCanonicalUrl(opts.urlPath || `/pricing/${opts.slug}`);
   return {
     "@context": "https://schema.org",
     "@type": "Service",

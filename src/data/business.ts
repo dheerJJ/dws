@@ -120,11 +120,22 @@ export const business = {
   // Service offerings
   services: [
     "Website Design & Development",
+    "E-commerce Development",
+    "Custom Software Development",
+    "ERP Development",
+    "CRM Development",
+    "School Management Software",
     "Mobile App Development",
-    "Search Engine Optimisation",
+    "Android App Development",
+    "iOS App Development",
+    "UI/UX Design",
+    "Graphic Design & Branding",
+    "Digital Marketing",
+    "SEO Services",
+    "Web Hosting",
+    "Domain Registration",
+    "Website Maintenance & Support",
     "SaaS MVP Development",
-    "Conversion Rate Optimisation",
-    "Brand & Content Systems",
   ],
 
   // Pricing guide ranges

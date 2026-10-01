@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUp, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { business } from "@/data/business";
+import { getFooterServices } from "@/data/services";
 import logo from "@/assets/dws-logo.png.asset.json";
 
 function SocialIcon({ label }: { label: string }) {
@@ -78,13 +79,6 @@ export function Contact() {
   );
 }
 
-const serviceLinks = [
-  { label: "Website Design", slug: "website-design" },
-  { label: "Mobile App Development", slug: "mobile-app-development" },
-  { label: "SEO Services", slug: "seo" },
-  { label: "SaaS MVP Development", slug: "saas-mvp" },
-] as const;
-
 const companyLinks = [
   { label: "About Studio", to: "/about" },
   { label: "Services & Capabilities", to: "/services" },
@@ -153,10 +147,10 @@ export function Footer() {
             <div className="col-6 col-lg-2 col-md-3">
               <h3 className="dws-footer-title">Services</h3>
               <ul className="dws-footer-list">
-                {serviceLinks.map((s) => (
+                {getFooterServices().map((s) => (
                   <li key={s.slug}>
-                    <Link to="/pricing/$service" params={{ service: s.slug }}>
-                      {s.label}
+                    <Link to="/services/$slug" params={{ slug: s.slug }}>
+                      {s.title}
                     </Link>
                   </li>
                 ))}

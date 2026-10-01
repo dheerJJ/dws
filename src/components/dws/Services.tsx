@@ -1,36 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 
 import { Reveal } from "./Reveal";
-
-const services = [
-  {
-    title: "Website Design & Development",
-    meta: "Next-gen builds, CRO-ready",
-    service: "website-design",
-  },
-  {
-    title: "Brand Identity & Design Systems",
-    meta: "Positioning to pixels",
-    service: "website-design",
-  },
-  {
-    title: "Mobile App Development",
-    meta: "iOS & Android (Flutter / React Native)",
-    service: "mobile-app-development",
-  },
-  { title: "SEO & Content Engines", meta: "Compounding organic reach", service: "seo" },
-  {
-    title: "Cross-Platform App Engineering",
-    meta: "From prototype to App Store",
-    service: "mobile-app-development",
-  },
-  {
-    title: "SaaS & Product Engineering",
-    meta: "MVPs that reach paying users",
-    service: "saas-mvp",
-  },
-];
+import { getFeaturedServices } from "@/data/services";
 
 function ArrowIcon() {
   return (
@@ -53,6 +26,8 @@ function ArrowIcon() {
 }
 
 export function Services() {
+  const featuredServices = getFeaturedServices(6);
+
   return (
     <section id="services" className="dws-section">
       <div className="container">
@@ -64,21 +39,21 @@ export function Services() {
                 Specialized engineering and growth, on demand.
               </h2>
               <p className="dws-muted fs-5 mb-0">
-                From bespoke website architecture and cross-platform apps to production SaaS MVPs. Direct senior execution with zero handoffs.
+                From bespoke website architecture and mobile apps to ERP systems and organic growth. Direct senior execution with zero handoffs.
               </p>
             </Reveal>
           </div>
         </div>
 
         <div>
-          {services.map((service, i) => (
-            <Reveal key={service.title} delay={i * 0.06} y={20}>
+          {featuredServices.map((service, i) => (
+            <Reveal key={service.slug} delay={i * 0.06} y={20}>
               <motion.div className="dws-service">
                 <Link
-                  to="/pricing/$service"
-                  params={{ service: service.service }}
+                  to="/services/$slug"
+                  params={{ slug: service.slug }}
                   className="dws-service-link"
-                  aria-label={`${service.title} - see pricing`}
+                  aria-label={`${service.title} - see details`}
                 />
                 <span className="dws-service-index dws-mono">
                   {"{"}
@@ -87,12 +62,24 @@ export function Services() {
                 </span>
                 <div>
                   <h3 className="dws-service-title">{service.title}</h3>
-                  <span className="dws-service-meta d-none d-sm-inline">{service.meta}</span>
+                  <span className="dws-service-meta d-none d-sm-inline">{service.category} · {service.startsAt}</span>
                 </div>
                 <ArrowIcon />
               </motion.div>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-4 pt-2">
+          <Reveal delay={0.4}>
+            <Link
+              to="/services"
+              className="dws-btn dws-btn-outline d-inline-flex align-items-center gap-2"
+            >
+              <span>Explore All 15+ Services</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </Reveal>
         </div>
       </div>
     </section>

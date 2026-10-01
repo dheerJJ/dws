@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { posts } from "@/data/blog";
 import { business, publicRoutes } from "@/data/business";
 import { servicePricing } from "@/data/pricing";
+import { services } from "@/data/services";
 
 type Entry = { loc: string; priority: string; lastmod: string; changefreq: string };
 
@@ -40,6 +41,11 @@ export const Route = createFileRoute("/sitemap.xml")({
         // Dedicated service landing & pricing pages
         servicePricing.forEach((service) => {
           addEntry(`/pricing/${service.slug}`, "0.85", today, "monthly");
+        });
+
+        // Individual service detail pages
+        services.forEach((service) => {
+          addEntry(`/services/${service.slug}`, "0.85", today, "monthly");
         });
 
         // Individual blog posts
