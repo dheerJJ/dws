@@ -111,7 +111,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
   AtSign, Wrench, Rocket, TabletSmartphone, Apple,
 };
 
-function ServiceIcon({ name, size = 20, className }: { name: string; size?: number; className?: string }) {
+function ServiceIcon({ name, size = 20, className = "" }: { name: string; size?: number; className?: string }) {
   const Icon = iconMap[name];
   if (!Icon) return null;
   return <Icon size={size} className={className} />;

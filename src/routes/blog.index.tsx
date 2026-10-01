@@ -14,7 +14,7 @@ import { business } from "@/data/business";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: formatMetaTitle("Web Design & SEO Insights", "Blog") },
+      { title: formatMetaTitle("Web Design & SEO Insights") },
       {
         name: "description",
         content: formatMetaDescription(

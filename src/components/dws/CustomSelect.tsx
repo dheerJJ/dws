@@ -51,7 +51,8 @@ export function CustomSelect({
       } else {
         const currentIndex = options.indexOf(value);
         const nextIndex = currentIndex < options.length - 1 ? currentIndex + 1 : 0;
-        onChange(options[nextIndex]);
+        const nextOpt = options[nextIndex];
+        if (nextOpt) onChange(nextOpt);
       }
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
@@ -60,7 +61,8 @@ export function CustomSelect({
       } else {
         const currentIndex = options.indexOf(value);
         const prevIndex = currentIndex > 0 ? currentIndex - 1 : options.length - 1;
-        onChange(options[prevIndex]);
+        const prevOpt = options[prevIndex];
+        if (prevOpt) onChange(prevOpt);
       }
     }
   };

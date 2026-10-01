@@ -17,7 +17,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const origin = forwardedHost ? `https://${forwardedHost}` : business.siteUrl;
 
         // Current build date for static page lastmod
-        const today = new Date().toISOString().split("T")[0];
+        const today = new Date().toISOString().slice(0, 10);
 
         // Unique set of indexable, canonical URLs
         const seen = new Set<string>();
