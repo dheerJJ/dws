@@ -63,7 +63,12 @@ export const Route = createFileRoute("/about")({
               name: business.name,
               legalName: business.legalName,
               description: business.description,
-              founder: { "@type": "Person", name: business.founder },
+              founder: {
+                "@type": "Person",
+                name: business.founder,
+                image: `${business.siteUrl}/dheerajj-kumawat.jpg`,
+                jobTitle: "Founder & Technical Lead",
+              },
               foundingDate: business.foundingYear,
               telephone: business.phone,
               email: business.email,
@@ -132,8 +137,8 @@ function AboutPage() {
               </nav>
             </Reveal>
 
-            <div className="row">
-              <div className="col-lg-9">
+            <div className="row align-items-center g-5">
+              <div className="col-12 col-lg-7">
                 <Reveal>
                   <p className="dws-eyebrow mb-3">About the Studio</p>
                 </Reveal>
@@ -148,11 +153,43 @@ function AboutPage() {
                     DWS Web Services turns complex business requirements into fast websites, measurable
                     organic SEO, and compounding revenue engines.
                   </p>
-                  <p className="dws-muted mb-0 lead" style={{ maxWidth: "46rem" }}>
+                  <p className="dws-muted mb-0 lead">
                     Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates deliberately lean:
                     senior hands on every keyboard, zero junior hand-offs, and reporting judged strictly on
                     commercial enquiries rather than superficial vanity impressions.
                   </p>
+                </Reveal>
+              </div>
+
+              <div className="col-12 col-md-8 col-lg-5 mx-auto mx-lg-0">
+                <Reveal delay={0.15}>
+                  <div className="dws-founder-hero-card">
+                    <div className="dws-founder-hero-media">
+                      <img
+                        src="/dheerajj-kumawat.jpg"
+                        alt="Dheerajj Kumawat - Founder & Technical Lead at DWS Web Services, Jaipur"
+                        className="dws-founder-hero-img"
+                        width="540"
+                        height="675"
+                        loading="eager"
+                        fetchPriority="high"
+                      />
+                      <div className="dws-founder-hero-gradient" aria-hidden="true" />
+                    </div>
+                    <div className="dws-founder-hero-caption">
+                      <div className="d-flex justify-content-between align-items-baseline gap-2">
+                        <div>
+                          <h2 className="h6 text-white mb-0 fw-semibold">Dheerajj Kumawat</h2>
+                          <p className="dws-mono text-muted mb-0" style={{ fontSize: "0.72rem", letterSpacing: "0.08em" }}>
+                            FOUNDER &amp; TECHNICAL LEAD
+                          </p>
+                        </div>
+                        <span className="dws-mono text-muted" style={{ fontSize: "0.72rem", letterSpacing: "0.08em" }}>
+                          JAIPUR, RJ
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </Reveal>
               </div>
             </div>
@@ -261,7 +298,19 @@ function AboutPage() {
                 <div className="col-12 col-sm-6 col-lg-3" key={member.name}>
                   <Reveal delay={i * 0.08}>
                     <article className="dws-team h-100">
-                      <div className="dws-team-avatar">{member.initials}</div>
+                      {member.name === "Dheerajj Kumawat" ? (
+                        <div className="dws-team-avatar overflow-hidden p-0">
+                          <img
+                            src="/dheerajj-kumawat.jpg"
+                            alt="Dheerajj Kumawat"
+                            className="w-100 h-100 object-fit-cover"
+                            style={{ objectPosition: "center 15%" }}
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
+                        <div className="dws-team-avatar">{member.initials}</div>
+                      )}
                       <h3 className="h6 mb-1 text-white">{member.name}</h3>
                       <p className="dws-mono small mb-3 text-muted">{member.role}</p>
                       <p className="dws-muted small mb-0">{member.bio}</p>
