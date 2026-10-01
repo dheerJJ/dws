@@ -181,7 +181,7 @@ export const servicePricing: ServicePricing[] = [
     headline: "Compounding organic search rankings that generate real phone calls and sales.",
     intro:
       "Looking for professional SEO services in Jaipur? DWS Web Services helps local Jaipur businesses and national brands dominate Google search rankings. We build clean technical foundations, optimize Google Business Profiles for local map packs, write human-first content, and build genuine topical authority that turns searchers into paying clients.",
-    startsAt: "₹12,999",
+    startsAt: "₹18,999",
     metaTitle: "SEO Services in Jaipur | DWS Web Services",
     metaDescription:
       "Results-driven SEO services in Jaipur. Google Business Profile optimization, local citation building, technical SEO and content to drive high-intent enquiries.",
@@ -220,7 +220,7 @@ export const servicePricing: ServicePricing[] = [
     packages: [
       {
         name: "Local",
-        price: "₹12,999",
+        price: "₹18,999",
         cadence: "per month",
         summary: "Rank in your city - ideal for clinics, studios, realtors, and local services.",
         timeline: "First results in 6-10 weeks",
@@ -235,7 +235,7 @@ export const servicePricing: ServicePricing[] = [
       },
       {
         name: "National",
-        price: "₹29,999",
+        price: "₹34,999",
         cadence: "per month",
         summary: "Compete across India with a serious content and technical engine.",
         timeline: "First results in 8-12 weeks",
@@ -251,7 +251,7 @@ export const servicePricing: ServicePricing[] = [
       },
       {
         name: "Enterprise",
-        price: "₹59,999",
+        price: "₹64,999",
         cadence: "per month",
         summary: "Large product catalogues, multi-city, or programmatic SEO campaigns.",
         timeline: "Custom roadmap",
@@ -514,7 +514,7 @@ export const servicePricing: ServicePricing[] = [
       },
       {
         name: "Product Sprints",
-        price: "₹79,999",
+        price: "₹64,999",
         cadence: "per month",
         summary: "An ongoing dedicated engineering team shipping updates every two weeks.",
         timeline: "Rolling monthly",
@@ -568,8 +568,17 @@ export const servicePricing: ServicePricing[] = [
 ];
 
 export function getServicePricing(slug: string): ServicePricing | undefined {
-  if (slug === "digital-marketing") {
+  if (slug === "digital-marketing" || slug === "mobile-app") {
     return servicePricing.find((s) => s.slug === "mobile-app-development");
+  }
+  if (slug === "saas-mvp-development" || slug === "saas") {
+    return servicePricing.find((s) => s.slug === "saas-mvp");
+  }
+  if (slug === "website-design-architecture" || slug === "web-design") {
+    return servicePricing.find((s) => s.slug === "website-design");
+  }
+  if (slug === "search-revenue-infrastructure" || slug === "search-seo") {
+    return servicePricing.find((s) => s.slug === "seo");
   }
   return servicePricing.find((s) => s.slug === slug);
 }

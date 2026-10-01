@@ -47,7 +47,7 @@ We build lean, scalable SaaS products designed to ship fast and reach your first
   - Automated transactional emails & error tracking
   - Fully deployed on Cloudflare Workers or serverless cloud
 
-Read our breakdown on [SaaS MVP Development](/pricing/saas-mvp-development) or [Book an Online Strategy Call](/contact).`;
+Read our breakdown on [SaaS MVP Development](/pricing/saas-mvp) or [Book an Online Strategy Call](/contact).`;
   }
 
   // 3. Website Design & Architecture / Website Cost
