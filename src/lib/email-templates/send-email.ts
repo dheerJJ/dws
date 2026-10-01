@@ -6,7 +6,7 @@ import { TEMPLATES } from "./registry";
 // Server-only: reads LOVABLE_API_KEY. Never import from client components.
 
 // Configuration baked in at scaffold time
-const SITE_NAME = "DwS Digital Showcase";
+const SITE_NAME = "DwS Web Services";
 // SENDER_DOMAIN is the verified sender subdomain FQDN (e.g., "notify.example.com").
 // It MUST match the subdomain delegated to Lovable's nameservers. NEVER use the root domain.
 const SENDER_DOMAIN = "notify.tech.dws.co";
@@ -63,7 +63,7 @@ export async function sendTemplateEmail(
   // 1. If Resend API key is provided, send directly via Resend
   if (resendApiKey) {
     try {
-      const fromEmail = process.env["RESEND_FROM_EMAIL"] || "DwS Inquiries <onboarding@resend.dev>";
+      const fromEmail = process.env["RESEND_FROM_EMAIL"] || "DwS Web Services <onboarding@resend.dev>";
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {

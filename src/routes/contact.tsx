@@ -143,8 +143,7 @@ function ContactPage() {
     setLastSubmitTime(now);
 
     try {
-      const { website_hp, ...cleanData } = form;
-      await send({ data: cleanData });
+      await send({ data: form });
       setStatus("sent");
     } catch (err) {
       setStatus("error");
@@ -264,8 +263,7 @@ function ContactPage() {
                       <div className="text-center py-5">
                         <h3 className="h4 mb-3 text-white">Message Received Successfully</h3>
                         <p className="dws-muted mb-0">
-                          Thank you, {form.name.split(" ")[0] || "there"} - your project details are in.
-                          We will be in touch at {form.email} within one business day.
+                          Thanks! A confirmation email has been sent to your inbox.
                         </p>
                       </div>
                     ) : (
