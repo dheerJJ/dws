@@ -178,9 +178,6 @@ export function Footer() {
                 <li>
                   <Link to="/terms-and-conditions">Terms & Conditions</Link>
                 </li>
-                <li>
-                  <Link to="/dashboard">Client Portal</Link>
-                </li>
               </ul>
             </div>
 
