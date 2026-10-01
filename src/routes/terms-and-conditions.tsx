@@ -83,8 +83,8 @@ function TermsAndConditionsPage() {
                     <p className="dws-muted mb-4">
                       These Terms and Conditions govern all contracts, proposals, and project
                       engagements between {business.name} (&quot;Studio&quot;) and the client
-                      (&quot;Client&quot;) for website design, front-end development, search engine
-                      optimisation, and digital marketing services.
+                      (&quot;Client&quot;) for website design, mobile app development, search engine
+                      optimisation, and software engineering services.
                     </p>
                   </Reveal>
 

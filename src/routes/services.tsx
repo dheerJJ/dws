@@ -17,9 +17,9 @@ import {
 
 export const Route = createFileRoute("/services")({
   head: () => {
-    const title = formatMetaTitle("SEO, Web Design & Marketing Services");
+    const title = formatMetaTitle("Web Design, Mobile App & SEO Services");
     const description = formatMetaDescription(
-      "DWS Web Services in Jaipur: SEO, website design and development, digital marketing, and SaaS MVP builds with transparent packages, process, and rates."
+      "DWS Web Services in Jaipur: SEO, custom website design, mobile app development, and SaaS MVP builds with transparent packages, process, and rates."
     );
     const canonical = getCanonicalUrl("/services");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/services")({
         {
           name: "keywords",
           content:
-            "SEO services in Jaipur, website design company in Jaipur, digital marketing agency in Jaipur, SaaS MVP development India",
+            "SEO services in Jaipur, website design company in Jaipur, mobile app development in Jaipur, SaaS MVP development India",
         },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
@@ -147,13 +147,13 @@ function ServicesPage() {
 
                 {/* Exactly one H1 per page containing primary keywords */}
                 <h1 className="display-4 mb-4 text-white fw-bold">
-                  SEO, Website Design &amp; Digital Marketing Services in Jaipur
+                  Website Design, Mobile App &amp; SEO Services in Jaipur
                 </h1>
 
                 <Reveal delay={0.1}>
                   <p className="dws-hero-sub mb-0">
                     DWS Web Services is deliberately focused on high-impact disciplines: custom website
-                    design, local SEO, performance digital marketing, and SaaS MVP engineering. Every project is
+                    design, local SEO, mobile app development, and SaaS MVP engineering. Every project is
                     built hands-on for businesses in {business.city}, {business.state}, and across India.
                   </p>
                 </Reveal>

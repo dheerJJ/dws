@@ -80,7 +80,7 @@ export function Contact() {
 
 const serviceLinks = [
   { label: "Website Design", slug: "website-design" },
-  { label: "Digital Marketing", slug: "digital-marketing" },
+  { label: "Mobile App Development", slug: "mobile-app-development" },
   { label: "SEO Services", slug: "seo" },
   { label: "SaaS MVP Development", slug: "saas-mvp" },
 ] as const;

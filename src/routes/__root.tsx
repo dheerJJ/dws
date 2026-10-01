@@ -101,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => {
     const defaultTitle = formatMetaTitle(business.keywords.home.primary);
     const defaultDescription = formatMetaDescription(
-      `${business.name} is a Jaipur-based web development, SEO and digital marketing studio building high-performance websites, SaaS MVPs and organic growth engines.`
+      `${business.name} is a Jaipur-based web development, mobile app development, and SEO studio building high-performance websites, SaaS MVPs and digital platforms.`
     );
     const canonical = getCanonicalUrl("/");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;

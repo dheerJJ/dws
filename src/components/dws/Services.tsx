@@ -15,15 +15,15 @@ const services = [
     service: "website-design",
   },
   {
-    title: "Performance Marketing",
-    meta: "Meta, Google, LinkedIn",
-    service: "digital-marketing",
+    title: "Mobile App Development",
+    meta: "iOS & Android (Flutter / React Native)",
+    service: "mobile-app-development",
   },
   { title: "SEO & Content Engines", meta: "Compounding organic reach", service: "seo" },
   {
-    title: "Social Media Management",
-    meta: "Always-on storytelling",
-    service: "digital-marketing",
+    title: "Cross-Platform App Engineering",
+    meta: "From prototype to App Store",
+    service: "mobile-app-development",
   },
   {
     title: "SaaS & Product Engineering",

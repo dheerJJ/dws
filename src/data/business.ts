@@ -20,7 +20,7 @@ export const business = {
   legalName: "DWS Web Services",
   tagline: "Strategy first, design obsessed, measured on revenue.",
   description:
-    "DWS Web Services is a Jaipur-based web development, SEO and digital marketing studio building high-performance websites, SaaS products and organic growth programmes for businesses across India and worldwide.",
+    "DWS Web Services is a Jaipur-based web development, mobile app development, SEO and SaaS product studio building high-performance websites, mobile apps, SaaS products and organic growth programmes for businesses across India and worldwide.",
 
   // Canonical base URL (configurable via VITE_SITE_URL)
   siteUrl: getEnv("VITE_SITE_URL", "https://dws.co").replace(/\/$/, ""),
@@ -77,6 +77,7 @@ export const business = {
       primary: "website design and SEO agency in Jaipur",
       secondary: [
         "web development company Jaipur",
+        "mobile app development company Jaipur",
         "digital marketing agency Jaipur",
         "Jaipur SEO consultant",
       ],
@@ -97,12 +98,13 @@ export const business = {
         "technical SEO services India",
       ],
     },
-    digitalMarketing: {
-      primary: "digital marketing agency in Jaipur",
+    mobileApp: {
+      primary: "mobile app development in Jaipur",
       secondary: [
-        "performance marketing Jaipur",
-        "Google Ads Meta Ads management Jaipur",
-        "PPC agency Jaipur",
+        "mobile app development company Jaipur",
+        "iOS Android app development Jaipur",
+        "Flutter React Native developers India",
+        "cross-platform app development",
       ],
     },
     saas: {
@@ -118,8 +120,8 @@ export const business = {
   // Service offerings
   services: [
     "Website Design & Development",
+    "Mobile App Development",
     "Search Engine Optimisation",
-    "Digital Marketing & Paid Media",
     "SaaS MVP Development",
     "Conversion Rate Optimisation",
     "Brand & Content Systems",
@@ -128,9 +130,9 @@ export const business = {
   // Pricing guide ranges
   pricingRanges: {
     websiteDesign: "From ₹24,999",
-    digitalMarketing: "From ₹15,999 / mo",
+    mobileAppDevelopment: "From ₹35,999",
     seo: "From ₹12,999 / mo",
-    saasMvp: "From ₹99,999",
+    saasMvp: "From ₹49,999",
   },
 } as const;
 
@@ -141,7 +143,7 @@ export const publicRoutes = [
   "/case-studies",
   "/pricing",
   "/pricing/website-design",
-  "/pricing/digital-marketing",
+  "/pricing/mobile-app-development",
   "/pricing/seo",
   "/pricing/saas-mvp",
   "/blog",

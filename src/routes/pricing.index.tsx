@@ -18,9 +18,9 @@ import {
 
 export const Route = createFileRoute("/pricing/")({
   head: () => {
-    const title = formatMetaTitle("Web Design & Marketing Pricing");
+    const title = formatMetaTitle("Web Design, Mobile App & SEO Pricing");
     const description = formatMetaDescription(
-      "Transparent pricing packages for website design, SEO, and paid digital marketing from DWS Web Services in Jaipur. Fixed scope, clear deliverables, no lock-in."
+      "Transparent pricing packages for website design, mobile app development, SEO, and SaaS MVPs from DWS Web Services in Jaipur. Fixed scope, clear deliverables, no lock-in."
     );
     const canonical = getCanonicalUrl("/pricing");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;
@@ -112,7 +112,7 @@ function PricingPage() {
 
                 {/* Exactly one H1 per page containing primary keywords */}
                 <h1 className="display-4 mb-4 text-white fw-bold">
-                  Transparent Web Design &amp; Marketing Packages
+                  Transparent Web Design, Mobile App &amp; SEO Packages
                 </h1>
 
                 <Reveal delay={0.1}>

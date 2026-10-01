@@ -84,8 +84,8 @@ function PrivacyPolicyPage() {
                       {business.name} (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to
                       protecting your privacy. This Privacy Policy outlines our practices regarding
                       the collection, use, and disclosure of personal data when you visit our
-                      website ({business.siteUrl}) or engage with our web development, SEO, and
-                      digital marketing services.
+                      website ({business.siteUrl}) or engage with our web design, mobile app
+                      development, SEO, and software services.
                     </p>
                   </Reveal>
 
