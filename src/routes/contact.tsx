@@ -8,6 +8,7 @@ import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
 import { Reveal } from "@/components/dws/Reveal";
 import { useDwsBody } from "@/components/dws/useDwsBody";
+import { CustomSelect } from "@/components/dws/CustomSelect";
 import { submitEnquiry } from "@/lib/contact.functions";
 import { tiers } from "@/data/site";
 import { business } from "@/data/business";
@@ -331,19 +332,14 @@ function ContactPage() {
                             <label className="dws-label" htmlFor="budget">
                               Target Budget Range
                             </label>
-                            <select
+                            <CustomSelect
                               id="budget"
-                              className={`dws-input${form.budget ? "" : " is-placeholder"}`}
+                              name="budget"
                               value={form.budget}
-                              onChange={update("budget")}
-                            >
-                              <option value="">Select a budget range</option>
-                              {budgets.map((b) => (
-                                <option key={b} value={b}>
-                                  {b}
-                                </option>
-                              ))}
-                            </select>
+                              onChange={(val) => setForm((f) => ({ ...f, budget: val }))}
+                              options={budgets}
+                              placeholder="Select a budget range"
+                            />
                           </div>
                           <div className="col-12">
                             <label className="dws-label" htmlFor="message">

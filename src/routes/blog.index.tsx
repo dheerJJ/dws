@@ -118,18 +118,18 @@ function BlogIndex() {
               </p>
             </Reveal>
 
-            <div className="row g-4">
+            <div className="row g-4 align-items-stretch">
               {posts.map((post, i) => (
-                <div className="col-md-6" key={post.slug}>
-                  <Reveal delay={0.05 * i}>
-                    <article className="dws-post-card h-100">
+                <div className="col-12 col-md-6 d-flex flex-column" key={post.slug}>
+                  <Reveal delay={0.05 * i} className="h-100 d-flex flex-column flex-grow-1">
+                    <article className="dws-post-card h-100 d-flex flex-column flex-grow-1">
                       <div className="d-flex justify-content-between align-items-center mb-3">
                         <span className="dws-mono small">{post.category}</span>
                         <span className="dws-muted small">{post.readingTime}</span>
                       </div>
                       <h2 className="h4 mb-3">{post.title}</h2>
-                      <p className="dws-muted mb-4">{post.excerpt}</p>
-                      <div className="d-flex flex-wrap align-items-center gap-3">
+                      <p className="dws-muted mb-4 flex-grow-1">{post.excerpt}</p>
+                      <div className="d-flex flex-wrap align-items-center gap-3 mt-auto">
                         <Link
                           to="/blog/$slug"
                           params={{ slug: post.slug }}
