@@ -131,7 +131,7 @@ export const business = {
   pricingRanges: {
     websiteDesign: "From ₹24,999",
     mobileAppDevelopment: "From ₹35,999",
-    seo: "From ₹12,999 / mo",
+    seo: "From ₹18,999 / mo",
     saasMvp: "From ₹49,999",
   },
 } as const;

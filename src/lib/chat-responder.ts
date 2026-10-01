@@ -59,16 +59,16 @@ Read our breakdown on [SaaS MVP Development](/pricing/saas-mvp-development) or [
 
 All our websites are engineered with sub-second page loads, clean design systems, and conversion-focused copywriting—no bloated templates.
 
-- **Starter Architecture:** ₹24,999 (Fixed fee)
-  - 1–5 bespoke pages, responsive layout, SEO metadata, contact form, analytics.
+- **Launch Package:** ₹24,999 (Fixed fee)
+  - 1 conversion-focused landing page, custom design, WhatsApp & enquiry forms, SEO foundations, analytics.
   - Timeline: 7–10 business days.
-- **Growth Architecture:** ₹54,999 (Fixed fee)
-  - 6–12 custom pages, CMS or blog integration, conversion funnel, CRM integration, Core Web Vitals optimization.
-  - Timeline: 2–3 weeks.
-- **Custom Web Platform:** Starting at ₹95,000+
-  - Bespoke portals, interactive web apps, complex API integrations.
+- **Business Package:** ₹64,999 (Fixed fee)
+  - Up to 8 custom pages, brand design system, blog/resources section, conversion tracking dashboard, 30 days post-launch support.
+  - Timeline: 3–4 weeks.
+- **Custom Architecture:** Starting at ₹1,49,999+
+  - Unlimited templates, booking/client portal integrations, programmatic SEO architecture, Core Web Vitals audit.
 
-Explore full package details on our [Website Architecture Pricing](/pricing/website-design-architecture) page or [Get a Fixed Quote](/contact).`;
+Explore full package details on our [Website Design Pricing](/pricing/website-design) page or [Get a Fixed Quote](/contact).`;
   }
 
   // 4. SEO / Search & Revenue Infrastructure
@@ -84,7 +84,7 @@ We don't sell vanity traffic reports. Our SEO programmes focus on local ranking 
 - **National Domination:** ₹64,999 / month
   - Enterprise technical SEO, Core Web Vitals audit, content cluster expansion, competitive search moat.
 
-Read our practical guide [The Local SEO Checklist for Indian Businesses](/blog/local-seo-checklist-indian-businesses) or check out our [SEO Pricing](/pricing/search-revenue-infrastructure).`;
+Read our practical guide [The Local SEO Checklist for Indian Businesses](/blog/local-seo-checklist-indian-businesses) or check out our [SEO Pricing](/pricing/seo).`;
   }
 
   // 5. General Pricing / Packages
@@ -93,14 +93,14 @@ Read our practical guide [The Local SEO Checklist for Indian Businesses](/blog/l
 
 We believe in upfront, transparent pricing with no hidden costs:
 
-1. **Website Design & Architecture:** Starts at **₹24,999** (Starter) up to **₹54,999** (Growth)
-2. **Mobile App Development:** Starts at **₹35,999** (Native / Cross-platform MVP)
-3. **SaaS MVP Engineering:** Starts at **₹49,999** (Full production build in 4–6 weeks)
+1. **Website Design & Architecture:** Starts at **₹24,999** (Launch) up to **₹64,999** (Business) and **₹1,49,999+** (Custom)
+2. **Mobile App Development:** Starts at **₹35,999** (Native / Cross-platform MVP) up to **₹74,999** (Growth App)
+3. **SaaS MVP Engineering:** Starts at **₹49,999** (Production MVP build in 4–6 weeks)
 4. **Search & Technical SEO:** Starts at **₹18,999 / month** (Local foundations)
-5. **Ongoing Studio Retainers:**
-   - Strategic Advisory: ₹18,999 / month
-   - Growth Partner: ₹34,999 / month
-   - Full Studio Retainer: ₹64,999 / month
+5. **Full-Service Growth Retainers:**
+   - Starter: ₹18,999 / month
+   - Growth: ₹34,999 / month
+   - Scale: ₹64,999 / month
 
 Check out our complete breakdown on the [Pricing Overview](/pricing) page or [Schedule a Free Strategy Call](/contact).`;
   }
