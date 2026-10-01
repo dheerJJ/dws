@@ -6,7 +6,6 @@ import { Services } from "@/components/dws/Services";
 import { Process } from "@/components/dws/Process";
 import { Portfolio } from "@/components/dws/Portfolio";
 import { Contact, Footer } from "@/components/dws/Contact";
-import { Preloader } from "@/components/dws/Preloader";
 import { useDwsBody } from "@/components/dws/useDwsBody";
 import { business } from "@/data/business";
 import {
@@ -58,7 +57,6 @@ function Index() {
 
   return (
     <>
-      <Preloader />
       <Navbar />
       <main>
         <Hero />

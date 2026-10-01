@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import dwsCss from "../dws.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { BootSkeleton, BOOT_CRITICAL_CSS } from "../components/dws/BootSkeleton";
+import { Preloader } from "../components/dws/Preloader";
 
 const ChatWidget = lazy(() => import("../components/dws/ChatWidget"));
 import { business } from "../data/business";
@@ -181,6 +182,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <Preloader />
       <Outlet />
       <Suspense fallback={null}>
         <ChatWidget />
