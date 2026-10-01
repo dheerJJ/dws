@@ -199,10 +199,10 @@ function AboutPage() {
         {/* Studio Facts & NAP */}
         <section className="dws-section pt-0">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-12 col-md-6 col-lg-4">
-                <Reveal>
-                  <div className="dws-step h-100">
+            <div className="row g-4 align-items-stretch">
+              <div className="col-12 col-md-6 col-lg-4 d-flex flex-column">
+                <Reveal className="h-100 d-flex flex-column flex-grow-1">
+                  <div className="dws-step h-100 flex-grow-1">
                     <p className="dws-case-label dws-mono mb-2">Philosophy</p>
                     <h2 className="h5 mb-3 text-white">Engineering-First Growth</h2>
                     <p className="dws-muted small mb-0">
@@ -213,9 +213,9 @@ function AboutPage() {
                 </Reveal>
               </div>
 
-              <div className="col-12 col-md-6 col-lg-4">
-                <Reveal delay={0.08}>
-                  <div className="dws-step h-100">
+              <div className="col-12 col-md-6 col-lg-4 d-flex flex-column">
+                <Reveal delay={0.08} className="h-100 d-flex flex-column flex-grow-1">
+                  <div className="dws-step h-100 flex-grow-1">
                     <p className="dws-case-label dws-mono mb-2">Location &amp; Reach</p>
                     <h2 className="h5 mb-3 text-white">Rooted in Jaipur, Serving India</h2>
                     <p className="dws-muted small mb-0">
@@ -226,9 +226,9 @@ function AboutPage() {
                 </Reveal>
               </div>
 
-              <div className="col-12 col-md-6 col-lg-4">
-                <Reveal delay={0.16}>
-                  <div className="dws-step h-100">
+              <div className="col-12 col-md-6 col-lg-4 d-flex flex-column">
+                <Reveal delay={0.16} className="h-100 d-flex flex-column flex-grow-1">
+                  <div className="dws-step h-100 flex-grow-1">
                     <p className="dws-case-label dws-mono mb-2">Direct Contact</p>
                     <h2 className="h5 mb-3 text-white">Studio Coordinates</h2>
                     <ul className="list-unstyled small dws-muted mb-0">
@@ -265,11 +265,11 @@ function AboutPage() {
               <p className="dws-eyebrow mb-2">Timeline</p>
               <h2 className="h3 mb-4 text-white">Studio Trajectory</h2>
             </Reveal>
-            <div className="row g-4">
+            <div className="row g-4 align-items-stretch">
               {milestones.map((m, i) => (
-                <div className="col-12 col-md-6 col-lg-3" key={m.year}>
-                  <Reveal delay={i * 0.08}>
-                    <div className="dws-step h-100">
+                <div className="col-12 col-md-6 col-lg-3 d-flex flex-column" key={m.year}>
+                  <Reveal delay={i * 0.08} className="h-100 d-flex flex-column flex-grow-1">
+                    <div className="dws-step h-100 flex-grow-1">
                       <div className="dws-step-number opacity-50">{m.year}</div>
                       <p className="dws-muted mb-0 small">{m.text}</p>
                     </div>
@@ -293,13 +293,13 @@ function AboutPage() {
                 </Reveal>
               </div>
             </div>
-            <div className="row g-4">
+            <div className="row g-4 align-items-stretch">
               {team.map((member, i) => (
-                <div className="col-12 col-sm-6 col-lg-3" key={member.name}>
-                  <Reveal delay={i * 0.08}>
-                    <article className="dws-team h-100">
+                <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column" key={member.name}>
+                  <Reveal delay={i * 0.08} className="h-100 d-flex flex-column flex-grow-1">
+                    <article className="dws-team h-100 d-flex flex-column flex-grow-1">
                       {member.name === "Dheerajj Kumawat" ? (
-                        <div className="dws-team-avatar overflow-hidden p-0">
+                        <div className="dws-team-avatar overflow-hidden p-0 flex-shrink-0">
                           <img
                             src="/dheerajj-kumawat.jpg"
                             alt="Dheerajj Kumawat"
@@ -309,11 +309,11 @@ function AboutPage() {
                           />
                         </div>
                       ) : (
-                        <div className="dws-team-avatar">{member.initials}</div>
+                        <div className="dws-team-avatar flex-shrink-0">{member.initials}</div>
                       )}
                       <h3 className="h6 mb-1 text-white">{member.name}</h3>
                       <p className="dws-mono small mb-3 text-muted">{member.role}</p>
-                      <p className="dws-muted small mb-0">{member.bio}</p>
+                      <p className="dws-muted small mb-0 flex-grow-1">{member.bio}</p>
                     </article>
                   </Reveal>
                 </div>

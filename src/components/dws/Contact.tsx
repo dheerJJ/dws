@@ -255,9 +255,6 @@ export function Footer() {
               <div className="dws-footer-legal-links">
                 <Link to="/privacy-policy">Privacy</Link>
                 <Link to="/terms-and-conditions">Terms</Link>
-                <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
-                  Sitemap
-                </a>
                 <Link to="/contact">Support</Link>
               </div>
 
