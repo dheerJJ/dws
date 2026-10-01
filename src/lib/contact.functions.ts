@@ -16,7 +16,26 @@ const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
 const MAX_SUBMISSIONS_PER_WINDOW = 3;
 
 export const submitEnquiry = createServerFn({ method: "POST" })
-  .validator((data: unknown) => schema.parse(data))
+  .validator((data: unknown) => {
+    const result = schema.safeParse(data);
+    if (!result.success) {
+      const issue = result.error.issues[0];
+      if (issue) {
+        if (issue.path.includes("message")) {
+          throw new Error("Message must be between 10 and 4,000 characters (minimum and maximum characters allowed).");
+        }
+        if (issue.path.includes("name")) {
+          throw new Error("Full name must be between 2 and 120 characters.");
+        }
+        if (issue.path.includes("email")) {
+          throw new Error("Please enter a valid email address.");
+        }
+        throw new Error(issue.message);
+      }
+      throw new Error("Please check your form details and try again.");
+    }
+    return result.data;
+  })
   .handler(async ({ data }) => {
     // 1. Honeypot check: silently accept and discard bot submissions
     if (data.website_hp && data.website_hp.trim().length > 0) {

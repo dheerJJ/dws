@@ -100,6 +100,33 @@ const budgets = [
   "₹1,50,000+",
 ];
 
+function formatErrorMessage(err: unknown): string {
+  if (!err) return "Something went wrong. Please try again.";
+  const raw = err instanceof Error ? err.message : String(err);
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed) && parsed.length > 0) {
+      const issue = parsed[0];
+      if (issue.path?.includes("message")) {
+        return "Message must be between 10 and 4,000 characters (minimum and maximum characters allowed).";
+      }
+      if (issue.path?.includes("name")) {
+        return "Full name must be between 2 and 120 characters.";
+      }
+      if (issue.path?.includes("email")) {
+        return "Please enter a valid email address.";
+      }
+      if (issue.message) return issue.message;
+    }
+  } catch {
+    // String is not JSON, check for raw Zod substrings
+    if (raw.includes("too_small") && raw.includes("message")) {
+      return "Message must be between 10 and 4,000 characters (minimum and maximum characters allowed).";
+    }
+  }
+  return raw;
+}
+
 function ContactPage() {
   useDwsBody();
   const { plan } = Route.useSearch();
@@ -147,7 +174,7 @@ function ContactPage() {
       setStatus("sent");
     } catch (err) {
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setError(formatErrorMessage(err));
     }
   }
 
@@ -340,9 +367,14 @@ function ContactPage() {
                             />
                           </div>
                           <div className="col-12">
-                            <label className="dws-label" htmlFor="message">
-                              Project Details &amp; Commercial Goals *
-                            </label>
+                            <div className="d-flex justify-content-between align-items-baseline mb-1">
+                              <label className="dws-label mb-0" htmlFor="message">
+                                Project Details &amp; Commercial Goals *
+                              </label>
+                              <span className="dws-muted small">
+                                Min 10 &ndash; Max 4,000 characters
+                              </span>
+                            </div>
                             <textarea
                               id="message"
                               className="dws-input"
@@ -351,8 +383,19 @@ function ContactPage() {
                               onChange={update("message")}
                               required
                               minLength={10}
+                              maxLength={4000}
                               placeholder="Describe your current business, website requirements, or target timeline..."
                             />
+                            <div className="d-flex justify-content-between align-items-center mt-1">
+                              <span className="dws-muted small" style={{ fontSize: "0.8rem" }}>
+                                Minimum 10 and maximum 4,000 characters allowed.
+                              </span>
+                              {form.message.length > 0 && (
+                                <span className="dws-mono small text-muted" style={{ fontSize: "0.75rem" }}>
+                                  {form.message.length} / 4,000
+                                </span>
+                              )}
+                            </div>
                           </div>
                           {error && (
                             <div className="col-12">
