@@ -110,7 +110,7 @@ p {
 
 /* ---------- Buttons ---------- */
 .dws-btn {
-  border-radius: 999px;
+  border-radius: 6px;
   font-size: 0.95rem;
   font-weight: 500;
   padding: 0.7rem 1.6rem;
@@ -129,6 +129,7 @@ p {
 }
 
 .dws-btn-sm-tight {
+  border-radius: 6px;
   padding: 0.55rem 1.25rem;
   font-size: 0.85rem;
   line-height: 1.3;
@@ -547,7 +548,7 @@ p {
   align-items: center;
   gap: 0.35rem;
   padding: 0.4rem 0.85rem;
-  border-radius: 999px;
+  border-radius: 6px;
   border: 1px solid var(--dws-border);
   background: rgba(255, 255, 255, 0.02);
   color: var(--dws-muted);
@@ -1078,7 +1079,7 @@ select.dws-input.is-placeholder {
   background: transparent;
   border: 1px solid #222;
   color: var(--dws-muted, #8b8b8b);
-  border-radius: 999px;
+  border-radius: 6px;
   padding: 0.35rem 1rem;
   font-size: 0.85rem;
   transition: all 0.25s ease;
@@ -1108,7 +1109,7 @@ select.dws-input.is-placeholder {
   margin-bottom: 1rem;
 }
 .dws-badge {
-  border-radius: 999px;
+  border-radius: 4px;
   padding: 0.2rem 0.7rem;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
@@ -1838,7 +1839,7 @@ select.dws-input.is-placeholder {
 }
 .dws-chip {
   border: 1px solid #333;
-  border-radius: 999px;
+  border-radius: 6px;
   padding: 0.35rem 0.85rem;
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.88);

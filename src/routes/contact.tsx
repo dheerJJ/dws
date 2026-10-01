@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { z } from "zod";
-import { Calendar, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Calendar, Clock, Mail, MapPin, Phone } from "lucide-react";
 
 import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
@@ -260,23 +260,35 @@ function ContactPage() {
                 {/* Online Strategy Call Booking Section */}
                 <Reveal delay={0.08}>
                   <div className="dws-step p-4 mb-4">
-                    <div className="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
-                      <div>
-                        <div className="d-flex align-items-center gap-2 mb-1">
+                    <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+                      <div className="d-flex align-items-start gap-3">
+                        <div
+                          className="d-flex align-items-center justify-content-center flex-shrink-0 mt-1"
+                          style={{
+                            width: "36px",
+                            height: "36px",
+                            borderRadius: "6px",
+                            backgroundColor: "rgba(255, 255, 255, 0.05)",
+                            border: "1px solid rgba(255, 255, 255, 0.12)",
+                          }}
+                        >
                           <Calendar size={18} className="text-white" aria-hidden="true" />
-                          <h2 className="h5 mb-0 text-white">Direct 30-Minute Strategy Call</h2>
                         </div>
-                        <p className="dws-muted small mb-0">
-                          Prefer speaking directly? Pick an available slot on our calendar right now.
-                        </p>
+                        <div>
+                          <h2 className="h5 mb-1 text-white">Direct 30-Minute Strategy Call</h2>
+                          <p className="dws-muted small mb-0">
+                            Prefer speaking directly? Pick an available slot on our calendar right now.
+                          </p>
+                        </div>
                       </div>
                       <a
                         href={business.bookingUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="dws-btn dws-btn-solid dws-btn-sm-tight text-nowrap"
+                        className="dws-btn dws-btn-solid dws-btn-sm-tight text-nowrap d-inline-flex align-items-center gap-2 flex-shrink-0"
                       >
-                        Schedule Online Slot ↗
+                        <span>Schedule Online Slot</span>
+                        <ArrowUpRight size={15} aria-hidden="true" />
                       </a>
                     </div>
                   </div>

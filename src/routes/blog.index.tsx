@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 
 import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
@@ -142,9 +143,10 @@ function BlogIndex() {
                             href={post.externalUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="dws-muted small"
+                            className="dws-muted small d-inline-flex align-items-center gap-1"
                           >
-                            Original ↗
+                            <span>Original</span>
+                            <ArrowUpRight size={13} aria-hidden="true" />
                           </a>
                         )}
                       </div>

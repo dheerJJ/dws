@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SmartImage } from "./SmartImage";
 import { projects } from "@/data/site";
@@ -34,12 +35,13 @@ export function Portfolio() {
                   </div>
                   <p className="dws-muted small mb-4">{item.description}</p>
                   <a
-                    className="dws-work-link mt-auto"
+                    className="dws-work-link mt-auto d-inline-flex align-items-center gap-1"
                     href={item.url}
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    View live site <span aria-hidden="true">↗</span>
+                    <span>View live site</span>
+                    <ArrowUpRight size={14} aria-hidden="true" />
                   </a>
                 </div>
               </article>

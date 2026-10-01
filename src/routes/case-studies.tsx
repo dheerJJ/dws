@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 
 import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
@@ -211,9 +212,10 @@ function CaseStudiesPage() {
                           href={study.url}
                           target="_blank"
                           rel="noreferrer noopener"
-                          className="dws-btn dws-btn-outline dws-btn-sm-tight"
+                          className="dws-btn dws-btn-outline dws-btn-sm-tight d-inline-flex align-items-center gap-2"
                         >
-                          Visit Live Project ↗
+                          <span>Visit Live Project</span>
+                          <ArrowUpRight size={14} aria-hidden="true" />
                         </a>
                       </div>
                     </div>

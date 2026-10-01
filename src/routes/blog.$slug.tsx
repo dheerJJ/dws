@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 
 import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
@@ -213,9 +214,10 @@ function PostPage() {
                       href={post.externalUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="dws-post-link"
+                      className="dws-post-link d-inline-flex align-items-center gap-1"
                     >
-                      Read the original ↗
+                      <span>Read the original</span>
+                      <ArrowUpRight size={14} aria-hidden="true" />
                     </a>
                   </p>
                 )}
