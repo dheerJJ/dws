@@ -120,13 +120,28 @@ p {
     color 0.25s ease,
     border-color 0.25s ease,
     transform 0.25s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   text-decoration: none;
+  line-height: 1.35;
+}
+
+.dws-btn-sm-tight {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .dws-btn-solid {
   background-color: var(--dws-white);
   color: var(--dws-black);
+  text-align: center;
 }
 
 .dws-btn-solid:hover {
@@ -139,6 +154,7 @@ p {
   background-color: transparent;
   color: var(--dws-white);
   border-color: #3a3a3a;
+  text-align: center;
 }
 
 .dws-btn-outline:hover {
@@ -193,8 +209,21 @@ p {
 
 /* ---------- Section chrome ---------- */
 .dws-section {
-  padding: 6.5rem 0;
+  padding: 5.5rem 0;
   border-top: 1px solid var(--dws-border);
+}
+
+/* Fix top padding across all pages where pt-0 was collapsing content onto the border-top divider */
+.dws-section.pt-0 {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem;
+}
+
+/* Eliminate duplicate border-top on child cards directly inside a section */
+.dws-section .dws-case,
+.dws-section .dws-service-block {
+  border-top: none;
+  padding-top: 0;
 }
 
 .dws-eyebrow {
@@ -264,9 +293,9 @@ p {
   transform: translateX(6px) rotate(-45deg);
 }
 
-/* ---------- Process ---------- */
+/* ---------- Process / Step Cards ---------- */
 .dws-step {
-  padding: 2rem 0 0;
+  padding: 2.25rem 0 1.5rem;
   border-top: 1px solid var(--dws-border);
   height: 100%;
 }
@@ -1099,6 +1128,10 @@ select.dws-input.is-placeholder {
   .dws-section {
     padding: 4rem 0;
   }
+  .dws-section.pt-0 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem;
+  }
   .dws-service:hover,
   .dws-work:hover,
   .dws-post-card:hover {
@@ -1113,7 +1146,8 @@ select.dws-input.is-placeholder {
     padding: 1.35rem 1.15rem;
   }
   .dws-step {
-    padding-top: 1.4rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.25rem;
   }
   .dws-tier-price {
     font-size: 1.9rem;
@@ -1124,17 +1158,29 @@ select.dws-input.is-placeholder {
   .dws-body {
     letter-spacing: -0.005em;
   }
+  .dws-section {
+    padding: 3rem 0;
+  }
+  .dws-section.pt-0 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem;
+  }
   .dws-btn {
-    padding: 0.8rem 1.35rem;
+    padding: 0.75rem 1.35rem;
     font-size: 0.9rem;
     min-height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
   .dws-btn-sm-tight {
-    padding: 0.6rem 1.05rem;
+    padding: 0.55rem 1.05rem;
     font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   .dws-badge {
     font-size: 0.7rem;

@@ -438,7 +438,7 @@ export const servicePricing: ServicePricing[] = [
   {
     slug: "saas-mvp",
     name: "SaaS MVP Development India",
-    navLabel: "SaaS MVP Development",
+    navLabel: "SaaS MVP",
     eyebrow: "SaaS Product Studio in India",
     primaryKeyword: "SaaS MVP development India",
     h1: "SaaS MVP Development India",

@@ -186,7 +186,7 @@ function PricingPage() {
                       <Link
                         to="/pricing/$service"
                         params={{ service: s.slug }}
-                        className="dws-btn dws-btn-outline dws-btn-sm-tight mt-auto"
+                        className="dws-btn dws-btn-outline dws-btn-sm-tight mt-auto w-100 text-center"
                       >
                         View {s.navLabel} Rates
                       </Link>
