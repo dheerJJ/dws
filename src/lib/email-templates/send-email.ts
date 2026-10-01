@@ -62,8 +62,8 @@ export async function sendTemplateEmail(
 
   // 1. If Resend API key is provided, send directly via Resend
   if (resendApiKey) {
+    const fromEmail = process.env["RESEND_FROM_EMAIL"] || "DwS Web Services <onboarding@resend.dev>";
     try {
-      const fromEmail = process.env["RESEND_FROM_EMAIL"] || "DwS Web Services <onboarding@resend.dev>";
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
@@ -82,35 +82,20 @@ export async function sendTemplateEmail(
 
       if (!res.ok) {
         const errBody = await res.text();
-        console.warn("[Email] Resend API notice:", res.status, errBody);
-
-        // If Resend is in testing sandbox (requires verified domain for external recipients),
-        // deliver to the account email as a reliable fallback.
-        if (res.status === 403 && errBody.includes("dheerajjkumawat@gmail.com") && recipient !== "dheerajjkumawat@gmail.com") {
-          console.log("[Email] Resend testing mode active — delivering notification to account email (dheerajjkumawat@gmail.com)...");
-          await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${resendApiKey}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              from: fromEmail,
-              to: ["dheerajjkumawat@gmail.com"],
-              subject: `[DwS Lead] ${subject}`,
-              html,
-              text,
-              ...(options.replyTo ? { reply_to: options.replyTo } : {}),
-            }),
-          });
-          return { sent: true };
-        }
-      } else {
-        console.log(`[Email] Successfully sent ${templateName} to ${recipient} via Resend`);
-        return { sent: true };
+        console.error(
+          `[Email] Resend API error for "${templateName}" to ${recipient}:`,
+          res.status,
+          errBody,
+        );
+        throw new Error(`Resend API returned ${res.status}: ${errBody}`);
       }
+
+      console.log(`[Email] Successfully sent "${templateName}" to ${recipient} via Resend`);
+      return { sent: true };
     } catch (err) {
-      console.error("[Email] Failed to send via Resend:", err);
+      console.error(`[Email] Failed to send "${templateName}" to ${recipient} via Resend:`, err);
+      // Don't swallow — let the calling code's error boundary handle it
+      throw err;
     }
   }
 
