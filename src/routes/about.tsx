@@ -153,7 +153,7 @@ function AboutPage() {
                     DWS Web Services turns complex business requirements into fast websites, measurable
                     organic SEO, and compounding revenue engines.
                   </p>
-                  <p className="dws-muted mb-0 lead">
+                  <p className="mb-0 lead" style={{ color: "#d6d6d6" }}>
                     Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates deliberately lean:
                     senior hands on every keyboard, zero junior hand-offs, and reporting judged strictly on
                     commercial enquiries rather than superficial vanity impressions.
@@ -270,7 +270,7 @@ function AboutPage() {
                 <div className="col-12 col-md-6 col-lg-3" key={m.year}>
                   <Reveal delay={i * 0.08}>
                     <div className="dws-step h-100">
-                      <div className="dws-step-number opacity-25">{m.year}</div>
+                      <div className="dws-step-number opacity-50">{m.year}</div>
                       <p className="dws-muted mb-0 small">{m.text}</p>
                     </div>
                   </Reveal>

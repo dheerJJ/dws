@@ -4,7 +4,8 @@
   --dws-black: #000000;
   --dws-white: #ffffff;
   --dws-border: #222222;
-  --dws-muted: #8b8b8b;
+  --dws-muted: #b3b3b3;
+  --dws-muted-light: #d6d6d6;
   --dws-hover: #0d0d0d;
 }
 
@@ -35,6 +36,26 @@ body.dws-body {
 
 .dws-muted {
   color: var(--dws-muted);
+}
+
+/* Ensure Bootstrap and component .text-muted is crisp and never blends into black background */
+.text-muted,
+.dws-body .text-muted {
+  color: #b3b3b3 !important;
+}
+
+/* Breadcrumb navigation links */
+nav[aria-label="Breadcrumb"] {
+  color: #b3b3b3;
+}
+nav[aria-label="Breadcrumb"] a,
+.dws-body nav[aria-label="Breadcrumb"] a {
+  color: #b3b3b3 !important;
+  transition: color 0.2s ease;
+}
+nav[aria-label="Breadcrumb"] a:hover,
+.dws-body nav[aria-label="Breadcrumb"] a:hover {
+  color: #ffffff !important;
 }
 
 .dws-mono {
@@ -167,6 +188,7 @@ p {
   max-width: 640px;
   font-size: 1.075rem;
   line-height: 1.7;
+  color: #d6d6d6;
 }
 
 /* ---------- Section chrome ---------- */
@@ -179,7 +201,7 @@ p {
   font-size: 0.78rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--dws-muted);
+  color: #bfbfbf;
 }
 
 .dws-section-title {
@@ -211,7 +233,7 @@ p {
 }
 
 .dws-service-index {
-  color: var(--dws-muted);
+  color: #a8a8a8;
   font-size: 0.9rem;
   min-width: 3.5rem;
 }
@@ -224,13 +246,13 @@ p {
 }
 
 .dws-service-meta {
-  color: var(--dws-muted);
+  color: #b3b3b3;
   font-size: 0.9rem;
 }
 
 .dws-service-arrow {
   margin-left: auto;
-  color: var(--dws-muted);
+  color: #b3b3b3;
   transition:
     transform 0.35s ease,
     color 0.35s ease;
@@ -255,7 +277,7 @@ p {
   line-height: 1;
   letter-spacing: -0.05em;
   color: var(--dws-white);
-  opacity: 0.25;
+  opacity: 0.5;
 }
 
 .dws-step h3 {
@@ -815,13 +837,13 @@ p {
   padding-left: 1.4rem;
   margin-bottom: 0.65rem;
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.85);
 }
 .dws-tier-list li::before {
   content: "→";
   position: absolute;
   left: 0;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ---------- Contact form ---------- */
@@ -836,7 +858,7 @@ p {
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.82);
   margin-bottom: 0.5rem;
 }
 .dws-input {
@@ -870,7 +892,7 @@ select.dws-input:not(:focus):not([value=""]) {
   border-color: #222;
 }
 select.dws-input.is-placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.7);
 }
 .dws-input option {
   background: #0a0a0a;
@@ -1509,7 +1531,7 @@ select.dws-input.is-placeholder {
 .dws-chat-sub {
   margin: 0;
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.75);
 }
 .dws-chat-body {
   flex: 1;
@@ -1528,7 +1550,7 @@ select.dws-input.is-placeholder {
 .dws-chat-empty-copy {
   margin: 0 0 14px;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.6;
 }
 .dws-chat-suggestions {
@@ -1539,7 +1561,7 @@ select.dws-input.is-placeholder {
 .dws-chat-suggestion {
   border: 1px solid #262626;
   background: #0b0b0b;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   border-radius: 999px;
   padding: 8px 14px;
   font-size: 0.76rem;
@@ -1572,7 +1594,7 @@ select.dws-input.is-placeholder {
 .dws-chat-markdown {
   font-size: 0.87rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 100%;
   overflow-wrap: anywhere;
 }
@@ -1609,7 +1631,7 @@ select.dws-input.is-placeholder {
 .dws-chat-thinking {
   margin: 0;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.75);
   animation: dwsChatPulse 1.4s ease-in-out infinite;
 }
 @keyframes dwsChatPulse {
@@ -1683,7 +1705,7 @@ select.dws-input.is-placeholder {
   gap: 1rem 1.25rem;
 }
 .dws-case-index {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
   letter-spacing: 0.08em;
 }
@@ -1694,11 +1716,11 @@ select.dws-input.is-placeholder {
   margin: 0;
 }
 .dws-chip {
-  border: 1px solid #222;
+  border: 1px solid #333;
   border-radius: 999px;
   padding: 0.35rem 0.85rem;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.88);
 }
 .dws-case-panel {
   border: 1px solid #1c1c1c;
@@ -1714,7 +1736,7 @@ select.dws-input.is-placeholder {
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.78);
 }
 .dws-case-after .dws-case-label {
   color: #fff;
@@ -1769,13 +1791,13 @@ select.dws-input.is-placeholder {
   padding-left: 1.25rem;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.88);
 }
 .dws-case-list li::before {
   content: "-";
   position: absolute;
   left: 0;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
 }
 .dws-case-list-check li::before {
   content: "✓";
