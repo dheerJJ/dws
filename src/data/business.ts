@@ -36,10 +36,10 @@ export const business = {
   country: "India",
   countryCode: "IN",
   address: {
-    streetAddress: "Malviya Nagar",
+    streetAddress: "Gokulpura, Kalwar Road",
     addressLocality: "Jaipur",
     addressRegion: "Rajasthan",
-    postalCode: "302017",
+    postalCode: "302012",
     addressCountry: "IN",
   },
   areaServed: ["Jaipur", "Rajasthan", "India", "Worldwide"],
