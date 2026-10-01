@@ -1,9 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import {
-  Globe, ShoppingCart, Code, Building2, Users, GraduationCap,
-  Smartphone, Palette, Brush, TrendingUp, Search, Server,
-  AtSign, Wrench, Rocket, TabletSmartphone, Apple,
+  Globe,
+  ShoppingCart,
+  Code,
+  Building2,
+  Users,
+  GraduationCap,
+  Smartphone,
+  Palette,
+  Brush,
+  TrendingUp,
+  Search,
+  Server,
+  AtSign,
+  Wrench,
+  Rocket,
+  TabletSmartphone,
+  Apple,
 } from "lucide-react";
 
 import { Navbar } from "@/components/dws/Navbar";
@@ -11,7 +25,12 @@ import { Footer } from "@/components/dws/Contact";
 import { Reveal } from "@/components/dws/Reveal";
 import { useDwsBody } from "@/components/dws/useDwsBody";
 import { ShinyText } from "@/components/dws/reactbits/ShinyText";
-import { getDisplayServices, serviceCategories, type ServiceCategory, type ServiceEntry } from "@/data/services";
+import {
+  getDisplayServices,
+  serviceCategories,
+  type ServiceCategory,
+  type ServiceEntry,
+} from "@/data/services";
 import { business } from "@/data/business";
 import {
   formatMetaDescription,
@@ -25,7 +44,7 @@ export const Route = createFileRoute("/services")({
   head: () => {
     const title = formatMetaTitle("15+ IT & Digital Services in Jaipur");
     const description = formatMetaDescription(
-      "DWS Web Services offers 15+ IT and digital services in Jaipur: website design, mobile apps, SEO, e-commerce, ERP, CRM, UI/UX design, digital marketing, and cloud support."
+      "DWS Web Services offers 15+ IT and digital services in Jaipur: website design, mobile apps, SEO, e-commerce, ERP, CRM, UI/UX design, digital marketing, and cloud support.",
     );
     const canonical = getCanonicalUrl("/services");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;
@@ -65,7 +84,7 @@ export const Route = createFileRoute("/services")({
             getBreadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
-            ])
+            ]),
           ),
         },
         {
@@ -106,12 +125,34 @@ export const Route = createFileRoute("/services")({
 });
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Globe, ShoppingCart, Code, Building2, Users, GraduationCap,
-  Smartphone, Palette, Brush, TrendingUp, Search, Server,
-  AtSign, Wrench, Rocket, TabletSmartphone, Apple,
+  Globe,
+  ShoppingCart,
+  Code,
+  Building2,
+  Users,
+  GraduationCap,
+  Smartphone,
+  Palette,
+  Brush,
+  TrendingUp,
+  Search,
+  Server,
+  AtSign,
+  Wrench,
+  Rocket,
+  TabletSmartphone,
+  Apple,
 };
 
-function ServiceIcon({ name, size = 20, className = "" }: { name: string; size?: number; className?: string }) {
+function ServiceIcon({
+  name,
+  size = 20,
+  className = "",
+}: {
+  name: string;
+  size?: number;
+  className?: string;
+}) {
   const Icon = iconMap[name];
   if (!Icon) return null;
   return <Icon size={size} className={className} />;
@@ -161,7 +202,7 @@ function ServicesPage() {
           s.title.toLowerCase().includes(q) ||
           s.description.toLowerCase().includes(q) ||
           s.category.toLowerCase().includes(q) ||
-          s.features.some((f) => f.toLowerCase().includes(q))
+          s.features.some((f) => f.toLowerCase().includes(q)),
       );
     }
 
@@ -196,8 +237,8 @@ function ServicesPage() {
 
                 <Reveal delay={0.1}>
                   <p className="dws-hero-sub mb-0">
-                    End-to-end technology and marketing services for businesses ready to grow.
-                    Every project is senior-led, fixed-scope, and built for measurable results.
+                    End-to-end technology and marketing services for businesses ready to grow. Every
+                    project is senior-led, fixed-scope, and built for measurable results.
                   </p>
                 </Reveal>
               </div>
@@ -331,8 +372,8 @@ function ServicesPage() {
                   Let&apos;s build your next growth curve
                 </h2>
                 <p className="dws-muted mb-4 mx-auto" style={{ maxWidth: "36rem" }}>
-                  Tell us where you want your business to be in the next 12 months. We will map the strategy
-                  in a focused 30-minute call.
+                  Tell us where you want your business to be in the next 12 months. We will map the
+                  strategy in a focused 30-minute call.
                 </p>
                 <div className="d-flex flex-wrap justify-content-center gap-3">
                   <Link to="/contact" className="dws-btn dws-btn-solid">
@@ -374,7 +415,9 @@ function ServiceCard({ service }: { service: ServiceEntry }) {
         {/* Feature bullets */}
         <ul className="dws-service-card-features list-unstyled mb-3">
           {service.features.map((f) => (
-            <li key={f} className="small">{f}</li>
+            <li key={f} className="small">
+              {f}
+            </li>
           ))}
         </ul>
 
@@ -385,10 +428,16 @@ function ServiceCard({ service }: { service: ServiceEntry }) {
 
         {/* Actions */}
         <div className="d-flex gap-2 mt-auto">
-          <Link to={learnMoreLink} className="dws-btn dws-btn-outline dws-btn-sm-tight flex-grow-1 text-center">
+          <Link
+            to={learnMoreLink}
+            className="dws-btn dws-btn-outline dws-btn-sm-tight flex-grow-1 text-center"
+          >
             Learn More
           </Link>
-          <Link to={inquireLink} className="dws-btn dws-btn-solid dws-btn-sm-tight flex-grow-1 text-center">
+          <Link
+            to={inquireLink}
+            className="dws-btn dws-btn-solid dws-btn-sm-tight flex-grow-1 text-center"
+          >
             Inquire Now
           </Link>
         </div>

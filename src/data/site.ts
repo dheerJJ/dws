@@ -86,14 +86,12 @@ export type Testimonial = { quote: string; author: string; role: string };
 
 export const testimonials: Testimonial[] = [
   {
-    quote:
-      "[ADD REAL TESTIMONIAL - Client quote on website rebuild and conversion results]",
+    quote: "[ADD REAL TESTIMONIAL - Client quote on website rebuild and conversion results]",
     author: "[Client Operations Director]",
     role: "Verified B2B Client",
   },
   {
-    quote:
-      "[ADD REAL TESTIMONIAL - Client review on performance marketing and lead attribution]",
+    quote: "[ADD REAL TESTIMONIAL - Client review on performance marketing and lead attribution]",
     author: "[Client Founder]",
     role: "Verified Brand Partner",
   },
@@ -120,7 +118,8 @@ export const tiers: Tier[] = [
     name: "Starter",
     price: "₹18,999",
     cadence: "per month",
-    summary: "For founders who need a clean presence, local search rankings, and a working acquisition channel.",
+    summary:
+      "For founders who need a clean presence, local search rankings, and a working acquisition channel.",
     features: [
       "Landing page or 5-page website architecture",
       "Local SEO and Google Business Profile setup",
@@ -134,7 +133,8 @@ export const tiers: Tier[] = [
     name: "Growth",
     price: "₹34,999",
     cadence: "per month",
-    summary: "For teams ready for multi-channel reach, ongoing conversion tuning, and technical compounding.",
+    summary:
+      "For teams ready for multi-channel reach, ongoing conversion tuning, and technical compounding.",
     features: [
       "Full website build or redesign + ongoing CRO",
       "Multi-location local SEO and content cluster",
@@ -149,7 +149,8 @@ export const tiers: Tier[] = [
     name: "Scale",
     price: "₹64,999",
     cadence: "per month",
-    summary: "An embedded senior studio team delivering custom web apps, technical SEO, and rapid product sprints.",
+    summary:
+      "An embedded senior studio team delivering custom web apps, technical SEO, and rapid product sprints.",
     features: [
       "Dedicated senior engineer and designer capacity",
       "SaaS / web app features or mobile app support",

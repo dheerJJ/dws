@@ -25,7 +25,10 @@ export const Route = createFileRoute("/pricing/$service")({
   head: ({ params, loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Service not found | DWS Web Services" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Service not found | DWS Web Services" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { service } = loaderData;
@@ -64,7 +67,7 @@ export const Route = createFileRoute("/pricing/$service")({
                 price: p.price,
                 description: p.summary,
               })),
-            })
+            }),
           ),
         },
         {
@@ -78,7 +81,7 @@ export const Route = createFileRoute("/pricing/$service")({
               { name: "Home", path: "/" },
               { name: "Pricing", path: "/pricing" },
               { name: service.navLabel, path: `/pricing/${params.service}` },
-            ])
+            ]),
           ),
         },
       ],
@@ -292,8 +295,8 @@ function ServicePricingPage() {
                   <p className="dws-eyebrow mb-2">Client Results & Case Studies</p>
                   <h3 className="h4 mb-3 text-white">See Our Work in Action</h3>
                   <p className="dws-muted mb-4">
-                    Explore detailed project breakdowns showing how we built conversion-focused websites
-                    and marketing systems for real businesses.
+                    Explore detailed project breakdowns showing how we built conversion-focused
+                    websites and marketing systems for real businesses.
                   </p>
                   <Link to="/case-studies" className="dws-btn dws-btn-outline dws-btn-sm-tight">
                     Explore Case Studies
@@ -303,8 +306,8 @@ function ServicePricingPage() {
                   <p className="dws-eyebrow mb-2">Knowledge Base</p>
                   <h3 className="h4 mb-3 text-white">Read Our Technical Guides</h3>
                   <p className="dws-muted mb-4">
-                    Learn the frameworks, Core Web Vitals optimizations, and SEO strategies we deploy
-                    for clients across India.
+                    Learn the frameworks, Core Web Vitals optimizations, and SEO strategies we
+                    deploy for clients across India.
                   </p>
                   <Link
                     to="/blog/$slug"
@@ -348,8 +351,8 @@ function ServicePricingPage() {
               <Reveal>
                 <h2 className="display-6 mb-3 text-white">Ready to grow your business?</h2>
                 <p className="dws-muted mb-4 mx-auto" style={{ maxWidth: "36rem" }}>
-                  Schedule a free 30-minute discovery call to discuss your goals, review your current
-                  setup, and get a clear, fixed-price proposal.
+                  Schedule a free 30-minute discovery call to discuss your goals, review your
+                  current setup, and get a clear, fixed-price proposal.
                 </p>
                 <div className="d-flex flex-wrap justify-content-center gap-3">
                   <Link to="/contact" className="dws-btn dws-btn-solid">
@@ -385,7 +388,9 @@ function ServicePricingPage() {
                       params={{ service: s.slug }}
                       className="dws-post-mini d-block h-100 text-decoration-none"
                     >
-                      <span className="dws-mono small d-block mb-2 text-muted">From {s.startsAt}</span>
+                      <span className="dws-mono small d-block mb-2 text-muted">
+                        From {s.startsAt}
+                      </span>
                       <span className="d-block text-white fw-semibold">{s.name}</span>
                     </Link>
                   </Reveal>

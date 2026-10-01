@@ -80,15 +80,40 @@ export const services: ServiceEntry[] = [
       "Post-launch support and bug fixes for 30 days",
     ],
     process: [
-      { step: "01", title: "Discovery & Architecture", text: "We analyse your goals, target audience, and competitors to define wireframes and conversion paths." },
-      { step: "02", title: "UI/UX Design", text: "Custom visual designs created specifically for your brand. No templates or page builders." },
-      { step: "03", title: "Development & Build", text: "Clean semantic code built with modern frameworks for instant page navigation and fast load times." },
-      { step: "04", title: "SEO & Launch", text: "Core Web Vitals passed, schema configured, Google Search Console verified, analytics connected." },
+      {
+        step: "01",
+        title: "Discovery & Architecture",
+        text: "We analyse your goals, target audience, and competitors to define wireframes and conversion paths.",
+      },
+      {
+        step: "02",
+        title: "UI/UX Design",
+        text: "Custom visual designs created specifically for your brand. No templates or page builders.",
+      },
+      {
+        step: "03",
+        title: "Development & Build",
+        text: "Clean semantic code built with modern frameworks for instant page navigation and fast load times.",
+      },
+      {
+        step: "04",
+        title: "SEO & Launch",
+        text: "Core Web Vitals passed, schema configured, Google Search Console verified, analytics connected.",
+      },
     ],
     faqs: [
-      { q: "How long does a website project take?", a: "A landing page takes 7-10 days, a full business site 3-4 weeks, and custom web applications 6-8 weeks depending on scope." },
-      { q: "Do I own the code?", a: "Yes. You get full ownership of the source code, domain assets, and hosting accounts. No lock-in." },
-      { q: "Will my website work on mobile?", a: "Every site we build is mobile-first by default. We test across devices and optimise for 4G mobile performance." },
+      {
+        q: "How long does a website project take?",
+        a: "A landing page takes 7-10 days, a full business site 3-4 weeks, and custom web applications 6-8 weeks depending on scope.",
+      },
+      {
+        q: "Do I own the code?",
+        a: "Yes. You get full ownership of the source code, domain assets, and hosting accounts. No lock-in.",
+      },
+      {
+        q: "Will my website work on mobile?",
+        a: "Every site we build is mobile-first by default. We test across devices and optimise for 4G mobile performance.",
+      },
     ],
   },
   {
@@ -121,15 +146,40 @@ export const services: ServiceEntry[] = [
       "SSL security and PCI compliance setup",
     ],
     process: [
-      { step: "01", title: "Store Architecture", text: "We map your product catalogue, payment workflows, and shipping requirements before writing a single line of code." },
-      { step: "02", title: "Design & Prototyping", text: "Custom store layouts designed for your brand with conversion-focused product and checkout pages." },
-      { step: "03", title: "Development & Integration", text: "We build the storefront, connect payment gateways, set up inventory, and integrate shipping providers." },
-      { step: "04", title: "Testing & Launch", text: "End-to-end testing of payment flows, order processing, mobile checkout, and performance before going live." },
+      {
+        step: "01",
+        title: "Store Architecture",
+        text: "We map your product catalogue, payment workflows, and shipping requirements before writing a single line of code.",
+      },
+      {
+        step: "02",
+        title: "Design & Prototyping",
+        text: "Custom store layouts designed for your brand with conversion-focused product and checkout pages.",
+      },
+      {
+        step: "03",
+        title: "Development & Integration",
+        text: "We build the storefront, connect payment gateways, set up inventory, and integrate shipping providers.",
+      },
+      {
+        step: "04",
+        title: "Testing & Launch",
+        text: "End-to-end testing of payment flows, order processing, mobile checkout, and performance before going live.",
+      },
     ],
     faqs: [
-      { q: "Which payment gateways do you integrate?", a: "Razorpay, Stripe, PayU, and UPI are standard. We can integrate any gateway that provides an API." },
-      { q: "Can I manage products myself?", a: "Yes. Every store includes an admin panel where you can add, edit, and manage products, prices, and inventory." },
-      { q: "Do you handle shipping integration?", a: "We integrate with major shipping providers like Shiprocket, Delhivery, and custom logistics APIs as needed." },
+      {
+        q: "Which payment gateways do you integrate?",
+        a: "Razorpay, Stripe, PayU, and UPI are standard. We can integrate any gateway that provides an API.",
+      },
+      {
+        q: "Can I manage products myself?",
+        a: "Yes. Every store includes an admin panel where you can add, edit, and manage products, prices, and inventory.",
+      },
+      {
+        q: "Do you handle shipping integration?",
+        a: "We integrate with major shipping providers like Shiprocket, Delhivery, and custom logistics APIs as needed.",
+      },
     ],
   },
 
@@ -163,15 +213,40 @@ export const services: ServiceEntry[] = [
       "Post-launch support and maintenance",
     ],
     process: [
-      { step: "01", title: "Requirements & Scoping", text: "We document your workflows, pain points, and system requirements in a detailed specification." },
-      { step: "02", title: "Architecture & Design", text: "System architecture, database design, and UI wireframes before development begins." },
-      { step: "03", title: "Iterative Development", text: "We build in sprint cycles with regular demos so you see progress and provide feedback throughout." },
-      { step: "04", title: "Deployment & Handover", text: "Production deployment, documentation, team training, and ongoing support plan." },
+      {
+        step: "01",
+        title: "Requirements & Scoping",
+        text: "We document your workflows, pain points, and system requirements in a detailed specification.",
+      },
+      {
+        step: "02",
+        title: "Architecture & Design",
+        text: "System architecture, database design, and UI wireframes before development begins.",
+      },
+      {
+        step: "03",
+        title: "Iterative Development",
+        text: "We build in sprint cycles with regular demos so you see progress and provide feedback throughout.",
+      },
+      {
+        step: "04",
+        title: "Deployment & Handover",
+        text: "Production deployment, documentation, team training, and ongoing support plan.",
+      },
     ],
     faqs: [
-      { q: "How do you scope custom software projects?", a: "We start with a detailed discovery phase to understand your workflows, then deliver a fixed-scope proposal with clear deliverables and timeline." },
-      { q: "What technologies do you use?", a: "We use modern stacks including React, Node.js, PostgreSQL, and cloud infrastructure. The tech choice depends on your specific requirements." },
-      { q: "Can you integrate with our existing tools?", a: "Yes. We regularly integrate with ERPs, CRMs, accounting software, payment gateways, and third-party APIs." },
+      {
+        q: "How do you scope custom software projects?",
+        a: "We start with a detailed discovery phase to understand your workflows, then deliver a fixed-scope proposal with clear deliverables and timeline.",
+      },
+      {
+        q: "What technologies do you use?",
+        a: "We use modern stacks including React, Node.js, PostgreSQL, and cloud infrastructure. The tech choice depends on your specific requirements.",
+      },
+      {
+        q: "Can you integrate with our existing tools?",
+        a: "Yes. We regularly integrate with ERPs, CRMs, accounting software, payment gateways, and third-party APIs.",
+      },
     ],
   },
   {
@@ -203,15 +278,40 @@ export const services: ServiceEntry[] = [
       "Team training and documentation",
     ],
     process: [
-      { step: "01", title: "Business Process Mapping", text: "We document every department's workflow, data flow, and reporting needs before design begins." },
-      { step: "02", title: "Module Design", text: "Each module is designed with your team's input, ensuring the system matches how you actually work." },
-      { step: "03", title: "Development & Integration", text: "Modules are built and integrated incrementally with regular demos and feedback cycles." },
-      { step: "04", title: "Migration & Training", text: "Data migration from existing systems, team training, and phased rollout to minimise disruption." },
+      {
+        step: "01",
+        title: "Business Process Mapping",
+        text: "We document every department's workflow, data flow, and reporting needs before design begins.",
+      },
+      {
+        step: "02",
+        title: "Module Design",
+        text: "Each module is designed with your team's input, ensuring the system matches how you actually work.",
+      },
+      {
+        step: "03",
+        title: "Development & Integration",
+        text: "Modules are built and integrated incrementally with regular demos and feedback cycles.",
+      },
+      {
+        step: "04",
+        title: "Migration & Training",
+        text: "Data migration from existing systems, team training, and phased rollout to minimise disruption.",
+      },
     ],
     faqs: [
-      { q: "How long does ERP development take?", a: "A core ERP with 3-4 modules typically takes 3-5 months. Complex multi-department systems may take 6-8 months with phased delivery." },
-      { q: "Can you migrate data from our current system?", a: "Yes. We handle data migration from spreadsheets, legacy software, or existing ERP systems with validation and cleanup." },
-      { q: "Is the ERP web-based or desktop?", a: "Web-based, accessible from any device with a browser. No software installation required for your team." },
+      {
+        q: "How long does ERP development take?",
+        a: "A core ERP with 3-4 modules typically takes 3-5 months. Complex multi-department systems may take 6-8 months with phased delivery.",
+      },
+      {
+        q: "Can you migrate data from our current system?",
+        a: "Yes. We handle data migration from spreadsheets, legacy software, or existing ERP systems with validation and cleanup.",
+      },
+      {
+        q: "Is the ERP web-based or desktop?",
+        a: "Web-based, accessible from any device with a browser. No software installation required for your team.",
+      },
     ],
   },
   {
@@ -243,15 +343,40 @@ export const services: ServiceEntry[] = [
       "Data import from existing spreadsheets or CRMs",
     ],
     process: [
-      { step: "01", title: "Sales Process Analysis", text: "We map your current sales process, lead sources, and reporting needs to design the right CRM structure." },
-      { step: "02", title: "Pipeline & UI Design", text: "Custom pipeline stages, contact views, and dashboard layouts designed for your team's daily workflow." },
-      { step: "03", title: "Build & Automate", text: "CRM development with automated follow-ups, notifications, and integrations with your existing tools." },
-      { step: "04", title: "Launch & Optimise", text: "Data migration, team onboarding, and iterative refinement based on real usage patterns." },
+      {
+        step: "01",
+        title: "Sales Process Analysis",
+        text: "We map your current sales process, lead sources, and reporting needs to design the right CRM structure.",
+      },
+      {
+        step: "02",
+        title: "Pipeline & UI Design",
+        text: "Custom pipeline stages, contact views, and dashboard layouts designed for your team's daily workflow.",
+      },
+      {
+        step: "03",
+        title: "Build & Automate",
+        text: "CRM development with automated follow-ups, notifications, and integrations with your existing tools.",
+      },
+      {
+        step: "04",
+        title: "Launch & Optimise",
+        text: "Data migration, team onboarding, and iterative refinement based on real usage patterns.",
+      },
     ],
     faqs: [
-      { q: "Can the CRM integrate with WhatsApp?", a: "Yes. We integrate WhatsApp Business API for automated messages, follow-ups, and lead notifications." },
-      { q: "Is there a per-user or monthly fee?", a: "No. You pay once for development and own the system. Hosting costs are typically under ₹2,000/month." },
-      { q: "Can I import my existing leads?", a: "Yes. We handle data import from spreadsheets, existing CRMs like HubSpot or Zoho, and Google Contacts." },
+      {
+        q: "Can the CRM integrate with WhatsApp?",
+        a: "Yes. We integrate WhatsApp Business API for automated messages, follow-ups, and lead notifications.",
+      },
+      {
+        q: "Is there a per-user or monthly fee?",
+        a: "No. You pay once for development and own the system. Hosting costs are typically under ₹2,000/month.",
+      },
+      {
+        q: "Can I import my existing leads?",
+        a: "Yes. We handle data import from spreadsheets, existing CRMs like HubSpot or Zoho, and Google Contacts.",
+      },
     ],
   },
 
@@ -285,15 +410,40 @@ export const services: ServiceEntry[] = [
       "Multi-branch support for school chains",
     ],
     process: [
-      { step: "01", title: "School Assessment", text: "We study your school's administrative workflow, fee structures, academic calendar, and communication needs." },
-      { step: "02", title: "Module Configuration", text: "Modules are configured for your school's specific grade structure, subjects, fee cycles, and reporting format." },
-      { step: "03", title: "Development & Testing", text: "Platform built with regular demos to school administrators and teachers for feedback and refinement." },
-      { step: "04", title: "Deployment & Training", text: "Data migration, staff training, parent onboarding, and ongoing technical support." },
+      {
+        step: "01",
+        title: "School Assessment",
+        text: "We study your school's administrative workflow, fee structures, academic calendar, and communication needs.",
+      },
+      {
+        step: "02",
+        title: "Module Configuration",
+        text: "Modules are configured for your school's specific grade structure, subjects, fee cycles, and reporting format.",
+      },
+      {
+        step: "03",
+        title: "Development & Testing",
+        text: "Platform built with regular demos to school administrators and teachers for feedback and refinement.",
+      },
+      {
+        step: "04",
+        title: "Deployment & Training",
+        text: "Data migration, staff training, parent onboarding, and ongoing technical support.",
+      },
     ],
     faqs: [
-      { q: "Can parents pay fees online?", a: "Yes. The system integrates with Razorpay and UPI for online fee payment with automated receipt generation." },
-      { q: "Does it support multiple branches?", a: "Yes. Multi-branch support is included with centralised admin control and branch-level management." },
-      { q: "Can teachers mark attendance from their phone?", a: "Yes. The teacher portal is fully mobile-responsive and supports attendance marking from any device." },
+      {
+        q: "Can parents pay fees online?",
+        a: "Yes. The system integrates with Razorpay and UPI for online fee payment with automated receipt generation.",
+      },
+      {
+        q: "Does it support multiple branches?",
+        a: "Yes. Multi-branch support is included with centralised admin control and branch-level management.",
+      },
+      {
+        q: "Can teachers mark attendance from their phone?",
+        a: "Yes. The teacher portal is fully mobile-responsive and supports attendance marking from any device.",
+      },
     ],
   },
 
@@ -328,15 +478,40 @@ export const services: ServiceEntry[] = [
       "30-day post-launch support and bug fixes",
     ],
     process: [
-      { step: "01", title: "Discovery & Wireframing", text: "We define features, user flows, and create interactive wireframes for your review." },
-      { step: "02", title: "UI Design", text: "Custom app interface design following Material Design guidelines for a native Android feel." },
-      { step: "03", title: "Development & Testing", text: "App development with regular builds for testing on real devices throughout the process." },
-      { step: "04", title: "Play Store Launch", text: "Play Store listing preparation, submission, and launch with ongoing support." },
+      {
+        step: "01",
+        title: "Discovery & Wireframing",
+        text: "We define features, user flows, and create interactive wireframes for your review.",
+      },
+      {
+        step: "02",
+        title: "UI Design",
+        text: "Custom app interface design following Material Design guidelines for a native Android feel.",
+      },
+      {
+        step: "03",
+        title: "Development & Testing",
+        text: "App development with regular builds for testing on real devices throughout the process.",
+      },
+      {
+        step: "04",
+        title: "Play Store Launch",
+        text: "Play Store listing preparation, submission, and launch with ongoing support.",
+      },
     ],
     faqs: [
-      { q: "Flutter or React Native?", a: "We recommend Flutter for most projects due to its performance and UI flexibility. React Native is better if you need extensive native module integration." },
-      { q: "Can the app work offline?", a: "Yes. We implement local data caching so core features remain available without internet connectivity." },
-      { q: "Do you handle Play Store submission?", a: "Yes. We prepare screenshots, descriptions, and handle the full submission and review process." },
+      {
+        q: "Flutter or React Native?",
+        a: "We recommend Flutter for most projects due to its performance and UI flexibility. React Native is better if you need extensive native module integration.",
+      },
+      {
+        q: "Can the app work offline?",
+        a: "Yes. We implement local data caching so core features remain available without internet connectivity.",
+      },
+      {
+        q: "Do you handle Play Store submission?",
+        a: "Yes. We prepare screenshots, descriptions, and handle the full submission and review process.",
+      },
     ],
   },
   {
@@ -369,15 +544,40 @@ export const services: ServiceEntry[] = [
       "30-day post-launch support and bug fixes",
     ],
     process: [
-      { step: "01", title: "Discovery & Wireframing", text: "Feature scoping, user flow mapping, and interactive prototyping for your approval." },
-      { step: "02", title: "UI Design", text: "Interface design following Apple's Human Interface Guidelines for a polished iOS experience." },
-      { step: "03", title: "Development & Testing", text: "App development with TestFlight builds for real-device testing throughout the process." },
-      { step: "04", title: "App Store Launch", text: "App Store listing, submission, review compliance, and launch support." },
+      {
+        step: "01",
+        title: "Discovery & Wireframing",
+        text: "Feature scoping, user flow mapping, and interactive prototyping for your approval.",
+      },
+      {
+        step: "02",
+        title: "UI Design",
+        text: "Interface design following Apple's Human Interface Guidelines for a polished iOS experience.",
+      },
+      {
+        step: "03",
+        title: "Development & Testing",
+        text: "App development with TestFlight builds for real-device testing throughout the process.",
+      },
+      {
+        step: "04",
+        title: "App Store Launch",
+        text: "App Store listing, submission, review compliance, and launch support.",
+      },
     ],
     faqs: [
-      { q: "Do I need a Mac to manage the app?", a: "No. We handle all Xcode builds and App Store submissions. You manage content through a web-based admin panel." },
-      { q: "How long does App Store review take?", a: "Apple's review typically takes 1-3 days. We ensure compliance with their guidelines to avoid rejections." },
-      { q: "Can you build for both Android and iOS together?", a: "Yes. Using Flutter or React Native, we build both platforms from a single codebase, saving time and cost." },
+      {
+        q: "Do I need a Mac to manage the app?",
+        a: "No. We handle all Xcode builds and App Store submissions. You manage content through a web-based admin panel.",
+      },
+      {
+        q: "How long does App Store review take?",
+        a: "Apple's review typically takes 1-3 days. We ensure compliance with their guidelines to avoid rejections.",
+      },
+      {
+        q: "Can you build for both Android and iOS together?",
+        a: "Yes. Using Flutter or React Native, we build both platforms from a single codebase, saving time and cost.",
+      },
     ],
   },
 
@@ -412,15 +612,40 @@ export const services: ServiceEntry[] = [
       "Two rounds of design revisions",
     ],
     process: [
-      { step: "01", title: "Research & Strategy", text: "User research, competitive analysis, and information architecture to define the design direction." },
-      { step: "02", title: "Wireframing", text: "Low-fidelity wireframes to validate structure, layout, and user flows before visual design begins." },
-      { step: "03", title: "Visual Design", text: "High-fidelity Figma designs with your brand colours, typography, and imagery applied to every screen." },
-      { step: "04", title: "Prototyping & Handoff", text: "Interactive prototypes for testing, plus complete developer handoff with component specs and assets." },
+      {
+        step: "01",
+        title: "Research & Strategy",
+        text: "User research, competitive analysis, and information architecture to define the design direction.",
+      },
+      {
+        step: "02",
+        title: "Wireframing",
+        text: "Low-fidelity wireframes to validate structure, layout, and user flows before visual design begins.",
+      },
+      {
+        step: "03",
+        title: "Visual Design",
+        text: "High-fidelity Figma designs with your brand colours, typography, and imagery applied to every screen.",
+      },
+      {
+        step: "04",
+        title: "Prototyping & Handoff",
+        text: "Interactive prototypes for testing, plus complete developer handoff with component specs and assets.",
+      },
     ],
     faqs: [
-      { q: "Do you design for web, mobile, or both?", a: "Both. We design responsive web interfaces and native mobile app screens, often as a unified design system." },
-      { q: "What do I get at the end?", a: "Figma source files, interactive prototypes, design system documentation, and exported assets ready for development." },
-      { q: "Can you work with our existing brand guidelines?", a: "Yes. We build on your existing brand identity, colours, typography, and visual language." },
+      {
+        q: "Do you design for web, mobile, or both?",
+        a: "Both. We design responsive web interfaces and native mobile app screens, often as a unified design system.",
+      },
+      {
+        q: "What do I get at the end?",
+        a: "Figma source files, interactive prototypes, design system documentation, and exported assets ready for development.",
+      },
+      {
+        q: "Can you work with our existing brand guidelines?",
+        a: "Yes. We build on your existing brand identity, colours, typography, and visual language.",
+      },
     ],
   },
   {
@@ -452,15 +677,40 @@ export const services: ServiceEntry[] = [
       "Two rounds of revisions per deliverable",
     ],
     process: [
-      { step: "01", title: "Brand Discovery", text: "We understand your industry, target audience, brand personality, and competitive positioning." },
-      { step: "02", title: "Concept Development", text: "Multiple logo concepts and visual directions presented for your feedback and selection." },
-      { step: "03", title: "Design Refinement", text: "Selected direction refined into final logo, colour system, typography, and brand guidelines." },
-      { step: "04", title: "Collateral & Delivery", text: "Business cards, social templates, and collateral designed. All source files delivered." },
+      {
+        step: "01",
+        title: "Brand Discovery",
+        text: "We understand your industry, target audience, brand personality, and competitive positioning.",
+      },
+      {
+        step: "02",
+        title: "Concept Development",
+        text: "Multiple logo concepts and visual directions presented for your feedback and selection.",
+      },
+      {
+        step: "03",
+        title: "Design Refinement",
+        text: "Selected direction refined into final logo, colour system, typography, and brand guidelines.",
+      },
+      {
+        step: "04",
+        title: "Collateral & Delivery",
+        text: "Business cards, social templates, and collateral designed. All source files delivered.",
+      },
     ],
     faqs: [
-      { q: "How many logo concepts do I get?", a: "You receive 3 initial logo concepts with 2 rounds of revisions on the selected direction." },
-      { q: "What file formats are delivered?", a: "SVG, PNG, PDF for digital use, and EPS/AI for print. All source files are included." },
-      { q: "Can you design social media posts on a monthly basis?", a: "Yes. We offer ongoing social media creative packages. Contact us for a monthly retainer quote." },
+      {
+        q: "How many logo concepts do I get?",
+        a: "You receive 3 initial logo concepts with 2 rounds of revisions on the selected direction.",
+      },
+      {
+        q: "What file formats are delivered?",
+        a: "SVG, PNG, PDF for digital use, and EPS/AI for print. All source files are included.",
+      },
+      {
+        q: "Can you design social media posts on a monthly basis?",
+        a: "Yes. We offer ongoing social media creative packages. Contact us for a monthly retainer quote.",
+      },
     ],
   },
 
@@ -495,15 +745,40 @@ export const services: ServiceEntry[] = [
       "Lead nurturing workflow setup",
     ],
     process: [
-      { step: "01", title: "Audit & Strategy", text: "We audit your current marketing, analyse competitors, and build a channel strategy with realistic targets." },
-      { step: "02", title: "Campaign Setup", text: "Ad accounts configured, tracking pixels installed, audiences defined, and initial creatives launched." },
-      { step: "03", title: "Optimisation", text: "Daily monitoring, bid adjustments, creative testing, and budget allocation based on performance data." },
-      { step: "04", title: "Reporting & Scaling", text: "Monthly reports with cost-per-lead analysis and recommendations for scaling profitable campaigns." },
+      {
+        step: "01",
+        title: "Audit & Strategy",
+        text: "We audit your current marketing, analyse competitors, and build a channel strategy with realistic targets.",
+      },
+      {
+        step: "02",
+        title: "Campaign Setup",
+        text: "Ad accounts configured, tracking pixels installed, audiences defined, and initial creatives launched.",
+      },
+      {
+        step: "03",
+        title: "Optimisation",
+        text: "Daily monitoring, bid adjustments, creative testing, and budget allocation based on performance data.",
+      },
+      {
+        step: "04",
+        title: "Reporting & Scaling",
+        text: "Monthly reports with cost-per-lead analysis and recommendations for scaling profitable campaigns.",
+      },
     ],
     faqs: [
-      { q: "What's the minimum ad budget?", a: "We recommend a minimum monthly ad spend of ₹15,000-₹20,000 in addition to the management fee for meaningful results." },
-      { q: "How soon will I see results?", a: "Initial leads typically arrive within the first 1-2 weeks. Campaign optimisation improves results over the first 2-3 months." },
-      { q: "Do you manage social media posting?", a: "Yes. Content planning, creation, and posting across your social channels is included in our marketing packages." },
+      {
+        q: "What's the minimum ad budget?",
+        a: "We recommend a minimum monthly ad spend of ₹15,000-₹20,000 in addition to the management fee for meaningful results.",
+      },
+      {
+        q: "How soon will I see results?",
+        a: "Initial leads typically arrive within the first 1-2 weeks. Campaign optimisation improves results over the first 2-3 months.",
+      },
+      {
+        q: "Do you manage social media posting?",
+        a: "Yes. Content planning, creation, and posting across your social channels is included in our marketing packages.",
+      },
     ],
   },
   {
@@ -537,15 +812,40 @@ export const services: ServiceEntry[] = [
       "Competitor tracking and analysis",
     ],
     process: [
-      { step: "01", title: "SEO Audit", text: "Complete technical audit of your site covering crawlability, speed, schema, and on-page factors." },
-      { step: "02", title: "Foundation Work", text: "Technical fixes, schema implementation, Google Business Profile optimisation, and site speed improvements." },
-      { step: "03", title: "Content & Links", text: "Keyword-targeted content creation, local landing pages, and organic link-building through quality content." },
-      { step: "04", title: "Measure & Report", text: "Monthly reports connecting keyword rankings to actual business outcomes and enquiry volume." },
+      {
+        step: "01",
+        title: "SEO Audit",
+        text: "Complete technical audit of your site covering crawlability, speed, schema, and on-page factors.",
+      },
+      {
+        step: "02",
+        title: "Foundation Work",
+        text: "Technical fixes, schema implementation, Google Business Profile optimisation, and site speed improvements.",
+      },
+      {
+        step: "03",
+        title: "Content & Links",
+        text: "Keyword-targeted content creation, local landing pages, and organic link-building through quality content.",
+      },
+      {
+        step: "04",
+        title: "Measure & Report",
+        text: "Monthly reports connecting keyword rankings to actual business outcomes and enquiry volume.",
+      },
     ],
     faqs: [
-      { q: "How long until SEO shows results?", a: "Meaningful ranking improvements typically appear within 3-4 months. Local SEO results often surface faster, within 6-8 weeks." },
-      { q: "Do you guarantee first-page rankings?", a: "No legitimate SEO provider can guarantee specific rankings. We commit to transparent reporting and measurable improvement month over month." },
-      { q: "What's the minimum commitment?", a: "We recommend a minimum 6-month engagement for SEO. Search engines need time to index changes and build authority." },
+      {
+        q: "How long until SEO shows results?",
+        a: "Meaningful ranking improvements typically appear within 3-4 months. Local SEO results often surface faster, within 6-8 weeks.",
+      },
+      {
+        q: "Do you guarantee first-page rankings?",
+        a: "No legitimate SEO provider can guarantee specific rankings. We commit to transparent reporting and measurable improvement month over month.",
+      },
+      {
+        q: "What's the minimum commitment?",
+        a: "We recommend a minimum 6-month engagement for SEO. Search engines need time to index changes and build authority.",
+      },
     ],
   },
 
@@ -580,15 +880,40 @@ export const services: ServiceEntry[] = [
       "30-day post-launch support",
     ],
     process: [
-      { step: "01", title: "Product Strategy", text: "We define your core value proposition, user personas, and the minimum feature set to validate with real users." },
-      { step: "02", title: "Architecture & Design", text: "Technical architecture, database design, and UI/UX design for the core user flows." },
-      { step: "03", title: "Sprint Development", text: "Iterative development with weekly demos and continuous deployment to a staging environment." },
-      { step: "04", title: "Launch & Iterate", text: "Production deployment, monitoring setup, and iterative improvements based on early user feedback." },
+      {
+        step: "01",
+        title: "Product Strategy",
+        text: "We define your core value proposition, user personas, and the minimum feature set to validate with real users.",
+      },
+      {
+        step: "02",
+        title: "Architecture & Design",
+        text: "Technical architecture, database design, and UI/UX design for the core user flows.",
+      },
+      {
+        step: "03",
+        title: "Sprint Development",
+        text: "Iterative development with weekly demos and continuous deployment to a staging environment.",
+      },
+      {
+        step: "04",
+        title: "Launch & Iterate",
+        text: "Production deployment, monitoring setup, and iterative improvements based on early user feedback.",
+      },
     ],
     faqs: [
-      { q: "What is an MVP?", a: "A Minimum Viable Product is the simplest version of your SaaS idea that solves the core problem for real users and validates your business model." },
-      { q: "How long does an MVP take?", a: "A focused MVP typically takes 4-8 weeks depending on complexity. We prioritise speed to market." },
-      { q: "What tech stack do you use for SaaS?", a: "React, Next.js or TanStack Start for the frontend, Supabase or PostgreSQL for the database, and Vercel for deployment." },
+      {
+        q: "What is an MVP?",
+        a: "A Minimum Viable Product is the simplest version of your SaaS idea that solves the core problem for real users and validates your business model.",
+      },
+      {
+        q: "How long does an MVP take?",
+        a: "A focused MVP typically takes 4-8 weeks depending on complexity. We prioritise speed to market.",
+      },
+      {
+        q: "What tech stack do you use for SaaS?",
+        a: "React, Next.js or TanStack Start for the frontend, Supabase or PostgreSQL for the database, and Vercel for deployment.",
+      },
     ],
   },
 
@@ -622,15 +947,40 @@ export const services: ServiceEntry[] = [
       "Technical support via email",
     ],
     process: [
-      { step: "01", title: "Assessment", text: "We evaluate your site's requirements, expected traffic, and current hosting setup." },
-      { step: "02", title: "Setup & Migration", text: "Server provisioned, SSL installed, and your site migrated with zero downtime." },
-      { step: "03", title: "Configuration", text: "Backups automated, CDN configured, security rules applied, and monitoring activated." },
-      { step: "04", title: "Ongoing Management", text: "Continuous monitoring, security patches, backup verification, and performance checks." },
+      {
+        step: "01",
+        title: "Assessment",
+        text: "We evaluate your site's requirements, expected traffic, and current hosting setup.",
+      },
+      {
+        step: "02",
+        title: "Setup & Migration",
+        text: "Server provisioned, SSL installed, and your site migrated with zero downtime.",
+      },
+      {
+        step: "03",
+        title: "Configuration",
+        text: "Backups automated, CDN configured, security rules applied, and monitoring activated.",
+      },
+      {
+        step: "04",
+        title: "Ongoing Management",
+        text: "Continuous monitoring, security patches, backup verification, and performance checks.",
+      },
     ],
     faqs: [
-      { q: "Can you migrate my existing website?", a: "Yes. We handle full site migration from your current host to our managed infrastructure with zero downtime." },
-      { q: "Is email hosting included?", a: "Basic email hosting can be included. For business email, we recommend Google Workspace or Zoho Mail." },
-      { q: "What happens if my site goes down?", a: "Our monitoring systems detect outages within minutes and we respond immediately to restore service." },
+      {
+        q: "Can you migrate my existing website?",
+        a: "Yes. We handle full site migration from your current host to our managed infrastructure with zero downtime.",
+      },
+      {
+        q: "Is email hosting included?",
+        a: "Basic email hosting can be included. For business email, we recommend Google Workspace or Zoho Mail.",
+      },
+      {
+        q: "What happens if my site goes down?",
+        a: "Our monitoring systems detect outages within minutes and we respond immediately to restore service.",
+      },
     ],
   },
   {
@@ -662,15 +1012,40 @@ export const services: ServiceEntry[] = [
       "WHOIS privacy protection setup",
     ],
     process: [
-      { step: "01", title: "Domain Search", text: "We search for available domains that match your brand name and suggest alternatives if needed." },
-      { step: "02", title: "Registration", text: "Domain registered under your ownership with WHOIS privacy protection enabled." },
-      { step: "03", title: "DNS Setup", text: "DNS records configured for your website, email, and any additional services." },
-      { step: "04", title: "Renewal Management", text: "We track renewal dates and ensure your domain never expires unexpectedly." },
+      {
+        step: "01",
+        title: "Domain Search",
+        text: "We search for available domains that match your brand name and suggest alternatives if needed.",
+      },
+      {
+        step: "02",
+        title: "Registration",
+        text: "Domain registered under your ownership with WHOIS privacy protection enabled.",
+      },
+      {
+        step: "03",
+        title: "DNS Setup",
+        text: "DNS records configured for your website, email, and any additional services.",
+      },
+      {
+        step: "04",
+        title: "Renewal Management",
+        text: "We track renewal dates and ensure your domain never expires unexpectedly.",
+      },
     ],
     faqs: [
-      { q: "Who owns the domain?", a: "You do. The domain is registered under your name and contact details. We never retain ownership of client domains." },
-      { q: "How much does a domain cost?", a: "Domain pricing varies by extension: .com domains typically cost ₹800-1,200/year, .in domains ₹400-700/year. Our service fee is ₹500." },
-      { q: "Can you transfer my existing domain?", a: "Yes. We handle domain transfers from GoDaddy, Namecheap, or any other registrar to your preferred provider." },
+      {
+        q: "Who owns the domain?",
+        a: "You do. The domain is registered under your name and contact details. We never retain ownership of client domains.",
+      },
+      {
+        q: "How much does a domain cost?",
+        a: "Domain pricing varies by extension: .com domains typically cost ₹800-1,200/year, .in domains ₹400-700/year. Our service fee is ₹500.",
+      },
+      {
+        q: "Can you transfer my existing domain?",
+        a: "Yes. We handle domain transfers from GoDaddy, Namecheap, or any other registrar to your preferred provider.",
+      },
     ],
   },
   {
@@ -702,15 +1077,40 @@ export const services: ServiceEntry[] = [
       "Priority email and WhatsApp support",
     ],
     process: [
-      { step: "01", title: "Site Audit", text: "We review your current site for security issues, outdated dependencies, and performance bottlenecks." },
-      { step: "02", title: "Plan Setup", text: "Maintenance schedule established based on your site's technology stack and update frequency needs." },
-      { step: "03", title: "Ongoing Maintenance", text: "Regular updates applied, content changes processed, and monitoring dashboards configured." },
-      { step: "04", title: "Monthly Reporting", text: "Monthly report covering uptime, performance metrics, changes made, and recommendations." },
+      {
+        step: "01",
+        title: "Site Audit",
+        text: "We review your current site for security issues, outdated dependencies, and performance bottlenecks.",
+      },
+      {
+        step: "02",
+        title: "Plan Setup",
+        text: "Maintenance schedule established based on your site's technology stack and update frequency needs.",
+      },
+      {
+        step: "03",
+        title: "Ongoing Maintenance",
+        text: "Regular updates applied, content changes processed, and monitoring dashboards configured.",
+      },
+      {
+        step: "04",
+        title: "Monthly Reporting",
+        text: "Monthly report covering uptime, performance metrics, changes made, and recommendations.",
+      },
     ],
     faqs: [
-      { q: "How quickly are content changes processed?", a: "Standard content updates are completed within 24-48 hours. Emergency changes are handled the same business day." },
-      { q: "What if my site gets hacked?", a: "Our monitoring detects security issues early. If a breach occurs, we handle incident response, cleanup, and prevention measures." },
-      { q: "Can I cancel anytime?", a: "Yes. Maintenance plans are month-to-month with no long-term commitment required." },
+      {
+        q: "How quickly are content changes processed?",
+        a: "Standard content updates are completed within 24-48 hours. Emergency changes are handled the same business day.",
+      },
+      {
+        q: "What if my site gets hacked?",
+        a: "Our monitoring detects security issues early. If a breach occurs, we handle incident response, cleanup, and prevention measures.",
+      },
+      {
+        q: "Can I cancel anytime?",
+        a: "Yes. Maintenance plans are month-to-month with no long-term commitment required.",
+      },
     ],
   },
 
@@ -745,15 +1145,40 @@ export const services: ServiceEntry[] = [
       "30-day post-launch support",
     ],
     process: [
-      { step: "01", title: "Discovery", text: "Feature definition, user flow mapping, and platform strategy (Flutter vs React Native)." },
-      { step: "02", title: "Design", text: "Mobile-optimised UI design following platform-specific guidelines for Android and iOS." },
-      { step: "03", title: "Development", text: "Sprint-based development with regular builds for real-device testing." },
-      { step: "04", title: "Launch", text: "App store submissions, listing optimisation, and post-launch monitoring." },
+      {
+        step: "01",
+        title: "Discovery",
+        text: "Feature definition, user flow mapping, and platform strategy (Flutter vs React Native).",
+      },
+      {
+        step: "02",
+        title: "Design",
+        text: "Mobile-optimised UI design following platform-specific guidelines for Android and iOS.",
+      },
+      {
+        step: "03",
+        title: "Development",
+        text: "Sprint-based development with regular builds for real-device testing.",
+      },
+      {
+        step: "04",
+        title: "Launch",
+        text: "App store submissions, listing optimisation, and post-launch monitoring.",
+      },
     ],
     faqs: [
-      { q: "Do you build for both Android and iOS?", a: "Yes. Using cross-platform frameworks, we build for both platforms simultaneously from a single codebase." },
-      { q: "How long does app development take?", a: "A standard app takes 6-10 weeks. Complex apps with custom backends may take 12-16 weeks." },
-      { q: "Do you provide source code?", a: "Yes. You receive full ownership of the source code, app store accounts, and all related assets." },
+      {
+        q: "Do you build for both Android and iOS?",
+        a: "Yes. Using cross-platform frameworks, we build for both platforms simultaneously from a single codebase.",
+      },
+      {
+        q: "How long does app development take?",
+        a: "A standard app takes 6-10 weeks. Complex apps with custom backends may take 12-16 weeks.",
+      },
+      {
+        q: "Do you provide source code?",
+        a: "Yes. You receive full ownership of the source code, app store accounts, and all related assets.",
+      },
     ],
   },
 ];

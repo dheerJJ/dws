@@ -79,9 +79,7 @@ export function CustomSelect({
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
-        <span className={value ? "text-white" : "text-muted"}>
-          {value || placeholder}
-        </span>
+        <span className={value ? "text-white" : "text-muted"}>{value || placeholder}</span>
         <ChevronDown
           size={16}
           className="dws-select-chevron flex-shrink-0 ms-2"

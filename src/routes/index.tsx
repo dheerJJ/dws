@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
   head: () => {
     const title = formatMetaTitle(business.keywords.home.primary);
     const description = formatMetaDescription(
-      "DWS Web Services is a Jaipur web design and SEO agency building fast, high-converting websites, SaaS MVPs and organic search engines for Indian businesses."
+      "DWS Web Services is a Jaipur web design and SEO agency building fast, high-converting websites, SaaS MVPs and organic search engines for Indian businesses.",
     );
     const canonical = getCanonicalUrl("/");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;

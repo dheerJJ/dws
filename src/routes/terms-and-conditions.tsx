@@ -17,7 +17,7 @@ export const Route = createFileRoute("/terms-and-conditions")({
   head: () => {
     const title = formatMetaTitle("Terms & Conditions");
     const description = formatMetaDescription(
-      `Terms and conditions of service for ${business.name}. Review our engagement policies, intellectual property rights, and payment terms.`
+      `Terms and conditions of service for ${business.name}. Review our engagement policies, intellectual property rights, and payment terms.`,
     );
     const canonical = getCanonicalUrl("/terms-and-conditions");
 
@@ -43,7 +43,7 @@ export const Route = createFileRoute("/terms-and-conditions")({
             getBreadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "Terms & Conditions", path: "/terms-and-conditions" },
-            ])
+            ]),
           ),
         },
       ],
@@ -91,10 +91,10 @@ function TermsAndConditionsPage() {
                   <Reveal delay={0.1}>
                     <h2 className="h4 mb-3">2. Project Scope & Deliverables</h2>
                     <p className="dws-muted mb-4">
-                      Every project is governed by a mutually approved written scope document detailing
-                      deliverables, timelines, and milestones. Any additional features, scope expansions,
-                      or structural redesigns requested outside the original statement of work will be
-                      quoted as a separate sprint or add-on.
+                      Every project is governed by a mutually approved written scope document
+                      detailing deliverables, timelines, and milestones. Any additional features,
+                      scope expansions, or structural redesigns requested outside the original
+                      statement of work will be quoted as a separate sprint or add-on.
                     </p>
                   </Reveal>
 
@@ -102,9 +102,9 @@ function TermsAndConditionsPage() {
                     <h2 className="h4 mb-3">3. Intellectual Property & Code Ownership</h2>
                     <p className="dws-muted mb-4">
                       Upon receipt of full payment for agreed milestones, 100% ownership of custom
-                      codebases, design assets, and content developed specifically for the Client transfers
-                      fully to the Client. The Studio retains no proprietary lock-ins and provides complete
-                      deployment configurations on the Client&apos;s own accounts.
+                      codebases, design assets, and content developed specifically for the Client
+                      transfers fully to the Client. The Studio retains no proprietary lock-ins and
+                      provides complete deployment configurations on the Client&apos;s own accounts.
                     </p>
                   </Reveal>
 
@@ -114,28 +114,36 @@ function TermsAndConditionsPage() {
                       Unless otherwise agreed in a written project agreement:
                     </p>
                     <ul className="dws-tier-list mb-4">
-                      <li>One-time projects: 50% initial deposit upon kick-off, 50% upon final sign-off before production domain launch.</li>
-                      <li>Monthly retainers: Invoiced at the beginning of each 30-day service cycle.</li>
-                      <li>Third-party costs: Advertising spend (Google Ads, Meta Ads) and third-party SaaS subscriptions are paid directly by the Client.</li>
+                      <li>
+                        One-time projects: 50% initial deposit upon kick-off, 50% upon final
+                        sign-off before production domain launch.
+                      </li>
+                      <li>
+                        Monthly retainers: Invoiced at the beginning of each 30-day service cycle.
+                      </li>
+                      <li>
+                        Third-party costs: Advertising spend (Google Ads, Meta Ads) and third-party
+                        SaaS subscriptions are paid directly by the Client.
+                      </li>
                     </ul>
                   </Reveal>
 
                   <Reveal delay={0.25}>
                     <h2 className="h4 mb-3">5. Warranties & Performance Guarantees</h2>
                     <p className="dws-muted mb-4">
-                      The Studio builds all websites adhering to modern Core Web Vitals standards, semantic
-                      HTML5, and technical SEO best practices. While we commit to industry-leading execution,
-                      neither party can guarantee exact third-party search engine ranking algorithms or ad auction
-                      outcomes.
+                      The Studio builds all websites adhering to modern Core Web Vitals standards,
+                      semantic HTML5, and technical SEO best practices. While we commit to
+                      industry-leading execution, neither party can guarantee exact third-party
+                      search engine ranking algorithms or ad auction outcomes.
                     </p>
                   </Reveal>
 
                   <Reveal delay={0.3}>
                     <h2 className="h4 mb-3">6. Governing Law & Jurisdiction</h2>
                     <p className="dws-muted mb-4">
-                      These Terms are governed by the laws of India. Any disputes arising under this agreement
-                      shall be subject to the exclusive jurisdiction of the competent courts in {business.city},
-                      {business.state}, India.
+                      These Terms are governed by the laws of India. Any disputes arising under this
+                      agreement shall be subject to the exclusive jurisdiction of the competent
+                      courts in {business.city},{business.state}, India.
                     </p>
                     <p className="dws-muted mb-4">
                       Questions regarding these terms? Contact us at:{" "}

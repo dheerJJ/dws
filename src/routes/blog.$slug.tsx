@@ -10,7 +10,13 @@ import { useDwsBody } from "@/components/dws/useDwsBody";
 import { getPost, posts } from "@/data/blog";
 import { business } from "@/data/business";
 
-import { formatMetaDescription, formatMetaTitle, getCanonicalUrl, getBlogPostingSchema, getBreadcrumbSchema } from "@/lib/seo";
+import {
+  formatMetaDescription,
+  formatMetaTitle,
+  getCanonicalUrl,
+  getBlogPostingSchema,
+  getBreadcrumbSchema,
+} from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -22,7 +28,10 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = loaderData?.post || getPost(params?.slug);
     if (!post) {
       return {
-        meta: [{ title: formatMetaTitle("Article not found", false) }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: formatMetaTitle("Article not found", false) },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const slug = params?.slug || post.slug;
@@ -55,7 +64,7 @@ export const Route = createFileRoute("/blog/$slug")({
               cover: post.cover,
               author: post.author,
               category: post.category,
-            })
+            }),
           ),
         },
         {
@@ -65,7 +74,7 @@ export const Route = createFileRoute("/blog/$slug")({
               { name: "Home", path: "/" },
               { name: "Blog", path: "/blog" },
               { name: post.title, path: `/blog/${slug}` },
-            ])
+            ]),
           ),
         },
       ],
@@ -121,7 +130,11 @@ function PostPage() {
                       </Link>
                     </li>
                     <li>/</li>
-                    <li className="text-white text-truncate" style={{ maxWidth: "240px" }} aria-current="page">
+                    <li
+                      className="text-white text-truncate"
+                      style={{ maxWidth: "240px" }}
+                      aria-current="page"
+                    >
                       {post.title}
                     </li>
                   </ol>

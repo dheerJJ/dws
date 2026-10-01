@@ -97,7 +97,9 @@ async function runCheck() {
       if (!descMatch) {
         errors.push("Missing meta description");
       } else if (descMatch.length > 155) {
-        errors.push(`Meta description length ${descMatch.length} chars exceeds 155 chars threshold: "${descMatch}"`);
+        errors.push(
+          `Meta description length ${descMatch.length} chars exceeds 155 chars threshold: "${descMatch}"`,
+        );
       }
 
       // H1 count check
@@ -122,7 +124,7 @@ async function runCheck() {
       // Structured data JSON-LD check
       const jsonLdBlocks = extractAllTags(
         res.body,
-        /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi
+        /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
       );
       if (jsonLdBlocks.length === 0) {
         errors.push("No JSON-LD structured data script found");
@@ -145,7 +147,9 @@ async function runCheck() {
       }
 
       const statusIcon = errors.length === 0 ? "✅" : "❌";
-      console.log(`${statusIcon} ${route} [${res.status}] - Title: "${title}" (${title.length}c) | H1s: ${h1s.length} | Canonical: ${canonicalMatch ? "Yes" : "No"}`);
+      console.log(
+        `${statusIcon} ${route} [${res.status}] - Title: "${title}" (${title.length}c) | H1s: ${h1s.length} | Canonical: ${canonicalMatch ? "Yes" : "No"}`,
+      );
 
       if (errors.length > 0) {
         errors.forEach((err) => console.log(`   🚨 ERROR: ${err}`));
@@ -240,7 +244,9 @@ async function runCheck() {
   }
 
   console.log(`\n======================================================`);
-  console.log(`📊 SUMMARY: ${totalErrors} Errors, ${totalWarnings} Warnings across all audited pages.`);
+  console.log(
+    `📊 SUMMARY: ${totalErrors} Errors, ${totalWarnings} Warnings across all audited pages.`,
+  );
   console.log(`======================================================\n`);
 
   if (totalErrors > 0) {

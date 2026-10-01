@@ -22,7 +22,7 @@ for (const page of PAGES) {
   try {
     execSync(
       `npx lighthouse "${targetUrl}" --chrome-flags="--headless --no-sandbox" --output=json --output-path="${reportPath}" --form-factor=mobile --screenEmulation.mobile --only-categories=performance,accessibility,best-practices,seo --quiet`,
-      { stdio: "inherit" }
+      { stdio: "inherit" },
     );
 
     if (fs.existsSync(reportPath)) {

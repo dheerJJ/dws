@@ -200,7 +200,10 @@ export function Footer() {
                 <li>
                   <div className="dws-footer-item">
                     <MapPin size={16} className="dws-footer-icon" aria-hidden="true" />
-                    <span>{business.address.streetAddress}, {business.city}, {business.state} {business.address.postalCode}, India</span>
+                    <span>
+                      {business.address.streetAddress}, {business.city}, {business.state}{" "}
+                      {business.address.postalCode}, India
+                    </span>
                   </div>
                 </li>
                 <li>

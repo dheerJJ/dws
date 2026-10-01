@@ -5,6 +5,7 @@ This document lists all items that require real-world input, manual account setu
 ---
 
 ## 1. Domain, DNS & Hosting Verification
+
 - [ ] **Custom Domain Connection**: Connect your registered custom domain (e.g. `dws.co` or `dwswebservices.com`) in Vercel project settings -> Domains.
 - [ ] **DNS Records**: Add the recommended CNAME and A records in your DNS registrar (GoDaddy, Namecheap, Cloudflare, etc.).
 - [ ] **Canonical Host Environment Variable**: Update `VITE_SITE_URL` in `.env` and Vercel Environment Variables to your final custom domain (e.g. `https://dws.co`).
@@ -12,6 +13,7 @@ This document lists all items that require real-world input, manual account setu
 ---
 
 ## 2. Search Engines & Webmaster Verification
+
 - [x] **Google Search Console (GSC)**:
   - Verification file `google0b960ea3bfa41cfa.html` placed in `/public` directory.
   - Verification meta tag `<meta name="google-site-verification" content="google0b960ea3bfa41cfa" />` added to `<head>`.
@@ -24,6 +26,7 @@ This document lists all items that require real-world input, manual account setu
 ---
 
 ## 3. Local SEO & Google Business Profile (GBP)
+
 - [ ] **Google Business Profile (GBP)**:
   - Create or claim "DWS Web Services" at [business.google.com](https://business.google.com).
   - Primary category: "Website Designer" or "Internet Marketing Service".
@@ -37,7 +40,9 @@ This document lists all items that require real-world input, manual account setu
 ---
 
 ## 4. Real Content Placeholders (No Fake Facts / Data)
+
 Per strict safety rules, no fake statistics, client reviews, or numbers have been fabricated. Replace the following placeholders with your verified data:
+
 - [ ] **Real Testimonials**:
   - In `src/data/site.ts` or `src/data/config.ts`, replace `[ADD REAL TESTIMONIAL]` with quotes from verified clients, including client name, designation, and company name.
 - [ ] **Real Case Studies Metrics**:
@@ -48,6 +53,7 @@ Per strict safety rules, no fake statistics, client reviews, or numbers have bee
 ---
 
 ## 5. Booking & Lead Channels
+
 - [ ] **Cal.com / Calendly Link**:
   - Create a 30-minute Strategy Call event type in Cal.com or Calendly.
   - Set the booking URL in `src/data/config.ts` (`bookingUrl: "https://cal.com/your-username/30min"`).
@@ -57,7 +63,9 @@ Per strict safety rules, no fake statistics, client reviews, or numbers have bee
 ---
 
 ## 6. Local Directory Listings & Citations (NAP Consistency)
+
 Ensure the exact Name, Address, and Phone (**DWS Web Services, Jaipur, Rajasthan, +91 78509 15862**) are submitted to:
+
 - [ ] **Justdial**: List under Website Designers in Jaipur.
 - [ ] **IndiaMART**: Create free business profile for web design and digital marketing.
 - [ ] **Sulekha**: Local Jaipur business listing.
@@ -68,6 +76,7 @@ Ensure the exact Name, Address, and Phone (**DWS Web Services, Jaipur, Rajasthan
 ---
 
 ## 7. Social Profiles & Brand Assets
+
 - [ ] **LinkedIn Company Page**: Create "DWS Web Services" company page and link it in `config.ts`.
 - [ ] **Instagram**: Update bio and website link on `@dws.io` or company handle.
 - [ ] **Twitter / X**: Create or link agency profile.

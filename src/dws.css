@@ -64,7 +64,12 @@ nav[aria-label="Breadcrumb"] a:hover,
 }
 
 /* Rendering performance & typography optimization */
-h1, h2, h3, .h1, .h2, .h3 {
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
   text-wrap: balance;
 }
 p {
@@ -758,7 +763,9 @@ p {
   overflow: hidden;
   background: #0a0a0a;
   box-shadow: 0 24px 48px -18px rgba(0, 0, 0, 0.8);
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 .dws-founder-hero-card:hover {
   border-color: #383838;
@@ -977,7 +984,9 @@ select.dws-input.is-placeholder {
   border: 1px solid #282828;
   border-radius: 12px;
   padding: 0.35rem;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.8),
+    0 4px 12px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
   max-height: 280px;
   overflow-y: auto;

@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
   head: () => {
     const title = formatMetaTitle("Digital Agency in Jaipur");
     const description = formatMetaDescription(
-      "DWS Web Services is a founder-led digital agency in Jaipur, started by Dheerajj Kumawat, delivering high-performance websites, SEO, and paid growth engines."
+      "DWS Web Services is a founder-led digital agency in Jaipur, started by Dheerajj Kumawat, delivering high-performance websites, SEO, and paid growth engines.",
     );
     const canonical = getCanonicalUrl("/about");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;
@@ -90,7 +90,7 @@ export const Route = createFileRoute("/about")({
             getBreadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "About", path: "/about" },
-            ])
+            ]),
           ),
         },
       ],
@@ -150,13 +150,14 @@ function AboutPage() {
 
                 <Reveal delay={0.1}>
                   <p className="dws-hero-sub mb-4">
-                    DWS Web Services turns complex business requirements into fast websites, measurable
-                    organic SEO, and compounding revenue engines.
+                    DWS Web Services turns complex business requirements into fast websites,
+                    measurable organic SEO, and compounding revenue engines.
                   </p>
                   <p className="mb-0 lead" style={{ color: "#d6d6d6" }}>
-                    Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates deliberately lean:
-                    senior hands on every keyboard, zero junior hand-offs, and reporting judged strictly on
-                    commercial enquiries rather than superficial vanity impressions.
+                    Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates
+                    deliberately lean: senior hands on every keyboard, zero junior hand-offs, and
+                    reporting judged strictly on commercial enquiries rather than superficial vanity
+                    impressions.
                   </p>
                 </Reveal>
               </div>
@@ -180,11 +181,17 @@ function AboutPage() {
                       <div className="d-flex justify-content-between align-items-baseline gap-2">
                         <div>
                           <h2 className="h6 text-white mb-0 fw-semibold">Dheerajj Kumawat</h2>
-                          <p className="dws-mono text-muted mb-0" style={{ fontSize: "0.72rem", letterSpacing: "0.08em" }}>
+                          <p
+                            className="dws-mono text-muted mb-0"
+                            style={{ fontSize: "0.72rem", letterSpacing: "0.08em" }}
+                          >
                             FOUNDER &amp; TECHNICAL LEAD
                           </p>
                         </div>
-                        <span className="dws-mono text-muted" style={{ fontSize: "0.72rem", letterSpacing: "0.08em" }}>
+                        <span
+                          className="dws-mono text-muted"
+                          style={{ fontSize: "0.72rem", letterSpacing: "0.08em" }}
+                        >
                           JAIPUR, RJ
                         </span>
                       </div>
@@ -206,8 +213,9 @@ function AboutPage() {
                     <p className="dws-case-label dws-mono mb-2">Philosophy</p>
                     <h2 className="h5 mb-3 text-white">Engineering-First Growth</h2>
                     <p className="dws-muted small mb-0">
-                      We treat websites and marketing like software systems. Every page has an architectural
-                      hypothesis, explicit conversion goals, and rigorous performance benchmarks.
+                      We treat websites and marketing like software systems. Every page has an
+                      architectural hypothesis, explicit conversion goals, and rigorous performance
+                      benchmarks.
                     </p>
                   </div>
                 </Reveal>
@@ -219,8 +227,8 @@ function AboutPage() {
                     <p className="dws-case-label dws-mono mb-2">Location &amp; Reach</p>
                     <h2 className="h5 mb-3 text-white">Rooted in Jaipur, Serving India</h2>
                     <p className="dws-muted small mb-0">
-                      Based in {business.city}, {business.state}. We serve local service providers, healthcare
-                      clinics, real estate brokerages, and national tech startups.
+                      Based in {business.city}, {business.state}. We serve local service providers,
+                      healthcare clinics, real estate brokerages, and national tech startups.
                     </p>
                   </div>
                 </Reveal>
@@ -236,17 +244,24 @@ function AboutPage() {
                         <strong className="text-white">Studio:</strong> {business.name}
                       </li>
                       <li className="mb-1">
-                        <strong className="text-white">Location:</strong> {business.address.streetAddress}, {business.city}, {business.state}
+                        <strong className="text-white">Location:</strong>{" "}
+                        {business.address.streetAddress}, {business.city}, {business.state}
                       </li>
                       <li className="mb-1">
                         <strong className="text-white">Phone:</strong>{" "}
-                        <a className="text-white text-decoration-none" href={`tel:${business.phone}`}>
+                        <a
+                          className="text-white text-decoration-none"
+                          href={`tel:${business.phone}`}
+                        >
                           {business.phoneDisplay}
                         </a>
                       </li>
                       <li>
                         <strong className="text-white">Email:</strong>{" "}
-                        <a className="text-white text-decoration-none" href={`mailto:${business.email}`}>
+                        <a
+                          className="text-white text-decoration-none"
+                          href={`mailto:${business.email}`}
+                        >
                           {business.email}
                         </a>
                       </li>
@@ -346,9 +361,7 @@ function AboutPage() {
                           <span className="dws-quote-mark" aria-hidden="true">
                             &ldquo;
                           </span>
-                          <blockquote className="dws-muted mb-4 flex-grow-1">
-                            {t.quote}
-                          </blockquote>
+                          <blockquote className="dws-muted mb-4 flex-grow-1">{t.quote}</blockquote>
                           <figcaption className="mt-auto">
                             <cite className="d-block fw-semibold text-white fst-normal">
                               {t.author}

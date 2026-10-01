@@ -22,7 +22,9 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       const issue = result.error.issues[0];
       if (issue) {
         if (issue.path.includes("message")) {
-          throw new Error("Message must be between 10 and 4,000 characters (minimum and maximum characters allowed).");
+          throw new Error(
+            "Message must be between 10 and 4,000 characters (minimum and maximum characters allowed).",
+          );
         }
         if (issue.path.includes("name")) {
           throw new Error("Full name must be between 2 and 120 characters.");
@@ -54,7 +56,9 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       }
       if (now - rateData.lastTime < RATE_LIMIT_WINDOW_MS) {
         if (rateData.count >= MAX_SUBMISSIONS_PER_WINDOW) {
-          throw new Error("Too many submissions. Please wait a minute or email us directly at tech.dws.co@gmail.com.");
+          throw new Error(
+            "Too many submissions. Please wait a minute or email us directly at tech.dws.co@gmail.com.",
+          );
         }
         rateData.count += 1;
         rateData.lastTime = now;

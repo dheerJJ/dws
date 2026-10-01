@@ -25,15 +25,15 @@ DwS is a modern digital agency platform designed to deliver an interactive digit
 
 ## 🛠️ Technology Stack
 
-| Layer | Technologies |
-| :--- | :--- |
-| **Framework** | [TanStack Start](https://tanstack.com/start) (Full-stack SSR), [TanStack Router](https://tanstack.com/router) |
-| **Frontend UI** | [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/) |
-| **Styling & Icons** | [Tailwind CSS v4](https://tailwindcss.com/), [Radix UI](https://www.radix-ui.com/), [Lucide React](https://lucide.dev/), [Framer Motion](https://www.framer.com/motion/) |
-| **Data & State** | [TanStack Query](https://tanstack.com/query), [React Hook Form](https://react-hook-form.com/), [Zod](https://zod.dev/) |
-| **Backend & Services** | [Supabase](https://supabase.com/) (Auth, Database, Edge Functions), [Nitro Engine](https://nitro.unjs.io/) |
-| **Email Templates** | [React Email](https://react.email/) |
-| **Build & Tooling** | [Vite](https://vitejs.dev/), [ESLint](https://eslint.org/), [Prettier](https://prettier.io/) |
+| Layer                  | Technologies                                                                                                                                                             |
+| :--------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Framework**          | [TanStack Start](https://tanstack.com/start) (Full-stack SSR), [TanStack Router](https://tanstack.com/router)                                                            |
+| **Frontend UI**        | [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)                                                                                            |
+| **Styling & Icons**    | [Tailwind CSS v4](https://tailwindcss.com/), [Radix UI](https://www.radix-ui.com/), [Lucide React](https://lucide.dev/), [Framer Motion](https://www.framer.com/motion/) |
+| **Data & State**       | [TanStack Query](https://tanstack.com/query), [React Hook Form](https://react-hook-form.com/), [Zod](https://zod.dev/)                                                   |
+| **Backend & Services** | [Supabase](https://supabase.com/) (Auth, Database, Edge Functions), [Nitro Engine](https://nitro.unjs.io/)                                                               |
+| **Email Templates**    | [React Email](https://react.email/)                                                                                                                                      |
+| **Build & Tooling**    | [Vite](https://vitejs.dev/), [ESLint](https://eslint.org/), [Prettier](https://prettier.io/)                                                                             |
 
 ---
 
@@ -79,22 +79,27 @@ DwS is a modern digital agency platform designed to deliver an interactive digit
 ### Installation
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository-url>
    cd "DwS Digital Showcase"
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Configure Environment Variables**:
    Copy the example environment file and populate your Supabase credentials:
+
    ```bash
    cp .env.example .env
    ```
+
    Provide the following configuration:
+
    ```env
    SUPABASE_PROJECT_ID="your_project_id"
    SUPABASE_URL="https://your_project_id.supabase.co"
@@ -118,14 +123,14 @@ DwS is a modern digital agency platform designed to deliver an interactive digit
 
 ## 📜 Available Scripts
 
-| Command | Description |
-| :--- | :--- |
-| `npm run dev` | Starts the local Vite development server with HMR. |
-| `npm run build` | Compiles the production build for server and client. |
-| `npm run build:dev` | Compiles a development-mode build. |
-| `npm run preview` | Runs the production build locally for verification. |
-| `npm run lint` | Runs ESLint across the codebase for static code analysis. |
-| `npm run format` | Formats all code files using Prettier. |
+| Command             | Description                                               |
+| :------------------ | :-------------------------------------------------------- |
+| `npm run dev`       | Starts the local Vite development server with HMR.        |
+| `npm run build`     | Compiles the production build for server and client.      |
+| `npm run build:dev` | Compiles a development-mode build.                        |
+| `npm run preview`   | Runs the production build locally for verification.       |
+| `npm run lint`      | Runs ESLint across the codebase for static code analysis. |
+| `npm run format`    | Formats all code files using Prettier.                    |
 
 ---
 

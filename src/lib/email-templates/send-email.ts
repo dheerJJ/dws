@@ -158,7 +158,7 @@ export async function sendTemplateEmail(
   // ── No provider configured ────────────────────────────────────────────
   console.error(
     `[Email] No email provider configured. Set GMAIL_USER + GMAIL_APP_PASSWORD, ` +
-    `or RESEND_API_KEY, or LOVABLE_API_KEY to deliver emails to ${recipient}.`,
+      `or RESEND_API_KEY, or LOVABLE_API_KEY to deliver emails to ${recipient}.`,
   );
   throw new Error("No email provider configured");
 }

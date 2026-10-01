@@ -11,22 +11,28 @@
 ## A. Business Identity
 
 1. **Legal business name** (exactly as registered, if registered):
+
    > _e.g. "DWS Web Services" or "DWS Web Services, Sole Proprietorship of Dheerajj Kumawat"_
 
 2. **Year founded / started taking clients**:
+
    > _e.g. "2024", "January 2026", etc._
 
 3. **Registered office address** (full street, building, floor, city, pin):
+
    > _Currently showing "Malviya Nagar, Jaipur, Rajasthan 302017". Is this the real,
    > exact address? If it's just a locality, say so and we'll handle it._
 
 4. **Phone number** (currently +91 78509 15862):
+
    > _Confirm or update._
 
 5. **Email** (currently tech.dws.co@gmail.com):
+
    > _Confirm or update._
 
 6. **Opening hours** (currently Mon-Sat, 10:00-19:00 IST):
+
    > _Confirm or update._
 
 7. **GST / MSME / any registration number** (optional, for T&C page):
@@ -37,15 +43,18 @@
 ## B. Founder & Team
 
 8. **Your full name** (currently "Dheerajj Kumawat"):
+
    > _Confirm spelling._
 
 9. **Your preferred title** (currently "Founder & Growth Strategist" on /about, "Founder & Technical Lead" in schema):
+
    > _Pick one title or give us the right one._
 
 10. **Do you have any other team members? If yes, list each with:**
     - Name
     - Role
     - One-sentence bio
+
     > _If it's just you, say "Solo". We'll rewrite the site to reflect that honestly._
 
 11. **Do you use freelancers or contractors for specific deliverables?**
@@ -57,9 +66,11 @@
 ## C. Experience & Track Record
 
 12. **Total number of projects completed** (real count, not aspirational):
+
     > _e.g. "4 shipped websites, 1 SaaS product" or "7 total projects"_
 
 13. **How many years have you been doing this work** (including before DWS)?
+
     > _e.g. "Building websites since 2023, started DWS in 2026"_
 
 14. **Any formal education, certifications, or training relevant to the work?**
@@ -95,8 +106,8 @@ The site currently shows 4 projects. For each, confirm or correct:
 ## E. Pricing
 
 20. **Are all prices currently shown on the site accurate and current?**
-    > _If anything has changed, list the corrections below._
 
+    > _If anything has changed, list the corrections below._
     - Website Design Launch: ₹24,999 - correct?
     - Website Design Business: ₹64,999 - correct?
     - Website Design Custom: ₹1,49,999+ - correct?
@@ -121,9 +132,11 @@ The site currently shows 4 projects. For each, confirm or correct:
 ## F. Process & Delivery
 
 22. **How do you actually deliver work?** Describe in 2-3 sentences.
+
     > _e.g. "I scope the project on a call, send a fixed quote, build it myself over 2-4 weeks, and do 2 rounds of revisions before launch."_
 
 23. **Response time for enquiries** (currently promising "within one business day"):
+
     > _Is this realistic? Confirm or change._
 
 24. **Do you offer a free strategy call?** (currently advertised):
@@ -134,6 +147,7 @@ The site currently shows 4 projects. For each, confirm or correct:
 ## G. Proof & Social Proof
 
 25. **Do you have any real testimonials or reviews?**
+
     > _If yes, paste the exact quote, the person's real name, their title/company,
     > and whether they've given you permission to use it on the site._
 
@@ -149,9 +163,11 @@ The site currently shows 4 projects. For each, confirm or correct:
 ## H. Voice & Tone Preferences
 
 29. **How do you want to come across?**
+
     > _Pick 3-5 words: e.g. "direct, technical, no-nonsense" or "friendly, approachable, professional"_
 
 30. **Anything you specifically do NOT want said on the site?**
+
     > _e.g. "Don't call us an agency, we're a studio" or "Don't promise specific timelines for SEO"_
 
 31. **What makes you genuinely different from other web/SEO providers in Jaipur?**
@@ -163,6 +179,7 @@ The site currently shows 4 projects. For each, confirm or correct:
 ## I. Content Gaps
 
 32. **Is there anything true about DWS that the current site doesn't mention at all?**
+
     > _e.g. "I also do WhatsApp chatbot setup" or "I offer a money-back guarantee on the first month of SEO"_
 
 33. **Anything on the current site that's just wrong and should be removed?**

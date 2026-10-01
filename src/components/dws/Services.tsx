@@ -39,7 +39,8 @@ export function Services() {
                 Specialized engineering and growth, on demand.
               </h2>
               <p className="dws-muted fs-5 mb-0">
-                From bespoke website architecture and mobile apps to ERP systems and organic growth. Direct senior execution with zero handoffs.
+                From bespoke website architecture and mobile apps to ERP systems and organic growth.
+                Direct senior execution with zero handoffs.
               </p>
             </Reveal>
           </div>
@@ -62,7 +63,9 @@ export function Services() {
                 </span>
                 <div>
                   <h3 className="dws-service-title">{service.title}</h3>
-                  <span className="dws-service-meta d-none d-sm-inline">{service.category} · {service.startsAt}</span>
+                  <span className="dws-service-meta d-none d-sm-inline">
+                    {service.category} · {service.startsAt}
+                  </span>
                 </div>
                 <ArrowIcon />
               </motion.div>

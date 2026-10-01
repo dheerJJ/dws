@@ -20,7 +20,7 @@ export const Route = createFileRoute("/pricing/")({
   head: () => {
     const title = formatMetaTitle("Web Design, Mobile App & SEO Pricing");
     const description = formatMetaDescription(
-      "Transparent pricing packages for website design, mobile app development, SEO, and SaaS MVPs from DWS Web Services in Jaipur. Fixed scope, clear deliverables, no lock-in."
+      "Transparent pricing packages for website design, mobile app development, SEO, and SaaS MVPs from DWS Web Services in Jaipur. Fixed scope, clear deliverables, no lock-in.",
     );
     const canonical = getCanonicalUrl("/pricing");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/pricing/")({
             getBreadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "Pricing", path: "/pricing" },
-            ])
+            ]),
           ),
         },
       ],

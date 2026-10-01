@@ -18,7 +18,7 @@ export const Route = createFileRoute("/blog/")({
       {
         name: "description",
         content: formatMetaDescription(
-          "Practical insights on high-converting websites, SaaS MVP development, local SEO for Indian businesses and digital marketing."
+          "Practical insights on high-converting websites, SaaS MVP development, local SEO for Indian businesses and digital marketing.",
         ),
       },
       { property: "og:title", content: "Web Design & SEO Insights | DWS Web Services" },

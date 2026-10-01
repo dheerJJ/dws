@@ -20,7 +20,7 @@ export const Route = createFileRoute("/case-studies")({
   head: () => {
     const title = formatMetaTitle("Web Design & SEO Case Studies");
     const description = formatMetaDescription(
-      "Before-and-after case studies from DWS Web Services: verified website builds for healthcare, luxury real estate, SaaS products, and personal branding in India."
+      "Before-and-after case studies from DWS Web Services: verified website builds for healthcare, luxury real estate, SaaS products, and personal branding in India.",
     );
     const canonical = getCanonicalUrl("/case-studies");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/case-studies")({
             getBreadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "Case Studies", path: "/case-studies" },
-            ])
+            ]),
           ),
         },
       ],
@@ -94,9 +94,9 @@ function CaseStudiesPage() {
 
                 <Reveal delay={0.1}>
                   <p className="dws-hero-sub mb-0">
-                    Four real builds, each with the starting challenge, the engineered solution, and the live
-                    production result. No stock mockups - every screenshot below reflects the application as it
-                    runs in production today.
+                    Four real builds, each with the starting challenge, the engineered solution, and
+                    the live production result. No stock mockups - every screenshot below reflects
+                    the application as it runs in production today.
                   </p>
                 </Reveal>
               </div>
@@ -202,10 +202,7 @@ function CaseStudiesPage() {
                         Scope: <span className="text-white">{study.scope.join(" · ")}</span>
                       </div>
                       <div className="d-flex gap-2">
-                        <Link
-                          to="/contact"
-                          className="dws-btn dws-btn-solid dws-btn-sm-tight"
-                        >
+                        <Link to="/contact" className="dws-btn dws-btn-solid dws-btn-sm-tight">
                           Request Similar Build
                         </Link>
                         <a
@@ -233,8 +230,8 @@ function CaseStudiesPage() {
               <Reveal>
                 <h2 className="display-6 mb-3 text-white">Have a project in mind?</h2>
                 <p className="dws-muted mb-4 mx-auto" style={{ maxWidth: "36rem" }}>
-                  Every case study began with a single strategy conversation. Tell us your goals and we
-                  will map out the architecture.
+                  Every case study began with a single strategy conversation. Tell us your goals and
+                  we will map out the architecture.
                 </p>
                 <div className="d-flex flex-wrap justify-content-center gap-3">
                   <Link to="/contact" className="dws-btn dws-btn-solid">

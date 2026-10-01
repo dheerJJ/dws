@@ -17,7 +17,7 @@ export const Route = createFileRoute("/privacy-policy")({
   head: () => {
     const title = formatMetaTitle("Privacy Policy");
     const description = formatMetaDescription(
-      `Privacy Policy for ${business.name}. Learn how we collect, handle, and protect your information when using our website and services.`
+      `Privacy Policy for ${business.name}. Learn how we collect, handle, and protect your information when using our website and services.`,
     );
     const canonical = getCanonicalUrl("/privacy-policy");
 
@@ -43,7 +43,7 @@ export const Route = createFileRoute("/privacy-policy")({
             getBreadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "Privacy Policy", path: "/privacy-policy" },
-            ])
+            ]),
           ),
         },
       ],
@@ -81,11 +81,11 @@ function PrivacyPolicyPage() {
                   <Reveal delay={0.05}>
                     <h2 className="h4 mb-3">1. Overview</h2>
                     <p className="dws-muted mb-4">
-                      {business.name} (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to
-                      protecting your privacy. This Privacy Policy outlines our practices regarding
-                      the collection, use, and disclosure of personal data when you visit our
-                      website ({business.siteUrl}) or engage with our web design, mobile app
-                      development, SEO, and software services.
+                      {business.name} (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is
+                      committed to protecting your privacy. This Privacy Policy outlines our
+                      practices regarding the collection, use, and disclosure of personal data when
+                      you visit our website ({business.siteUrl}) or engage with our web design,
+                      mobile app development, SEO, and software services.
                     </p>
                   </Reveal>
 
@@ -113,7 +113,9 @@ function PrivacyPolicyPage() {
                     <p className="dws-muted mb-3">We use your information exclusively to:</p>
                     <ul className="dws-tier-list mb-4">
                       <li>Respond to your enquiries and prepare project proposals.</li>
-                      <li>Deliver web development, search engine optimisation, and marketing services.</li>
+                      <li>
+                        Deliver web development, search engine optimisation, and marketing services.
+                      </li>
                       <li>Schedule and conduct discovery or strategy meetings.</li>
                       <li>Maintain billing records, tax compliance, and project agreements.</li>
                       <li>Ensure the security and reliability of our website.</li>
@@ -128,8 +130,8 @@ function PrivacyPolicyPage() {
                     <p className="dws-muted mb-4">
                       All proprietary business information, credentials, and assets shared during
                       active engagements are treated as strictly confidential under non-disclosure
-                      obligations. We implement standard encryption, access controls, and secure hosting
-                      protocols to safeguard your data.
+                      obligations. We implement standard encryption, access controls, and secure
+                      hosting protocols to safeguard your data.
                     </p>
                   </Reveal>
 
@@ -137,23 +139,27 @@ function PrivacyPolicyPage() {
                     <h2 className="h4 mb-3">5. Third-Party Integrations</h2>
                     <p className="dws-muted mb-4">
                       Our site may integrate trusted third-party providers for scheduling (Cal.com /
-                      Calendly) and communications (WhatsApp). These providers process data in accordance
-                      with their respective privacy policies.
+                      Calendly) and communications (WhatsApp). These providers process data in
+                      accordance with their respective privacy policies.
                     </p>
                   </Reveal>
 
                   <Reveal delay={0.3}>
                     <h2 className="h4 mb-3">6. Your Rights & Contact Details</h2>
                     <p className="dws-muted mb-3">
-                      Under Indian Information Technology laws and international data standards, you have
-                      the right to request access to, correction of, or deletion of your personal data.
+                      Under Indian Information Technology laws and international data standards, you
+                      have the right to request access to, correction of, or deletion of your
+                      personal data.
                     </p>
                     <p className="dws-muted mb-4">
                       For privacy requests or queries, reach us at:
                       <br />
                       <strong>{business.name}</strong>
                       <br />
-                      Email: <a href={`mailto:${business.email}`} className="text-white">{business.email}</a>
+                      Email:{" "}
+                      <a href={`mailto:${business.email}`} className="text-white">
+                        {business.email}
+                      </a>
                       <br />
                       Location: {business.city}, {business.state}, India
                     </p>

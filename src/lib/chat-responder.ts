@@ -14,7 +14,13 @@ export function generateInstantChatReply(query: string, _history: UIMessage[] = 
   const q = clean(query);
 
   // 1. Mobile App Development
-  if (q.includes("mobile") || q.includes("app") || q.includes("ios") || q.includes("android") || q.includes("flutter")) {
+  if (
+    q.includes("mobile") ||
+    q.includes("app") ||
+    q.includes("ios") ||
+    q.includes("android") ||
+    q.includes("flutter")
+  ) {
     return `### Mobile App Development at DwS
 
 We engineer production-grade mobile applications built for fluid performance, responsive touch interactions, and commercial conversion.
@@ -32,7 +38,11 @@ View packages on our [Mobile App Development Pricing](/pricing/mobile-app-develo
   }
 
   // 2. SaaS MVP Development
-  if (q.includes("saas") || q.includes("mvp") || (q.includes("software") && !q.includes("website"))) {
+  if (
+    q.includes("saas") ||
+    q.includes("mvp") ||
+    (q.includes("software") && !q.includes("website"))
+  ) {
     return `### SaaS MVP & Product Engineering
 
 We build lean, scalable SaaS products designed to ship fast and reach your first paying users without technical debt.
@@ -52,12 +62,19 @@ Read our breakdown on [SaaS MVP Development](/pricing/saas-mvp) or [Book an Onli
 
   // 3. Website Design & Architecture / Website Cost
   if (
-    (q.includes("website") || q.includes("web design") || q.includes("build cost") || q.includes("site cost")) &&
-    (q.includes("cost") || q.includes("price") || q.includes("rate") || q.includes("much") || q.includes("how"))
+    (q.includes("website") ||
+      q.includes("web design") ||
+      q.includes("build cost") ||
+      q.includes("site cost")) &&
+    (q.includes("cost") ||
+      q.includes("price") ||
+      q.includes("rate") ||
+      q.includes("much") ||
+      q.includes("how"))
   ) {
     return `### Website Design & Architecture Pricing
 
-All our websites are engineered with sub-second page loads, clean design systems, and conversion-focused copywriting—no bloated templates.
+All our websites are engineered with sub-second page loads, clean design systems, and conversion-focused copywriting with no bloated templates.
 
 - **Launch Package:** ₹24,999 (Fixed fee)
   - 1 conversion-focused landing page, custom design, WhatsApp & enquiry forms, SEO foundations, analytics.
@@ -72,7 +89,13 @@ Explore full package details on our [Website Design Pricing](/pricing/website-de
   }
 
   // 4. SEO / Search & Revenue Infrastructure
-  if (q.includes("seo") || q.includes("rank") || q.includes("google") || q.includes("search") || q.includes("traffic")) {
+  if (
+    q.includes("seo") ||
+    q.includes("rank") ||
+    q.includes("google") ||
+    q.includes("search") ||
+    q.includes("traffic")
+  ) {
     return `### Search & Revenue Infrastructure (Technical & Local SEO)
 
 We don't sell vanity traffic reports. Our SEO programmes focus on local ranking in Google Map Pack and organic conversion.
@@ -88,7 +111,15 @@ Read our practical guide [The Local SEO Checklist for Indian Businesses](/blog/l
   }
 
   // 5. General Pricing / Packages
-  if (q.includes("price") || q.includes("pricing") || q.includes("cost") || q.includes("rate") || q.includes("package") || q.includes("budget") || q.includes("fees")) {
+  if (
+    q.includes("price") ||
+    q.includes("pricing") ||
+    q.includes("cost") ||
+    q.includes("rate") ||
+    q.includes("package") ||
+    q.includes("budget") ||
+    q.includes("fees")
+  ) {
     return `### DwS Transparent Pricing (INR)
 
 We believe in upfront, transparent pricing with no hidden costs:
@@ -106,7 +137,14 @@ Check out our complete breakdown on the [Pricing Overview](/pricing) page or [Sc
   }
 
   // 6. Projects / Portfolio / Case Studies
-  if (q.includes("project") || q.includes("work") || q.includes("portfolio") || q.includes("case") || q.includes("built") || q.includes("client")) {
+  if (
+    q.includes("project") ||
+    q.includes("work") ||
+    q.includes("portfolio") ||
+    q.includes("case") ||
+    q.includes("built") ||
+    q.includes("client")
+  ) {
     return `### Recent Featured Work
 
 Here are a few production systems and sites shipped by DwS:
@@ -124,7 +162,14 @@ Explore live demos and metrics on our [Case Studies](/case-studies) page.`;
   }
 
   // 7. Team / Founder
-  if (q.includes("team") || q.includes("founder") || q.includes("who") || q.includes("dheerajj") || q.includes("kumawat") || q.includes("lead")) {
+  if (
+    q.includes("team") ||
+    q.includes("founder") ||
+    q.includes("who") ||
+    q.includes("dheerajj") ||
+    q.includes("kumawat") ||
+    q.includes("lead")
+  ) {
     return `### Founder-Led Craft & Execution
 
 DwS is led by **Dheerajj Kumawat**, Founder & Technical Lead.
@@ -137,7 +182,17 @@ Learn more on our [About Us](/about) page.`;
   }
 
   // 8. Contact / Hours / Location / Hiring
-  if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("call") || q.includes("reach") || q.includes("address") || q.includes("location") || q.includes("hire") || q.includes("book")) {
+  if (
+    q.includes("contact") ||
+    q.includes("email") ||
+    q.includes("phone") ||
+    q.includes("call") ||
+    q.includes("reach") ||
+    q.includes("address") ||
+    q.includes("location") ||
+    q.includes("hire") ||
+    q.includes("book")
+  ) {
     return `### Get in Touch with DwS
 
 We respond to all project enquiries within 24 business hours.
@@ -152,7 +207,13 @@ Fill out our project inquiry form directly on the [Contact](/contact) page.`;
   }
 
   // 9. Timelines
-  if (q.includes("timeline") || q.includes("how long") || q.includes("time") || q.includes("duration") || q.includes("fast")) {
+  if (
+    q.includes("timeline") ||
+    q.includes("how long") ||
+    q.includes("time") ||
+    q.includes("duration") ||
+    q.includes("fast")
+  ) {
     return `### Delivery Timelines
 
 We work in focused sprints with guaranteed fixed delivery windows:
@@ -167,7 +228,13 @@ Ready to schedule your kickoff? [Talk to us at /contact](/contact).`;
   }
 
   // 10. Greetings
-  if (q.includes("hi") || q.includes("hello") || q.includes("hey") || q.includes("good morning") || q.includes("good afternoon")) {
+  if (
+    q.includes("hi") ||
+    q.includes("hello") ||
+    q.includes("hey") ||
+    q.includes("good morning") ||
+    q.includes("good afternoon")
+  ) {
     return `Hello! Welcome to **DwS**.
 
 I'm the DwS Assistant. I can immediately answer questions about:

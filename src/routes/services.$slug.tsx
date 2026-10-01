@@ -1,8 +1,22 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import {
-  Globe, ShoppingCart, Code, Building2, Users, GraduationCap,
-  Smartphone, Palette, Brush, TrendingUp, Search, Server,
-  AtSign, Wrench, Rocket, TabletSmartphone, Apple,
+  Globe,
+  ShoppingCart,
+  Code,
+  Building2,
+  Users,
+  GraduationCap,
+  Smartphone,
+  Palette,
+  Brush,
+  TrendingUp,
+  Search,
+  Server,
+  AtSign,
+  Wrench,
+  Rocket,
+  TabletSmartphone,
+  Apple,
 } from "lucide-react";
 
 import { Navbar } from "@/components/dws/Navbar";
@@ -71,7 +85,7 @@ export const Route = createFileRoute("/services/$slug")({
               { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
               { name: service.title, path: `/services/${params.slug}` },
-            ])
+            ]),
           ),
         },
         {
@@ -116,9 +130,23 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Globe, ShoppingCart, Code, Building2, Users, GraduationCap,
-  Smartphone, Palette, Brush, TrendingUp, Search, Server,
-  AtSign, Wrench, Rocket, TabletSmartphone, Apple,
+  Globe,
+  ShoppingCart,
+  Code,
+  Building2,
+  Users,
+  GraduationCap,
+  Smartphone,
+  Palette,
+  Brush,
+  TrendingUp,
+  Search,
+  Server,
+  AtSign,
+  Wrench,
+  Rocket,
+  TabletSmartphone,
+  Apple,
 };
 
 function ServiceIcon({ name, size = 24 }: { name: string; size?: number }) {
@@ -142,8 +170,13 @@ function ServiceDetailPage() {
           <div className="container">
             <Reveal>
               <nav aria-label="Breadcrumb" className="dws-mono small mb-4">
-                <Link to="/" className="text-muted text-decoration-none">Home</Link>{" "}
-                / <Link to="/services" className="text-muted text-decoration-none">Services</Link>{" "}
+                <Link to="/" className="text-muted text-decoration-none">
+                  Home
+                </Link>{" "}
+                /{" "}
+                <Link to="/services" className="text-muted text-decoration-none">
+                  Services
+                </Link>{" "}
                 / <span className="text-white">{service.title}</span>
               </nav>
             </Reveal>

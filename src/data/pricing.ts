@@ -368,7 +368,8 @@ export const servicePricing: ServicePricing[] = [
         name: "Growth App",
         price: "₹74,999",
         cadence: "one-time",
-        summary: "A production-grade mobile application ready for store launch and customer acquisition.",
+        summary:
+          "A production-grade mobile application ready for store launch and customer acquisition.",
         timeline: "4-6 weeks",
         featured: true,
         features: [
@@ -385,7 +386,8 @@ export const servicePricing: ServicePricing[] = [
         name: "Enterprise App",
         price: "₹1,49,999",
         cadence: "one-time",
-        summary: "Full-scale mobile platform with real-time sync, custom APIs, and advanced security.",
+        summary:
+          "Full-scale mobile platform with real-time sync, custom APIs, and advanced security.",
         timeline: "7-10 weeks",
         features: [
           "Scalable cross-platform architecture with modular components",
@@ -486,7 +488,8 @@ export const servicePricing: ServicePricing[] = [
         name: "Prototype & Starter MVP",
         price: "₹49,999",
         cadence: "one-time",
-        summary: "A focused MVP build to validate customer demand, onboard users, and test market traction.",
+        summary:
+          "A focused MVP build to validate customer demand, onboard users, and test market traction.",
         timeline: "2-3 weeks",
         features: [
           "Product scoping and core user loop architecture workshop",

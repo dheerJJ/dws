@@ -122,7 +122,10 @@ export const Route = createFileRoute("/api/chat")({
 
             return withLovableAiGatewayRunIdHeader(response, runIdFetch);
           } catch (err) {
-            console.warn("AI gateway stream failed, falling back to instant knowledge responder:", err);
+            console.warn(
+              "AI gateway stream failed, falling back to instant knowledge responder:",
+              err,
+            );
           }
         }
 

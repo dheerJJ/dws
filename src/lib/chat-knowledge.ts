@@ -56,7 +56,9 @@ export function buildDwsKnowledge(): string {
 
   lines.push("\n## Client feedback");
   for (const t of testimonials) {
-    lines.push(`- "${t.quote}" - ${t.author}, ${t.role}`);
+    if (!t.quote.startsWith("[ADD REAL TESTIMONIAL")) {
+      lines.push(`- "${t.quote}" - ${t.author}, ${t.role}`);
+    }
   }
 
   lines.push("\n## Articles (page: /blog/<slug>)");

@@ -126,10 +126,12 @@ const footer = {
 /** Sanitize and strip unsafe control characters for defense-in-depth */
 function sanitize(input: string | undefined): string {
   if (!input) return "";
-  return input
-    // eslint-disable-next-line no-control-regex
-    .replace(/[\u0000-\u0008\u000B-\u000C\u000E-\u001F]/g, "")
-    .trim();
+  return (
+    input
+      // eslint-disable-next-line no-control-regex
+      .replace(/[\u0000-\u0008\u000B-\u000C\u000E-\u001F]/g, "")
+      .trim()
+  );
 }
 
 export const ContactConfirmationEmail = ({

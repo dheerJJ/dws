@@ -27,7 +27,7 @@ export const Route = createFileRoute("/contact")({
   head: () => {
     const title = formatMetaTitle("Contact Studio | Start a Project");
     const description = formatMetaDescription(
-      "Contact DWS Web Services in Jaipur. Book a free 30-minute strategy call or send an enquiry for website design, SEO, and software development."
+      "Contact DWS Web Services in Jaipur. Book a free 30-minute strategy call or send an enquiry for website design, SEO, and software development.",
     );
     const canonical = getCanonicalUrl("/contact");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;
@@ -84,7 +84,7 @@ export const Route = createFileRoute("/contact")({
             getBreadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "Contact", path: "/contact" },
-            ])
+            ]),
           ),
         },
       ],
@@ -93,12 +93,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const budgets = [
-  "Under ₹25,000",
-  "₹25,000 - ₹65,000",
-  "₹65,000 - ₹1,50,000",
-  "₹1,50,000+",
-];
+const budgets = ["Under ₹25,000", "₹25,000 - ₹65,000", "₹65,000 - ₹1,50,000", "₹1,50,000+"];
 
 function formatErrorMessage(err: unknown): string {
   if (!err) return "Something went wrong. Please try again.";
@@ -209,8 +204,9 @@ function ContactPage() {
 
                 <Reveal delay={0.1}>
                   <p className="dws-hero-sub mb-4">
-                    Share your requirements and commercial goals. You will receive a direct reply from
-                    our technical lead within one business day with clear next steps and scope options.
+                    Share your requirements and commercial goals. You will receive a direct reply
+                    from our technical lead within one business day with clear next steps and scope
+                    options.
                   </p>
 
                   <ul className="dws-tier-list mb-4">
@@ -232,18 +228,26 @@ function ContactPage() {
                       <li className="mb-2 d-flex align-items-center gap-2">
                         <MapPin size={16} className="text-white flex-shrink-0" aria-hidden="true" />
                         <span>
-                          <strong className="text-white">{business.name}</strong>, {business.address.streetAddress}, {business.city}, {business.state} {business.address.postalCode}, India
+                          <strong className="text-white">{business.name}</strong>,{" "}
+                          {business.address.streetAddress}, {business.city}, {business.state}{" "}
+                          {business.address.postalCode}, India
                         </span>
                       </li>
                       <li className="mb-2 d-flex align-items-center gap-2">
                         <Phone size={16} className="text-white flex-shrink-0" aria-hidden="true" />
-                        <a href={`tel:${business.phone}`} className="text-white text-decoration-none">
+                        <a
+                          href={`tel:${business.phone}`}
+                          className="text-white text-decoration-none"
+                        >
                           {business.phoneDisplay}
                         </a>
                       </li>
                       <li className="mb-2 d-flex align-items-center gap-2">
                         <Mail size={16} className="text-white flex-shrink-0" aria-hidden="true" />
-                        <a href={`mailto:${business.email}`} className="text-white text-decoration-none">
+                        <a
+                          href={`mailto:${business.email}`}
+                          className="text-white text-decoration-none"
+                        >
                           {business.email}
                         </a>
                       </li>
@@ -277,7 +281,8 @@ function ContactPage() {
                         <div>
                           <h2 className="h5 mb-1 text-white">Direct 30-Minute Strategy Call</h2>
                           <p className="dws-muted small mb-0">
-                            Prefer speaking directly? Pick an available slot on our calendar right now.
+                            Prefer speaking directly? Pick an available slot on our calendar right
+                            now.
                           </p>
                         </div>
                       </div>
@@ -403,7 +408,10 @@ function ContactPage() {
                                 Minimum 10 and maximum 4,000 characters allowed.
                               </span>
                               {form.message.length > 0 && (
-                                <span className="dws-mono small text-muted" style={{ fontSize: "0.75rem" }}>
+                                <span
+                                  className="dws-mono small text-muted"
+                                  style={{ fontSize: "0.75rem" }}
+                                >
                                   {form.message.length} / 4,000
                                 </span>
                               )}

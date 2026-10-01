@@ -5,6 +5,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 1: Website Design Cost in Jaipur (2026 Price Guide)
+
 - **Target Primary Keyword**: `website design cost in Jaipur`
 - **Secondary Keywords**: `website development price Jaipur`, `freelance vs agency web design cost India`, `cost of business website Jaipur`
 - **Search Intent**: Commercial Investigation / Transactional
@@ -22,6 +23,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 2: How Doctors & Clinics in Jaipur Can Get Patient Bookings from Google
+
 - **Target Primary Keyword**: `medical website design Jaipur`
 - **Secondary Keywords**: `SEO for doctors in Jaipur`, `dental clinic SEO Jaipur`, `clinic website development India`
 - **Search Intent**: Local Commercial
@@ -39,6 +41,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 3: Local SEO Checklist: How to Rank in Jaipur Google Maps & Search
+
 - **Target Primary Keyword**: `local SEO services in Jaipur`
 - **Secondary Keywords**: `rank in Google 3-pack Jaipur`, `Google Business Profile optimization Jaipur`, `local search agency India`
 - **Search Intent**: Commercial / Informational
@@ -56,6 +59,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 4: Real Estate Website Design & Lead Generation in Jaipur
+
 - **Target Primary Keyword**: `real estate website design Jaipur`
 - **Secondary Keywords**: `property dealer website development India`, `real estate lead generation Jaipur`, `luxury real estate web design`
 - **Search Intent**: High Commercial Intent
@@ -73,6 +77,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 5: SEO vs. Google Ads for Jaipur Businesses: Where to Invest First?
+
 - **Target Primary Keyword**: `digital marketing agency in Jaipur`
 - **Secondary Keywords**: `Google Ads vs SEO India`, `PPC agency Jaipur`, `paid marketing vs organic ranking`
 - **Search Intent**: Commercial Investigation
@@ -89,6 +94,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 6: How to Build a SaaS MVP in India: From Idea to First Paying Users
+
 - **Target Primary Keyword**: `SaaS MVP development India`
 - **Secondary Keywords**: `hire MVP developers India`, `startup MVP development cost`, `React Supabase app developers`
 - **Search Intent**: B2B Commercial
@@ -106,6 +112,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 7: Salon, Spa & Fitness Studio Websites: Converting Instagram Followers into Bookings
+
 - **Target Primary Keyword**: `salon website design Jaipur`
 - **Secondary Keywords**: `fitness studio website India`, `spa booking website development`, `appointment booking website Jaipur`
 - **Search Intent**: Local Commercial
@@ -122,6 +129,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 8: Core Web Vitals Guide for Indian E-Commerce & Service Sites
+
 - **Target Primary Keyword**: `website speed optimization services India`
 - **Secondary Keywords**: `Core Web Vitals agency India`, `fix LCP CLS WordPress`, `fast web development agency`
 - **Search Intent**: Technical / Commercial
@@ -138,6 +146,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 9: How to Hire a Reliable Web Development Company in Jaipur
+
 - **Target Primary Keyword**: `web development company in Jaipur`
 - **Secondary Keywords**: `hire web developers Jaipur`, `best website designers in Jaipur`, `custom software studio Jaipur`
 - **Search Intent**: Commercial Decision
@@ -155,6 +164,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 10: Technical SEO Audit Checklist for B2B Websites in India
+
 - **Target Primary Keyword**: `technical SEO audit India`
 - **Secondary Keywords**: `B2B website SEO checklist`, `crawl budget schema optimization`, `Google Search Console fix`
 - **Search Intent**: Informational / Commercial
@@ -171,6 +181,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 11: Google Ads for Jaipur Businesses: How to Avoid Wasting Ad Spend
+
 - **Target Primary Keyword**: `Google Ads agency in Jaipur`
 - **Secondary Keywords**: `PPC management company Jaipur`, `local Google search ads India`, `reduce cost per lead Google ads`
 - **Search Intent**: Commercial
@@ -187,6 +198,7 @@ This content plan targets high-intent, local, and commercial queries for busines
 ---
 
 ### Article 12: Why Your Business Website Isn't Getting Enquiries (And How to Fix It)
+
 - **Target Primary Keyword**: `conversion rate optimization agency India`
 - **Secondary Keywords**: `website not generating leads`, `fix business website conversion`, `CRO consultant India`
 - **Search Intent**: Commercial Problem-Solving
