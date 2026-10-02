@@ -20,6 +20,7 @@ export const Route = createFileRoute("/terms-and-conditions")({
       `Terms and conditions of service for ${business.name}. Review our engagement policies, intellectual property rights, and payment terms.`,
     );
     const canonical = getCanonicalUrl("/terms-and-conditions");
+    const ogImageUrl = `${business.siteUrl}/og-image.png`;
 
     return {
       meta: [
@@ -29,7 +30,13 @@ export const Route = createFileRoute("/terms-and-conditions")({
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
         { property: "og:url", content: canonical },
+        { property: "og:image", content: ogImageUrl },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: ogImageUrl },
+        { name: "geo.region", content: "IN-RJ" },
+        { name: "geo.placename", content: "Jaipur" },
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [

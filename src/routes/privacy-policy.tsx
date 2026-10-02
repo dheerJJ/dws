@@ -20,6 +20,7 @@ export const Route = createFileRoute("/privacy-policy")({
       `Privacy Policy for ${business.name}. Learn how we collect, handle, and protect your information when using our website and services.`,
     );
     const canonical = getCanonicalUrl("/privacy-policy");
+    const ogImageUrl = `${business.siteUrl}/og-image.png`;
 
     return {
       meta: [
@@ -29,7 +30,13 @@ export const Route = createFileRoute("/privacy-policy")({
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
         { property: "og:url", content: canonical },
+        { property: "og:image", content: ogImageUrl },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: ogImageUrl },
+        { name: "geo.region", content: "IN-RJ" },
+        { name: "geo.placename", content: "Jaipur" },
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
