@@ -77,8 +77,32 @@ export function getOrganizationSchema() {
         closes: "19:00",
       },
     ],
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "26.9124",
+      longitude: "75.7873",
+    },
+    hasMap: "https://maps.google.com/?q=Jaipur,+Rajasthan",
     sameAs: business.socials.map((s) => s.url),
     knowsAbout: business.services,
+  };
+}
+
+/** Returns WebSite JSON-LD schema */
+export function getWebSiteSchema() {
+  const siteUrl = getCanonicalUrl("/");
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}#website`,
+    url: siteUrl,
+    name: business.name,
+    alternateName: business.shortName,
+    description: business.description,
+    inLanguage: "en-IN",
+    publisher: {
+      "@id": `${siteUrl}#organization`,
+    },
   };
 }
 
