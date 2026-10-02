@@ -53,7 +53,7 @@ export const servicePricing: ServicePricing[] = [
     startsAt: "₹24,999",
     metaTitle: "Website Design Company in Jaipur | DWS Web Services",
     metaDescription:
-      "Professional website design company in Jaipur. Fast, responsive, conversion-focused websites and eCommerce builds with full code ownership and SEO foundations.",
+      "Professional website design company in Jaipur. Fast, responsive, conversion-focused websites with full code ownership, modern UX, and SEO foundations.",
     whoItsFor: [
       "Jaipur service businesses, medical clinics, and real estate consultancies needing a credible digital presence.",
       "Growing eCommerce and D2C brands requiring rapid page loads and seamless checkout flows.",
@@ -184,7 +184,7 @@ export const servicePricing: ServicePricing[] = [
     startsAt: "₹18,999",
     metaTitle: "SEO Services in Jaipur | DWS Web Services",
     metaDescription:
-      "Results-driven SEO services in Jaipur. Google Business Profile optimization, local citation building, technical SEO and content to drive high-intent enquiries.",
+      "Results-driven SEO services in Jaipur. Google Business Profile, local citations, technical SEO, and content strategy to drive qualified enquiries.",
     whoItsFor: [
       "Jaipur clinics, dentists, real estate brokers, and local studios wanting to rank #1 in the Google Maps 3-pack.",
       "B2B service providers seeking qualified inbound leads rather than relying entirely on paid ad spend.",
@@ -450,7 +450,7 @@ export const servicePricing: ServicePricing[] = [
     startsAt: "₹49,999",
     metaTitle: "SaaS MVP Development India | DWS Web Services",
     metaDescription:
-      "Fast SaaS MVP development in India. From concept to paying users in 3-6 weeks with React, Supabase, authentication, subscription billing and full code ownership.",
+      "Fast SaaS MVP development in India. Concept to paying users with React, Supabase, authentication, subscription billing, and 100% full code ownership.",
     whoItsFor: [
       "Early-stage founders validating software concepts with real paying customers before committing large capital.",
       "Domain experts building B2B SaaS tools to solve specific industry workflows.",
