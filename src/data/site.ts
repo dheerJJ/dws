@@ -18,13 +18,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Shree Radhe Dental Hospital",
-    tag: "SRDH",
+    name: "Dheerajj Portfolio",
+    tag: "DJK",
     description:
-      "A warm, trust-first website for a Jaipur dental hospital - services, doctor profiles and a clear booking path built around 'Creating Beautiful Smiles Everyday'.",
-    type: "Healthcare Website",
-    url: "https://shreeradhe.vercel.app",
-    thumb: shreeradheThumb.url,
+      "A personal portfolio site built for a founder and growth strategist - case studies, skills and a contact path in one focused experience.",
+    type: "Portfolio Website",
+    url: "https://dheerajjj-portfolio.vercel.app",
+    thumb: dheerajjThumb.url,
   },
   {
     name: "Agneepath Defence Academy",
@@ -63,13 +63,13 @@ export const projects: Project[] = [
     thumb: linksnapThumb.url,
   },
   {
-    name: "Dheerajj Portfolio",
-    tag: "DJK",
+    name: "Shree Radhe Dental Hospital",
+    tag: "SRDH",
     description:
-      "A personal portfolio site built for a founder and growth strategist - case studies, skills and a contact path in one focused experience.",
-    type: "Portfolio Website",
-    url: "https://dheerajjj-portfolio.vercel.app",
-    thumb: dheerajjThumb.url,
+      "A warm, trust-first website for a Jaipur dental hospital - services, doctor profiles and a clear booking path built around 'Creating Beautiful Smiles Everyday'.",
+    type: "Healthcare Website",
+    url: "https://shreeradhe.vercel.app",
+    thumb: shreeradheThumb.url,
   },
 ];
 
