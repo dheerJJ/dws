@@ -64,6 +64,42 @@ export const caseStudies: CaseStudy[] = [
     thumb: thumbOf("Shree Radhe Dental Hospital"),
   },
   {
+    slug: "agneepath-defence-academy",
+    name: "Agneepath Defence Academy",
+    client: "Agneepath Defence & Boxing Academy",
+    sector: "Education & Defence Coaching",
+    location: "Jaipur, Rajasthan",
+    scope: ["Website architecture", "Course catalog structure", "Lead capture funnels", "Local SEO foundations"],
+    before:
+      "Student enrolments and demo enquiries depended entirely on physical flyers and word of mouth in local districts. Aspirants and parents searching online could not review the 10 course streams, physical training syllabus, or hostel facilities.",
+    beforePoints: [
+      "No digital presence for courses or syllabus details",
+      "Parent enquiries handled manually without qualification",
+      "Daily physical training and boxing coaching undocumented",
+      "Zero search visibility for defence academy admissions in Jaipur",
+    ],
+    after:
+      "A high-performance admissions platform presenting 10 specialized recruitment programs, daily physical training schedules, residential hostel details, and seamless demo booking paths on mobile.",
+    afterPoints: [
+      "Categorized course catalog across Army, Navy, Air Force, and School Entrance",
+      "Interactive curriculum, physical test criteria, and facilities breakdown",
+      "Prominent demo class booking and enquiry routing",
+      "Fast, mobile-optimized experience with local SEO architecture",
+    ],
+    outcomes: [
+      { label: "Course pathways structured", value: "10" },
+      { label: "Enquiry channels", value: "Call + Demo Form" },
+      { label: "Mobile performance", value: "Sub-2s" },
+    ],
+    quote: {
+      text: "Parents and students now inspect the training regime, courses, and hostel facilities before reaching out. Admissions inquiries arrive informed and ready to enroll.",
+      author: "Academy Director",
+      role: "Agneepath Defence & Boxing Academy",
+    },
+    url: "https://agneepathdefence.vercel.app",
+    thumb: thumbOf("Agneepath Defence Academy"),
+  },
+  {
     slug: "rudra-bhumi-realtors",
     name: "Rudra Bhumi Realtors",
     client: "Rudra Bhumi Realtors",
@@ -98,6 +134,42 @@ export const caseStudies: CaseStudy[] = [
     },
     url: "https://rudra-bhumi.vercel.app",
     thumb: thumbOf("Rudra Bhumi Realtors"),
+  },
+  {
+    slug: "priyas-art-beauty-makeup-academy",
+    name: "Priya's Art Beauty & Makeup Academy",
+    client: "Priya's Art Beauty & Makeup Academy",
+    sector: "Salon & Academy Management",
+    location: "Jaipur, Rajasthan",
+    scope: ["Custom ERP web app", "WhatsApp API billing", "Customer CRM", "Analytics dashboard"],
+    before:
+      "Daily salon operations and academy billing ran entirely on paper receipts and manual register entries. Customer visit histories were untracked, invoice delivery via WhatsApp had to be sent by hand, and calculating monthly service revenue took hours of manual tallying.",
+    beforePoints: [
+      "Paper-based billing prone to errors and lost records",
+      "No unified customer database or visit history",
+      "Manual WhatsApp messaging for every invoice",
+      "Zero real-time visibility into daily revenue or top services",
+    ],
+    after:
+      "A custom cloud billing and CRM web application that lets staff select services, apply discounts, issue itemized bills in seconds, and automatically dispatch invoices via WhatsApp.",
+    afterPoints: [
+      "Fast, touch-friendly billing interface for front-desk staff",
+      "One-click automated WhatsApp invoice delivery",
+      "Customer directory with complete spend and appointment history",
+      "Real-time reports on daily revenue, payment methods, and staff performance",
+    ],
+    outcomes: [
+      { label: "Billing workflow", value: "Under 30s" },
+      { label: "Invoice delivery", value: "Automated WhatsApp" },
+      { label: "Data security", value: "Cloud-backed" },
+    ],
+    quote: {
+      text: "Billing now takes seconds instead of minutes, and clients receive professional WhatsApp invoices instantly. It transformed how our salon and academy operate daily.",
+      author: "Founder",
+      role: "Priya's Art Beauty & Makeup Academy",
+    },
+    url: "https://priya-s-art-beauty.vercel.app",
+    thumb: thumbOf("Priya's Art Beauty & Makeup Academy"),
   },
   {
     slug: "linksnap",

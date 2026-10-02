@@ -20,7 +20,7 @@ export const Route = createFileRoute("/case-studies")({
   head: () => {
     const title = formatMetaTitle("Web Design & SEO Case Studies");
     const description = formatMetaDescription(
-      "Before-and-after case studies from DWS Web Services: verified website builds for healthcare, luxury real estate, SaaS products, and personal branding in India.",
+      "Real case studies from DWS Web Services: verified builds for salon ERP, defence coaching, healthcare, luxury real estate, and SaaS products in India.",
     );
     const canonical = getCanonicalUrl("/case-studies");
     const ogImageUrl = `${business.siteUrl}/og-image.png`;
@@ -117,7 +117,7 @@ function CaseStudiesPage() {
 
                 <Reveal delay={0.1}>
                   <p className="dws-hero-sub mb-0">
-                    Four real builds, each with the starting challenge, the engineered solution, and
+                    Six real builds, each with the starting challenge, the engineered solution, and
                     the live production result. No stock mockups - every screenshot below reflects
                     the application as it runs in production today.
                   </p>

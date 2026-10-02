@@ -4,6 +4,8 @@ import shreeradheThumb from "@/assets/projects/shreeradhe.jpg.asset.json";
 import dheerajjThumb from "@/assets/projects/dheerajj-portfolio.jpg.asset.json";
 import rudraBhumiThumb from "@/assets/projects/rudra-bhumi.jpg.asset.json";
 import linksnapThumb from "@/assets/projects/linksnap.jpg.asset.json";
+import agneepathThumb from "@/assets/projects/agneepath.jpg.asset.json";
+import priyasArtBeautyThumb from "@/assets/projects/priyas-art-beauty.jpg.asset.json";
 
 export type Project = {
   name: string;
@@ -25,13 +27,13 @@ export const projects: Project[] = [
     thumb: shreeradheThumb.url,
   },
   {
-    name: "Dheerajj Portfolio",
-    tag: "DJK",
+    name: "Agneepath Defence Academy",
+    tag: "ADBA",
     description:
-      "A personal portfolio site built for a founder and growth strategist - case studies, skills and a contact path in one focused experience.",
-    type: "Portfolio Website",
-    url: "https://dheerajjj-portfolio.vercel.app",
-    thumb: dheerajjThumb.url,
+      "A high-impact admissions portal for a Jaipur residential defence academy - course pathways, physical training routines, and instant demo enquiry flows.",
+    type: "Education & Academy Website",
+    url: "https://agneepathdefence.vercel.app",
+    thumb: agneepathThumb.url,
   },
   {
     name: "Rudra Bhumi Realtors",
@@ -43,6 +45,15 @@ export const projects: Project[] = [
     thumb: rudraBhumiThumb.url,
   },
   {
+    name: "Priya's Art Beauty & Makeup Academy",
+    tag: "PABM",
+    description:
+      "A custom billing and salon management web application with instant WhatsApp invoice generation, service catalogs, customer tracking, and revenue reports.",
+    type: "SaaS & Web App",
+    url: "https://priya-s-art-beauty.vercel.app",
+    thumb: priyasArtBeautyThumb.url,
+  },
+  {
     name: "LinkSnap",
     tag: "LSN",
     description:
@@ -50,6 +61,15 @@ export const projects: Project[] = [
     type: "SaaS Product",
     url: "https://linksnap-one.vercel.app",
     thumb: linksnapThumb.url,
+  },
+  {
+    name: "Dheerajj Portfolio",
+    tag: "DJK",
+    description:
+      "A personal portfolio site built for a founder and growth strategist - case studies, skills and a contact path in one focused experience.",
+    type: "Portfolio Website",
+    url: "https://dheerajjj-portfolio.vercel.app",
+    thumb: dheerajjThumb.url,
   },
 ];
 

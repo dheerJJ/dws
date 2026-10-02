@@ -106,7 +106,7 @@ const milestones = [
   },
   {
     year: "Now",
-    text: "Shipping high-converting live products for real brands: Shree Radhe Dental Hospital, Rudra Bhumi Realtors, LinkSnap, and growing businesses.",
+    text: "Shipping high-converting live products for real brands: Shree Radhe Dental Hospital, Agneepath Defence Academy, Priya's Art Beauty, Rudra Bhumi Realtors, LinkSnap, and growing businesses.",
   },
   {
     year: "Next",
