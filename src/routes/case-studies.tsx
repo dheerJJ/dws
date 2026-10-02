@@ -56,6 +56,29 @@ export const Route = createFileRoute("/case-studies")({
             ]),
           ),
         },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: `${business.name} Case Studies & Portfolio`,
+            itemListElement: caseStudies.map((cs, idx) => ({
+              "@type": "ListItem",
+              position: idx + 1,
+              item: {
+                "@type": "CreativeWork",
+                name: cs.name,
+                headline: `${cs.name} Case Study`,
+                description: cs.after,
+                url: `${canonical}#${cs.slug}`,
+                creator: {
+                  "@type": "ProfessionalService",
+                  name: business.name,
+                },
+              },
+            })),
+          }),
+        },
       ],
     };
   },
