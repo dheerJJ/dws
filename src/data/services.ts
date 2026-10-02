@@ -65,7 +65,7 @@ export const services: ServiceEntry[] = [
     startsAt: "₹24,999",
     pricingSlug: "website-design",
     featured: true,
-    metaTitle: "Website Design & Development in Jaipur | DWS Web Services",
+    metaTitle: "Website Design Services in Jaipur | DWS Web Services",
     metaDescription:
       "Custom website design and development services in Jaipur. Fast, responsive, conversion-focused websites with full code ownership and SEO foundations.",
     longDescription:
