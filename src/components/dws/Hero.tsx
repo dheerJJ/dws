@@ -38,8 +38,8 @@ export function Hero() {
 
             {/* Tagline preserved as subheading without em dashes */}
             <motion.p className="dws-hero-sub dws-muted mx-auto mb-5" variants={item}>
-              DwS builds high-performance websites, brand systems and paid growth engines for
-              ambitious companies. Strategy first, design obsessed, measured on revenue.
+              DWS Web Services builds high-performance websites, brand systems and paid growth
+              engines for ambitious companies. Strategy first, design obsessed, measured on revenue.
             </motion.p>
 
             <motion.div

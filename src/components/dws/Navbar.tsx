@@ -28,8 +28,8 @@ export function Navbar() {
     >
       <div className="container">
         <div className="d-flex align-items-center justify-content-between gap-3">
-          <Link to="/" aria-label="DwS home" className="flex-shrink-0">
-            <img src={logo.url} alt="DwS logo" className="dws-logo" />
+          <Link to="/" aria-label="DWS Web Services home" className="flex-shrink-0">
+            <img src={logo.url} alt="DWS Web Services logo" className="dws-logo" />
           </Link>
 
           <div className="d-none d-lg-flex justify-content-center gap-4 flex-grow-1">

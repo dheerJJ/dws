@@ -104,8 +104,8 @@ export function Footer() {
           <div className="row g-4 g-lg-5">
             {/* Col 1: Brand & Status */}
             <div className="col-lg-4 col-md-6">
-              <Link to="/" aria-label="DwS home" className="d-inline-block mb-3">
-                <img src={logo.url} alt="DwS logo" className="dws-footer-logo" />
+              <Link to="/" aria-label="DWS Web Services home" className="d-inline-block mb-3">
+                <img src={logo.url} alt="DWS Web Services logo" className="dws-footer-logo" />
               </Link>
 
               <div>
@@ -128,7 +128,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="dws-social"
-                    aria-label={`Visit DwS on ${s.label}`}
+                    aria-label={`Visit DWS Web Services on ${s.label}`}
                   >
                     <SocialIcon label={s.label} />
                   </a>
