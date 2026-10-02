@@ -83,8 +83,9 @@ export const Route = createFileRoute("/blog/")({
         }),
       },
     ],
-  }),
-  component: BlogIndex,
+  };
+},
+component: BlogIndex,
 });
 
 function BlogIndex() {
