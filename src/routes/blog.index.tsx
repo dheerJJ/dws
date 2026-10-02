@@ -12,26 +12,31 @@ import { formatMetaDescription, formatMetaTitle, getCanonicalUrl } from "@/lib/s
 import { business } from "@/data/business";
 
 export const Route = createFileRoute("/blog/")({
-  head: () => ({
-    meta: [
-      { title: formatMetaTitle("Web Design & SEO Insights") },
-      {
-        name: "description",
-        content: formatMetaDescription(
-          "Practical insights on high-converting websites, SaaS MVP development, local SEO for Indian businesses and digital marketing.",
-        ),
-      },
-      { property: "og:title", content: "Web Design & SEO Insights | DWS Web Services" },
-      {
-        property: "og:description",
-        content:
-          "Practical insights on high-converting websites, SaaS builds, local SEO and digital marketing from Jaipur.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: getCanonicalUrl("/blog") },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: getCanonicalUrl("/blog") }],
+  head: () => {
+    const title = formatMetaTitle("Web Design & SEO Insights");
+    const description = formatMetaDescription(
+      "Practical insights on high-converting websites, SaaS MVP development, local SEO for Indian businesses, and performance marketing from Jaipur.",
+    );
+    const canonical = getCanonicalUrl("/blog");
+    const ogImageUrl = `${business.siteUrl}/og-image.png`;
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: ogImageUrl },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: ogImageUrl },
+        { name: "geo.region", content: "IN-RJ" },
+        { name: "geo.placename", content: "Jaipur" },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
     scripts: [
       {
         type: "application/ld+json",

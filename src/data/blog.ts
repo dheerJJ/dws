@@ -34,9 +34,9 @@ export type Post = {
 export const posts: Post[] = [
   {
     slug: "website-that-converts-india-2026",
-    title: "Want a Website That Actually Converts Looks Like in 2026",
+    title: "Websites That Convert in India: 2026 Blueprint",
     excerpt:
-      "Most Indian business websites are brochures. Here is the structure we use at DwS to turn a site into a predictable enquiry engine.",
+      "Most Indian business websites are brochures. Here is the structure we use at DWS Web Services to turn a site into a predictable enquiry engine.",
     date: "2026-08-12",
     readingTime: "8 min read",
     category: "Web Design",
@@ -45,7 +45,7 @@ export const posts: Post[] = [
     coverAlt: "Abstract wireframe of a website layout drawn in glowing white lines on black",
     intro: [
       "A website earns its budget when it produces enquiries, not compliments. Yet most business sites in India are still built as digital brochures: a slider, an 'About Us' paragraph, a services grid and a contact form nobody fills.",
-      "This is the exact structure we build at DwS, in the order we build it, and the numbers we watch after launch.",
+      "This is the exact structure we build at DWS Web Services, in the order we build it, and the numbers we watch after launch.",
     ],
     takeaways: [
       "Answer three questions in the first screen: what is this, is it for me, what happens next.",
@@ -106,9 +106,9 @@ export const posts: Post[] = [
   },
   {
     slug: "saas-mvp-to-first-paying-users",
-    title: "Shipping a SaaS MVP That Reaches Its First Paying Users",
+    title: "Shipping a SaaS MVP to First Paying Users",
     excerpt:
-      "Scope, stack and go-to-market decisions we make when building SaaS products for founders - and the features we deliberately cut.",
+      "Scope, stack, and go-to-market decisions we make when building SaaS products for founders, and the features we deliberately cut.",
     date: "2026-07-03",
     readingTime: "9 min read",
     category: "SaaS",
@@ -173,9 +173,9 @@ export const posts: Post[] = [
   },
   {
     slug: "local-seo-checklist-indian-businesses",
-    title: "The Local SEO Checklist for Indian Businesses",
+    title: "Local SEO Checklist for Indian Businesses",
     excerpt:
-      "A practical, no-fluff checklist to rank in your city - Google Business Profile, service pages, reviews and schema, in the order they matter.",
+      "A practical, no-fluff checklist to rank in your city: Google Business Profile, service pages, reviews and schema, in the order they matter.",
     date: "2026-06-18",
     readingTime: "7 min read",
     category: "SEO",
@@ -238,9 +238,9 @@ export const posts: Post[] = [
   },
   {
     slug: "digital-marketing-budget-first-90-days",
-    title: "How to Spend Your First ₹50,000 of Digital Marketing Budget",
+    title: "How to Spend Your First ₹50,000 Ad Budget",
     excerpt:
-      "Where a small budget goes furthest in the first 90 days, and the three line items we tell clients to stop paying for.",
+      "Where a small marketing budget goes furthest in the first 90 days, and the three line items we tell clients to stop paying for.",
     date: "2026-05-26",
     readingTime: "7 min read",
     category: "Performance",

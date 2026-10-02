@@ -49,7 +49,11 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:url", content: postUrl },
         { property: "og:image", content: post.cover },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: postTitle },
+        { name: "twitter:description", content: postDesc },
         { name: "twitter:image", content: post.cover },
+        { name: "geo.region", content: "IN-RJ" },
+        { name: "geo.placename", content: "Jaipur" },
       ],
       links: [{ rel: "canonical", href: postUrl }],
       scripts: [
