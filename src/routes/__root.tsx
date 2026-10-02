@@ -23,6 +23,7 @@ import {
   formatMetaTitle,
   getCanonicalUrl,
   getOrganizationSchema,
+  getWebSiteSchema,
 } from "../lib/seo";
 
 function NotFoundComponent() {
@@ -127,11 +128,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:title", content: defaultTitle },
         { name: "twitter:description", content: defaultDescription },
         { name: "twitter:image", content: ogImageUrl },
+        { name: "geo.region", content: "IN-RJ" },
+        { name: "geo.placename", content: "Jaipur" },
+        { name: "geo.position", content: "26.9124;75.7873" },
+        { name: "ICBM", content: "26.9124, 75.7873" },
       ],
       scripts: [
         {
           type: "application/ld+json",
           children: JSON.stringify(getOrganizationSchema()),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(getWebSiteSchema()),
         },
       ],
       links: [
