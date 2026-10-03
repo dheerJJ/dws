@@ -6,4 +6,4 @@ Disallow: /api/
 Disallow: /lovable/
 Disallow: /review
 
-Sitemap: https://dws.co/sitemap.xml
+Sitemap: https://dwsco.vercel.app/sitemap.xml

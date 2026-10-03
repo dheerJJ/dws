@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import http from "node:http";
 
 const BASE_URL = process.env.TEST_URL || "http://localhost:8081";
 
@@ -33,22 +32,17 @@ const ROUTES = [
 const PRIVATE_ROUTES = ["/dashboard", "/auth", "/review"];
 const STATIC_FILES = ["/robots.txt", "/sitemap.xml", "/google0b960ea3bfa41cfa.html"];
 
-function fetchPage(urlPath) {
-  return new Promise((resolve, reject) => {
-    const url = new URL(urlPath, BASE_URL);
-    const req = http.get(url, (res) => {
-      let body = "";
-      res.on("data", (chunk) => (body += chunk));
-      res.on("end", () => {
-        resolve({ status: res.statusCode, headers: res.headers, body });
-      });
-    });
-    req.on("error", reject);
-    req.setTimeout(10000, () => {
-      req.destroy();
-      reject(new Error(`Timeout fetching ${urlPath}`));
-    });
-  });
+async function fetchPage(urlPath) {
+  const url = new URL(urlPath, BASE_URL);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    const body = await res.text();
+    return { status: res.status, headers: Object.fromEntries(res.headers.entries()), body };
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 function extractTag(html, regex) {

@@ -23,7 +23,7 @@ export const business = {
     "DWS Web Services is a Jaipur-based web development, mobile app development, SEO and SaaS product studio building high-performance websites, mobile apps, SaaS products and organic growth programmes for businesses across India and worldwide.",
 
   // Canonical base URL (configurable via VITE_SITE_URL)
-  siteUrl: getEnv("VITE_SITE_URL", "https://dws.co").replace(/\/$/, ""),
+  siteUrl: getEnv("VITE_SITE_URL", "https://dwsco.vercel.app").replace(/\/$/, ""),
 
   // Contact details
   email: "tech.dws.co@gmail.com",

@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Pages -->
   <url>
-    <loc>https://dws.co/</loc>
+    <loc>https://dwsco.vercel.app/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dws.co/services</loc>
+    <loc>https://dwsco.vercel.app/services</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dws.co/pricing</loc>
+    <loc>https://dwsco.vercel.app/pricing</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/case-studies</loc>
+    <loc>https://dwsco.vercel.app/case-studies</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/about</loc>
+    <loc>https://dwsco.vercel.app/about</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dws.co/blog</loc>
+    <loc>https://dwsco.vercel.app/blog</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dws.co/contact</loc>
+    <loc>https://dwsco.vercel.app/contact</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/privacy-policy</loc>
+    <loc>https://dwsco.vercel.app/privacy-policy</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dws.co/terms-and-conditions</loc>
+    <loc>https://dwsco.vercel.app/terms-and-conditions</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -58,25 +58,25 @@
 
   <!-- Pricing Landing Pages -->
   <url>
-    <loc>https://dws.co/pricing/website-design</loc>
+    <loc>https://dwsco.vercel.app/pricing/website-design</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dws.co/pricing/mobile-app-development</loc>
+    <loc>https://dwsco.vercel.app/pricing/mobile-app-development</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dws.co/pricing/seo</loc>
+    <loc>https://dwsco.vercel.app/pricing/seo</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dws.co/pricing/saas-mvp</loc>
+    <loc>https://dwsco.vercel.app/pricing/saas-mvp</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -84,97 +84,97 @@
 
   <!-- Service Detail Pages -->
   <url>
-    <loc>https://dws.co/services/website-design</loc>
+    <loc>https://dwsco.vercel.app/services/website-design</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/ecommerce-development</loc>
+    <loc>https://dwsco.vercel.app/services/ecommerce-development</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/custom-software-development</loc>
+    <loc>https://dwsco.vercel.app/services/custom-software-development</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/erp-development</loc>
+    <loc>https://dwsco.vercel.app/services/erp-development</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/crm-development</loc>
+    <loc>https://dwsco.vercel.app/services/crm-development</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/school-management-software</loc>
+    <loc>https://dwsco.vercel.app/services/school-management-software</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/android-app-development</loc>
+    <loc>https://dwsco.vercel.app/services/android-app-development</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/ios-app-development</loc>
+    <loc>https://dwsco.vercel.app/services/ios-app-development</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/ui-ux-design</loc>
+    <loc>https://dwsco.vercel.app/services/ui-ux-design</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/graphic-design-branding</loc>
+    <loc>https://dwsco.vercel.app/services/graphic-design-branding</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/digital-marketing</loc>
+    <loc>https://dwsco.vercel.app/services/digital-marketing</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/seo</loc>
+    <loc>https://dwsco.vercel.app/services/seo</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/saas-mvp</loc>
+    <loc>https://dwsco.vercel.app/services/saas-mvp</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/web-hosting</loc>
+    <loc>https://dwsco.vercel.app/services/web-hosting</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/domain-registration</loc>
+    <loc>https://dwsco.vercel.app/services/domain-registration</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://dws.co/services/website-maintenance</loc>
+    <loc>https://dwsco.vercel.app/services/website-maintenance</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -182,25 +182,25 @@
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://dws.co/blog/website-that-converts-india-2026</loc>
+    <loc>https://dwsco.vercel.app/blog/website-that-converts-india-2026</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://dws.co/blog/saas-mvp-to-first-paying-users</loc>
+    <loc>https://dwsco.vercel.app/blog/saas-mvp-to-first-paying-users</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://dws.co/blog/local-seo-checklist-indian-businesses</loc>
+    <loc>https://dwsco.vercel.app/blog/local-seo-checklist-indian-businesses</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://dws.co/blog/digital-marketing-budget-first-90-days</loc>
+    <loc>https://dwsco.vercel.app/blog/digital-marketing-budget-first-90-days</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
