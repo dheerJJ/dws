@@ -37,55 +37,55 @@ export const Route = createFileRoute("/blog/")({
         { name: "geo.placename", content: "Jaipur" },
       ],
       links: [{ rel: "canonical", href: canonical }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Blog",
-          name: `${business.name} Blog`,
-          url: getCanonicalUrl("/blog"),
-          description:
-            "Practical insights on web development, SaaS MVP shipping, local SEO and digital marketing.",
-          publisher: {
-            "@type": "Organization",
-            name: business.name,
-            url: business.siteUrl,
-          },
-          blogPost: posts.map((p) => ({
-            "@type": "BlogPosting",
-            headline: p.title,
-            description: p.excerpt,
-            datePublished: p.date,
-            url: getCanonicalUrl(`/blog/${p.slug}`),
-          })),
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Home",
-              item: business.siteUrl,
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: `${business.name} Blog`,
+            url: getCanonicalUrl("/blog"),
+            description:
+              "Practical insights on web development, SaaS MVP shipping, local SEO and digital marketing.",
+            publisher: {
+              "@type": "Organization",
+              name: business.name,
+              url: business.siteUrl,
             },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "Blog",
-              item: getCanonicalUrl("/blog"),
-            },
-          ],
-        }),
-      },
-    ],
-  };
-},
-component: BlogIndex,
+            blogPost: posts.map((p) => ({
+              "@type": "BlogPosting",
+              headline: p.title,
+              description: p.excerpt,
+              datePublished: p.date,
+              url: getCanonicalUrl(`/blog/${p.slug}`),
+            })),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: business.siteUrl,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: getCanonicalUrl("/blog"),
+              },
+            ],
+          }),
+        },
+      ],
+    };
+  },
+  component: BlogIndex,
 });
 
 function BlogIndex() {

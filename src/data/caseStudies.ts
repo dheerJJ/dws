@@ -69,7 +69,12 @@ export const caseStudies: CaseStudy[] = [
     client: "Agneepath Defence & Boxing Academy",
     sector: "Education & Defence Coaching",
     location: "Jaipur, Rajasthan",
-    scope: ["Website architecture", "Course catalog structure", "Lead capture funnels", "Local SEO foundations"],
+    scope: [
+      "Website architecture",
+      "Course catalog structure",
+      "Lead capture funnels",
+      "Local SEO foundations",
+    ],
     before:
       "Student enrolments and demo enquiries depended entirely on physical flyers and word of mouth in local districts. Aspirants and parents searching online could not review the 10 course streams, physical training syllabus, or hostel facilities.",
     beforePoints: [
