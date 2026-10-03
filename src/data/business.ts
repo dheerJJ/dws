@@ -80,7 +80,7 @@ export const business = {
   // Primary & secondary keywords map
   keywords: {
     home: {
-      primary: "website design and SEO agency in Jaipur",
+      primary: "Website Design & SEO Agency in Jaipur",
       secondary: [
         "web development company Jaipur",
         "mobile app development company Jaipur",

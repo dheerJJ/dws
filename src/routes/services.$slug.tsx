@@ -31,7 +31,6 @@ import {
   formatMetaTitle,
   getBreadcrumbSchema,
   getCanonicalUrl,
-  getOrganizationSchema,
   getFaqSchema,
 } from "@/lib/seo";
 
@@ -74,10 +73,6 @@ export const Route = createFileRoute("/services/$slug")({
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(getOrganizationSchema()),
-        },
         {
           type: "application/ld+json",
           children: JSON.stringify(

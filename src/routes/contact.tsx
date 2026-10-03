@@ -17,7 +17,6 @@ import {
   formatMetaTitle,
   getBreadcrumbSchema,
   getCanonicalUrl,
-  getOrganizationSchema,
 } from "@/lib/seo";
 
 const searchSchema = z.object({ plan: z.string().optional() });
@@ -50,10 +49,6 @@ export const Route = createFileRoute("/contact")({
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(getOrganizationSchema()),
-        },
         {
           type: "application/ld+json",
           children: JSON.stringify({

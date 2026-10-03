@@ -13,7 +13,6 @@ import {
   getBreadcrumbSchema,
   getCanonicalUrl,
   getFaqSchema,
-  getOrganizationSchema,
   getServiceSchema,
 } from "@/lib/seo";
 
@@ -56,10 +55,6 @@ export const Route = createFileRoute("/pricing/$service")({
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(getOrganizationSchema()),
-        },
         {
           type: "application/ld+json",
           children: JSON.stringify(

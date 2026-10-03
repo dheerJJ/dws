@@ -10,7 +10,6 @@ import {
   formatMetaTitle,
   getBreadcrumbSchema,
   getCanonicalUrl,
-  getOrganizationSchema,
 } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy-policy")({
@@ -40,10 +39,6 @@ export const Route = createFileRoute("/privacy-policy")({
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(getOrganizationSchema()),
-        },
         {
           type: "application/ld+json",
           children: JSON.stringify(

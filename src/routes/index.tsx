@@ -14,7 +14,6 @@ import {
   formatMetaDescription,
   formatMetaTitle,
   getCanonicalUrl,
-  getOrganizationSchema,
 } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -46,12 +45,6 @@ export const Route = createFileRoute("/")({
         { name: "geo.placename", content: "Jaipur" },
       ],
       links: [{ rel: "canonical", href: canonical }],
-      scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(getOrganizationSchema()),
-        },
-      ],
     };
   },
   component: Index,
