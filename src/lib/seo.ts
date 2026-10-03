@@ -162,11 +162,78 @@ export function getServiceSchema(opts: {
             name: offer.name,
             price: offer.price.replace(/[^0-9]/g, "") || undefined,
             priceCurrency: "INR",
+            availability: "https://schema.org/InStock",
             description: offer.description,
             url: serviceUrl,
           })),
         }
       : undefined,
+  };
+}
+
+/** Returns aggregate pricing catalog schema for /pricing */
+export function getPricingCatalogSchema(
+  tiersList: { name: string; price: string; summary: string; cadence: string }[],
+  servicesList: { name: string; startsAt: string; headline: string; slug: string }[],
+) {
+  const pricingUrl = getCanonicalUrl("/pricing");
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pricingUrl}#service`,
+    name: "Web Design, Mobile App & SEO Growth Packages",
+    description:
+      "Transparent pricing packages for website design, mobile app development, SEO, and SaaS MVPs in Jaipur.",
+    url: pricingUrl,
+    provider: {
+      "@type": "ProfessionalService",
+      name: business.name,
+      url: getCanonicalUrl("/"),
+      telephone: business.phone,
+      email: business.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: business.address.streetAddress,
+        addressLocality: business.city,
+        addressRegion: business.state,
+        postalCode: business.address.postalCode,
+        addressCountry: business.address.addressCountry,
+      },
+    },
+    areaServed: business.areaServed.map((name) => ({
+      "@type": "Place",
+      name,
+    })),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "DWS Web Services Pricing Packages",
+      itemListElement: [
+        ...tiersList.map((t) => ({
+          "@type": "Offer",
+          name: `${t.name} Growth Retainer`,
+          description: t.summary,
+          price: t.price.replace(/[^0-9]/g, "") || undefined,
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock",
+          url: pricingUrl,
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: t.price.replace(/[^0-9]/g, "") || undefined,
+            priceCurrency: "INR",
+            unitText: t.cadence,
+          },
+        })),
+        ...servicesList.map((s) => ({
+          "@type": "Offer",
+          name: `${s.name} (Fixed Scope)`,
+          description: s.headline,
+          price: s.startsAt.replace(/[^0-9]/g, "") || undefined,
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock",
+          url: getCanonicalUrl(`/pricing/${s.slug}`),
+        })),
+      ],
+    },
   };
 }
 

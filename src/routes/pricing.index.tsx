@@ -13,8 +13,33 @@ import {
   formatMetaTitle,
   getBreadcrumbSchema,
   getCanonicalUrl,
+  getFaqSchema,
   getOrganizationSchema,
+  getPricingCatalogSchema,
 } from "@/lib/seo";
+
+const pricingFaqs = [
+  {
+    q: "Are contracts locked in for long durations?",
+    a: "No. Retainers run month-to-month after an initial 90-day learning period, which represents the minimum realistic window to build and prove compounding growth.",
+  },
+  {
+    q: "What is not included in the retainer fees?",
+    a: "Direct advertising budgets (Google or Meta) and proprietary third-party software subscriptions are paid directly by you, ensuring complete transparency with zero agency markup.",
+  },
+  {
+    q: "Can packages be customized for our specific needs?",
+    a: "Yes. Most client partnerships begin with a core tier and are tailored around your specific channels and commercial priorities during our initial strategy discovery call.",
+  },
+  {
+    q: "Do you offer milestone payments on fixed-price projects?",
+    a: "Yes. All one-time builds (such as website design or SaaS MVPs) are split into structured milestones: 50% upon contract commencement and 50% upon final launch sign-off.",
+  },
+  {
+    q: "How do we get started?",
+    a: "Book a 30-minute discovery strategy call or submit a contact enquiry. We review your requirements and provide a clear written proposal within one business day.",
+  },
+];
 
 export const Route = createFileRoute("/pricing/")({
   head: () => {
@@ -49,6 +74,14 @@ export const Route = createFileRoute("/pricing/")({
         },
         {
           type: "application/ld+json",
+          children: JSON.stringify(getPricingCatalogSchema(tiers, servicePricing)),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(getFaqSchema(pricingFaqs)),
+        },
+        {
+          type: "application/ld+json",
           children: JSON.stringify(
             getBreadcrumbSchema([
               { name: "Home", path: "/" },
@@ -61,29 +94,6 @@ export const Route = createFileRoute("/pricing/")({
   },
   component: PricingPage,
 });
-
-const faqs = [
-  {
-    q: "Are contracts locked in for long durations?",
-    a: "No. Retainers run month-to-month after an initial 90-day learning period, which represents the minimum realistic window to build and prove compounding growth.",
-  },
-  {
-    q: "What is not included in the retainer fees?",
-    a: "Direct advertising budgets (Google or Meta) and proprietary third-party software subscriptions are paid directly by you, ensuring complete transparency with zero agency markup.",
-  },
-  {
-    q: "Can packages be customized for our specific needs?",
-    a: "Yes. Most client partnerships begin with a core tier and are tailored around your specific channels and commercial priorities during our initial strategy discovery call.",
-  },
-  {
-    q: "Do you offer milestone payments on fixed-price projects?",
-    a: "Yes. All one-time builds (such as website design or SaaS MVPs) are split into structured milestones: 50% upon contract commencement and 50% upon final launch sign-off.",
-  },
-  {
-    q: "How do we get started?",
-    a: "Book a 30-minute discovery strategy call or submit a contact enquiry. We review your requirements and provide a clear written proposal within one business day.",
-  },
-];
 
 function PricingPage() {
   useDwsBody();
@@ -206,7 +216,7 @@ function PricingPage() {
               <h2 className="h3 mb-4 text-white">Pricing &amp; Contract FAQs</h2>
             </Reveal>
             <div className="row g-4">
-              {faqs.map((f, i) => (
+              {pricingFaqs.map((f, i) => (
                 <div className="col-12 col-lg-6" key={f.q}>
                   <Reveal delay={i * 0.06}>
                     <div className="dws-step h-100">

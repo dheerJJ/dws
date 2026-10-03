@@ -30,7 +30,7 @@ const ROUTES = [
   "/terms-and-conditions",
 ];
 
-const PRIVATE_ROUTES = ["/dashboard", "/auth"];
+const PRIVATE_ROUTES = ["/dashboard", "/auth", "/review"];
 const STATIC_FILES = ["/robots.txt", "/sitemap.xml", "/google0b960ea3bfa41cfa.html"];
 
 function fetchPage(urlPath) {

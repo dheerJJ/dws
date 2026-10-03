@@ -4,5 +4,6 @@ Disallow: /dashboard
 Disallow: /auth
 Disallow: /api/
 Disallow: /lovable/
+Disallow: /review
 
 Sitemap: https://dws.co/sitemap.xml
