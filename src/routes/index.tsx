@@ -5,9 +5,11 @@ import { Hero } from "@/components/dws/Hero";
 import { Services } from "@/components/dws/Services";
 import { Process } from "@/components/dws/Process";
 import { Portfolio } from "@/components/dws/Portfolio";
+import { GoogleReviews } from "@/components/dws/GoogleReviews";
 import { Contact, Footer } from "@/components/dws/Contact";
 import { useDwsBody } from "@/components/dws/useDwsBody";
 import { business } from "@/data/business";
+import { getGoogleReviews } from "@/lib/reviews.functions";
 import {
   formatMetaDescription,
   formatMetaTitle,
@@ -16,6 +18,9 @@ import {
 } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    return await getGoogleReviews();
+  },
   head: () => {
     const title = formatMetaTitle(business.keywords.home.primary);
     const description = formatMetaDescription(
@@ -54,6 +59,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useDwsBody();
+  const reviewsData = Route.useLoaderData();
 
   return (
     <>
@@ -63,6 +69,11 @@ function Index() {
         <Services />
         <Process />
         <Portfolio />
+        <GoogleReviews
+          reviews={reviewsData?.reviews}
+          rating={reviewsData?.rating}
+          totalReviews={reviewsData?.totalReviews}
+        />
         <Contact />
       </main>
       <Footer />

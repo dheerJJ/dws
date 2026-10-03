@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUp, Clock, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { business } from "@/data/business";
 import { getFooterServices } from "@/data/services";
@@ -177,6 +177,17 @@ export function Footer() {
                 </li>
                 <li>
                   <Link to="/terms-and-conditions">Terms & Conditions</Link>
+                </li>
+                <li>
+                  <a
+                    href={business.googleReviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="d-inline-flex align-items-center gap-1"
+                  >
+                    <span>Google Reviews</span>
+                    <ExternalLink size={12} aria-hidden="true" />
+                  </a>
                 </li>
               </ul>
             </div>

@@ -6,6 +6,8 @@ import { Reveal } from "@/components/dws/Reveal";
 import { useDwsBody } from "@/components/dws/useDwsBody";
 import { team, testimonials } from "@/data/site";
 import { business } from "@/data/business";
+import { GoogleReviews } from "@/components/dws/GoogleReviews";
+import { getGoogleReviews } from "@/lib/reviews.functions";
 import {
   formatMetaDescription,
   formatMetaTitle,
@@ -15,6 +17,9 @@ import {
 } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
+  loader: async () => {
+    return await getGoogleReviews();
+  },
   head: () => {
     const title = formatMetaTitle("Digital Agency in Jaipur");
     const description = formatMetaDescription(
@@ -120,6 +125,7 @@ const milestones = [
 
 function AboutPage() {
   useDwsBody();
+  const reviewsData = Route.useLoaderData();
 
   return (
     <>
@@ -336,6 +342,13 @@ function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Google Reviews - Render strictly only when at least 3 verified Google reviews exist */}
+        <GoogleReviews
+          reviews={reviewsData?.reviews}
+          rating={reviewsData?.rating}
+          totalReviews={reviewsData?.totalReviews}
+        />
 
         {/* Testimonials - Render only when verified client feedback is available */}
         {testimonials.some((t) => !t.quote.startsWith("[ADD REAL TESTIMONIAL")) && (

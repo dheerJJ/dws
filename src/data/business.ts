@@ -64,6 +64,12 @@ export const business = {
   whatsappDefaultMessage:
     "Hello DWS Web Services, I would like to discuss a project for my business.",
 
+  // Google Business Profile & Reviews
+  googleReviewUrl: "https://g.page/r/CSkUXt6-fhieEAI/review",
+  googlePlaceId: getEnv("GOOGLE_PLACE_ID", "ChIJC-3Gj4VVjmcRKRRe3r5-GJ4"),
+  googleBusinessSearchUrl:
+    "https://www.google.com/search?q=DWS+IT+Solution&ludocid=11391994615673263145&ibp=gwp;0,7",
+
   // Brand credits
   creditLine: "Created by DWS Web Services",
   showCreditLine: true,
