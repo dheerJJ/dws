@@ -5,7 +5,6 @@ import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
 import { Reveal } from "@/components/dws/Reveal";
 import { useDwsBody } from "@/components/dws/useDwsBody";
-import { SplitText } from "@/components/dws/reactbits/SplitText";
 import { posts } from "@/data/blog";
 
 import { formatMetaDescription, formatMetaTitle, getCanonicalUrl } from "@/lib/seo";
@@ -114,8 +113,8 @@ function BlogIndex() {
             <Reveal>
               <p className="dws-eyebrow mb-3">Articles & Insights</p>
             </Reveal>
-            <h1 className="display-5 mb-4">
-              <SplitText as="span" text="Notes on building, ranking, and scaling." />
+            <h1 className="display-5 mb-4 text-white fw-bold">
+              Web Design, SEO &amp; Tech Insights
             </h1>
             <Reveal delay={0.15}>
               <p className="dws-hero-sub mb-5" style={{ maxWidth: "44rem" }}>
