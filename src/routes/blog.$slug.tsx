@@ -16,6 +16,7 @@ import {
   getCanonicalUrl,
   getBlogPostingSchema,
   getBreadcrumbSchema,
+  getFaqSchema,
 } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -81,6 +82,14 @@ export const Route = createFileRoute("/blog/$slug")({
             ]),
           ),
         },
+        ...(post.faqs && post.faqs.length > 0
+          ? [
+              {
+                type: "application/ld+json",
+                children: JSON.stringify(getFaqSchema(post.faqs)),
+              },
+            ]
+          : []),
       ],
     };
   },
@@ -174,6 +183,17 @@ function PostPage() {
                   </Reveal>
                 ))}
 
+                {post.quickAnswer && (
+                  <Reveal>
+                    <aside className="dws-takeaways mb-5">
+                      <p className="dws-eyebrow mb-2">Quick answer</p>
+                      <p className="mb-0 text-white" style={{ lineHeight: "1.7" }}>
+                        {post.quickAnswer}
+                      </p>
+                    </aside>
+                  </Reveal>
+                )}
+
                 <Reveal>
                   <aside className="dws-takeaways my-5">
                     <p className="dws-eyebrow mb-3">Key takeaways</p>
@@ -195,6 +215,70 @@ function PostPage() {
                         <p className="dws-article-p">{para}</p>
                       </Reveal>
                     ))}
+                    {section.table && (
+                      <Reveal>
+                        <div className="table-responsive my-4">
+                          <table
+                            className="table table-bordered text-white mb-0"
+                            style={{ borderColor: "var(--dws-line, #222)" }}
+                          >
+                            <thead>
+                              <tr style={{ background: "var(--dws-hover, #111)" }}>
+                                {section.table.headers.map((h, i) => (
+                                  <th
+                                    key={i}
+                                    className="py-2 px-3 small font-monospace text-uppercase"
+                                    style={{ borderColor: "var(--dws-line, #222)" }}
+                                  >
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {section.table.rows.map((row, ri) => (
+                                <tr key={ri}>
+                                  {row.map((cell, ci) => (
+                                    <td
+                                      key={ci}
+                                      className="py-2 px-3 small"
+                                      style={{
+                                        borderColor: "var(--dws-line, #222)",
+                                        color: "#cfcfcf",
+                                      }}
+                                    >
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </Reveal>
+                    )}
+                    {section.subsections &&
+                      section.subsections.map((sub, subi) => (
+                        <div key={subi} className="mt-4 mb-3">
+                          <Reveal>
+                            <h3 className="h5 text-white mb-2">{sub.subheading}</h3>
+                          </Reveal>
+                          {sub.paragraphs.map((sp, spi) => (
+                            <Reveal key={spi} delay={0.02 * spi}>
+                              <p className="dws-article-p">{sp}</p>
+                            </Reveal>
+                          ))}
+                          {sub.bullets && (
+                            <Reveal>
+                              <ul className="dws-article-list">
+                                {sub.bullets.map((sb) => (
+                                  <li key={sb}>{sb}</li>
+                                ))}
+                              </ul>
+                            </Reveal>
+                          )}
+                        </div>
+                      ))}
                     {section.bullets && (
                       <Reveal>
                         <ul className="dws-article-list">
@@ -224,6 +308,35 @@ function PostPage() {
                     )}
                   </section>
                 ))}
+
+                {post.faqs && post.faqs.length > 0 && (
+                  <section className="mb-5">
+                    <Reveal>
+                      <h2 className="dws-article-h2">Frequently Asked Questions</h2>
+                    </Reveal>
+                    <div className="d-flex flex-column gap-3 mt-4">
+                      {post.faqs.map((faq, fi) => (
+                        <Reveal key={fi} delay={0.03 * fi}>
+                          <div
+                            className="p-3"
+                            style={{
+                              border: "1px solid var(--dws-line, #222)",
+                              background: "var(--dws-hover, #0b0b0b)",
+                            }}
+                          >
+                            <h3 className="h6 text-white mb-2">{faq.q}</h3>
+                            <p
+                              className="small mb-0"
+                              style={{ color: "#cfcfcf", lineHeight: "1.7" }}
+                            >
+                              {faq.a}
+                            </p>
+                          </div>
+                        </Reveal>
+                      ))}
+                    </div>
+                  </section>
+                )}
 
                 {post.externalUrl && (
                   <p className="mt-4">

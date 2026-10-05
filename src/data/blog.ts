@@ -5,6 +5,17 @@ import saasMvpCover from "@/assets/blog/saas-mvp.jpg.asset.json";
 import localSeoCover from "@/assets/blog/local-seo.jpg.asset.json";
 import marketingBudgetCover from "@/assets/blog/marketing-budget.jpg.asset.json";
 
+export type SubSection = {
+  subheading: string;
+  paragraphs: string[];
+  bullets?: string[];
+};
+
+export type TableData = {
+  headers: string[];
+  rows: string[][];
+};
+
 export type Section = {
   heading: string;
   paragraphs: string[];
@@ -12,6 +23,10 @@ export type Section = {
   bullets?: string[];
   /** Optional pull quote rendered at the end of the section. */
   quote?: string;
+  /** Optional subsections with H3 headings. */
+  subsections?: SubSection[];
+  /** Optional comparison table. */
+  table?: TableData;
 };
 
 export type Post = {
@@ -28,10 +43,195 @@ export type Post = {
   externalUrl?: string;
   intro: string[];
   takeaways: string[];
+  quickAnswer?: string;
   sections: Section[];
+  faqs?: { q: string; a: string }[];
 };
 
 export const posts: Post[] = [
+  {
+    slug: "website-cost-in-india-2026",
+    title: "Website Cost in India: 2026 Pricing Guide",
+    excerpt:
+      "A transparent breakdown of website cost in India in 2026. What ₹15,000, ₹65,000, and ₹1,50,000 actually buy, hidden fees to avoid, and field notes from Jaipur.",
+    date: "2026-10-05",
+    readingTime: "11 min read",
+    category: "Web Design",
+    author: "Dheerajj Kumawat",
+    cover: websiteConvertsCover.url,
+    coverAlt: "Website development cost comparison table and pricing breakdown in India",
+    quickAnswer:
+      "In 2026, a professional business website cost in India ranges from ₹25,000 to ₹75,000 for a multi-page service site, ₹45,000 to ₹1,50,000 for an e-commerce store, and ₹1,50,000+ for custom web applications. Basic template sites cost ₹5,000 to ₹15,000 but rarely rank or generate qualified leads.",
+    intro: [
+      "You can buy a website in India for ₹5,000, or you can pay ₹2,50,000 for one. Both sellers will look you in the eye and claim they are building you a business asset.",
+      "If you run a business in Jaipur or anywhere in India, that massive price gap makes no sense at first glance. Why does one freelancer quote ₹8,000 for a ten-page site while an established studio quotes ₹65,000 for eight pages? What are you actually paying for, and where is the money wasted?",
+      "Here is the honest breakdown of the real website cost in India in 2026. These are practical field notes from DWS Web Services, covering what each price tier delivers, the hidden costs agencies keep quiet about, and the red flags to watch for before paying an advance.",
+    ],
+    takeaways: [
+      "A realistic business website cost in India sits between ₹25,000 and ₹75,000 for custom-built, fast-loading service sites.",
+      "The ₹5,000 to ₹15,000 template sites rely on bloated themes that score poorly on mobile networks and fail Google Core Web Vitals.",
+      "Hidden recurring costs include domain renewals, managed hosting, transactional WhatsApp API credits, and maintenance.",
+      "Never compromise on asset ownership. Ensure you hold direct admin access to your domain, source code repository, and hosting console.",
+    ],
+    sections: [
+      {
+        heading: "1. The Three Price Brackets in the Indian Web Market",
+        paragraphs: [
+          "The Indian web market is divided into three distinct tiers. Knowing which tier you are purchasing from protects you from paying studio rates for a cloned theme or expecting custom software on a festival offer budget.",
+        ],
+        table: {
+          headers: ["Tier & Price Range", "Typical Architecture", "Turnaround", "Best Suited For"],
+          rows: [
+            [
+              "Basic Template: ₹5,000 - ₹15,000",
+              "Pre-made WordPress theme or page builder (Elementor)",
+              "3 - 7 days",
+              "Temporary student projects or basic hobby sites",
+            ],
+            [
+              "Custom Studio Site: ₹25,000 - ₹80,000",
+              "Custom front-end (React/Modern CSS), SEO schema, analytics",
+              "2 - 4 weeks",
+              "Local clinics, coaching institutes, realtors, service businesses",
+            ],
+            [
+              "Custom Web App / Portal: ₹1,50,000+",
+              "Full-stack React, Supabase/Postgres, role auth, billing APIs",
+              "6 - 10 weeks",
+              "SaaS MVPs, custom ERPs, high-SKU e-commerce stores",
+            ],
+          ],
+        },
+        subsections: [
+          {
+            subheading: "Tier 1: ₹5,000 to ₹15,000 (Freelancer Template Sites)",
+            paragraphs: [
+              "This tier is what flooded Justdial and IndiaMART listings. The provider buys a $29 WordPress theme from ThemeForest or installs a cracked template, swaps your logo, pastes your raw text, and hits publish. There is zero custom design, no conversion strategy, and no performance optimization.",
+              "The site might look acceptable on a desktop screen in an office. On a 4G Android phone in Jaipur, it takes seven seconds to load because of 40 active plugins. When you ask to change a layout six months later, the original freelancer has changed their phone number.",
+            ],
+          },
+          {
+            subheading: "Tier 2: ₹25,000 to ₹80,000 (Studio-Built Custom Sites)",
+            paragraphs: [
+              "This is the sweet spot for serious Indian service businesses. At DWS Web Services, our Launch landing page starts at ₹24,999 (7-10 days turnaround) and our multi-page Business website is ₹64,999 (3-4 weeks turnaround).",
+              "At this level, you get custom UI/UX design wireframed to match your business offer, hand-crafted semantic code, local SEO schema markup, conversion paths connected to WhatsApp and CRM forms, and guaranteed sub-2-second load times on mobile devices.",
+            ],
+          },
+          {
+            subheading: "Tier 3: ₹1,50,000 and Above (Web Applications and Custom ERPs)",
+            paragraphs: [
+              "When your website requires internal databases, user authentication, inventory synchronization, custom booking rules, or role-based staff access, you are no longer building a brochure site. You are building software.",
+              "Our custom web applications and SaaS prototypes start at ₹1,49,999. They run on modern architectures like React, TypeScript, and managed PostgreSQL databases, designed for high security and scale without ongoing agency lock-in.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "2. What Actually Drives the Website Cost in India?",
+        paragraphs: [
+          "When agencies pitch web development charges in India, they often hide behind technical jargon. In reality, four specific factors determine whether your project costs ₹20,000 or ₹90,000.",
+        ],
+        bullets: [
+          "Architecture and Code Quality: A hand-coded React or static-first site requires skilled engineering hours, whereas dragging widgets in a visual page builder takes hours. Clean code delivers instant speeds and lasts for years without plugin security exploits.",
+          "Conversion Copywriting: A website fails if the words fail. Quality studios spend days structuring your headlines, value propositions, and objection-handling FAQs instead of waiting for you to send a raw Word document.",
+          "Mobile Performance on Indian Networks: Optimizing Core Web Vitals to pass Google thresholds on budget Android smartphones requires image compression (WebP/AVIF), asset deferral, and minimal script execution.",
+          "Technical SEO and Schema: Implementing valid LocalBusiness, Service, and Breadcrumb JSON-LD structured data ensures search engines index your services and geographic locations accurately.",
+        ],
+      },
+      {
+        heading: "3. Hidden Costs Nobody Mentions on the First Call",
+        paragraphs: [
+          "A common frustration among first-time buyers in India is the hidden bill that arrives right before launch. A developer quotes ₹15,000, but demands another ₹18,000 before making the site live. Watch for these line items upfront:",
+        ],
+        bullets: [
+          "Domain Registration: A .com or .in domain costs roughly ₹800 to ₹1,200 per year through reputable registrars like Cloudflare or Namecheap. Never let an agency register your domain under their personal account.",
+          "Hosting Infrastructure: Static-first websites can run on global edge networks like Vercel or Cloudflare Pages for ₹0 on basic tiers, or ₹1,500 to ₹3,000 per month for managed production servers and databases. Avoid shared hosting cPanel servers that cost ₹2,000 per year and crash under ten concurrent visitors.",
+          "WhatsApp Business API and SMS: If you want automated WhatsApp invoices or enquiry notifications, API providers charge per conversation (typically 35 to 80 paise per utility session).",
+          "Website Maintenance Cost in India: Routine security updates, monthly off-site backups, and uptime monitoring typically run from ₹2,500 to ₹5,000 per month for business sites.",
+        ],
+        quote:
+          "If an agency refuses to tell you where your website is hosted or charges you an ongoing fee just to keep your domain active, you do not own your website. You are renting it.",
+      },
+      {
+        heading: "4. E-Commerce Website Cost in India: What You Need to Budget",
+        paragraphs: [
+          "If you plan to sell products online, your e-commerce website cost in India depends on catalog size, payment gateways, and shipping logistics integrations. A basic shop with 20 items is fundamentally different from a catalog of 2,000 SKUs.",
+        ],
+        bullets: [
+          "Starter E-Commerce (Shopify / WooCommerce, under 50 products): ₹35,000 to ₹65,000 setup plus ₹2,500 to ₹3,000 monthly platform costs. Good for testing D2C concepts quickly.",
+          "Custom E-Commerce (React front-end, headless database, 500+ SKUs): ₹95,000 to ₹2,20,000. Provides custom checkout logic, instant search, and zero monthly revenue commissions.",
+          "Payment Gateway Integration: Razorpay, Cashfree, or PhonePe PG integration typically incurs 2% per domestic transaction plus GST, with minimal one-time setup fees if standard plugins are used.",
+          "Logistics APIs: Shiprocket or Delhivery automated tracking setups add a small development time during checkout engineering.",
+        ],
+      },
+      {
+        heading: "5. What We Have Seen at DWS: Real Field Notes from Jaipur",
+        paragraphs: [
+          "We run DWS Web Services from Kalwar Road in Jaipur. Most of our clients come to us after spending ₹15,000 to ₹30,000 with a local agency and getting nothing to show for it except a broken site that nobody visits.",
+          "Here is what happened with Shree Radhe Dental Hospital in Jaipur. Their clinic reputation lived offline through walk-ins and phone calls. Their online presence was nonexistent. We built a fast, mobile-first website with dedicated treatment pages, doctor credentials, and direct WhatsApp and tap-to-call booking paths. Instead of patients calling with basic questions about root canals or implants, they arrived already informed about treatments and doctors.",
+          "For Agneepath Defence Academy in Jaipur, student admissions previously relied on printed physical flyers. We structured an admissions platform covering 10 recruitment courses, daily physical test requirements, and hostel facilities with sub-2-second load times on mobile. Demo inquiries immediately arrived pre-qualified.",
+          "For Rudra Bhumi Realtors in Jaipur, property inquiries were scattered across disorganized WhatsApp messages. We built clear service separation across property sales, leasing, rentals, and management, so buyers arrived with clear context instead of sending blank 'price?' messages.",
+        ],
+      },
+      {
+        heading: "6. A Mistake We Made at DWS and What We Learned",
+        paragraphs: [
+          "We believe in total transparency. Early in our studio journey, we made a mistake: we accepted website projects before the client had written their copy or collected their service details.",
+          "We would design wireframes, and then the project would freeze for six weeks waiting for the client to send doctor bios, price lists, or facility photographs. The timeline stretched, enthusiasm died, and launch dates were missed.",
+          "What we learned: Design cannot fix missing content. Today, we run a content architecture and copywriting sprint during Week 1 before touching UI code. If copy is missing, we write it and get it approved first. Projects ship on time, on budget, and convert from day one.",
+        ],
+      },
+      {
+        heading: "7. Common Mistakes Indian Founders Make When Buying a Website",
+        paragraphs: [
+          "Before you approve any quotation, check whether you are falling into one of these four common traps:",
+        ],
+        bullets: [
+          "Shopping by Page Count Instead of Business Outcomes: Asking 'How much for a 5-page site?' is the wrong question. A single focused landing page that answers objections and books calls will generate 5x more revenue than ten generic pages nobody reads.",
+          "Ignoring Mobile Speed on 4G Networks: Over 85% of commercial traffic in India browses on mobile phones. If your agency tests your website only on their high-speed studio MacBook, test it yourself on a mid-range Android phone using cellular data.",
+          "Surrendering Asset Ownership: Always buy your own domain on your own email address. If an agency registers your domain under their name, they can hold your brand hostage when you decide to part ways.",
+          "Treating the Launch as the Finish Line: A website is a digital salesperson. It needs routine performance reviews, monthly analytics checks, and continuous conversion improvements.",
+        ],
+      },
+      {
+        heading: "8. The Pre-Hiring Action Checklist for Founders",
+        paragraphs: [
+          "Take this checklist into your next discovery call with any web design agency or freelancer:",
+        ],
+        bullets: [
+          "Do I get direct administrative ownership of the domain name registrar account?",
+          "Will the complete source code be pushed to a Git repository under my company's account?",
+          "Does the contract include a guaranteed Core Web Vitals speed score on mobile?",
+          "Are on-page SEO, title tags, meta descriptions, and LocalBusiness schema included in the quote?",
+          "Is copywriting included, or am I expected to write all text myself?",
+          "What is the exact post-launch bug fix and warranty period (DWS includes 30 days standard)?",
+          "Are all third-party hosting, plugin, and API costs listed in writing?",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the average website cost in India for a small business?",
+        a: "A professional, custom-designed small business website in India costs between ₹25,000 and ₹65,000 in 2026. This includes custom responsive design, conversion copywriting, on-page SEO, WhatsApp integration, and mobile speed optimization.",
+      },
+      {
+        q: "Why do some agencies charge ₹5,000 while others charge ₹50,000?",
+        a: "A ₹5,000 website is usually an unoptimized WordPress theme with pre-made templates, copied text, and slow loading times. A ₹50,000 website involves custom UI/UX design, tailored copywriting, clean engineering, fast mobile performance, and local search optimization.",
+      },
+      {
+        q: "What are the recurring annual costs of maintaining a website in India?",
+        a: "Expect to pay ₹800 to ₹1,200 per year for your domain name and ₹0 to ₹3,000 per month for reliable hosting. Optional maintenance and security care plans typically range from ₹2,500 to ₹5,000 per month.",
+      },
+      {
+        q: "How long does it take to build a business website in India?",
+        a: "A focused single-page landing page takes 7 to 10 days. A multi-page business website with custom service pages takes 3 to 4 weeks. Complex e-commerce stores and custom web portals take 6 to 10 weeks.",
+      },
+      {
+        q: "Can I manage and update content on my website without technical knowledge?",
+        a: "Yes. Modern websites are built with modular content structures or headless content managers, allowing you to update text, blog posts, service details, and pricing without writing a line of code.",
+      },
+    ],
+  },
   {
     slug: "website-that-converts-india-2026",
     title: "Websites That Convert in India: 2026 Blueprint",
