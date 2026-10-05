@@ -7,14 +7,13 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, lazy, Suspense, type ReactNode } from "react";
+import { useEffect, useState, lazy, Suspense, type ReactNode } from "react";
 
-import bootstrapCss from "bootstrap/dist/css/bootstrap.min.css?url";
+import bootstrapCss from "bootstrap/dist/css/bootstrap-grid.min.css?url";
 import appCss from "../styles.css?url";
 import dwsCss from "../dws.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { BootSkeleton, BOOT_CRITICAL_CSS } from "../components/dws/BootSkeleton";
-import { Preloader } from "../components/dws/Preloader";
+import { BOOT_CRITICAL_CSS } from "../components/dws/BootSkeleton";
 
 const ChatWidget = lazy(() => import("../components/dws/ChatWidget"));
 import { business } from "../data/business";
@@ -149,7 +148,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
         },
         { rel: "stylesheet", href: bootstrapCss },
         { rel: "stylesheet", href: appCss },
@@ -172,29 +171,47 @@ function RootShell({ children }: { children: ReactNode }) {
         <style dangerouslySetInnerHTML={{ __html: BOOT_CRITICAL_CSS }} />
         <HeadContent />
       </head>
-      <body>
+      <body className="dws-body">
         {children}
-        <BootSkeleton />
         <Scripts />
       </body>
     </html>
   );
 }
 
+function DeferredChatWidget() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const win = window as unknown as {
+      requestIdleCallback?: (cb: () => void, opts: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    if (typeof win.requestIdleCallback === "function") {
+      const handle = win.requestIdleCallback(() => setMounted(true), { timeout: 3500 });
+      return () => win.cancelIdleCallback?.(handle);
+    }
+    const timer = setTimeout(() => setMounted(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <Suspense fallback={null}>
+      <ChatWidget />
+    </Suspense>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
-  useEffect(() => {
-    document.documentElement.classList.add("dws-hydrated");
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
-      <Preloader />
       <Outlet />
-      <Suspense fallback={null}>
-        <ChatWidget />
-      </Suspense>
+      <DeferredChatWidget />
     </QueryClientProvider>
   );
 }
