@@ -10,11 +10,7 @@ import { Contact, Footer } from "@/components/dws/Contact";
 import { useDwsBody } from "@/components/dws/useDwsBody";
 import { business } from "@/data/business";
 import { getGoogleReviews } from "@/lib/reviews.functions";
-import {
-  formatMetaDescription,
-  formatMetaTitle,
-  getCanonicalUrl,
-} from "@/lib/seo";
+import { formatMetaDescription, formatMetaTitle, getCanonicalUrl } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   loader: async () => {
