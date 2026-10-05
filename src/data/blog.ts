@@ -1,7 +1,5 @@
 // Edit this file to add or update articles. Each post gets a full page at /blog/<slug>.
 
-
-
 export type SubSection = {
   subheading: string;
   paragraphs: string[];
