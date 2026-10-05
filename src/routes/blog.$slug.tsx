@@ -169,11 +169,13 @@ function PostPage() {
               </div>
             </div>
 
-            <Reveal>
-              <figure className="dws-article-cover mb-0">
-                <SmartImage src={post.cover} alt={post.coverAlt} width={1600} height={900} />
-              </figure>
-            </Reveal>
+            {post.cover && (
+              <Reveal>
+                <figure className="dws-article-cover mb-0">
+                  <SmartImage src={post.cover} alt={post.coverAlt} width={1600} height={900} />
+                </figure>
+              </Reveal>
+            )}
 
             <div className="row justify-content-center mt-5">
               <div className="col-lg-8">
@@ -291,19 +293,6 @@ function PostPage() {
                     {section.quote && (
                       <Reveal>
                         <blockquote className="dws-article-quote">{section.quote}</blockquote>
-                      </Reveal>
-                    )}
-                    {si === 1 && (
-                      <Reveal>
-                        <figure className="dws-article-inline-img">
-                          <SmartImage
-                            src={post.cover}
-                            alt={post.coverAlt}
-                            width={1600}
-                            height={900}
-                          />
-                          <figcaption className="dws-muted small">{post.coverAlt}</figcaption>
-                        </figure>
                       </Reveal>
                     )}
                   </section>

@@ -58,8 +58,8 @@ export const posts: Post[] = [
     readingTime: "11 min read",
     category: "Web Design",
     author: "Dheerajj Kumawat",
-    cover: websiteConvertsCover.url,
-    coverAlt: "Website development cost comparison table and pricing breakdown in India",
+    cover: "/blog/website-cost-guide.svg",
+    coverAlt: "Technical comparison blueprint of website development cost in India",
     quickAnswer:
       "In 2026, a professional business website cost in India ranges from ₹25,000 to ₹75,000 for a multi-page service site, ₹45,000 to ₹1,50,000 for an e-commerce store, and ₹1,50,000+ for custom web applications. Basic template sites cost ₹5,000 to ₹15,000 but rarely rank or generate qualified leads.",
     intro: [
