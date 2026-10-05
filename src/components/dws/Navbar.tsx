@@ -20,12 +20,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <motion.nav
-      className="dws-nav sticky-top py-3"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: EASE }}
-    >
+    <nav className="dws-nav sticky-top py-3">
       <div className="container">
         <div className="d-flex align-items-center justify-content-between gap-3">
           <Link to="/" aria-label="DWS Web Services home" className="flex-shrink-0">
@@ -90,6 +85,6 @@ export function Navbar() {
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+    </nav>
   );
 }
