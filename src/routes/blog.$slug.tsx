@@ -4,7 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
 import { Reveal } from "@/components/dws/Reveal";
-import { SmartImage } from "@/components/dws/SmartImage";
 import { Comments } from "@/components/dws/Comments";
 import { useDwsBody } from "@/components/dws/useDwsBody";
 import { getPost, posts } from "@/data/blog";
@@ -39,6 +38,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const postUrl = getCanonicalUrl(`/blog/${slug}`);
     const postTitle = formatMetaTitle(post.title);
     const postDesc = formatMetaDescription(post.excerpt);
+    const postImage = post.cover || `${business.siteUrl}/dws-logo.png`;
 
     return {
       meta: [
@@ -48,11 +48,11 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: postDesc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: postUrl },
-        { property: "og:image", content: post.cover },
+        { property: "og:image", content: postImage },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: postTitle },
         { name: "twitter:description", content: postDesc },
-        { name: "twitter:image", content: post.cover },
+        { name: "twitter:image", content: postImage },
         { name: "geo.region", content: "IN-RJ" },
         { name: "geo.placename", content: "Jaipur" },
       ],
@@ -66,7 +66,7 @@ export const Route = createFileRoute("/blog/$slug")({
               excerpt: post.excerpt,
               date: post.date,
               slug,
-              cover: post.cover,
+              cover: postImage,
               author: post.author,
               category: post.category,
             }),
@@ -127,7 +127,7 @@ function PostPage() {
       <main id="main-content">
         <article className="dws-section pt-5">
           <div className="container">
-            <div className="row justify-content-center mb-5">
+            <div className="row justify-content-center mb-4">
               <div className="col-lg-9">
                 <nav aria-label="Breadcrumb" className="mb-4">
                   <ol className="d-flex align-items-center gap-2 list-unstyled small text-muted mb-0">
@@ -169,15 +169,7 @@ function PostPage() {
               </div>
             </div>
 
-            {post.cover && (
-              <Reveal>
-                <figure className="dws-article-cover mb-0">
-                  <SmartImage src={post.cover} alt={post.coverAlt} width={1600} height={900} />
-                </figure>
-              </Reveal>
-            )}
-
-            <div className="row justify-content-center mt-5">
+            <div className="row justify-content-center mt-3">
               <div className="col-lg-8">
                 {post.intro.map((para, i) => (
                   <Reveal key={i} delay={0.04 * i}>

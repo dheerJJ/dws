@@ -1,9 +1,6 @@
 // Edit this file to add or update articles. Each post gets a full page at /blog/<slug>.
 
-import websiteConvertsCover from "@/assets/blog/website-converts.jpg.asset.json";
-import saasMvpCover from "@/assets/blog/saas-mvp.jpg.asset.json";
-import localSeoCover from "@/assets/blog/local-seo.jpg.asset.json";
-import marketingBudgetCover from "@/assets/blog/marketing-budget.jpg.asset.json";
+
 
 export type SubSection = {
   subheading: string;
@@ -37,8 +34,8 @@ export type Post = {
   readingTime: string;
   category: string;
   author: string;
-  cover: string;
-  coverAlt: string;
+  cover?: string;
+  coverAlt?: string;
   /** Optional external link (original publication). */
   externalUrl?: string;
   intro: string[];
@@ -241,8 +238,6 @@ export const posts: Post[] = [
     readingTime: "8 min read",
     category: "Web Design",
     author: "Dheerajj Kumawat",
-    cover: websiteConvertsCover.url,
-    coverAlt: "Abstract wireframe of a website layout drawn in glowing white lines on black",
     intro: [
       "A website earns its budget when it produces enquiries, not compliments. Yet most business sites in India are still built as digital brochures: a slider, an 'About Us' paragraph, a services grid and a contact form nobody fills.",
       "This is the exact structure we build at DWS Web Services, in the order we build it, and the numbers we watch after launch.",
@@ -313,8 +308,6 @@ export const posts: Post[] = [
     readingTime: "9 min read",
     category: "SaaS",
     author: "Dheerajj Kumawat",
-    cover: saasMvpCover.url,
-    coverAlt: "Abstract product interface breaking into modular glass panels, white on black",
     intro: [
       "The fastest SaaS launches we have built shared one trait: the founder agreed to ship one workflow end to end instead of five workflows halfway.",
       "Your MVP is not a small version of the product. It is the single loop a user will pay to repeat.",
@@ -380,8 +373,6 @@ export const posts: Post[] = [
     readingTime: "7 min read",
     category: "SEO",
     author: "Dheerajj Kumawat",
-    cover: localSeoCover.url,
-    coverAlt: "Glowing map pin above an abstract city street grid rendered in white lines",
     intro: [
       "Local search is the cheapest demand available to an Indian service business, and most competitors still get the basics wrong.",
       "Work this list in order. Skipping ahead is how agencies burn budget on backlinks while a wrong business category quietly caps your visibility.",
@@ -445,8 +436,6 @@ export const posts: Post[] = [
     readingTime: "7 min read",
     category: "Performance",
     author: "Dheerajj Kumawat",
-    cover: marketingBudgetCover.url,
-    coverAlt: "Rising line chart with coin stacks drawn in glowing white lines on black",
     intro: [
       "With a small budget, the goal of the first 90 days is not scale - it is learning which message, audience and offer produce a qualified enquiry.",
       "Buy information first, volume second. Here is the split we use and what we refuse to fund.",
