@@ -1,3 +1,4 @@
+// DWS Studio Root Shell v1.0.2
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,

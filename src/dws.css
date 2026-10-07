@@ -1,4 +1,4 @@
-/* DwS — cinematic dark theme overrides on top of Bootstrap 5 */
+/* DWS Studio Design System v1.0.2 */
 
 :root {
   --dws-black: #000000;
@@ -7,6 +7,7 @@
   --dws-muted: #b3b3b3;
   --dws-muted-light: #d6d6d6;
   --dws-hover: #0d0d0d;
+  --dws-release: 20261007;
 }
 
 html {

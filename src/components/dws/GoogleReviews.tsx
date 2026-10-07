@@ -11,7 +11,7 @@ type GoogleReviewsProps = {
 };
 
 /**
- * Official Google "G" 4-color inline SVG logo.
+ * Official Google "G" 4-color inline SVG logo (v1.0.2).
  */
 function GoogleGLogo({ size = 16, className = "" }: { size?: number; className?: string }) {
   return (
