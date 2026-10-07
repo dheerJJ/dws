@@ -154,6 +154,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "stylesheet", href: bootstrapCss },
         { rel: "stylesheet", href: appCss },
         { rel: "stylesheet", href: dwsCss },
+        { rel: "icon", href: "/favicon.ico" },
         { rel: "icon", type: "image/png", href: "/favicon.png" },
         { rel: "apple-touch-icon", href: "/dws-icon.png" },
       ],
