@@ -170,10 +170,10 @@ function ServicePricingPage() {
             </Reveal>
             <div className="row g-4 align-items-stretch">
               {service.packages.map((pkg, i) => (
-                <div className="col-12 col-lg-4" key={pkg.name}>
-                  <Reveal delay={i * 0.08}>
+                <div className="col-12 col-lg-4 d-flex" key={pkg.name}>
+                  <Reveal delay={i * 0.08} className="w-100 d-flex flex-column h-100">
                     <article
-                      className={`dws-tier h-100 d-flex flex-column${pkg.featured ? " dws-tier-featured" : ""}`}
+                      className={`dws-tier h-100 d-flex flex-column w-100${pkg.featured ? " dws-tier-featured" : ""}`}
                     >
                       {pkg.featured && <span className="dws-tier-flag">Most popular</span>}
                       <h3 className="h5 mb-2 text-white">{pkg.name}</h3>
@@ -183,7 +183,7 @@ function ServicePricingPage() {
                         <span className="dws-muted small">{pkg.cadence}</span>
                       </div>
                       <p className="dws-mono small dws-muted mb-4">Timeline: {pkg.timeline}</p>
-                      <ul className="dws-tier-list mb-4">
+                      <ul className="dws-tier-list mb-4 flex-grow-1">
                         {pkg.features.map((f) => (
                           <li key={f}>{f}</li>
                         ))}
@@ -379,14 +379,14 @@ function ServicePricingPage() {
             <Reveal>
               <p className="dws-eyebrow mb-4">Other Service Capabilities</p>
             </Reveal>
-            <div className="row g-4">
+            <div className="row g-4 align-items-stretch">
               {others.map((s, i) => (
-                <div className="col-12 col-md-4" key={s.slug}>
-                  <Reveal delay={i * 0.06}>
+                <div className="col-12 col-md-4 d-flex" key={s.slug}>
+                  <Reveal delay={i * 0.06} className="w-100 d-flex flex-column h-100">
                     <Link
                       to="/pricing/$service"
                       params={{ service: s.slug }}
-                      className="dws-post-mini d-block h-100 text-decoration-none"
+                      className="dws-post-mini d-block h-100 w-100 text-decoration-none"
                     >
                       <span className="dws-mono small d-block mb-2 text-muted">
                         From {s.startsAt}

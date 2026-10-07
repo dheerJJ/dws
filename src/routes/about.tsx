@@ -240,7 +240,7 @@ function AboutPage() {
                       Why clients choose us
                     </div>
                     <div className="d-flex flex-column gap-3">
-                      <div className="d-flex align-items-baseline gap-2.5">
+                      <div className="d-flex align-items-baseline gap-2">
                         <UserCheck
                           size={16}
                           className="text-white flex-shrink-0"

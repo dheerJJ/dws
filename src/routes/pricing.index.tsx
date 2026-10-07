@@ -139,10 +139,10 @@ function PricingPage() {
             </Reveal>
             <div className="row g-4 align-items-stretch">
               {tiers.map((tier, i) => (
-                <div className="col-12 col-lg-4" key={tier.name}>
-                  <Reveal delay={i * 0.1}>
+                <div className="col-12 col-lg-4 d-flex" key={tier.name}>
+                  <Reveal delay={i * 0.1} className="w-100 d-flex flex-column h-100">
                     <article
-                      className={`dws-tier h-100 d-flex flex-column${tier.featured ? " dws-tier-featured" : ""}`}
+                      className={`dws-tier h-100 d-flex flex-column w-100${tier.featured ? " dws-tier-featured" : ""}`}
                     >
                       {tier.featured && <span className="dws-tier-flag">Most popular</span>}
                       <h3 className="h4 mb-2 text-white">{tier.name}</h3>
@@ -151,7 +151,7 @@ function PricingPage() {
                         <span className="dws-tier-price">{tier.price}</span>
                         <span className="dws-muted small">{tier.cadence}</span>
                       </div>
-                      <ul className="dws-tier-list mb-4">
+                      <ul className="dws-tier-list mb-4 flex-grow-1">
                         {tier.features.map((f) => (
                           <li key={f}>{f}</li>
                         ))}
@@ -178,11 +178,11 @@ function PricingPage() {
               <p className="dws-eyebrow mb-2">Service-Specific Solutions</p>
               <h2 className="h3 mb-4 text-white">Fixed-Scope Project Rates</h2>
             </Reveal>
-            <div className="row g-4">
+            <div className="row g-4 align-items-stretch">
               {servicePricing.map((s, i) => (
-                <div className="col-12 col-md-6 col-lg-3" key={s.slug}>
-                  <Reveal delay={i * 0.08}>
-                    <div className="dws-step h-100 d-flex flex-column">
+                <div className="col-12 col-md-6 col-lg-3 d-flex" key={s.slug}>
+                  <Reveal delay={i * 0.08} className="w-100 d-flex flex-column h-100">
+                    <div className="dws-step h-100 d-flex flex-column w-100">
                       <p className="dws-mono small mb-2 text-muted">
                         <ShinyText text={`From ${s.startsAt}`} />
                       </p>
@@ -210,11 +210,11 @@ function PricingPage() {
               <p className="dws-eyebrow mb-2">Clear Answers</p>
               <h2 className="h3 mb-4 text-white">Pricing &amp; Contract FAQs</h2>
             </Reveal>
-            <div className="row g-4">
+            <div className="row g-4 align-items-stretch">
               {pricingFaqs.map((f, i) => (
-                <div className="col-12 col-lg-6" key={f.q}>
-                  <Reveal delay={i * 0.06}>
-                    <div className="dws-step h-100">
+                <div className="col-12 col-lg-6 d-flex" key={f.q}>
+                  <Reveal delay={i * 0.06} className="w-100 d-flex flex-column h-100">
+                    <div className="dws-step h-100 w-100">
                       <h3 className="h6 mb-2 text-white">{f.q}</h3>
                       <p className="dws-muted small mb-0">{f.a}</p>
                     </div>

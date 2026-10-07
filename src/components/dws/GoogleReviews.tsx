@@ -80,6 +80,7 @@ function ReviewCard({ review: r, index }: { review: GoogleReview; index: number 
           <div className="d-flex justify-content-between align-items-start mb-3">
             <div>
               <div
+                role="img"
                 className="d-flex align-items-center gap-1 mb-1"
                 aria-label={`${r.rating} out of 5 stars`}
               >
@@ -92,8 +93,7 @@ function ReviewCard({ review: r, index }: { review: GoogleReview; index: number 
             {/* Small Google G logo in top-right */}
             <div
               className="d-flex align-items-center justify-content-center p-1 rounded bg-dark border border-secondary-subtle"
-              title="Google review"
-              aria-label="Google review"
+              aria-hidden="true"
             >
               <GoogleGLogo size={14} />
             </div>
@@ -147,8 +147,8 @@ function ReviewCard({ review: r, index }: { review: GoogleReview; index: number 
               {r.service && (
                 <div className="mt-1">
                   <span
-                    className="d-inline-block px-2 py-0.5 rounded text-white-50 border border-secondary-subtle"
-                    style={{ fontSize: "0.72rem" }}
+                    className="d-inline-block px-2 rounded text-white-50 border border-secondary-subtle"
+                    style={{ fontSize: "0.72rem", paddingTop: "0.125rem", paddingBottom: "0.125rem" }}
                   >
                     {r.service}
                   </span>
@@ -183,9 +183,9 @@ export function GoogleReviews({ reviews = [] }: GoogleReviewsProps) {
     telephone: business.phone,
     address: {
       "@type": "PostalAddress",
-      streetAddress: business.address.street,
-      addressLocality: business.address.city,
-      addressRegion: business.address.state,
+      streetAddress: business.address.streetAddress,
+      addressLocality: business.address.addressLocality,
+      addressRegion: business.address.addressRegion,
       postalCode: business.address.postalCode,
       addressCountry: "IN",
     },
@@ -239,7 +239,11 @@ export function GoogleReviews({ reviews = [] }: GoogleReviewsProps) {
               <div className="d-inline-flex flex-column align-items-lg-end gap-2">
                 {/* Rating Summary matching exact count */}
                 <div className="d-flex align-items-center gap-2">
-                  <div className="d-flex align-items-center gap-1" aria-label="5.0 out of 5 stars">
+                  <div
+                    role="img"
+                    className="d-flex align-items-center gap-1"
+                    aria-label="5.0 out of 5 stars"
+                  >
                     {[...Array(5)].map((_, i) => (
                       <GoogleStar key={i} size={18} />
                     ))}
@@ -253,7 +257,7 @@ export function GoogleReviews({ reviews = [] }: GoogleReviewsProps) {
                     href={business.googleBusinessSearchUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="dws-btn dws-btn-solid dws-btn-sm-tight d-inline-flex align-items-center gap-1.5"
+                    className="dws-btn dws-btn-solid dws-btn-sm-tight d-inline-flex align-items-center gap-2"
                     aria-label="View all reviews on Google (opens in a new tab)"
                   >
                     <GoogleGLogo size={14} />
@@ -264,7 +268,7 @@ export function GoogleReviews({ reviews = [] }: GoogleReviewsProps) {
                     href={business.googleReviewUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="dws-btn dws-btn-outline dws-btn-sm-tight d-inline-flex align-items-center gap-1.5"
+                    className="dws-btn dws-btn-outline dws-btn-sm-tight d-inline-flex align-items-center gap-2"
                     aria-label="Leave a review on Google (opens in a new tab)"
                   >
                     <span>Leave a Review on Google</span>
