@@ -2189,3 +2189,24 @@ select.dws-input.is-placeholder {
   border-bottom-color: #fff;
   opacity: 0.85;
 }
+
+/* ---------- About Hero Left Column & Stats Grid ---------- */
+.dws-about-hero-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.dws-about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 899.98px) {
+  .dws-about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
