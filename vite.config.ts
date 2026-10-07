@@ -20,6 +20,11 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    server: {
+      headers: {
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+      },
+    },
     resolve: {
       alias: {
         "entities/lib/decode.js": path.resolve(
