@@ -1543,7 +1543,7 @@ select.dws-input.is-placeholder {
   border-bottom: 0;
 }
 
-/* ---------- Article page ---------- */
+/* ---------- Article & Blog Pages (Responsive) ---------- */
 .dws-post-back {
   color: var(--dws-muted, #888);
   text-decoration: none;
@@ -1551,9 +1551,108 @@ select.dws-input.is-placeholder {
 .dws-post-back:hover {
   color: #fff;
 }
+
+/* Breadcrumbs */
+.dws-breadcrumb ol {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.dws-breadcrumb-current {
+  display: inline-block;
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+@media (min-width: 576px) {
+  .dws-breadcrumb-current {
+    max-width: 280px;
+  }
+}
+@media (min-width: 768px) {
+  .dws-breadcrumb-current {
+    max-width: 440px;
+  }
+}
+@media (min-width: 992px) {
+  .dws-breadcrumb-current {
+    max-width: 620px;
+  }
+}
+
+/* Blog Index Card styles */
+.dws-post-card {
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+.dws-blog-card-title {
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+@media (min-width: 768px) {
+  .dws-blog-card-title {
+    min-height: 3.1rem;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+.dws-blog-card-excerpt {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--dws-muted, #888);
+  margin-bottom: 1.25rem;
+  overflow-wrap: break-word;
+}
+@media (min-width: 768px) {
+  .dws-blog-card-excerpt {
+    min-height: 4.6rem;
+  }
+}
+.dws-blog-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+@media (max-width: 440px) {
+  .dws-blog-card-actions {
+    flex-direction: column;
+  }
+  .dws-blog-card-actions .dws-btn {
+    width: 100%;
+  }
+}
+
+/* Article Page Typography & Elements */
+.dws-article-title {
+  font-size: clamp(1.75rem, 4vw + 0.5rem, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.dws-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+  color: var(--dws-muted, #888);
+  font-size: 0.85rem;
+}
 .dws-article-cover {
   border: 1px solid var(--dws-line, #222);
+  border-radius: 12px;
   overflow: hidden;
+  background: #080808;
 }
 .dws-article-cover img,
 .dws-article-inline-img img {
@@ -1565,20 +1664,43 @@ select.dws-input.is-placeholder {
   margin: 2.5rem 0 0;
   border: 1px solid var(--dws-line, #222);
   padding: 0.5rem;
+  border-radius: 10px;
 }
 .dws-article-inline-img figcaption {
   padding: 0.75rem 0.25rem 0.25rem;
 }
 .dws-article-lead {
-  font-size: 1.16rem;
+  font-size: clamp(1.05rem, 1.8vw + 0.3rem, 1.2rem);
   line-height: 1.75;
   color: #e6e6e6;
   margin-bottom: 1.25rem;
+  overflow-wrap: break-word;
 }
 .dws-article-h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.35rem, 2.5vw + 0.3rem, 1.75rem);
   font-weight: 600;
-  margin: 0 0 1rem;
+  line-height: 1.3;
+  margin: 2.5rem 0 1rem;
+  color: #fff;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.dws-article-h3 {
+  font-size: clamp(1.1rem, 2vw + 0.2rem, 1.3rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.dws-article-p {
+  color: #cfcfcf;
+  font-size: clamp(0.95rem, 1vw + 0.4rem, 1.05rem);
+  line-height: 1.8;
+  margin-bottom: 1.35rem;
+  overflow-wrap: break-word;
 }
 .dws-article-list {
   list-style: none;
@@ -1588,9 +1710,11 @@ select.dws-input.is-placeholder {
 .dws-article-list li {
   position: relative;
   padding-left: 1.35rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
   color: #cfcfcf;
-  line-height: 1.7;
+  font-size: clamp(0.92rem, 0.8vw + 0.4rem, 1rem);
+  line-height: 1.65;
+  overflow-wrap: break-word;
 }
 .dws-article-list li::before {
   content: "-";
@@ -1599,21 +1723,111 @@ select.dws-input.is-placeholder {
   color: var(--dws-muted, #888);
 }
 .dws-article-quote {
-  border-left: 2px solid #fff;
-  padding: 0.25rem 0 0.25rem 1.25rem;
-  margin: 2rem 0;
-  font-size: 1.12rem;
+  border-left: 3px solid #fff;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  margin: 1.75rem 0;
+  font-size: clamp(1rem, 1.8vw + 0.2rem, 1.15rem);
   line-height: 1.7;
   color: #fff;
+  font-style: italic;
+  overflow-wrap: break-word;
 }
+
+/* Takeaways & Quick answer */
 .dws-takeaways {
   border: 1px solid var(--dws-line, #222);
   background: var(--dws-hover, #0b0b0b);
+  border-radius: 14px;
   padding: 1.75rem;
+  overflow-wrap: break-word;
 }
+
+/* Responsive Table Wrapper */
+.dws-table-container {
+  border: 1px solid var(--dws-line, #222);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #060606;
+}
+.dws-table-scroll-hint {
+  background: #0f0f0f;
+  border-bottom: 1px solid var(--dws-line, #222);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--dws-muted, #888);
+}
+.dws-article-table {
+  min-width: 580px;
+  margin-bottom: 0;
+}
+.dws-article-table th {
+  background: #111;
+  color: #fff;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  padding: 0.85rem 1rem;
+  border-color: var(--dws-line, #222);
+  white-space: nowrap;
+}
+.dws-article-table td {
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #cfcfcf;
+  border-color: var(--dws-line, #222);
+  vertical-align: top;
+}
+
+/* FAQs */
+.dws-faq-item {
+  border: 1px solid var(--dws-line, #222);
+  background: var(--dws-hover, #0b0b0b);
+  border-radius: 12px;
+  padding: 1.25rem;
+  overflow-wrap: break-word;
+}
+
+/* Article CTA */
 .dws-article-cta {
   border: 1px solid var(--dws-line, #222);
-  padding: 2rem;
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  background: linear-gradient(180deg, #090909 0%, #030303 100%);
+  overflow-wrap: break-word;
+}
+.dws-article-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+@media (max-width: 575.98px) {
+  .dws-article-cta-actions {
+    flex-direction: column;
+  }
+  .dws-article-cta-actions .dws-btn {
+    width: 100%;
+  }
+}
+
+/* Keep reading mini cards */
+.dws-post-mini {
+  border: 1px solid var(--dws-line, #222);
+  border-left: 3px solid #fff;
+  border-radius: 10px;
+  background: #060606;
+  padding: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+  overflow-wrap: break-word;
+}
+.dws-post-mini:hover {
+  background: #0f0f0f;
+  transform: translateY(-2px);
+  color: #fff;
 }
 
 /* ---------- Comments ---------- */
@@ -1622,6 +1836,8 @@ select.dws-input.is-placeholder {
 }
 .dws-comment-form {
   border: 1px solid var(--dws-line, #222);
+  border-radius: 14px;
+  background: #070707;
   padding: 1.5rem;
 }
 .dws-form-success {
@@ -1630,17 +1846,26 @@ select.dws-input.is-placeholder {
 }
 .dws-comment {
   border: 1px solid var(--dws-line, #222);
-  padding: 1.25rem 1.35rem;
+  border-radius: 12px;
+  background: #050505;
+  padding: 1.25rem;
   margin-bottom: 1rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .dws-comment-author {
   font-weight: 600;
   font-size: 0.95rem;
+  color: #fff;
+  overflow-wrap: break-word;
 }
 .dws-comment-body {
   color: #cfcfcf;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  line-height: 1.65;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 @media (max-width: 575.98px) {
@@ -1649,8 +1874,18 @@ select.dws-input.is-placeholder {
   .dws-comment-form {
     padding: 1.25rem;
   }
+  .dws-comment {
+    padding: 1rem;
+  }
+  .dws-faq-item {
+    padding: 1rem;
+  }
+  .dws-post-mini {
+    padding: 1rem;
+  }
   .dws-article-h2 {
-    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
   }
 }
 

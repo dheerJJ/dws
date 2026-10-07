@@ -128,49 +128,62 @@ function PostPage() {
         <article className="dws-section pt-5">
           <div className="container">
             <div className="row justify-content-center mb-4">
-              <div className="col-lg-9">
-                <nav aria-label="Breadcrumb" className="mb-4">
-                  <ol className="d-flex align-items-center gap-2 list-unstyled small text-muted mb-0">
+              <div className="col-lg-9 col-xl-8">
+                <nav aria-label="Breadcrumb" className="dws-breadcrumb mb-4">
+                  <ol className="d-flex flex-wrap align-items-center gap-2 list-unstyled small text-muted mb-0">
                     <li>
                       <Link to="/" className="text-muted text-decoration-none">
                         Home
                       </Link>
                     </li>
-                    <li>/</li>
+                    <li aria-hidden="true">/</li>
                     <li>
                       <Link to="/blog" className="text-muted text-decoration-none">
                         Blog
                       </Link>
                     </li>
-                    <li>/</li>
-                    <li
-                      className="text-white text-truncate"
-                      style={{ maxWidth: "240px" }}
-                      aria-current="page"
-                    >
+                    <li aria-hidden="true">/</li>
+                    <li className="text-white dws-breadcrumb-current" aria-current="page">
                       {post.title}
                     </li>
                   </ol>
                 </nav>
 
                 <Reveal>
-                  <p className="dws-eyebrow mb-3">{post.category}</p>
-                  <h1 className="display-5 mb-4">{post.title}</h1>
-                  <p className="dws-muted small mb-0">
-                    {post.author} ·{" "}
-                    {new Date(post.date).toLocaleDateString("en-IN", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}{" "}
-                    · {post.readingTime}
-                  </p>
+                  <p className="dws-eyebrow mb-2 mb-sm-3">{post.category}</p>
+                  <h1 className="dws-article-title mb-3 mb-md-4">{post.title}</h1>
+                  <div className="dws-article-meta mb-0">
+                    <span>{post.author}</span>
+                    <span aria-hidden="true">·</span>
+                    <time dateTime={post.date}>
+                      {new Date(post.date).toLocaleDateString("en-IN", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </time>
+                    <span aria-hidden="true">·</span>
+                    <span>{post.readingTime}</span>
+                  </div>
                 </Reveal>
+
+                {post.cover && (
+                  <Reveal delay={0.08}>
+                    <div className="dws-article-cover my-4 my-md-5">
+                      <img
+                        src={post.cover}
+                        alt={post.coverAlt || post.title}
+                        loading="lazy"
+                        className="img-fluid w-100"
+                      />
+                    </div>
+                  </Reveal>
+                )}
               </div>
             </div>
 
-            <div className="row justify-content-center mt-3">
-              <div className="col-lg-8">
+            <div className="row justify-content-center mt-2 mt-md-3">
+              <div className="col-lg-9 col-xl-8">
                 {post.intro.map((para, i) => (
                   <Reveal key={i} delay={0.04 * i}>
                     <p className="dws-article-lead">{para}</p>
@@ -179,7 +192,7 @@ function PostPage() {
 
                 {post.quickAnswer && (
                   <Reveal>
-                    <aside className="dws-takeaways mb-5">
+                    <aside className="dws-takeaways mb-4 mb-md-5">
                       <p className="dws-eyebrow mb-2">Quick answer</p>
                       <p className="mb-0 text-white" style={{ lineHeight: "1.7" }}>
                         {post.quickAnswer}
@@ -189,7 +202,7 @@ function PostPage() {
                 )}
 
                 <Reveal>
-                  <aside className="dws-takeaways my-5">
+                  <aside className="dws-takeaways my-4 my-md-5">
                     <p className="dws-eyebrow mb-3">Key takeaways</p>
                     <ul className="dws-tier-list mb-0">
                       {post.takeaways.map((t) => (
@@ -200,7 +213,7 @@ function PostPage() {
                 </Reveal>
 
                 {post.sections.map((section, si) => (
-                  <section key={section.heading} className="mb-5">
+                  <section key={section.heading} className="mb-4 mb-md-5">
                     <Reveal>
                       <h2 className="dws-article-h2">{section.heading}</h2>
                     </Reveal>
@@ -211,43 +224,32 @@ function PostPage() {
                     ))}
                     {section.table && (
                       <Reveal>
-                        <div className="table-responsive my-4">
-                          <table
-                            className="table table-bordered text-white mb-0"
-                            style={{ borderColor: "var(--dws-line, #222)" }}
-                          >
-                            <thead>
-                              <tr style={{ background: "var(--dws-hover, #111)" }}>
-                                {section.table.headers.map((h, i) => (
-                                  <th
-                                    key={i}
-                                    className="py-2 px-3 small font-monospace text-uppercase"
-                                    style={{ borderColor: "var(--dws-line, #222)" }}
-                                  >
-                                    {h}
-                                  </th>
-                                ))}
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {section.table.rows.map((row, ri) => (
-                                <tr key={ri}>
-                                  {row.map((cell, ci) => (
-                                    <td
-                                      key={ci}
-                                      className="py-2 px-3 small"
-                                      style={{
-                                        borderColor: "var(--dws-line, #222)",
-                                        color: "#cfcfcf",
-                                      }}
-                                    >
-                                      {cell}
-                                    </td>
+                        <div className="dws-table-container my-4">
+                          <div className="dws-table-scroll-hint d-md-none px-3 py-2 font-monospace">
+                            Scroll table horizontally to view all columns →
+                          </div>
+                          <div className="table-responsive">
+                            <table className="table table-bordered text-white dws-article-table">
+                              <thead>
+                                <tr>
+                                  {section.table.headers.map((h, i) => (
+                                    <th key={i} className="font-monospace text-uppercase">
+                                      {h}
+                                    </th>
                                   ))}
                                 </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                              </thead>
+                              <tbody>
+                                {section.table.rows.map((row, ri) => (
+                                  <tr key={ri}>
+                                    {row.map((cell, ci) => (
+                                      <td key={ci}>{cell}</td>
+                                    ))}
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </Reveal>
                     )}
@@ -255,7 +257,7 @@ function PostPage() {
                       section.subsections.map((sub, subi) => (
                         <div key={subi} className="mt-4 mb-3">
                           <Reveal>
-                            <h3 className="h5 text-white mb-2">{sub.subheading}</h3>
+                            <h3 className="dws-article-h3">{sub.subheading}</h3>
                           </Reveal>
                           {sub.paragraphs.map((sp, spi) => (
                             <Reveal key={spi} delay={0.02 * spi}>
@@ -291,20 +293,14 @@ function PostPage() {
                 ))}
 
                 {post.faqs && post.faqs.length > 0 && (
-                  <section className="mb-5">
+                  <section className="mb-4 mb-md-5">
                     <Reveal>
                       <h2 className="dws-article-h2">Frequently Asked Questions</h2>
                     </Reveal>
-                    <div className="d-flex flex-column gap-3 mt-4">
+                    <div className="d-flex flex-column gap-3 mt-3 mt-md-4">
                       {post.faqs.map((faq, fi) => (
                         <Reveal key={fi} delay={0.03 * fi}>
-                          <div
-                            className="p-3"
-                            style={{
-                              border: "1px solid var(--dws-line, #222)",
-                              background: "var(--dws-hover, #0b0b0b)",
-                            }}
-                          >
+                          <div className="dws-faq-item p-3 p-sm-4">
                             <h3 className="h6 text-white mb-2">{faq.q}</h3>
                             <p
                               className="small mb-0"
@@ -333,15 +329,15 @@ function PostPage() {
                   </p>
                 )}
 
-                <div className="dws-divider my-5" />
+                <div className="dws-divider my-4 my-md-5" />
                 <Reveal>
                   <div className="dws-article-cta">
-                    <h2 className="h5 mb-3">Want this done for your business?</h2>
+                    <h2 className="h5 mb-2 mb-sm-3">Want this done for your business?</h2>
                     <p className="dws-muted mb-4">
                       We build websites, SaaS products and growth systems from Jaipur for clients
                       across India and worldwide.
                     </p>
-                    <div className="d-flex flex-wrap gap-3">
+                    <div className="dws-article-cta-actions">
                       <Link to="/contact" className="dws-btn dws-btn-solid">
                         Start a project
                       </Link>
@@ -356,11 +352,11 @@ function PostPage() {
               </div>
             </div>
 
-            <div className="row mt-5">
+            <div className="row mt-4 mt-md-5">
               <div className="col-12">
                 <div className="dws-divider mb-4" />
-                <p className="dws-eyebrow mb-4">Keep reading</p>
-                <div className="row g-4">
+                <p className="dws-eyebrow mb-3 mb-md-4">Keep reading</p>
+                <div className="row g-3 g-md-4">
                   {others.map((p) => (
                     <div className="col-12 col-md-4" key={p.slug}>
                       <Reveal delay={0.06 * others.indexOf(p)}>

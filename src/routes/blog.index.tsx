@@ -131,9 +131,9 @@ function BlogCard({ post }: { post: Post }) {
   return (
     <article className="dws-service-card dws-post-card w-100 h-100 d-flex flex-column">
       {/* Top Header: Icon in subtle container + Category Tag */}
-      <div className="d-flex align-items-center justify-content-between mb-4">
+      <div className="d-flex align-items-center justify-content-between mb-3 mb-sm-4">
         <div
-          className="d-flex align-items-center justify-content-center rounded-2 border border-secondary-subtle"
+          className="d-flex align-items-center justify-content-center rounded-2 border border-secondary-subtle flex-shrink-0"
           style={{ width: 44, height: 44, backgroundColor: "rgba(255, 255, 255, 0.04)" }}
         >
           <Icon size={22} className="text-white" />
@@ -146,11 +146,8 @@ function BlogCard({ post }: { post: Post }) {
         </span>
       </div>
 
-      {/* Title with balanced min-height for uniform baseline */}
-      <h2
-        className="h5 fw-semibold text-white mb-3"
-        style={{ minHeight: "2.8rem", display: "flex", alignItems: "flex-start", lineHeight: 1.35 }}
-      >
+      {/* Title with responsive height and font size */}
+      <h2 className="dws-blog-card-title fw-semibold text-white">
         <Link
           to="/blog/$slug"
           params={{ slug: post.slug }}
@@ -160,20 +157,11 @@ function BlogCard({ post }: { post: Post }) {
         </Link>
       </h2>
 
-      {/* Description with comfortable line height and breathing room */}
-      <p
-        className="dws-muted small mb-4"
-        style={{
-          fontSize: "0.9rem",
-          lineHeight: 1.6,
-          minHeight: "4.8rem",
-        }}
-      >
-        {post.excerpt}
-      </p>
+      {/* Description with responsive height and spacing */}
+      <p className="dws-blog-card-excerpt">{post.excerpt}</p>
 
       {/* Key Takeaways List */}
-      <div className="pt-3 border-top border-secondary-subtle mb-4 flex-grow-1">
+      <div className="pt-3 border-top border-secondary-subtle mb-3 mb-sm-4 flex-grow-1">
         <div
           className="dws-mono text-uppercase text-muted mb-3"
           style={{ fontSize: "0.72rem", letterSpacing: "0.06em" }}
@@ -201,8 +189,8 @@ function BlogCard({ post }: { post: Post }) {
       </div>
 
       {/* Read Time & Date Block */}
-      <div className="pt-3 border-top border-secondary-subtle mb-4">
-        <div className="d-flex align-items-baseline justify-content-between">
+      <div className="pt-3 border-top border-secondary-subtle mb-3 mb-sm-4">
+        <div className="d-flex align-items-baseline justify-content-between flex-wrap gap-2">
           <div className="d-flex align-items-baseline gap-2">
             <span className="dws-mono text-muted small" style={{ fontSize: "0.78rem" }}>
               Read Time
@@ -218,7 +206,7 @@ function BlogCard({ post }: { post: Post }) {
       </div>
 
       {/* Actions anchored to the bottom */}
-      <div className="d-flex gap-2 mt-auto">
+      <div className="dws-blog-card-actions">
         <Link
           to={learnMoreLink}
           className="dws-btn dws-btn-outline dws-btn-sm-tight flex-grow-1 text-center"
@@ -257,14 +245,14 @@ function BlogIndex() {
       <main id="main-content">
         <section className="dws-section pt-5">
           <div className="container">
-            <nav aria-label="Breadcrumb" className="mb-4">
-              <ol className="d-flex align-items-center gap-2 list-unstyled small text-muted mb-0">
+            <nav aria-label="Breadcrumb" className="dws-breadcrumb mb-4">
+              <ol className="d-flex flex-wrap align-items-center gap-2 list-unstyled small text-muted mb-0">
                 <li>
                   <Link to="/" className="text-muted text-decoration-none">
                     Home
                   </Link>
                 </li>
-                <li>/</li>
+                <li aria-hidden="true">/</li>
                 <li className="text-white" aria-current="page">
                   Blog
                 </li>
@@ -274,18 +262,18 @@ function BlogIndex() {
             <Reveal>
               <p className="dws-eyebrow mb-3">Articles & Insights</p>
             </Reveal>
-            <h1 className="display-5 mb-4 text-white fw-bold">
+            <h1 className="dws-article-title mb-3 mb-md-4 text-white fw-bold">
               Web Design, SEO &amp; Tech Insights
             </h1>
             <Reveal delay={0.15}>
-              <p className="dws-hero-sub mb-5" style={{ maxWidth: "44rem" }}>
+              <p className="dws-hero-sub mb-4 mb-md-5" style={{ maxWidth: "44rem" }}>
                 Want a website that actually converts? Field notes from building websites, SaaS
                 products and growth programmes for founders in India and beyond: no theory, just
                 what we have shipped.
               </p>
             </Reveal>
 
-            <div className="row g-4 align-items-stretch">
+            <div className="row g-3 g-md-4 align-items-stretch">
               {posts.map((post, i) => (
                 <div className="col-12 col-md-6 col-lg-4 d-flex" key={post.slug}>
                   <Reveal

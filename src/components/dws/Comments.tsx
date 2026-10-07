@@ -71,7 +71,7 @@ export function Comments({ slug }: { slug: string }) {
 
   return (
     <section id="comments" className="dws-comments">
-      <div className="dws-divider mb-5" />
+      <div className="dws-divider mb-4 mb-md-5" />
       <h2 className="h5 mb-1">
         Comments{" "}
         <span className="dws-muted dws-mono small">({loading ? "…" : comments.length})</span>
@@ -80,7 +80,7 @@ export function Comments({ slug }: { slug: string }) {
         Join the discussion. Comments are public and moderated.
       </p>
 
-      <form className="dws-comment-form mb-5" onSubmit={onSubmit}>
+      <form className="dws-comment-form mb-4 mb-md-5" onSubmit={onSubmit}>
         <div className="row g-3">
           <div className="col-12 col-sm-6">
             <label className="dws-label" htmlFor="c-name">
@@ -118,7 +118,7 @@ export function Comments({ slug }: { slug: string }) {
 
         <button
           type="submit"
-          className="dws-btn dws-btn-solid mt-4"
+          className="dws-btn dws-btn-solid mt-4 w-100 w-sm-auto"
           disabled={status === "sending"}
         >
           {status === "sending" ? "Posting…" : "Post comment"}
@@ -143,7 +143,7 @@ export function Comments({ slug }: { slug: string }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
             >
-              <div className="d-flex align-items-center justify-content-between gap-3 mb-2">
+              <div className="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
                 <span className="dws-comment-author">{c.author_name}</span>
                 <span className="dws-muted dws-mono small">{formatDate(c.created_at)}</span>
               </div>

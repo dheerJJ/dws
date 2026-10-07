@@ -20,6 +20,7 @@ const ROUTES = [
   "/pricing/seo",
   "/pricing/saas-mvp",
   "/blog",
+  "/blog/website-cost-in-india-2026",
   "/blog/website-that-converts-india-2026",
   "/blog/saas-mvp-to-first-paying-users",
   "/blog/local-seo-checklist-indian-businesses",
