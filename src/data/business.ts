@@ -67,8 +67,7 @@ export const business = {
   // Google Business Profile & Reviews
   googleReviewUrl: "https://g.page/r/CSkUXt6-fhieEAI/review",
   googlePlaceId: getEnv("GOOGLE_PLACE_ID", "ChIJC-3Gj4VVjmcRKRRe3r5-GJ4"),
-  googleBusinessSearchUrl:
-    "https://www.google.com/search?q=DWS+IT+Solution&ludocid=11391994615673263145&ibp=gwp;0,7",
+  googleBusinessSearchUrl: "https://share.google/3jYcotcJ8ukLz4DZk",
 
   // Brand credits
   creditLine: "Created by DWS Web Services",
