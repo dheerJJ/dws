@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Target, UserCheck, Zap } from "lucide-react";
 
 import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
@@ -130,190 +129,37 @@ function AboutPage() {
         {/* Header Section with Visible Breadcrumbs and Single H1 */}
         <section className="dws-section pt-5">
           <div className="container">
-            <div className="row g-5 align-items-stretch">
-              <div className="col-12 col-lg-7 d-flex flex-column">
-                <Reveal className="w-100 h-100 d-flex flex-column">
-                  <div className="dws-about-hero-col">
-                    {/* Top Content Block */}
-                    <div>
-                      <nav aria-label="Breadcrumb" className="dws-mono small mb-4">
-                        <Link to="/" className="text-muted text-decoration-none">
-                          Home
-                        </Link>{" "}
-                        / <span className="text-white">About</span>
-                      </nav>
+            <Reveal>
+              <nav aria-label="Breadcrumb" className="dws-mono small mb-4">
+                <Link to="/" className="text-muted text-decoration-none">
+                  Home
+                </Link>{" "}
+                / <span className="text-white">About</span>
+              </nav>
+            </Reveal>
 
-                      <p className="dws-eyebrow mb-3">ABOUT THE STUDIO</p>
+            <div className="row align-items-center g-5">
+              <div className="col-12 col-lg-7">
+                <Reveal>
+                  <p className="dws-eyebrow mb-3">About the Studio</p>
+                </Reveal>
 
-                      {/* Exactly one H1 per page containing primary keywords */}
-                      <h1 className="display-4 mb-4 text-white fw-bold">
-                        Founder-Led Web Development Studio in Jaipur
-                      </h1>
+                {/* Exactly one H1 per page containing primary keywords */}
+                <h1 className="display-4 mb-4 text-white fw-bold">
+                  Founder-Led Web Development Studio in Jaipur
+                </h1>
 
-                      <p className="dws-hero-sub mb-4">
-                        DWS Web Services turns complex business requirements into fast websites,
-                        measurable organic SEO, and compounding revenue engines.
-                      </p>
-                      <p className="mb-0 lead" style={{ color: "#d6d6d6" }}>
-                        Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates
-                        deliberately lean: senior hands on every keyboard, zero junior hand-offs, and
-                        reporting judged strictly on commercial enquiries rather than superficial vanity
-                        impressions.
-                      </p>
-                    </div>
-
-                    {/* 1. Stats row */}
-                    <div
-                      style={{
-                        marginTop: "2.25rem",
-                        paddingTop: "1.75rem",
-                        borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-                      }}
-                    >
-                      <div className="dws-about-stats-grid">
-                        <div>
-                          <div
-                            className="dws-mono text-white fw-bold mb-1"
-                            style={{ fontSize: "1.85rem", lineHeight: 1.1 }}
-                          >
-                            3+
-                          </div>
-                          <div
-                            className="dws-mono text-muted text-uppercase"
-                            style={{ fontSize: "0.72rem", letterSpacing: "0.06em", lineHeight: 1.35 }}
-                          >
-                            Years of experience
-                          </div>
-                        </div>
-
-                        <div>
-                          <div
-                            className="dws-mono text-white fw-bold mb-1"
-                            style={{ fontSize: "1.85rem", lineHeight: 1.1 }}
-                          >
-                            20+
-                          </div>
-                          <div
-                            className="dws-mono text-muted text-uppercase"
-                            style={{ fontSize: "0.72rem", letterSpacing: "0.06em", lineHeight: 1.35 }}
-                          >
-                            Projects delivered
-                          </div>
-                        </div>
-
-                        <div>
-                          <div
-                            className="dws-mono text-white fw-bold mb-1"
-                            style={{ fontSize: "1.85rem", lineHeight: 1.1 }}
-                          >
-                            99/100
-                          </div>
-                          <div
-                            className="dws-mono text-muted text-uppercase"
-                            style={{ fontSize: "0.72rem", letterSpacing: "0.06em", lineHeight: 1.35 }}
-                          >
-                            Average PageSpeed score
-                          </div>
-                        </div>
-
-                        <div>
-                          <div
-                            className="dws-mono text-white fw-bold mb-1"
-                            style={{ fontSize: "1.85rem", lineHeight: 1.1 }}
-                          >
-                            150%
-                          </div>
-                          <div
-                            className="dws-mono text-muted text-uppercase"
-                            style={{ fontSize: "0.72rem", letterSpacing: "0.06em", lineHeight: 1.35 }}
-                          >
-                            Average organic traffic growth
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* 2. "Why clients choose us" block */}
-                    <div style={{ marginTop: "2.25rem" }}>
-                      <div
-                        className="dws-mono text-uppercase text-muted mb-3"
-                        style={{ fontSize: "0.75rem", letterSpacing: "0.08em" }}
-                      >
-                        Why clients choose us
-                      </div>
-                      <div className="d-flex flex-column gap-3">
-                        <div className="d-flex align-items-start gap-3">
-                          <div
-                            className="d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5 rounded-1"
-                            style={{
-                              width: 28,
-                              height: 28,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                              backgroundColor: "rgba(255, 255, 255, 0.03)",
-                            }}
-                          >
-                            <UserCheck size={14} className="text-white" aria-hidden="true" />
-                          </div>
-                          <div>
-                            <div className="text-white fw-semibold small mb-0.5">Senior-only team</div>
-                            <div className="text-muted small" style={{ lineHeight: 1.5 }}>
-                              every project is built and reviewed by experienced developers, never handed to juniors.
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="d-flex align-items-start gap-3">
-                          <div
-                            className="d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5 rounded-1"
-                            style={{
-                              width: 28,
-                              height: 28,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                              backgroundColor: "rgba(255, 255, 255, 0.03)",
-                            }}
-                          >
-                            <Target size={14} className="text-white" aria-hidden="true" />
-                          </div>
-                          <div>
-                            <div className="text-white fw-semibold small mb-0.5">Enquiry-focused reporting</div>
-                            <div className="text-muted small" style={{ lineHeight: 1.5 }}>
-                              we track calls, form fills and leads, not vanity impressions.
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="d-flex align-items-start gap-3">
-                          <div
-                            className="d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5 rounded-1"
-                            style={{
-                              width: 28,
-                              height: 28,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                              backgroundColor: "rgba(255, 255, 255, 0.03)",
-                            }}
-                          >
-                            <Zap size={14} className="text-white" aria-hidden="true" />
-                          </div>
-                          <div>
-                            <div className="text-white fw-semibold small mb-0.5">Built for speed and SEO</div>
-                            <div className="text-muted small" style={{ lineHeight: 1.5 }}>
-                              fast, clean code and search-ready structure from day one.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* 3. Two CTA buttons side by side */}
-                    <div className="d-flex flex-wrap gap-3" style={{ marginTop: "2.25rem" }}>
-                      <Link to="/contact" className="dws-btn dws-btn-solid">
-                        Book a Free Strategy Call
-                      </Link>
-                      <Link to="/case-studies" className="dws-btn dws-btn-outline">
-                        See Our Work
-                      </Link>
-                    </div>
-                  </div>
+                <Reveal delay={0.1}>
+                  <p className="dws-hero-sub mb-4">
+                    DWS Web Services turns complex business requirements into fast websites,
+                    measurable organic SEO, and compounding revenue engines.
+                  </p>
+                  <p className="mb-0 lead" style={{ color: "#d6d6d6" }}>
+                    Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates
+                    deliberately lean: senior hands on every keyboard, zero junior hand-offs, and
+                    reporting judged strictly on commercial enquiries rather than superficial vanity
+                    impressions.
+                  </p>
                 </Reveal>
               </div>
 
