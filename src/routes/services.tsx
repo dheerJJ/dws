@@ -322,10 +322,10 @@ function ServicesPage() {
                 </div>
               </Reveal>
             ) : (
-              <div className="row g-4">
+              <div className="row g-4 align-items-stretch">
                 {filteredServices.map((service, i) => (
-                  <div className="col-12 col-md-6 col-lg-4" key={service.slug}>
-                    <Reveal delay={Math.min(i * 0.04, 0.3)}>
+                  <div className="col-12 col-md-6 col-lg-4 d-flex" key={service.slug}>
+                    <Reveal delay={Math.min(i * 0.04, 0.3)} className="w-100 d-flex flex-column h-100">
                       <ServiceCard service={service} />
                     </Reveal>
                   </div>
@@ -394,49 +394,97 @@ function ServiceCard({ service }: { service: ServiceEntry }) {
   const inquireLink = `/contact?service=${encodeURIComponent(service.title)}`;
 
   return (
-    <div className="dws-service-card h-100 d-flex flex-column">
-      {/* Gradient header with icon */}
-      <div className="dws-service-card-header">
-        <div className="dws-service-card-icon">
-          <ServiceIcon name={service.icon} size={24} />
+    <div className="dws-service-card w-100 h-100 d-flex flex-column">
+      {/* Top Header: Icon in subtle container + Category Tag */}
+      <div className="d-flex align-items-center justify-content-between mb-4">
+        <div
+          className="d-flex align-items-center justify-content-center rounded-2 border border-secondary-subtle"
+          style={{ width: 44, height: 44, backgroundColor: "rgba(255, 255, 255, 0.04)" }}
+        >
+          <ServiceIcon name={service.icon} size={22} className="text-white" />
         </div>
-        <span className="dws-service-card-category">{service.category}</span>
+        <span
+          className="dws-mono text-uppercase text-muted"
+          style={{ fontSize: "0.75rem", letterSpacing: "0.08em" }}
+        >
+          {service.category}
+        </span>
       </div>
 
-      {/* Content */}
-      <div className="dws-service-card-body flex-grow-1 d-flex flex-column">
-        <h3 className="h5 mb-2 text-white">{service.title}</h3>
-        <p className="dws-muted small mb-3 flex-grow-1">{service.description}</p>
+      {/* Title with balanced min-height for uniform baseline */}
+      <h3
+        className="h5 fw-semibold text-white mb-3"
+        style={{ minHeight: "2.8rem", display: "flex", alignItems: "flex-start", lineHeight: 1.35 }}
+      >
+        {service.title}
+      </h3>
 
-        {/* Feature bullets */}
-        <ul className="dws-service-card-features list-unstyled mb-3">
+      {/* Description with comfortable line height and breathing room */}
+      <p
+        className="dws-muted small mb-4"
+        style={{
+          fontSize: "0.9rem",
+          lineHeight: 1.6,
+          minHeight: "4.8rem",
+        }}
+      >
+        {service.description}
+      </p>
+
+      {/* Deliverables / Features List */}
+      <div className="pt-3 border-top border-secondary-subtle mb-4 flex-grow-1">
+        <div
+          className="dws-mono text-uppercase text-muted mb-3"
+          style={{ fontSize: "0.72rem", letterSpacing: "0.06em" }}
+        >
+          Key Deliverables
+        </div>
+        <ul className="list-unstyled mb-0 d-flex flex-column" style={{ gap: "0.65rem" }}>
           {service.features.map((f) => (
-            <li key={f} className="small">
-              {f}
+            <li
+              key={f}
+              className="small d-flex align-items-start gap-2 text-white-50"
+              style={{ fontSize: "0.85rem", lineHeight: 1.5 }}
+            >
+              <span
+                className="text-white-50 flex-shrink-0"
+                style={{ fontSize: "0.8rem", marginTop: "1px" }}
+                aria-hidden="true"
+              >
+                →
+              </span>
+              <span>{f}</span>
             </li>
           ))}
         </ul>
+      </div>
 
-        {/* Price */}
-        <p className="dws-mono small mb-3 text-white">
-          <ShinyText text={`Starting ${service.startsAt}`} />
-        </p>
-
-        {/* Actions */}
-        <div className="d-flex gap-2 mt-auto">
-          <Link
-            to={learnMoreLink}
-            className="dws-btn dws-btn-outline dws-btn-sm-tight flex-grow-1 text-center"
-          >
-            Learn More
-          </Link>
-          <Link
-            to={inquireLink}
-            className="dws-btn dws-btn-solid dws-btn-sm-tight flex-grow-1 text-center"
-          >
-            Inquire Now
-          </Link>
+      {/* Price block */}
+      <div className="pt-3 border-top border-secondary-subtle mb-4">
+        <div className="d-flex align-items-baseline gap-2">
+          <span className="dws-mono text-muted small" style={{ fontSize: "0.78rem" }}>
+            Starting at
+          </span>
+          <span className="dws-mono text-white fw-bold fs-5">
+            <ShinyText text={service.startsAt} />
+          </span>
         </div>
+      </div>
+
+      {/* Actions anchored to the bottom */}
+      <div className="d-flex gap-2 mt-auto">
+        <Link
+          to={learnMoreLink}
+          className="dws-btn dws-btn-outline dws-btn-sm-tight flex-grow-1 text-center"
+        >
+          Learn More
+        </Link>
+        <Link
+          to={inquireLink}
+          className="dws-btn dws-btn-solid dws-btn-sm-tight flex-grow-1 text-center"
+        >
+          Inquire Now
+        </Link>
       </div>
     </div>
   );

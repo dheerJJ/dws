@@ -1466,7 +1466,9 @@ select.dws-input.is-placeholder {
 /* ---------- Service pricing cards ---------- */
 .dws-service-card {
   border: 1px solid var(--dws-line, #222);
-  padding: 1.5rem;
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  background: #060606;
   text-decoration: none;
   color: #fff;
   transition:
