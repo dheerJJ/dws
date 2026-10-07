@@ -192,7 +192,7 @@ export function GoogleReviews({ reviews = [] }: GoogleReviewsProps) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
-      reviewCount: reviews.length || 5,
+      reviewCount: reviews.length,
       bestRating: "5",
       worstRating: "1",
     },
@@ -237,14 +237,14 @@ export function GoogleReviews({ reviews = [] }: GoogleReviewsProps) {
           <div className="col-lg-5 text-lg-end mt-4 mt-lg-0">
             <Reveal delay={0.1}>
               <div className="d-inline-flex flex-column align-items-lg-end gap-2">
-                {/* Rating Summary matching exact specification: "5.0 · 5 Google reviews" */}
+                {/* Rating Summary matching exact count */}
                 <div className="d-flex align-items-center gap-2">
                   <div className="d-flex align-items-center gap-1" aria-label="5.0 out of 5 stars">
                     {[...Array(5)].map((_, i) => (
                       <GoogleStar key={i} size={18} />
                     ))}
                   </div>
-                  <span className="fw-semibold text-white">5.0 · 5 Google reviews</span>
+                  <span className="fw-semibold text-white">5.0 · {reviews.length} Google reviews</span>
                 </div>
 
                 {/* Proof & Action Buttons */}

@@ -40,19 +40,4 @@ export const googleReviews: GoogleReview[] = [
     relativeTime: "October 2026",
     text: "We hired them for a critical project and they knocked it out of the park. Not only was it the best work we’ve received in this space, but the craftsmanship and quality were evident in every detail. To top it off, they managed to deliver everything exactly on schedule. Will definitely hire again!",
   },
-  {
-    id: "review-kalu-ram-yadav",
-    authorName: "Kalu Ram Yadav",
-    rating: 5,
-    relativeTime: "October 2026",
-    text: "Top-quality work, flawless communication, and speedy on-time delivery. Will definitely use their services again!",
-  },
-  {
-    id: "review-kailash-saini-2",
-    authorName: "Kailash Saini",
-    authorPhotoUrl: "/reviews/kailash-saini.png",
-    rating: 5,
-    relativeTime: "October 2026",
-    text: "Outstanding experience from start to finish. Communication was seamless, the quality of work was unmatched, and they stuck strictly to our agreed timeline. It's rare to find a partner that delivers both speed and excellence so perfectly.",
-  },
 ];
