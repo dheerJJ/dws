@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Target, UserCheck, Zap } from "lucide-react";
 
 import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
@@ -129,41 +130,183 @@ function AboutPage() {
         {/* Header Section with Visible Breadcrumbs and Single H1 */}
         <section className="dws-section pt-5">
           <div className="container">
-            <Reveal>
-              <nav aria-label="Breadcrumb" className="dws-mono small mb-4">
-                <Link to="/" className="text-muted text-decoration-none">
-                  Home
-                </Link>{" "}
-                / <span className="text-white">About</span>
-              </nav>
-            </Reveal>
+            <div className="row align-items-stretch g-5">
+              <div className="col-12 col-lg-7 d-flex flex-column justify-content-between">
+                <div>
+                  <Reveal>
+                    <nav aria-label="Breadcrumb" className="dws-mono small mb-4">
+                      <Link to="/" className="text-muted text-decoration-none">
+                        Home
+                      </Link>{" "}
+                      / <span className="text-white">About</span>
+                    </nav>
+                  </Reveal>
 
-            <div className="row align-items-center g-5">
-              <div className="col-12 col-lg-7">
-                <Reveal>
-                  <p className="dws-eyebrow mb-3">About the Studio</p>
+                  <Reveal>
+                    <p className="dws-eyebrow mb-3">About the Studio</p>
+                  </Reveal>
+
+                  {/* Exactly one H1 per page containing primary keywords */}
+                  <h1 className="display-4 mb-4 text-white fw-bold">
+                    Founder-Led Web Development Studio in Jaipur
+                  </h1>
+
+                  <Reveal delay={0.1}>
+                    <p className="dws-hero-sub mb-4">
+                      DWS Web Services turns complex business requirements into fast websites,
+                      measurable organic SEO, and compounding revenue engines.
+                    </p>
+                    <p className="mb-0 lead" style={{ color: "#d6d6d6" }}>
+                      Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates
+                      deliberately lean: senior hands on every keyboard, zero junior hand-offs, and
+                      reporting judged strictly on commercial enquiries rather than superficial vanity
+                      impressions.
+                    </p>
+                  </Reveal>
+                </div>
+
+                {/* 1. Stats row */}
+                <Reveal delay={0.15}>
+                  <div className="dws-about-stats-grid">
+                    <div>
+                      <div
+                        className="dws-mono text-white fw-bold mb-1"
+                        style={{ fontSize: "1.85rem", lineHeight: 1.1 }}
+                      >
+                        3+
+                      </div>
+                      <div
+                        className="dws-mono text-muted text-uppercase"
+                        style={{ fontSize: "0.72rem", letterSpacing: "0.06em", lineHeight: 1.35 }}
+                      >
+                        Years of experience
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        className="dws-mono text-white fw-bold mb-1"
+                        style={{ fontSize: "1.85rem", lineHeight: 1.1 }}
+                      >
+                        20+
+                      </div>
+                      <div
+                        className="dws-mono text-muted text-uppercase"
+                        style={{ fontSize: "0.72rem", letterSpacing: "0.06em", lineHeight: 1.35 }}
+                      >
+                        Projects delivered
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        className="dws-mono text-white fw-bold mb-1"
+                        style={{ fontSize: "1.85rem", lineHeight: 1.1 }}
+                      >
+                        99/100
+                      </div>
+                      <div
+                        className="dws-mono text-muted text-uppercase"
+                        style={{ fontSize: "0.72rem", letterSpacing: "0.06em", lineHeight: 1.35 }}
+                      >
+                        Average PageSpeed score
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        className="dws-mono text-white fw-bold mb-1"
+                        style={{ fontSize: "1.85rem", lineHeight: 1.1 }}
+                      >
+                        150%
+                      </div>
+                      <div
+                        className="dws-mono text-muted text-uppercase"
+                        style={{ fontSize: "0.72rem", letterSpacing: "0.06em", lineHeight: 1.35 }}
+                      >
+                        Average organic traffic growth
+                      </div>
+                    </div>
+                  </div>
                 </Reveal>
 
-                {/* Exactly one H1 per page containing primary keywords */}
-                <h1 className="display-4 mb-4 text-white fw-bold">
-                  Founder-Led Web Development Studio in Jaipur
-                </h1>
+                {/* 2. "Why clients choose us" block */}
+                <Reveal delay={0.2}>
+                  <div className="dws-about-why-us">
+                    <div
+                      className="dws-mono text-uppercase text-muted mb-3"
+                      style={{ fontSize: "0.75rem", letterSpacing: "0.08em" }}
+                    >
+                      Why clients choose us
+                    </div>
+                    <div className="d-flex flex-column gap-3">
+                      <div className="d-flex align-items-baseline gap-2.5">
+                        <UserCheck
+                          size={16}
+                          className="text-white flex-shrink-0"
+                          style={{ transform: "translateY(2px)" }}
+                          aria-hidden="true"
+                        />
+                        <div style={{ lineHeight: 1.5 }}>
+                          <span className="text-white fw-semibold small">Senior-only team:</span>{" "}
+                          <span className="text-muted small">
+                            every project is built and reviewed by experienced developers, never
+                            handed to juniors.
+                          </span>
+                        </div>
+                      </div>
 
-                <Reveal delay={0.1}>
-                  <p className="dws-hero-sub mb-4">
-                    DWS Web Services turns complex business requirements into fast websites,
-                    measurable organic SEO, and compounding revenue engines.
-                  </p>
-                  <p className="mb-0 lead" style={{ color: "#d6d6d6" }}>
-                    Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates
-                    deliberately lean: senior hands on every keyboard, zero junior hand-offs, and
-                    reporting judged strictly on commercial enquiries rather than superficial vanity
-                    impressions.
-                  </p>
+                      <div className="d-flex align-items-baseline gap-2.5">
+                        <Target
+                          size={16}
+                          className="text-white flex-shrink-0"
+                          style={{ transform: "translateY(2px)" }}
+                          aria-hidden="true"
+                        />
+                        <div style={{ lineHeight: 1.5 }}>
+                          <span className="text-white fw-semibold small">
+                            Enquiry-focused reporting:
+                          </span>{" "}
+                          <span className="text-muted small">
+                            we track calls, form fills and leads, not vanity impressions.
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="d-flex align-items-baseline gap-2.5">
+                        <Zap
+                          size={16}
+                          className="text-white flex-shrink-0"
+                          style={{ transform: "translateY(2px)" }}
+                          aria-hidden="true"
+                        />
+                        <div style={{ lineHeight: 1.5 }}>
+                          <span className="text-white fw-semibold small">
+                            Built for speed and SEO:
+                          </span>{" "}
+                          <span className="text-muted small">
+                            fast, clean code and search-ready structure from day one.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* 3. Two CTA buttons side by side */}
+                <Reveal delay={0.25}>
+                  <div className="d-flex flex-wrap gap-3 dws-about-ctas">
+                    <Link to="/contact" className="dws-btn dws-btn-solid">
+                      Book a Free Strategy Call
+                    </Link>
+                    <Link to="/case-studies" className="dws-btn dws-btn-outline">
+                      See Our Work
+                    </Link>
+                  </div>
                 </Reveal>
               </div>
 
-              <div className="col-12 col-md-8 col-lg-5 mx-auto mx-lg-0">
+              <div className="col-12 col-md-8 col-lg-5 mx-auto mx-lg-0 d-flex flex-column justify-content-center">
                 <Reveal delay={0.15}>
                   <div className="dws-founder-hero-card">
                     <div className="dws-founder-hero-media">
