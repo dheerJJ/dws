@@ -70,11 +70,14 @@ export function GoogleReviews({ reviews = [], rating = 5, totalReviews = 0 }: Go
           </div>
         </div>
 
-        <div className="row g-4">
-          {reviews.map((r, i) => (
-            <div className="col-12 col-md-6 col-lg-4" key={r.id || r.authorName + i}>
-              <Reveal delay={i * 0.08}>
-                <div className="dws-quote h-100 mb-0 d-flex flex-column p-4 border border-secondary-subtle rounded-1 bg-black">
+        <div className="row g-4 align-items-stretch">
+          {reviews.slice(0, 3).map((r, i) => (
+            <div className="col-12 col-md-6 col-lg-4 d-flex" key={r.id || r.authorName + i}>
+              <Reveal delay={i * 0.08} className="w-100 d-flex flex-column h-100">
+                <div
+                  className="dws-quote h-100 w-100 mb-0 d-flex flex-column p-4 border border-secondary-subtle rounded-1 bg-black"
+                  style={{ minHeight: "280px" }}
+                >
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <div className="d-flex text-warning" aria-label={`${r.rating} stars`}>
                       {[...Array(Math.min(5, Math.max(1, r.rating)))].map((_, starIndex) => (
@@ -88,7 +91,7 @@ export function GoogleReviews({ reviews = [], rating = 5, totalReviews = 0 }: Go
                     &ldquo;{r.text}&rdquo;
                   </blockquote>
 
-                  <div className="d-flex align-items-center gap-3 pt-3 border-top border-secondary-subtle">
+                  <div className="d-flex align-items-center gap-3 pt-3 mt-auto border-top border-secondary-subtle">
                     {r.authorPhotoUrl ? (
                       <img
                         src={r.authorPhotoUrl}
@@ -100,7 +103,7 @@ export function GoogleReviews({ reviews = [], rating = 5, totalReviews = 0 }: Go
                       />
                     ) : (
                       <div
-                        className="d-flex align-items-center justify-content-center bg-secondary text-white rounded-circle fw-semibold"
+                        className="d-flex align-items-center justify-content-center bg-secondary text-white rounded-circle fw-semibold flex-shrink-0"
                         style={{ width: 38, height: 38, fontSize: "0.85rem" }}
                         aria-hidden="true"
                       >
