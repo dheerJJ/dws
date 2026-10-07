@@ -159,8 +159,8 @@ function AboutPage() {
                     <p className="mb-0 lead" style={{ color: "#d6d6d6" }}>
                       Started by Dheerajj Kumawat in Jaipur, Rajasthan, our studio operates
                       deliberately lean: senior hands on every keyboard, zero junior hand-offs, and
-                      reporting judged strictly on commercial enquiries rather than superficial vanity
-                      impressions.
+                      reporting judged strictly on commercial enquiries rather than superficial
+                      vanity impressions.
                     </p>
                   </Reveal>
                 </div>

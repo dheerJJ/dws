@@ -325,7 +325,10 @@ function ServicesPage() {
               <div className="row g-4 align-items-stretch">
                 {filteredServices.map((service, i) => (
                   <div className="col-12 col-md-6 col-lg-4 d-flex" key={service.slug}>
-                    <Reveal delay={Math.min(i * 0.04, 0.3)} className="w-100 d-flex flex-column h-100">
+                    <Reveal
+                      delay={Math.min(i * 0.04, 0.3)}
+                      className="w-100 d-flex flex-column h-100"
+                    >
                       <ServiceCard service={service} />
                     </Reveal>
                   </div>

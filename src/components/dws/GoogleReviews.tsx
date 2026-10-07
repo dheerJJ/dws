@@ -148,7 +148,11 @@ function ReviewCard({ review: r, index }: { review: GoogleReview; index: number 
                 <div className="mt-1">
                   <span
                     className="d-inline-block px-2 rounded text-white-50 border border-secondary-subtle"
-                    style={{ fontSize: "0.72rem", paddingTop: "0.125rem", paddingBottom: "0.125rem" }}
+                    style={{
+                      fontSize: "0.72rem",
+                      paddingTop: "0.125rem",
+                      paddingBottom: "0.125rem",
+                    }}
                   >
                     {r.service}
                   </span>
@@ -248,7 +252,9 @@ export function GoogleReviews({ reviews = [] }: GoogleReviewsProps) {
                       <GoogleStar key={i} size={18} />
                     ))}
                   </div>
-                  <span className="fw-semibold text-white">5.0 · {reviews.length} Google reviews</span>
+                  <span className="fw-semibold text-white">
+                    5.0 · {reviews.length} Google reviews
+                  </span>
                 </div>
 
                 {/* Proof & Action Buttons */}

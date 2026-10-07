@@ -2,13 +2,7 @@
  * Official Apple brand logo (iconic bitten Apple silhouette).
  * Used for Apple / iOS related services instead of the generic fruit apple icon.
  */
-export function AppleLogo({
-  size = 24,
-  className = "",
-}: {
-  size?: number;
-  className?: string;
-}) {
+export function AppleLogo({ size = 24, className = "" }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
