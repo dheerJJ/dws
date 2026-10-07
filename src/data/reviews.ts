@@ -18,6 +18,7 @@ export const googleReviews: GoogleReview[] = [
   {
     id: "review-ankit-yadav",
     authorName: "Ankit Yadav",
+    authorPhotoUrl: "/reviews/ankit-yadav.png",
     rating: 5,
     relativeTime: "Recently",
     text: "Exceeded my expectations! The project was handled with great care, attention to detail, and delivered strictly on schedule. I will definitely work with them again.",
@@ -25,6 +26,7 @@ export const googleReviews: GoogleReview[] = [
   {
     id: "review-suresh-yadav",
     authorName: "Suresh Yadav",
+    authorPhotoUrl: "/reviews/suresh-yadav.png",
     rating: 5,
     relativeTime: "Recently",
     text: "I am really impressed with the quality of the work. Everything was delivered right on time without any hassle. Great communication and smooth experience from start to finish. Definitely recommend them!",
@@ -32,6 +34,7 @@ export const googleReviews: GoogleReview[] = [
   {
     id: "review-kailash-saini-1",
     authorName: "Kailash Saini",
+    authorPhotoUrl: "/reviews/kailash-saini.png",
     rating: 5,
     relativeTime: "Recently",
     text: "We hired them for a critical project and they knocked it out of the park. Not only was it the best work we’ve received in this space, but the craftsmanship and quality were evident in every detail. To top it off, they managed to deliver everything exactly on schedule. Will definitely hire again!",

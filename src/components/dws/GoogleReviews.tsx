@@ -1,4 +1,4 @@
-import { Star, ExternalLink, CheckCircle } from "lucide-react";
+import { ExternalLink, CheckCircle } from "lucide-react";
 import { business } from "@/data/business";
 import { GoogleReview, MINIMUM_REVIEWS_THRESHOLD } from "@/data/reviews";
 import { Reveal } from "./Reveal";
@@ -8,6 +8,27 @@ type GoogleReviewsProps = {
   rating?: number;
   totalReviews?: number;
 };
+
+/**
+ * Authentic Google Reviews star icon.
+ * Matches the official Google Material star path and amber color (#fbbc04) used across Google Maps and Business profiles.
+ */
+function GoogleStar({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="#fbbc04"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className="flex-shrink-0"
+      style={{ display: "inline-block", verticalAlign: "middle" }}
+    >
+      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+    </svg>
+  );
+}
 
 /**
  * Google Reviews showcase component.
@@ -46,9 +67,9 @@ export function GoogleReviews({ reviews = [], rating = 5, totalReviews = 0 }: Go
             <Reveal delay={0.1}>
               <div className="d-inline-flex flex-column align-items-lg-end gap-2">
                 <div className="d-flex align-items-center gap-2">
-                  <div className="d-flex text-warning" aria-label={`${rating} out of 5 stars`}>
+                  <div className="d-flex align-items-center gap-1" aria-label={`${rating} out of 5 stars`}>
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={18} fill="#f59e0b" stroke="#f59e0b" />
+                      <GoogleStar key={i} size={18} />
                     ))}
                   </div>
                   <span className="fw-semibold text-white">{rating.toFixed(1)} / 5.0</span>
@@ -79,9 +100,9 @@ export function GoogleReviews({ reviews = [], rating = 5, totalReviews = 0 }: Go
                   style={{ minHeight: "280px" }}
                 >
                   <div className="d-flex justify-content-between align-items-center mb-3">
-                    <div className="d-flex text-warning" aria-label={`${r.rating} stars`}>
+                    <div className="d-flex align-items-center gap-1" aria-label={`${r.rating} stars`}>
                       {[...Array(Math.min(5, Math.max(1, r.rating)))].map((_, starIndex) => (
-                        <Star key={starIndex} size={15} fill="#f59e0b" stroke="#f59e0b" />
+                        <GoogleStar key={starIndex} size={16} />
                       ))}
                     </div>
                     <span className="dws-mono small text-muted">{r.relativeTime}</span>
@@ -96,15 +117,16 @@ export function GoogleReviews({ reviews = [], rating = 5, totalReviews = 0 }: Go
                       <img
                         src={r.authorPhotoUrl}
                         alt={r.authorName}
-                        width={38}
-                        height={38}
-                        className="rounded-circle border border-secondary-subtle"
+                        width={40}
+                        height={40}
+                        className="rounded-circle border border-secondary-subtle flex-shrink-0"
+                        style={{ width: "40px", height: "40px", objectFit: "cover" }}
                         loading="lazy"
                       />
                     ) : (
                       <div
                         className="d-flex align-items-center justify-content-center bg-secondary text-white rounded-circle fw-semibold flex-shrink-0"
-                        style={{ width: 38, height: 38, fontSize: "0.85rem" }}
+                        style={{ width: 40, height: 40, fontSize: "0.85rem" }}
                         aria-hidden="true"
                       >
                         {r.authorName.charAt(0).toUpperCase()}
