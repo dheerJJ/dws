@@ -44,6 +44,28 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+const DISALLOWED_PERMISSIONS_FEATURES = new Set([
+  "attribution-reporting",
+  "private-aggregation",
+  "join-ad-interest-group",
+  "run-ad-auction",
+]);
+
+function sanitizePermissionsPolicy(policy: string | null): string {
+  const standardDefault = "camera=(), microphone=(), geolocation=()";
+  if (!policy) return standardDefault;
+
+  const parts = policy
+    .split(",")
+    .map((item) => item.trim())
+    .filter((item) => {
+      const featureName = item.split("=")[0]?.trim().toLowerCase();
+      return featureName && !DISALLOWED_PERMISSIONS_FEATURES.has(featureName);
+    });
+
+  return parts.length > 0 ? parts.join(", ") : standardDefault;
+}
+
 function applySecurityHeaders(response: Response): Response {
   const newHeaders = new Headers(response.headers);
   if (!newHeaders.has("X-Content-Type-Options")) {
@@ -55,10 +77,12 @@ function applySecurityHeaders(response: Response): Response {
   if (!newHeaders.has("Referrer-Policy")) {
     newHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
   }
-  // Enforce standardized Permissions-Policy without experimental Privacy Sandbox features
-  if (!newHeaders.has("Permissions-Policy")) {
-    newHeaders.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
-  }
+
+  // Actively sanitize Permissions-Policy by removing non-standard Privacy Sandbox
+  // directives (attribution-reporting, private-aggregation, join-ad-interest-group,
+  // run-ad-auction) that trigger console errors in non-Chrome/Brave browsers.
+  const currentPolicy = newHeaders.get("Permissions-Policy");
+  newHeaders.set("Permissions-Policy", sanitizePermissionsPolicy(currentPolicy));
 
   return new Response(response.body, {
     status: response.status,
