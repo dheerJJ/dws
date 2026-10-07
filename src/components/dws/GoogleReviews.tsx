@@ -119,7 +119,7 @@ export function GoogleReviews({ reviews = [], rating = 5, totalReviews = 0 }: Go
                         alt={r.authorName}
                         width={40}
                         height={40}
-                        className="rounded-circle border border-secondary-subtle flex-shrink-0"
+                        className="rounded-circle flex-shrink-0"
                         style={{ width: "40px", height: "40px", objectFit: "cover" }}
                         loading="lazy"
                       />
