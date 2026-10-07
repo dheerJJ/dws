@@ -16,8 +16,9 @@ import {
   Wrench,
   Rocket,
   TabletSmartphone,
-  Apple,
 } from "lucide-react";
+
+import { AppleLogo } from "@/components/dws/AppleLogo";
 
 import { Navbar } from "@/components/dws/Navbar";
 import { Footer } from "@/components/dws/Contact";
@@ -141,7 +142,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
   Wrench,
   Rocket,
   TabletSmartphone,
-  Apple,
+  Apple: AppleLogo,
 };
 
 function ServiceIcon({ name, size = 24 }: { name: string; size?: number }) {
