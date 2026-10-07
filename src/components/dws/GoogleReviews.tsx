@@ -73,9 +73,9 @@ function ReviewCard({ review: r, index }: { review: GoogleReview; index: number 
   const displayText = isLong && !expanded ? `${r.text.slice(0, 165)}...` : r.text;
 
   return (
-    <div className="col-12 col-md-6 col-lg-4 d-flex" key={r.id || `${r.authorName}-${index}`}>
-      <Reveal delay={index * 0.06} className="w-100 d-flex flex-column h-100">
-        <div className="dws-quote h-100 w-100 mb-0 d-flex flex-column p-4 border border-secondary-subtle rounded-1 bg-black position-relative">
+    <div className="col-12 col-md-6 col-lg-4" key={r.id || `${r.authorName}-${index}`}>
+      <Reveal delay={index * 0.06} className="w-100">
+        <div className="dws-quote w-100 mb-0 d-flex flex-column p-4 border border-secondary-subtle rounded-1 bg-black position-relative">
           {/* Top Row: Stars + Date on Left, Official Google G in Top Right */}
           <div className="d-flex justify-content-between align-items-start mb-3">
             <div>
@@ -276,8 +276,8 @@ export function GoogleReviews({ reviews = [] }: GoogleReviewsProps) {
           </div>
         </div>
 
-        {/* All 5 Reviews in a Responsive Grid */}
-        <div className="row g-4 justify-content-start">
+        {/* Reviews in a Responsive Grid with Independent Card Heights */}
+        <div className="row g-4 justify-content-start align-items-start">
           {reviews.map((r, i) => (
             <ReviewCard key={r.id || `${r.authorName}-${i}`} review={r} index={i} />
           ))}
