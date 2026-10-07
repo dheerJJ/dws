@@ -80,10 +80,16 @@ export const getGoogleReviews = createServerFn({ method: "GET" }).handler(
     }
 
     // Default / fallback to local verified store
+    const totalCount = googleReviews.length;
+    const avgRating =
+      totalCount > 0
+        ? Number((googleReviews.reduce((acc, r) => acc + r.rating, 0) / totalCount).toFixed(1))
+        : 5.0;
+
     cachedData = {
       reviews: googleReviews,
-      rating: 5,
-      totalReviews: googleReviews.length,
+      rating: avgRating,
+      totalReviews: totalCount,
       source: "local_store",
     };
     lastFetchedAt = now;
