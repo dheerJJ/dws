@@ -146,11 +146,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       ],
       links: [
         { rel: "manifest", href: "/manifest.json" },
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
         {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+          rel: "preload",
+          href: "/fonts/inter-latin.woff2",
+          as: "font",
+          type: "font/woff2",
+          crossOrigin: "anonymous",
         },
         { rel: "stylesheet", href: bootstrapCss },
         { rel: "stylesheet", href: appCss },
@@ -187,16 +188,33 @@ function DeferredChatWidget() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    const trigger = () => setMounted(true);
+
+    // Mount on first user interaction so initial page load thread remains 100% idle
+    const events = ["scroll", "pointerdown", "keydown"] as const;
+    const onInteract = () => {
+      trigger();
+      events.forEach((e) => window.removeEventListener(e, onInteract));
+    };
+    events.forEach((e) => window.addEventListener(e, onInteract, { passive: true, once: true }));
+
+    // Fallback idle timeout
     const win = window as unknown as {
       requestIdleCallback?: (cb: () => void, opts: { timeout: number }) => number;
       cancelIdleCallback?: (id: number) => void;
     };
     if (typeof win.requestIdleCallback === "function") {
-      const handle = win.requestIdleCallback(() => setMounted(true), { timeout: 3500 });
-      return () => win.cancelIdleCallback?.(handle);
+      const handle = win.requestIdleCallback(trigger, { timeout: 7000 });
+      return () => {
+        win.cancelIdleCallback?.(handle);
+        events.forEach((e) => window.removeEventListener(e, onInteract));
+      };
     }
-    const timer = setTimeout(() => setMounted(true), 2500);
-    return () => clearTimeout(timer);
+    const timer = setTimeout(trigger, 6000);
+    return () => {
+      clearTimeout(timer);
+      events.forEach((e) => window.removeEventListener(e, onInteract));
+    };
   }, []);
 
   if (!mounted) return null;

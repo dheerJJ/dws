@@ -8,9 +8,10 @@ type SmartImageProps = {
   className?: string;
   imgClassName?: string;
   ratio?: string;
+  priority?: boolean;
 };
 
-/** Image that shows a shimmering skeleton until the bitmap has decoded. */
+/** Image that serves modern WebP with fallback and shows a skeleton until decoded */
 export function SmartImage({
   src,
   alt,
@@ -19,12 +20,13 @@ export function SmartImage({
   className,
   imgClassName,
   ratio,
+  priority = false,
 }: SmartImageProps) {
   const [loaded, setLoaded] = useState(false);
   const ref = useRef<HTMLImageElement>(null);
 
-  // React can miss load events fired between SSR paint and hydration,
-  // so attach a native listener and re-check completeness on mount.
+  const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -47,18 +49,22 @@ export function SmartImage({
       style={ratio ? { aspectRatio: ratio } : undefined}
     >
       {!loaded && <span className="dws-skeleton dws-img-skeleton" aria-hidden="true" />}
-      <img
-        ref={ref}
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        loading="lazy"
-        decoding="async"
-        className={`dws-img${loaded ? " is-loaded" : ""}${imgClassName ? ` ${imgClassName}` : ""}`}
-        onLoad={() => setLoaded(true)}
-        onError={() => setLoaded(true)}
-      />
+      <picture>
+        {webpSrc !== src && <source srcSet={webpSrc} type="image/webp" />}
+        <img
+          ref={ref}
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading={priority ? "eager" : "lazy"}
+          decoding={priority ? "sync" : "async"}
+          {...(priority ? { fetchPriority: "high" as const } : {})}
+          className={`dws-img${loaded ? " is-loaded" : ""}${imgClassName ? ` ${imgClassName}` : ""}`}
+          onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
+        />
+      </picture>
     </span>
   );
 }

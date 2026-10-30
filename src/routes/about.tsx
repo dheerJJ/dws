@@ -464,7 +464,10 @@ function AboutPage() {
                             alt="Dheerajj Kumawat"
                             className="w-100 h-100 object-fit-cover"
                             style={{ objectPosition: "center 15%" }}
+                            width={64}
+                            height={64}
                             loading="lazy"
+                            decoding="async"
                           />
                         </div>
                       ) : (

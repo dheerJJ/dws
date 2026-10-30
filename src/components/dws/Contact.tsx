@@ -105,7 +105,15 @@ export function Footer() {
             {/* Col 1: Brand & Status */}
             <div className="col-lg-4 col-md-6">
               <Link to="/" aria-label="DWS Web Services home" className="d-inline-block mb-3">
-                <img src={logo.url} alt="DWS Web Services logo" className="dws-footer-logo" />
+                <img
+                  src={logo.url}
+                  alt="DWS Web Services logo"
+                  className="dws-footer-logo"
+                  width={180}
+                  height={48}
+                  loading="lazy"
+                  decoding="async"
+                />
               </Link>
 
               <div>

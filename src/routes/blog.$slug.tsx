@@ -173,7 +173,10 @@ function PostPage() {
                       <img
                         src={post.cover}
                         alt={post.coverAlt || post.title}
+                        width={1200}
+                        height={630}
                         loading="lazy"
+                        decoding="async"
                         className="img-fluid w-100"
                       />
                     </div>

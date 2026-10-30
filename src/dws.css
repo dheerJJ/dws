@@ -254,9 +254,8 @@ p {
   border-bottom: 1px solid var(--dws-border);
   cursor: pointer;
   transition:
-    background-color 0.35s ease,
-    transform 0.35s ease,
-    padding-left 0.35s ease;
+    background-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .dws-service:first-child {
@@ -561,7 +560,11 @@ p {
   font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .dws-scroll-top-btn:hover {
@@ -806,29 +809,41 @@ p {
   line-height: 1.02;
 }
 
-/* ---------- React Bits: ShinyText ---------- */
+/* ---------- React Bits: ShinyText (100% GPU Composited) ---------- */
 .dws-shiny {
-  background: linear-gradient(
-    100deg,
-    rgba(255, 255, 255, 0.55) 30%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0.55) 70%
-  );
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation-name: dws-shine;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  position: relative;
+  display: inline-block;
+  color: var(--dws-white);
+  overflow: hidden;
+  will-change: transform;
 }
 
-@keyframes dws-shine {
+.dws-shiny::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: dws-shine-comp 4s infinite linear;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@keyframes dws-shine-comp {
   0% {
-    background-position: 180% center;
+    transform: translateX(0) skewX(-20deg);
   }
+  30%,
   100% {
-    background-position: -80% center;
+    transform: translateX(250%) skewX(-20deg);
   }
 }
 
@@ -1268,7 +1283,10 @@ select.dws-input.is-placeholder {
   border-radius: 6px;
   padding: 0.35rem 1rem;
   font-size: 0.85rem;
-  transition: all 0.25s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 .dws-chip:hover {
   border-color: #555;
