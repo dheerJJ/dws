@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import logo from "@/assets/dws-logo.png.asset.json";
+import { DURATION, EASE_IN_QUART, EASE_OUT_QUART } from "@/lib/motion";
 
 type NavLink = { label: string; to: string; hash?: string };
 
@@ -13,8 +14,6 @@ const links: NavLink[] = [
   { label: "Blog", to: "/blog" },
   { label: "Pricing", to: "/pricing" },
 ];
-
-const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -64,9 +63,22 @@ export function Navbar() {
             <motion.div
               className="dws-mobile-menu d-lg-none"
               initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.35, ease: EASE }}
+              animate={{
+                height: "auto",
+                opacity: 1,
+                transition: {
+                  duration: DURATION.card,
+                  ease: EASE_OUT_QUART,
+                },
+              }}
+              exit={{
+                height: 0,
+                opacity: 0,
+                transition: {
+                  duration: DURATION.exit,
+                  ease: EASE_IN_QUART,
+                },
+              }}
             >
               <div className="d-flex flex-column pt-3">
                 {links.map((link) => (
