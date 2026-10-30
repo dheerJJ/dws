@@ -8,20 +8,6 @@
   --dws-muted-light: #d6d6d6;
   --dws-hover: #0d0d0d;
   --dws-release: 20261007;
-
-  /* Motion & Easing Tokens (Physics-Based Acceleration & Settling) */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); /* hero reveals, big entrances */
-  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1); /* general UI entrances, modals, tabs */
-  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1); /* moving between states */
-  --ease-in-quart: cubic-bezier(0.5, 0, 0.75, 0); /* quick, decisive exits */
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* gentle tactile overshoot (<6%) */
-
-  /* Duration Scale */
-  --duration-micro: 200ms;
-  --duration-small: 280ms;
-  --duration-card: 450ms;
-  --duration-section: 850ms;
-  --duration-exit: 220ms;
 }
 
 html {
@@ -112,36 +98,14 @@ p {
   text-decoration: none;
   font-size: 0.925rem;
   opacity: 0.7;
-  position: relative;
-  padding-bottom: 4px;
-  will-change: opacity, color;
   transition:
-    opacity var(--duration-micro) var(--ease-out-quart),
-    color var(--duration-micro) var(--ease-out-quart);
-}
-
-.dws-nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--dws-white);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform var(--duration-small) var(--ease-out-quart);
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .dws-nav-link:hover {
   opacity: 1;
   color: var(--dws-white);
-}
-
-.dws-nav-link:hover::after,
-.dws-nav-link.is-active::after {
-  transform: scaleX(1);
-  transform-origin: left;
 }
 
 .dws-logo {
@@ -157,29 +121,17 @@ p {
   font-weight: 500;
   padding: 0.7rem 1.6rem;
   border: 1px solid transparent;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   text-decoration: none;
   line-height: 1.35;
-  position: relative;
-  will-change: transform;
-  transform: translateY(0) scale(1);
-  transition:
-    background-color var(--duration-micro) var(--ease-out-quart),
-    color var(--duration-micro) var(--ease-out-quart),
-    border-color var(--duration-micro) var(--ease-out-quart),
-    transform var(--duration-micro) var(--ease-out-quart);
-}
-
-.dws-btn:hover {
-  transform: translateY(-2px);
-}
-
-.dws-btn:active {
-  transform: translateY(0) scale(0.98);
-  transition-duration: 120ms;
 }
 
 .dws-btn-sm-tight {
@@ -197,27 +149,12 @@ p {
   background-color: var(--dws-white);
   color: var(--dws-black);
   text-align: center;
-  position: relative;
-}
-
-.dws-btn-solid::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.16);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--duration-micro) var(--ease-out-quart);
 }
 
 .dws-btn-solid:hover {
-  background-color: #e5e5e5;
+  background-color: #d9d9d9;
   color: var(--dws-black);
-}
-
-.dws-btn-solid:hover::after {
-  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .dws-btn-outline {
@@ -225,27 +162,12 @@ p {
   color: var(--dws-white);
   border-color: #3a3a3a;
   text-align: center;
-  position: relative;
-}
-
-.dws-btn-outline::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--duration-micro) var(--ease-out-quart);
 }
 
 .dws-btn-outline:hover {
   border-color: var(--dws-white);
   color: var(--dws-white);
-}
-
-.dws-btn-outline:hover::after {
-  opacity: 1;
+  transform: translateY(-2px);
 }
 
 /* ---------- Hero ---------- */
@@ -331,10 +253,10 @@ p {
   padding: 2rem 1.25rem;
   border-bottom: 1px solid var(--dws-border);
   cursor: pointer;
-  will-change: transform;
   transition:
-    background-color var(--duration-small) var(--ease-out-quart),
-    transform var(--duration-card) var(--ease-out-expo);
+    background-color 0.35s ease,
+    transform 0.35s ease,
+    padding-left 0.35s ease;
 }
 
 .dws-service:first-child {
@@ -343,7 +265,7 @@ p {
 
 .dws-service:hover {
   background-color: var(--dws-hover);
-  transform: translateX(10px);
+  transform: translateX(14px);
 }
 
 .dws-service-index {
@@ -367,16 +289,15 @@ p {
 .dws-service-arrow {
   margin-left: auto;
   color: #b3b3b3;
-  will-change: transform;
   transition:
-    transform var(--duration-card) var(--ease-out-expo),
-    color var(--duration-micro) var(--ease-out-quart);
+    transform 0.35s ease,
+    color 0.35s ease;
   flex-shrink: 0;
 }
 
 .dws-service:hover .dws-service-arrow {
   color: var(--dws-white);
-  transform: translate(4px, -4px) rotate(-45deg);
+  transform: translateX(6px) rotate(-45deg);
 }
 
 /* ---------- Process / Step Cards ---------- */
@@ -427,31 +348,14 @@ p {
   background: #050505;
   height: 100%;
   width: 100%;
-  position: relative;
-  will-change: transform;
   transition:
-    border-color var(--duration-card) var(--ease-out-quart),
-    transform var(--duration-card) var(--ease-out-expo);
-}
-
-.dws-work::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--duration-card) var(--ease-out-expo);
+    border-color 0.35s ease,
+    transform 0.35s ease;
 }
 
 .dws-work:hover {
   border-color: #3d3d3d;
   transform: translateY(-6px);
-}
-
-.dws-work:hover::after {
-  opacity: 1;
 }
 
 .dws-work-canvas {
@@ -469,8 +373,7 @@ p {
   object-fit: cover;
   object-position: top center;
   display: block;
-  will-change: transform;
-  transition: transform 600ms var(--ease-out-expo);
+  transition: transform 0.5s ease;
 }
 
 .dws-work:hover .dws-work-canvas img {
@@ -2554,29 +2457,4 @@ select.dws-input.is-placeholder {
   color: #fff;
   border-bottom-color: #fff;
   opacity: 0.85;
-}
-
-/* Global Reduced Motion Accessibility Enforcement */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .dws-btn:hover,
-  .dws-btn:active,
-  .dws-work:hover,
-  .dws-service:hover,
-  .dws-work:hover .dws-work-canvas img,
-  .dws-service:hover .dws-service-arrow {
-    transform: none !important;
-  }
-
-  .dws-nav-link::after {
-    display: none !important;
-  }
 }
